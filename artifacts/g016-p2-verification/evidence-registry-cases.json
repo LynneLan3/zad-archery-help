@@ -1,0 +1,128 @@
+{
+  "sharedAndDangling": {
+    "ok": true,
+    "output": {
+      "pageDataVersion": "v4",
+      "page": {
+        "id": "p2-test",
+        "title": "P2 Test",
+        "href": "/p2-test/",
+        "query": "dream nail",
+        "playerProblem": "look up the entity"
+      },
+      "state": {},
+      "intent": {
+        "query": "dream nail",
+        "playerProblem": "look up the entity",
+        "primaryTask": "entity-lookup",
+        "prototype": "P1",
+        "priority": 0,
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ],
+        "resolution": {
+          "basis": "primary-task",
+          "confidence": "high"
+        }
+      },
+      "facts": [],
+      "evidence": [
+        {
+          "evidenceId": "shared-evidence",
+          "sourceType": "fixture",
+          "finding": "One registry fact"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "media-1",
+          "role": "entity",
+          "source": "/shared.svg",
+          "localRef": "/shared.svg",
+          "alt": "Shared media"
+        }
+      ],
+      "assets": [
+        {
+          "role": "entity",
+          "path": "/shared.svg",
+          "alt": "Shared media",
+          "usable": true
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "one",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": []
+          },
+          "evidenceRefs": [
+            "shared-evidence"
+          ],
+          "mediaRefs": [
+            "media-1"
+          ]
+        },
+        {
+          "instanceId": "two",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": []
+          },
+          "evidenceRefs": [
+            "shared-evidence"
+          ],
+          "mediaRefs": [
+            "media-1"
+          ]
+        }
+      ],
+      "primitiveRecipe": [
+        {
+          "primitiveId": "A01",
+          "status": "include",
+          "reason": "Every answer surface identifies its task."
+        },
+        {
+          "primitiveId": "A02",
+          "status": "include",
+          "reason": "Entity lookup needs a direct answer."
+        },
+        {
+          "primitiveId": "E01",
+          "status": "include",
+          "reason": "Entity facts use structured facts."
+        },
+        {
+          "primitiveId": "N01",
+          "status": "include",
+          "reason": "A related next task continues the lookup."
+        }
+      ]
+    }
+  },
+  "duplicateEvidenceId": {
+    "ok": false,
+    "error": "Duplicate evidenceId: shared-evidence"
+  }
+}

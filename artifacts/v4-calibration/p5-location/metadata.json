@@ -1,0 +1,11 @@
+{
+  "page": "P5 Location — Cinder Marsh Map",
+  "url": "/v4-preview/marsh-map/",
+  "prototype": "P5",
+  "playerTask": "location",
+  "primitiveRecipe": ["A01", "L01", "L02", "L03"],
+  "mediaUsed": ["media-1: Cinder Marsh map"],
+  "interactiveBehavior": "Map markers expose selection state; route remains a readable waypoint sequence.",
+  "desktopScreenshot": "artifacts/v4-calibration/p5-location/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/p5-location/mobile.png"
+}

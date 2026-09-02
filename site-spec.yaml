@@ -1,0 +1,72 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+presentationVersion: 3
+
+site:
+  id: zad-archery
+  mode: standalone
+  locale: en
+  siteUrl: https://zadarchery.help
+  hubPath: /
+  title: Zad Archery Help
+  shortName: Zad Archery
+  description: Verified guides for Zad Archery progression, platforms, achievements and launch updates.
+  disclaimer: Independent fan guide for Zad Archery.
+
+deployment:
+  provider: vercel
+  orgId: "team_yAOizMTSVuT0RJATgFdAlQuG"
+  projectId: "prj_XKf0sXaOapId9g0A2pZVBD6dr5Na"
+  projectName: "zadarchery-help"
+  productionUrl: "https://zadarchery.help"
+  productionBranch: "main"
+
+game:
+  name: Zad Archery
+  hubTitle: Zad Archery Help
+  tagline: Every arrow, answered.
+  releaseStatus: released
+  releaseDate: 2026-09-01
+  developer: Samharia Studios
+  publisher: Samharia Studios
+  platforms: [Windows, macOS, Linux, Steam Deck, iOS, Android]
+
+theme:
+  accentColor: "#d49a22"
+  accentForeground: "#23170d"
+  heroAssetId: null
+  heroPosition: center
+
+categories:
+  - id: guides
+    label: Guides
+    description: Verified Zad Archery answers.
+    icon: information
+    order: 1
+pages:
+  - id: zad-archery-guide-index
+    title: Zad Archery Help
+    description: Verified Zad Archery answers for launch players.
+    category: guides
+    slug: zad-archery-guide-index
+    source: site-input/pages/zad-archery-guide-index.md
+    pageType: how-to
+    status: confirmed
+    featured: false
+    sidebarOrder: 1
+    role: core
+    intents: [getting-started]
+    quickAnswer: Start with the published answers for progression, platforms, achievements, and updates.
+    sections: [{ id: scope, title: Guide scope }]
+    facts: [{ label: Scope, value: Launch-ready answers only }]
+routes: []
+assets:
+  - id: zad-hero
+    source: public/zad-archery/10_steam_library_hero.jpg
+    target: zad-archery/hero.jpg
+    alt: Zad Archery archer facing target monsters in a green valley
+    kind: cover
+    sourceType: official
+    usageStatus: approved
+    aspectRatio: auto

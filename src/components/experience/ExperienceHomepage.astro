@@ -1,0 +1,366 @@
+---
+/**
+ * Formal Experience Homepage (V2.2-E1) — rendered at `/{hubPath}/`.
+ *
+ * Replaces the legacy GamePortal presentation on the splash entry. Every
+ * section is data-driven from existing runtime config (`game`, `game.routes`,
+ * `game.portal`) and the existing docs content collection. No new Homepage
+ * schema. Sections are omitted (never placeholder-filled) when their data is
+ * absent.
+ *
+ * Section order:
+ *   Hero → Status Strip → Priority Guide → Popular Questions → Start Here →
+ *   Routes → Field Notes → Recently Updated →
+ *   Evidence → About (id="about")
+ */
+import { Image } from 'astro:assets';
+import AdSlot from '../AdSlot.astro';
+import { game } from '../../config/game';
+import { resolveGameAsset } from '../../lib/assets';
+import { isPlaceholderAssetPath } from '../../lib/asset-path';
+import { resolveGuideCardImage } from '../../lib/card-images';
+import { getGuides, guideHref, categoryOf } from '../../lib/guides';
+import {
+	deriveRecentViews,
+	findFeaturedGuide,
+} from '../../lib/experience-homepage';
+import { experienceNav } from '../../lib/experience-nav';
+import {
+	formatReleaseDateValue,
+	formatReleaseFact,
+	formatUiDate,
+	releaseStatusLabel,
+	ui,
+} from '../../lib/ui';
+import GuideGrid from '../GuideGrid.astro';
+import HotGuideCard from './HotGuideCard.astro';
+import PopularQuestionCard from './PopularQuestionCard.astro';
+import CategoryBlock from './CategoryBlock.astro';
+
+const t = ui();
+const guides = await getGuides();
+const { guidesHref } = await experienceNav();
+
+/* ── Hero ── */
+const heroImage = isPlaceholderAssetPath(game.heroImage) ? undefined : resolveGameAsset(game.heroImage, 'game.heroImage');
+const heroPosition = game.heroPosition ?? 'center';
+const heroManifest = game.assets?.find((asset) => asset.usage.includes('homepageHero') && asset.localPath.endsWith(game.heroImage ?? ''));
+const heroWidth = Math.min(1920, heroManifest?.width ?? 1920);
+const heroHeight = Math.round(heroWidth / (heroManifest?.aspectRatio ?? 16 / 9));
+
+/* ── Start Here ── */
+type StartHereView = {
+	title: string;
+	description: string;
+	href: string;
+	label?: string;
+	badge?: string;
+};
+
+const configuredStartHere = game.portal?.startHere;
+const startHere: StartHereView[] = configuredStartHere?.length
+	? configuredStartHere.slice(0, 4).map((item) => ({
+			title: item.title,
+			description: item.description,
+			href: item.href,
+			label: item.label,
+			badge: item.badge,
+		}))
+	: [];
+
+/* ── Hero CTAs ── */
+const configuredPrimary = game.portal?.primaryCta;
+const primaryCta =
+	configuredPrimary && !configuredPrimary.href.startsWith('#')
+		? { label: configuredPrimary.label, href: configuredPrimary.href }
+		: startHere[0]
+			? { label: configuredPrimary?.label ?? t.startHere, href: startHere[0].href }
+			: undefined;
+const configuredSecondary = game.portal?.secondaryCta;
+const secondaryCta =
+	configuredSecondary && !configuredSecondary.href.startsWith('#')
+		? { label: configuredSecondary.label, href: configuredSecondary.href }
+		: { label: configuredSecondary?.label ?? t.browseGuides, href: guidesHref };
+
+/* ── Status Strip ── */
+const curatedRecent = game.portal?.recentUpdates;
+const showRecentlyUpdated = game.portal?.showRecentlyUpdated !== false;
+const maxRecent = Math.min(game.portal?.maxRecent ?? 3, 4);
+const recentlyUpdated = !showRecentlyUpdated
+	? []
+	: curatedRecent?.length
+		? curatedRecent.slice(0, maxRecent).map((item) => ({
+				title: item.title,
+				href: item.href,
+				date: new Date(item.date),
+				changeSummary: item.changeSummary,
+				tag: item.tag,
+			}))
+		: deriveRecentViews(guides, maxRecent);
+
+const configuredStatus = game.portal?.statusItems;
+const derivedStatus = [
+	{
+		label: releaseStatusLabel(game.releaseStatus),
+		value: formatReleaseDateValue(game.releaseDate) ?? '',
+	},
+	{ label: t.platforms, value: game.platforms.filter(Boolean).join(' / ') },
+	{ label: t.developer, value: game.developer },
+	recentlyUpdated[0]
+		? { label: t.updated, value: formatUiDate(recentlyUpdated[0].date) }
+		: { label: t.updated, value: '' },
+];
+const statusItems = (
+	configuredStatus
+		? configuredStatus.map((item) => ({ label: item.label, value: item.value }))
+		: derivedStatus
+)
+	.filter((item) => item.label.trim() && item.value.trim())
+	.slice(0, 4);
+
+/* ── Popular Questions ── */
+const popularQuestions = game.portal?.popularQuestions ?? [];
+const hotGuides = guides
+	.filter((guide) => typeof guide.data.homepagePriority === 'number')
+	.sort((a, b) => (a.data.homepagePriority ?? 999) - (b.data.homepagePriority ?? 999))
+	.slice(0, 6);
+const categoryViews = game.categories
+	.slice()
+	.sort((a, b) => a.order - b.order)
+	.map((category) => ({
+		category,
+		image: guides.find((guide) => categoryOf(guide)?.id === category.id ? resolveGuideCardImage(guide) : undefined),
+	}))
+	.map(({ category, image }) => ({ category, image: image ? resolveGuideCardImage(image) : undefined }));
+
+/* ── Featured ── */
+const featured = findFeaturedGuide(guides);
+const featuredHref = featured ? guideHref(featured) : undefined;
+const featuredImage = featured ? resolveGuideCardImage(featured) : undefined;
+const featuredHasCover = Boolean(featuredImage);
+const featuredEyebrow =
+	featured?.data.eyebrow ?? (featured ? categoryOf(featured)?.label : undefined) ?? t.featuredEyebrow;
+
+/* ── Evidence ── */
+const evidenceConfig = game.portal?.evidence;
+const evidenceItems =
+	evidenceConfig?.items.flatMap((item, index) => {
+		const image = isPlaceholderAssetPath(item.image) ? undefined : resolveGameAsset(item.image, `game.portal.evidence.items[${index}].image`);
+		if (!image) return [];
+		return { image, alt: item.alt, caption: item.caption, href: item.href };
+	}) ?? [];
+
+const showAbout = game.portal?.showAbout !== false;
+---
+
+<!-- 01 HERO -->
+<section class:list={['exp-home-hero', heroImage && 'exp-home-hero--media']}>
+	{heroImage && (
+		<div class="exp-home-hero__visual">
+			<Image
+				src={heroImage}
+				alt={game.heroAlt ?? game.name}
+				width={heroWidth}
+				height={heroHeight}
+				widths={[800, 1280, 1920]}
+				sizes="100vw"
+				loading="eager"
+				fetchpriority="high"
+				style={{ objectPosition: heroPosition }}
+				data-asset-id={heroManifest?.assetId}
+				data-asset-width={heroManifest?.width}
+				data-asset-height={heroManifest?.height}
+				data-asset-usage="homepageHero"
+			/>
+		</div>
+	)}
+	<div class="exp-home-hero__copy">
+		<p class="exp-eyebrow exp-home-hero__kicker">{t.gameWikiEyebrow}</p>
+		<h1 class="exp-display exp-home-hero__title">{game.hubTitle ?? `${game.name} Guide & Wiki`}</h1>
+		<p class="exp-lede exp-home-hero__tagline">{game.tagline}</p>
+		<div class="exp-home-hero__actions">
+			{primaryCta && (
+				<a class="exp-btn exp-btn--primary" href={primaryCta.href}>
+					{primaryCta.label}
+				</a>
+			)}
+			{secondaryCta && (
+				<a class="exp-btn exp-btn--ghost" href={secondaryCta.href}>
+					{secondaryCta.label}
+				</a>
+			)}
+			<button class="exp-btn exp-btn--search" type="button" data-exp-search-open>Search guides <kbd>/</kbd></button>
+		</div>
+		{popularQuestions.length > 0 && <div class="exp-home-hero__chips" aria-label="Popular questions">
+			{popularQuestions.slice(0, 3).map((question) => <a href={question.href}>{question.label}</a>)}
+		</div>}
+	</div>
+</section>
+
+<!-- 02 STATUS STRIP -->
+{statusItems.length > 0 && (
+	<dl class="exp-home-status" aria-label={t.gameFacts}>
+		{statusItems.map((item) => (
+			<div class="exp-home-status__item">
+				<dt>{item.label}</dt>
+				<dd>{item.value}</dd>
+			</div>
+		))}
+	</dl>
+)}
+
+<div class="exp-home-flow">
+	<!-- HOT / TRENDING GUIDES -->
+	{hotGuides.length > 0 && <section class="exp-section exp-home-hot" aria-labelledby="exp-home-hot-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">Hot guides</p>
+			<h2 class="exp-h2" id="exp-home-hot-heading">What players are looking for</h2>
+			<div class="exp-hot-guides">{hotGuides.map((entry) => <HotGuideCard entry={entry} />)}</div>
+		</div>
+	</section>}
+
+	<!-- POPULAR QUESTIONS -->
+	{popularQuestions.length > 0 && (
+		<section class="exp-section exp-section--tinted exp-home-questions" aria-labelledby="exp-home-questions-heading">
+			<div class="exp-content">
+				<p class="exp-eyebrow">{t.popularQuestions}</p>
+				<h2 class="exp-h2" id="exp-home-questions-heading">{t.popularQuestions}</h2>
+				<p class="exp-lede">{t.popularQuestionsLede}</p>
+				<div class="exp-questions">{popularQuestions.map((question) => <PopularQuestionCard {...question} />)}</div>
+			</div>
+		</section>
+	)}
+
+	{featured && featuredHref && (
+		<section class="exp-section exp-home-featured" aria-labelledby="exp-home-featured-heading">
+			<div class="exp-wide">
+				<a class:list={['exp-featured', !featuredHasCover && 'exp-featured--content-only']} href={featuredHref} data-analytics-event="guide_click" data-analytics-title={featured.data.title} data-analytics-placement="hero">
+					{featuredImage && <span class="exp-featured__image"><Image src={featuredImage} alt={featured.data.title} width={1280} height={720} sizes="(min-width: 50rem) 55vw, 100vw" loading="lazy" /></span>}
+					<span class="exp-featured__copy">
+						<span class="exp-eyebrow">{featuredEyebrow}</span>
+						<span class="exp-h2 exp-featured__title" id="exp-home-featured-heading">{featured.data.title}</span>
+						<span class="exp-lede">{featured.data.description}</span>
+						<span class="exp-cta-link">{t.readGuide}</span>
+					</span>
+				</a>
+			</div>
+		</section>
+	)}
+
+	<AdSlot placement="hub-after-start-here" />
+
+	<!-- BROWSE BY GAME CONTENT -->
+	<section class="exp-section exp-home-categories" aria-labelledby="exp-home-categories-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">Browse by game content</p>
+			<h2 class="exp-h2" id="exp-home-categories-heading">Find the right kind of guide</h2>
+			<div class="exp-category-grid">{categoryViews.map((view) => <CategoryBlock category={view.category} image={view.image} />)}</div>
+		</div>
+	</section>
+
+	<!-- MORE GUIDES -->
+	<section class="exp-section exp-home-browse" id="browse-guides" aria-labelledby="exp-home-browse-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">More guides</p>
+			<h2 class="exp-h2" id="exp-home-browse-heading">All game guides</h2>
+			<p class="exp-lede">{game.description}</p>
+			<GuideGrid entries={guides} />
+		</div>
+	</section>
+
+	<!-- RECENTLY UPDATED -->
+	{recentlyUpdated.length > 0 && (
+	<section class="exp-section exp-home-recent" aria-labelledby="exp-home-recent-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">{t.recentlyUpdated}</p>
+			<h2 class="exp-h2" id="exp-home-recent-heading">{t.recentlyUpdated}</h2>
+			<p class="exp-lede">{t.recentlyUpdatedLede}</p>
+			<ul class="exp-recent">
+				{recentlyUpdated.map((item) => (
+					<li>
+						<a class="exp-recent__row" href={item.href} data-analytics-event="guide_click" data-analytics-title={item.title} data-analytics-placement="recently_updated">
+							<span class="exp-recent__main">
+								<span class="exp-recent__title">{item.title}</span>
+								{item.changeSummary && <span class="exp-recent__change">{item.changeSummary}</span>}
+							</span>
+							<time class="exp-recent__date" datetime={item.date.toISOString()}>
+								{formatUiDate(item.date)}
+							</time>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+	)}
+
+	<!-- 09 EVIDENCE -->
+	{evidenceItems.length > 0 && (
+	<section class="exp-section exp-section--dark exp-home-evidence" aria-labelledby="exp-home-evidence-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">{t.seeGameInAction}</p>
+			<h2 class="exp-h2" id="exp-home-evidence-heading">{evidenceConfig?.title ?? t.seeGameInAction}</h2>
+			{evidenceConfig?.description && <p class="exp-lede">{evidenceConfig.description}</p>}
+			<div class="exp-evidence">
+				{evidenceItems.map((item) =>
+					item.href ? (
+						<a class="exp-evidence__frame" href={item.href}>
+							<Image
+								src={item.image}
+								alt={item.alt}
+								width={800}
+								height={450}
+								sizes="(min-width: 50rem) 32vw, 100vw"
+								loading="lazy"
+							/>
+							{item.caption && <span class="exp-evidence__caption">{item.caption}</span>}
+						</a>
+					) : (
+						<figure class="exp-evidence__frame">
+							<Image
+								src={item.image}
+								alt={item.alt}
+								width={800}
+								height={450}
+								sizes="(min-width: 50rem) 32vw, 100vw"
+								loading="lazy"
+							/>
+							{item.caption && <figcaption class="exp-evidence__caption">{item.caption}</figcaption>}
+						</figure>
+					),
+				)}
+			</div>
+		</div>
+	</section>
+	)}
+
+	<!-- 10 ABOUT -->
+	{showAbout && (
+	<section class="exp-section exp-home-about" id="about" aria-labelledby="exp-home-about-heading">
+		<div class="exp-content">
+			<p class="exp-eyebrow">{t.aboutGame(game.name)}</p>
+			<h2 class="exp-h2" id="exp-home-about-heading">{t.aboutGame(game.name)}</h2>
+			<p class="exp-lede exp-home-about__desc">{game.description}</p>
+			{game.disclaimer && <p class="exp-home-about__disclaimer">{game.disclaimer}</p>}
+			<dl class="exp-facts-strip exp-home-about__facts">
+				<div class="exp-facts-strip__item">
+					<dt>{t.releaseStatus}</dt>
+					<dd>{formatReleaseFact(game.releaseStatus, game.releaseDate)}</dd>
+				</div>
+				<div class="exp-facts-strip__item">
+					<dt>{t.developer}</dt>
+					<dd>{game.developer}</dd>
+				</div>
+				<div class="exp-facts-strip__item">
+					<dt>{t.publisher}</dt>
+					<dd>{game.publisher}</dd>
+				</div>
+				<div class="exp-facts-strip__item">
+					<dt>{t.platforms}</dt>
+					<dd>{game.platforms.join(' · ')}</dd>
+				</div>
+			</dl>
+		</div>
+	</section>
+	)}
+</div>

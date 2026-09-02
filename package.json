@@ -1,0 +1,58 @@
+{
+  "name": "game-wiki-starter",
+  "type": "module",
+  "version": "0.0.1",
+  "v4Version": "4.1",
+  "v4CodeBaseline": "v4.0.0@e448f6252933edc3ac8b0c4267dcc50b17da95c0",
+  "v4ResearchBaseline": "G016 / P7 / V4 visual research frozen artifacts",
+  "v4Status": "IN_PROGRESS",
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=9.6.5"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "verify:template": "node ./scripts/verify-template.mjs",
+    "verify:context": "tsx ./scripts/verify-context.ts",
+    "verify:bootstrap": "tsx ./scripts/verify-bootstrap.ts",
+    "validate:site": "tsx ./scripts/validate-site.mjs",
+    "site:generate": "tsx ./scripts/generate-site.ts",
+    "assets:bootstrap": "tsx ./scripts/bootstrap-assets.ts",
+    "assets:research": "tsx ./scripts/research-assets.ts",
+    "test:generator": "tsx --test tests/site-generator/generator.test.ts tests/link-graph/page-relations.test.ts tests/link-graph/page-paths.test.ts tests/link-graph/routes.test.ts tests/trust/trust-pages.test.ts tests/analytics/outbound.test.ts tests/social/social-image.test.ts tests/monetization/affiliate-link.test.ts tests/monetization/ad-slot.test.ts tests/experience/routes-ui.test.ts tests/experience/guide-editorial.test.ts tests/experience/homepage.test.ts tests/experience/card-images.test.ts tests/experience/toolkit.test.ts tests/experience/media.test.ts",
+    "test:context": "tsx --test tests/repo-context/verify-context.test.ts",
+    "test:validation": "tsx --test tests/validation/validate-modes.test.ts",
+    "validate:template": "npm run check && npm run verify:template && npm run validate:site -- --mode=template && npm run build",
+    "validate:generated": "tsx ./scripts/validate-generated-site.ts",
+    "test:v4:standalone": "tsx --test tests/v4/standalone-generator.test.ts",
+    "test:v4:standalone:build": "tsx --test tests/v4/standalone-build.test.ts",
+    "validate:v4:completeness": "tsx scripts/v4/product-completeness.ts",
+    "validate": "npm run validate:template",
+    "deploy:check": "node scripts/deploy-production.mjs --check",
+    "deploy:production": "node scripts/deploy-production.mjs",
+    "publish:production": "node scripts/publish-production.mjs",
+    "test:deployment": "tsx --test tests/deployment/deploy-identity.test.ts",
+    "test:publishing": "tsx --test tests/publishing/publish-production.test.ts",
+    "indexnow": "tsx ./scripts/indexnow-submit.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/starlight": "^0.41.7",
+    "@vercel/analytics": "^2.0.1",
+    "astro": "^7.1.6",
+    "sharp": "^0.35.3",
+    "typescript": "^5.9.2",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.20.5"
+  }
+}

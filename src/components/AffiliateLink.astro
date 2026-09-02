@@ -1,0 +1,23 @@
+---
+import { applyAffiliateLinkAttrs } from '../lib/affiliate-link';
+
+interface Props {
+	href: string;
+	newTab?: boolean;
+}
+
+const { href, newTab = false } = Astro.props;
+const attrs = applyAffiliateLinkAttrs({
+	outboundKind: 'affiliate',
+	target: newTab ? '_blank' : undefined,
+})!;
+---
+
+<a
+	href={href}
+	rel={attrs.rel}
+	data-outbound-kind={attrs.outboundKind}
+	target={newTab ? '_blank' : undefined}
+>
+	<slot />
+</a>

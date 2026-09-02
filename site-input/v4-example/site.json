@@ -1,0 +1,961 @@
+{
+  "game": {
+    "name": "Emberfall",
+    "slug": "emberfall",
+    "accent": "#f59e0b",
+    "accentForeground": "#1c1202",
+    "identityAsset": "/v4/emberfall-forge.svg",
+    "identityLabel": "Ashfall field guide",
+    "identity": {
+      "logo": "/v4/emberfall-forge.svg",
+      "hero": "/v4/emberfall-forge.svg",
+      "background": "/v4/emberfall-forge.svg",
+      "texture": "/v4/emberfall-core.svg",
+      "typography": "serif",
+      "palette": { "background": "#120f0c", "panel": "#211813", "ink": "#fff3df" }
+    }
+  },
+  "navigation": {
+    "primary": [
+      { "id": "home", "label": "Home", "href": "/v4-preview/" },
+      {
+        "id": "guide", "label": "Guide", "href": "/v4-preview/category/",
+        "groups": [
+          { "id": "find", "label": "Find things", "items": [
+            { "id": "ember-core", "label": "Ember Core", "href": "/v4-preview/ember-core/", "pageId": "ember-core" },
+            { "id": "ember-catalog", "label": "Field Guide", "href": "/v4-preview/ember-catalog/", "pageId": "ember-catalog" }
+          ] },
+          { "id": "decide", "label": "Make decisions", "items": [
+            { "id": "class-choice", "label": "Choose a path", "href": "/v4-preview/class-choice/", "pageId": "class-choice" },
+            { "id": "season-meta", "label": "Path recommendations", "href": "/v4-preview/season-meta/", "pageId": "season-meta" }
+          ] },
+          { "id": "route", "label": "Follow a route", "items": [
+            { "id": "forge-guide", "label": "Forge Guide", "href": "/v4-preview/forge-guide/", "pageId": "forge-guide" },
+            { "id": "marsh-map", "label": "Cinder Marsh Map", "href": "/v4-preview/marsh-map/", "pageId": "marsh-map" },
+            { "id": "ashfall-progression", "label": "Route Progression", "href": "/v4-preview/ashfall-progression/", "pageId": "ashfall-progression" }
+          ] },
+          { "id": "systems", "label": "Operate systems", "items": [
+            { "id": "heat-system", "label": "Heat System", "href": "/v4-preview/heat-system/", "pageId": "heat-system" },
+            { "id": "armory-db", "label": "Armory Planner", "href": "/v4-preview/armory-db/", "pageId": "armory-db" },
+            { "id": "ashfall-calendar", "label": "Planning Calendar", "href": "/v4-preview/ashfall-calendar/", "pageId": "ashfall-calendar" }
+          ] }
+        ]
+      }
+    ],
+    "utilities": [
+      { "id": "search", "label": "Search", "href": "/v4-preview/search/" }
+    ]
+  },
+  "pages": [
+    {
+      "id": "ember-core",
+      "title": "Ember Core",
+      "href": "/v4-preview/ember-core/",
+      "query": "ember core",
+      "playerProblem": "look up the item",
+      "primaryTask": "entity-lookup",
+      "priority": 10,
+      "facts": [
+        {
+          "id": "type",
+          "label": "Type",
+          "value": "Resource",
+          "verified": true
+        },
+        {
+          "id": "source",
+          "label": "Source",
+          "value": "Cinder Marsh seams",
+          "verified": true
+        },
+        {
+          "id": "use",
+          "label": "Primary use",
+          "value": "Forge heat-resistant tools",
+          "verified": true
+        },
+        {
+          "id": "rarity",
+          "label": "Rarity",
+          "value": "Uncommon",
+          "verified": true
+        },
+        {
+          "id": "heat",
+          "label": "Heat value",
+          "value": "12 units",
+          "verified": true
+        }
+      ],
+      "freshness": {
+        "version": "0.9",
+        "dataWindow": "Ashfall cycle"
+      },
+      "evidence": [
+        {
+          "evidenceId": "e1",
+          "sourceType": "fixture-lore",
+          "sourceRef": "fixture://ember-core",
+          "finding": "The Ember Core guide records its source and forge use."
+        }
+      ],
+      "assets": [
+        {
+          "role": "entity",
+          "path": "/v4/emberfall-core.svg",
+          "alt": "Ember Core crystal",
+          "usable": true,
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "pagePackage": {
+        "body": {
+          "intro": "Forge a tempered tool by preparing the handle before the Ember Core loses heat.",
+          "sections": [
+            { "id": "setup", "title": "Prepare the forge", "paragraphs": ["The forge sequence is timing-sensitive: gather the core and quench the handle before you begin heating."], "bullets": ["Start at the Cinder Marsh basin.", "Keep the handle in your kit before lighting the forge."] }
+          ],
+          "faq": [
+            { "id": "cooling", "question": "What if the core cools before sealing?", "answer": "Quench the handle first, then restart the heat step and seal the tool before the core cools." }
+          ]
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Ember Core",
+            "task": "Entity lookup",
+            "subject": "Resource"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": [
+            "media-1"
+          ]
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Use Ember Core at the forge to craft heat-resistant tools.",
+            "nextAction": {
+              "href": "/v4-preview/forge-guide/"
+            }
+          },
+          "evidenceRefs": [],
+          "mediaRefs": ["hero-heat"]
+        },
+        {
+          "instanceId": "facts",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              {
+                "label": "Type",
+                "value": "Resource"
+              },
+              {
+                "label": "Source",
+                "value": "Cinder Marsh seams"
+              },
+              {
+                "label": "Primary use",
+                "value": "Forge heat-resistant tools"
+              },
+              {
+                "label": "Rarity",
+                "value": "Uncommon",
+                "state": "Current state"
+              },
+              {
+                "label": "Heat value",
+                "value": "12 units"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e1"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/v4-preview/forge-guide/",
+                "label": "Forge with the Core",
+                "reason": "Turn the resource into a heat-resistant tool."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "forge-guide",
+      "title": "Forge Guide",
+      "href": "/v4-preview/forge-guide/",
+      "query": "how to forge",
+      "playerProblem": "complete the forging procedure",
+      "primaryTask": "procedure",
+      "priority": 9,
+      "primitiveSupport": {
+        "P01": "available",
+        "P04": "available"
+      },
+      "evidence": [
+        {
+          "evidenceId": "e2",
+          "sourceType": "fixture-procedure",
+          "sourceRef": "fixture://forge-guide",
+          "finding": "The three forge actions produce a tempered tool."
+        }
+      ],
+      "assets": [
+        {
+          "role": "step",
+          "path": "/v4/emberfall-forge.svg",
+          "alt": "Forge sequence diagram",
+          "usable": true,
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "pagePackage": {
+        "body": {
+          "intro": "Forge a tempered tool by preparing the handle before the Ember Core loses heat.",
+          "sections": [
+            { "id": "setup", "title": "Prepare the forge", "paragraphs": ["The sequence is timing-sensitive: gather the core and quench the handle before heating begins."], "bullets": ["Start at the Cinder Marsh basin.", "Keep the handle ready before lighting the forge."] }
+          ],
+          "faq": [
+            { "id": "cooling", "question": "What if the core cools before sealing?", "answer": "Quench the handle first, then restart the heat step and seal the tool before the core cools." }
+          ]
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Forge Guide",
+            "task": "How-to",
+            "subject": "Tempered tool"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Heat the Ember Core, add a quenched handle, then seal the tool.",
+            "nextAction": {
+              "href": "/v4-preview/ember-core/"
+            }
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "requirements",
+          "primitiveId": "P01",
+          "payload": {
+            "requirements": [
+              {
+                "id": "core",
+                "label": "Ember Core",
+                "status": "ready",
+                "howToMeet": "Gather one from a Cinder Marsh seam."
+              },
+              {
+                "id": "handle",
+                "label": "Quenched handle",
+                "status": "ready",
+                "howToMeet": "Cool the handle at the marsh basin."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "steps",
+          "primitiveId": "P02",
+          "payload": {
+            "steps": [
+              {
+                "id": "heat",
+                "order": 1,
+                "action": "Heat the Ember Core in the forge",
+                "result": "The core glows white."
+              },
+              {
+                "id": "handle",
+                "order": 2,
+                "action": "Seat the quenched handle",
+                "result": "The forge binds the grip.",
+                "evidenceRefs": [
+                  "e2"
+                ],
+                "mediaRefs": [
+                  "media-1"
+                ]
+              },
+              {
+                "id": "seal",
+                "order": 3,
+                "action": "Seal the tool before the core cools",
+                "result": "A tempered tool is added to your kit."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "recovery",
+          "primitiveId": "P04",
+          "payload": {
+            "cases": [
+              {
+                "symptom": "The core cools before sealing",
+                "cause": "The handle was not ready",
+                "recovery": "Quench the handle first, then restart the heat step."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/v4-preview/heat-system/",
+                "label": "Tune forge heat",
+                "reason": "Understand the heat limit before repeating the procedure."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "marsh-map",
+      "title": "Cinder Marsh Map",
+      "href": "/v4-preview/marsh-map/",
+      "query": "emberfall resource map",
+      "playerProblem": "find the resource location",
+      "primaryTask": "location",
+      "priority": 8,
+      "resolverEvidence": {
+        "mapData": "available"
+      },
+      "evidence": [
+        {
+          "evidenceId": "e3",
+          "sourceType": "fixture-map",
+          "sourceRef": "fixture://cinder-marsh",
+          "finding": "The north ridge seam is marked on the Cinder Marsh map."
+        }
+      ],
+      "assets": [
+        {
+          "role": "map",
+          "path": "/v4/emberfall-map.svg",
+          "alt": "Cinder Marsh resource map",
+          "usable": true,
+          "caption": "Reference map of Cinder Marsh",
+          "provenance": "Artificial Fixture asset",
+          "width": 1200,
+          "height": 640
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Cinder Marsh Map",
+            "task": "Location",
+            "subject": "Ember Core seam"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Start at the North Gate and follow the reed line to the marked north ridge seam."
+          },
+          "evidenceRefs": [
+            "e3"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "location",
+          "primitiveId": "L01",
+          "payload": {
+            "area": "Cinder Marsh",
+            "coordinates": {
+              "x": 42,
+              "y": 18,
+              "region": "North ridge"
+            },
+            "landmark": "Split-Reed Gate",
+            "access": "Enter from the North Gate after the Ashfall bell."
+          },
+          "evidenceRefs": [
+            "e3"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "map",
+          "primitiveId": "L02",
+          "payload": {
+            "source": "Cinder Marsh survey",
+            "markers": [
+              {
+                "id": "seam",
+                "label": "North ridge Ember Core seam",
+                "x": 42,
+                "y": 18,
+                "locationRef": "north-ridge"
+              }
+            ],
+            "layers": [
+              {
+                "id": "resources",
+                "label": "Resources",
+                "enabled": true
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e3"
+          ],
+          "mediaRefs": [
+            "media-1"
+          ]
+        },
+        {
+          "instanceId": "route",
+          "primitiveId": "L03",
+          "payload": {
+            "start": "North Gate",
+            "waypoints": [
+              {
+                "id": "reed",
+                "label": "Split-Reed Gate",
+                "instruction": "Keep the basin on your right."
+              },
+              {
+                "id": "ridge",
+                "label": "North ridge",
+                "instruction": "Climb past the ash posts."
+              }
+            ],
+            "destination": "Ember Core seam"
+          },
+          "evidenceRefs": [
+            "e3"
+          ],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "unmapped-location",
+      "title": "Unnamed Location",
+      "href": "/v4-preview/unmapped-location/",
+      "query": "emberfall location",
+      "playerProblem": "find a place",
+      "primaryTask": "location",
+      "priority": 1,
+      "resolverEvidence": {
+        "mapData": "unsupported"
+      },
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Unnamed Location",
+            "task": "Location",
+            "subject": "North ridge"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "location",
+          "primitiveId": "L01",
+          "payload": {
+            "area": "North ridge",
+            "landmark": "Ash posts",
+            "access": "Follow the marsh road."
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "heat-system",
+      "title": "Heat System",
+      "href": "/v4-preview/heat-system/",
+      "query": "emberfall heat mechanics",
+      "playerProblem": "understand the rule and calculate heat",
+      "primaryTask": "mechanics",
+      "priority": 7,
+      "resolverEvidence": {
+        "calculatorData": "available"
+      },
+      "freshness": {
+        "version": "0.9",
+        "dataWindow": "Ashfall cycle"
+      },
+      "evidence": [
+        {
+          "evidenceId": "e4",
+          "sourceType": "fixture-system",
+          "sourceRef": "fixture://heat-system",
+          "finding": "Heat rises by a base amount plus sprint duration times the ember rate."
+        }
+      ],
+      "assets": [
+        { "role": "hero", "path": "/v4/emberfall-forge.svg", "alt": "Emberfall forge system", "usable": true, "provenance": "Artificial Fixture asset" },
+        { "role": "evidence", "path": "/v4/emberfall-forge.svg", "alt": "Heat system evidence diagram", "usable": true, "caption": "Fixture evidence for the heat relationship", "provenance": "Artificial Fixture asset" },
+        { "role": "decorative", "path": "/v4/emberfall-core.svg", "alt": "Ember Core texture", "usable": true, "provenance": "Artificial Fixture asset" }
+      ],
+      "pagePackage": {
+        "body": {
+          "intro": "Heat increases while you sprint near an active forge; use the rule below to plan a safe forging window.",
+          "sections": [
+            { "id": "rule", "title": "The rule in plain language", "paragraphs": ["Start with the current base heat, then add the ember rate for each second of sprinting. The worked example shows how the variables combine."], "bullets": ["Check the Ashfall cycle before relying on this value.", "Treat the calculator result as planning guidance."] }
+          ],
+          "faq": [
+            { "id": "platform", "question": "Does this apply outside the Ashfall cycle?", "answer": "No. The fixture rule is explicitly scoped to the Ashfall cycle and active forge conditions." }
+          ]
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Heat System",
+            "task": "Mechanics",
+            "subject": "Forge heat"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": ["media-1"]
+        },
+        {
+          "instanceId": "context",
+          "primitiveId": "A03",
+          "payload": {
+            "scope": "Ashfall cycle",
+            "conditions": [
+              "Applies while sprinting near an active forge."
+            ],
+            "caveat": "This formula is for planning reference, not a real game mechanic."
+          },
+          "evidenceRefs": [
+            "e4"
+          ],
+          "mediaRefs": ["media-2", "media-3"]
+        },
+        {
+          "instanceId": "version",
+          "primitiveId": "S01",
+          "payload": {
+            "value": "0.9",
+            "applicability": "Ashfall cycle"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "freshness",
+          "primitiveId": "S04",
+          "payload": {
+            "value": "Ashfall cycle / checked week 3"
+          },
+          "evidenceRefs": [
+            "e4"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "formula",
+          "primitiveId": "X03",
+          "payload": {
+            "expression": "base heat + duration x ember rate",
+            "variables": [
+              {
+                "name": "base heat",
+                "meaning": "Starting heat",
+                "unit": "units"
+              },
+              {
+                "name": "duration",
+                "meaning": "Sprint duration",
+                "unit": "minutes"
+              },
+              {
+                "name": "ember rate",
+                "meaning": "Heat added per minute",
+                "unit": "units/min"
+              }
+            ],
+            "workedExample": {
+              "inputs": {
+                "base heat": 4,
+                "duration": 3,
+                "ember rate": 2
+              },
+              "result": "10 units"
+            }
+          },
+          "evidenceRefs": [
+            "e4"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "calculator",
+          "primitiveId": "X04",
+          "payload": {
+            "inputs": [
+              {
+                "id": "base",
+                "label": "Base heat",
+                "unit": "units",
+                "value": 4
+              },
+              {
+                "id": "duration",
+                "label": "Duration",
+                "unit": "minutes",
+                "value": 3
+              },
+              {
+                "id": "rate",
+                "label": "Ember rate",
+                "unit": "units/min",
+                "value": 2
+              }
+            ],
+            "calculation": "base + duration x rate",
+            "result": {
+              "value": 10,
+              "interpretation": "Stay below the 12-unit forge limit."
+            }
+          },
+          "evidenceRefs": [
+            "e4"
+          ],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "armory-db",
+      "title": "Armory Planner",
+      "href": "/v4-preview/armory-db/",
+      "query": "emberfall build planner",
+      "playerProblem": "search and arrange a build",
+      "primaryTask": "tool-database",
+      "priority": 6,
+      "resolverEvidence": {
+        "filterFacets": [
+          "class",
+          "weapon"
+        ]
+      },
+      "primitiveSupport": {
+        "X01": "available",
+        "X02": "available",
+        "X05": "available"
+      },
+      "evidence": [
+        {
+          "evidenceId": "e5",
+          "sourceType": "fixture-dataset",
+          "sourceRef": "fixture://armory",
+          "finding": "The Armory lists tools by class and power."
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Armory Planner",
+            "task": "Tool database",
+            "subject": "Build workspace"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Filter the armory, sort by power, and place a tool into the workspace."
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01",
+          "payload": {
+            "facets": [
+              {
+                "id": "class",
+                "label": "Class",
+                "values": [
+                  "Warden",
+                  "Arcanist"
+                ]
+              },
+              {
+                "id": "weapon",
+                "label": "Weapon",
+                "values": [
+                  "Cinder Axe",
+                  "Marsh Bow"
+                ]
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02",
+          "payload": {
+            "columns": [
+              {
+                "id": "name",
+                "label": "Name"
+              },
+              {
+                "id": "power",
+                "label": "Power"
+              }
+            ],
+            "rows": [
+              {
+                "name": "Cinder Axe",
+                "power": 12,
+                "class": "Warden"
+              },
+              {
+                "name": "Marsh Bow",
+                "power": 9,
+                "class": "Arcanist"
+              },
+              {
+                "name": "Ash Staff",
+                "power": 15,
+                "class": "Arcanist"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03",
+          "payload": {
+            "columns": [
+              {
+                "id": "name",
+                "label": "Name"
+              },
+              {
+                "id": "class",
+                "label": "Class"
+              },
+              {
+                "id": "power",
+                "label": "Power"
+              }
+            ],
+            "rows": [
+              {
+                "name": "Cinder Axe",
+                "class": "Warden",
+                "power": 12
+              },
+              {
+                "name": "Marsh Bow",
+                "class": "Arcanist",
+                "power": 9
+              },
+              {
+                "name": "Ash Staff",
+                "class": "Arcanist",
+                "power": 15
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "workspace",
+          "primitiveId": "X05",
+          "payload": {
+            "state": {
+              "slot": "empty",
+              "saved": false
+            },
+            "controls": [
+              {
+                "id": "cinder-axe",
+                "label": "Add Cinder Axe",
+                "type": "button"
+              },
+              {
+                "id": "ash-staff",
+                "label": "Add Ash Staff",
+                "type": "button"
+              }
+            ],
+            "result": "Choose a tool to begin.",
+            "saveShare": {
+              "saved": false
+            }
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "ember-catalog",
+      "title": "Emberfall Field Guide",
+      "href": "/v4-preview/ember-catalog/",
+      "query": "emberfall field guide",
+      "playerProblem": "browse resources and tools by group",
+      "primaryTask": "collection-browse",
+      "priority": 8,
+      "resolverEvidence": { "filterFacets": ["group", "role"] },
+      "primitiveSupport": { "E03": "available", "X01": "available", "X02": "available" },
+      "evidence": [{ "evidenceId": "e6", "sourceType": "fixture-catalog", "sourceRef": "fixture://ember-catalog", "finding": "The field guide groups six Emberfall items by role and use." }],
+      "primitiveData": [
+        { "instanceId": "header", "primitiveId": "A01", "payload": { "title": "Emberfall Field Guide", "task": "Catalog browse", "subject": "Resources and tools" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "grid", "primitiveId": "E02", "payload": { "group": "Forge materials and field tools", "entities": [
+          { "id": "core", "name": "Ember Core", "href": "/v4-preview/ember-core/", "summary": "Forge resource", "meta": "Uncommon - Heat 12" },
+          { "id": "handle", "name": "Quenched Handle", "href": "/v4-preview/ember-core/", "summary": "Tool component", "meta": "Marsh basin" },
+          { "id": "axe", "name": "Cinder Axe", "href": "/v4-preview/armory-db/", "summary": "Heavy field tool", "meta": "Power 12" },
+          { "id": "bow", "name": "Marsh Bow", "href": "/v4-preview/armory-db/", "summary": "Ranged field tool", "meta": "Power 9" },
+          { "id": "staff", "name": "Ash Staff", "href": "/v4-preview/armory-db/", "summary": "Heat-channeling tool", "meta": "Power 15" },
+          { "id": "seal", "name": "Ashen Seal", "href": "/v4-preview/ember-core/", "summary": "Forge result", "meta": "Quest item" }
+        ] }, "evidenceRefs": ["e6"], "mediaRefs": [] },
+        { "instanceId": "filter", "primitiveId": "X01", "payload": { "facets": [{ "id": "group", "label": "Group", "values": ["Forge materials", "Field tools"] }, { "id": "role", "label": "Role", "values": ["Resource", "Tool", "Component"] }], "resultCount": 6 }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "sort", "primitiveId": "X02", "payload": { "columns": [{ "id": "name", "label": "Name" }, { "id": "role", "label": "Role" }, { "id": "power", "label": "Power" }], "rows": [{ "name": "Cinder Axe", "role": "Tool", "power": 12 }, { "name": "Marsh Bow", "role": "Tool", "power": 9 }, { "name": "Ash Staff", "role": "Tool", "power": 15 }] }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "table", "primitiveId": "E03", "payload": { "columns": [{ "id": "name", "label": "Name" }, { "id": "role", "label": "Role" }, { "id": "power", "label": "Power" }], "rows": [{ "name": "Cinder Axe", "role": "Heavy", "power": 12 }, { "name": "Marsh Bow", "role": "Ranged", "power": 9 }, { "name": "Ash Staff", "role": "Channeling", "power": 15 }], "notes": ["Power helps compare field tools."] }, "evidenceRefs": ["e6"], "mediaRefs": [] }
+      ]
+    },
+    {
+      "id": "class-choice",
+      "title": "Choose Your Emberfall Path",
+      "href": "/v4-preview/class-choice/",
+      "query": "choose class",
+      "playerProblem": "choose a class for a preferred playstyle",
+      "primaryTask": "choice-comparison",
+      "priority": 7,
+      "primitiveData": [
+        { "instanceId": "header", "primitiveId": "A01", "payload": { "title": "Choose Your Emberfall Path", "task": "Choice comparison", "subject": "Three starting paths" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "platform", "primitiveId": "S02", "payload": { "label": "Platform state", "value": "PC - controller supported", "applicability": "Input feel is the same across paths", "options": ["PC", "Controller"] }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "comparison", "primitiveId": "D01", "payload": { "options": [{ "id": "warden", "label": "Warden" }, { "id": "arcanist", "label": "Arcanist" }, { "id": "scout", "label": "Scout" }], "dimensions": [{ "id": "playstyle", "label": "Playstyle" }, { "id": "strengths", "label": "Strengths" }, { "id": "weaknesses", "label": "Weaknesses" }, { "id": "difficulty", "label": "Difficulty" }, { "id": "range", "label": "Range / role" }], "cells": [{ "optionId": "warden", "dimensionId": "playstyle", "value": "Hold ground" }, { "optionId": "warden", "dimensionId": "strengths", "value": "Guard and stagger" }, { "optionId": "warden", "dimensionId": "weaknesses", "value": "Slow reposition" }, { "optionId": "warden", "dimensionId": "difficulty", "value": "Low" }, { "optionId": "warden", "dimensionId": "range", "value": "Close - anchor" }, { "optionId": "arcanist", "dimensionId": "playstyle", "value": "Shape heat" }, { "optionId": "arcanist", "dimensionId": "strengths", "value": "Area control" }, { "optionId": "arcanist", "dimensionId": "weaknesses", "value": "Fragile" }, { "optionId": "arcanist", "dimensionId": "difficulty", "value": "High" }, { "optionId": "arcanist", "dimensionId": "range", "value": "Mid - control" }, { "optionId": "scout", "dimensionId": "playstyle", "value": "Move and mark" }, { "optionId": "scout", "dimensionId": "strengths", "value": "Mobility and reach" }, { "optionId": "scout", "dimensionId": "weaknesses", "value": "Needs space" }, { "optionId": "scout", "dimensionId": "difficulty", "value": "Medium" }, { "optionId": "scout", "dimensionId": "range", "value": "Long - skirmish" }], "recommendation": { "optionId": "warden", "reason": "Choose Warden when you are learning the forge route or want forgiving close-range control." } }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "matrix", "primitiveId": "D03", "payload": { "scenarios": [{ "condition": "You want the safest first run", "choice": "Warden", "reason": "Its guard window and close-range role reduce early positioning demands." }, { "condition": "You enjoy managing zones and heat", "choice": "Arcanist", "reason": "Area control rewards deliberate setup but punishes missed timing." }, { "condition": "You prefer movement and distance", "choice": "Scout", "reason": "Mobility and reach keep threats away when the arena has room." }] }, "evidenceRefs": [], "mediaRefs": [] }
+      ]
+    },
+    {
+      "id": "ashfall-progression",
+      "title": "Ashfall Route Progression",
+      "href": "/v4-preview/ashfall-progression/",
+      "query": "ashfall progression walkthrough",
+      "playerProblem": "know the current milestone and next unlock",
+      "primaryTask": "progression",
+      "priority": 6,
+      "primitiveData": [
+        { "instanceId": "header", "primitiveId": "A01", "payload": { "title": "Ashfall Route Progression", "task": "Progression walkthrough", "subject": "Current route" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "answer", "primitiveId": "A02", "payload": { "answer": "You are at the Cinder Marsh milestone; temper the first tool before opening the Glassway route.", "qualifier": "The route below separates completed, current, and future milestones.", "nextAction": { "href": "/v4-preview/forge-guide/" } }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "progress", "primitiveId": "P03", "payload": { "milestones": [{ "id": "arrival", "label": "Reach Cinder Marsh", "status": "completed", "next": "Collect one Ember Core" }, { "id": "forge", "label": "Temper the first field tool", "status": "current", "next": "Complete the Forge Guide with an Ember Core and quenched handle" }, { "id": "glassway", "label": "Open the Glassway", "status": "future", "next": "Bring the tempered tool to the sealed gate" }, { "id": "watch", "label": "Cross the Ash Watch", "status": "future", "next": "Choose a path and stabilize the watchfire" }, { "id": "crown", "label": "Reach the Ember Crown", "status": "future", "next": "Use the Crown key at the final lift" }] }, "evidenceRefs": [], "mediaRefs": [] }
+      ]
+    },
+    {
+      "id": "season-meta",
+      "title": "Ashfall Path Recommendations",
+      "href": "/v4-preview/season-meta/",
+      "query": "best emberfall paths",
+      "playerProblem": "choose a current path for this season",
+      "primaryTask": "recommendation",
+      "priority": 5,
+      "resolverEvidence": { "rankingBasis": "available" },
+      "primitiveSupport": { "S01": "available", "S03": "available", "S04": "available", "D01": "available", "D02": "available" },
+      "freshness": { "version": "0.9", "season": "Ashfall", "dataWindow": "Cycle week 3" },
+      "primitiveData": [
+        { "instanceId": "header", "primitiveId": "A01", "payload": { "title": "Ashfall Path Recommendations", "task": "Recommendation", "subject": "Current route choices" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "version", "primitiveId": "S01", "payload": { "value": "0.9 - Ashfall cycle", "applicability": "Use this ranking for the current Ashfall cycle." }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "season", "primitiveId": "S03", "payload": { "label": "Season", "value": "Ashfall - week 3", "options": ["Ashfall", "Emberwane"], "applicability": "Recommendations change with route availability." }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "freshness", "primitiveId": "S04", "payload": { "value": "Ashfall week 3" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "ranking", "primitiveId": "D02", "payload": { "entries": [{ "rank": 1, "choice": "Warden / Marsh route", "reason": "Best for a first run: forgiving control and direct Ember Core access.", "state": "Current fit" }, { "rank": 2, "choice": "Scout / Glassway route", "reason": "Best when mobility matters and the player already knows the map.", "state": "Alternative" }, { "rank": 3, "choice": "Arcanist / Watch route", "reason": "Best for players who want high-input heat control.", "state": "Specialist" }], "methodology": "Based on route access, difficulty, role, and current availability." }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "tradeoffs", "primitiveId": "D01", "payload": { "options": [{ "id": "warden", "label": "Warden" }, { "id": "scout", "label": "Scout" }, { "id": "arcanist", "label": "Arcanist" }], "dimensions": [{ "id": "bestFor", "label": "Best for" }, { "id": "availability", "label": "Availability" }], "cells": [{ "optionId": "warden", "dimensionId": "bestFor", "value": "Learning route" }, { "optionId": "warden", "dimensionId": "availability", "value": "Open" }, { "optionId": "scout", "dimensionId": "bestFor", "value": "Map readers" }, { "optionId": "scout", "dimensionId": "availability", "value": "Open" }, { "optionId": "arcanist", "dimensionId": "bestFor", "value": "Heat specialists" }, { "optionId": "arcanist", "dimensionId": "availability", "value": "Watchfire gate" }], "recommendation": { "optionId": "warden", "reason": "It has the lowest entry friction in the current season state." } }, "evidenceRefs": [], "mediaRefs": [] }
+      ]
+    },
+    {
+      "id": "ashfall-calendar",
+      "title": "Ashfall Planning Calendar",
+      "href": "/v4-preview/ashfall-calendar/",
+      "query": "ashfall season calendar availability",
+      "playerProblem": "plan events, deadlines, and available materials",
+      "primaryTask": "planning",
+      "priority": 4,
+      "primitiveSupport": { "S04": "available", "N01": "available" },
+      "primitiveData": [
+        { "instanceId": "header", "primitiveId": "A01", "payload": { "title": "Ashfall Planning Calendar", "task": "Planning", "subject": "Cycle week 3" }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "period", "primitiveId": "S03", "payload": { "label": "Planning period", "value": "Ashfall - cycle week 3", "currentDay": "Day 2", "applicability": "Plan around the Glassway opening and Watchfire deadline.", "events": [{ "date": "Day 1", "title": "Marsh seams refresh", "detail": "Gather Ember Core", "availability": "Open", "economics": "1 core per seam" }, { "date": "Day 2", "title": "Forge window", "detail": "Temper field tools", "availability": "Open", "economics": "Core + handle", "current": true }, { "date": "Day 4", "title": "Glassway opens", "detail": "Bring tempered tool", "availability": "Opens at dusk", "economics": "Route unlock" }, { "date": "Day 6", "title": "Watchfire deadline", "detail": "Stabilize the fire", "availability": "Closes at cycle end", "economics": "2 fuel bundles", "deadline": true }] }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "freshness", "primitiveId": "S04", "payload": { "value": "Ashfall week 3. Includes events, availability, and costs." }, "evidenceRefs": [], "mediaRefs": [] },
+        { "instanceId": "next", "primitiveId": "N01", "payload": { "steps": [{ "href": "/v4-preview/forge-guide/", "label": "Temper the tool before Day 4", "reason": "The Glassway opening requires the tempered result." }, { "href": "/v4-preview/season-meta/", "label": "Compare paths", "reason": "Choose the route that fits your available days." }] }, "evidenceRefs": [], "mediaRefs": [] }
+      ]
+    }
+  ]
+}

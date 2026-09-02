@@ -1,0 +1,92 @@
+[
+  {
+    "label": "Map",
+    "prototype": "P5",
+    "primitiveId": "L02",
+    "availableSupport": "unsupported",
+    "candidateStatus": "conditional",
+    "activationResult": "omit",
+    "reason": "Map needs reliable spatial data."
+  },
+  {
+    "label": "Ranking",
+    "prototype": "P3",
+    "primitiveId": "D02",
+    "availableSupport": "unsupported",
+    "candidateStatus": "conditional",
+    "activationResult": "omit",
+    "reason": "Ranking needs a credible current basis."
+  },
+  {
+    "label": "Calculator",
+    "prototype": "P7",
+    "primitiveId": "X04",
+    "availableSupport": "unsupported",
+    "candidateStatus": "conditional",
+    "activationResult": "omit",
+    "reason": "Calculator needs meaningful variables and decision value."
+  },
+  {
+    "label": "Filter",
+    "prototype": "P9",
+    "primitiveId": "X01",
+    "availableSupport": "unsupported",
+    "candidateStatus": "omit",
+    "activationResult": "omit",
+    "reason": "Filter needs useful facets."
+  },
+  {
+    "label": "Planner",
+    "prototype": "P9",
+    "primitiveId": "X05",
+    "availableSupport": "unsupported",
+    "candidateStatus": "conditional",
+    "activationResult": "omit",
+    "reason": "Workspace needs a real planning task."
+  },
+  {
+    "label": "Map available",
+    "prototype": "P5",
+    "primitiveId": "L02",
+    "availableSupport": "available",
+    "candidateStatus": "conditional",
+    "activationResult": "include",
+    "reason": "Map needs reliable spatial data."
+  },
+  {
+    "label": "Ranking unresolved",
+    "prototype": "P3",
+    "primitiveId": "D02",
+    "availableSupport": "unresolved",
+    "candidateStatus": "conditional",
+    "activationResult": "conditional",
+    "reason": "Ranking needs a credible current basis."
+  },
+  {
+    "label": "Calculator available",
+    "prototype": "P7",
+    "primitiveId": "X04",
+    "availableSupport": "available",
+    "candidateStatus": "conditional",
+    "activationResult": "include",
+    "reason": "Calculator needs meaningful variables and decision value."
+  },
+  {
+    "label": "Filter available",
+    "prototype": "P9",
+    "primitiveId": "X01",
+    "availableSupport": "available",
+    "candidateStatus": "include",
+    "activationResult": "include",
+    "reason": "Filter needs useful facets."
+  },
+  {
+    "label": "Planner unresolved",
+    "prototype": "P9",
+    "primitiveId": "X05",
+    "availableSupport": "unresolved",
+    "candidateStatus": "conditional",
+    "activationResult": "conditional",
+    "reason": "Workspace needs a real planning task."
+  }
+]

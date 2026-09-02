@@ -1,0 +1,8 @@
+---
+interface Props { label: string; text: string }
+const { label, text } = Astro.props;
+---
+<aside class="exp-quick-answer exp-answer" aria-label={label}>
+	<p>{label}</p>
+	<strong>{text}</strong>
+</aside>

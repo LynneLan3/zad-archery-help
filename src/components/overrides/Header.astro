@@ -1,0 +1,13 @@
+---
+import GameShellTopbar from '../experience/GameShellTopbar.astro';
+import { game } from '../../config/game';
+import { experienceNav } from '../../lib/experience-nav';
+import { isV3Presentation } from '../../lib/v3/presentation';
+
+const { nav, homeHref } = await experienceNav();
+const siteTitle = game.shortName ?? game.title;
+const activePath = Astro.url.pathname;
+---
+
+<!-- Every route uses the same shell. Route-specific state is expressed through activePath. -->
+{!isV3Presentation && <GameShellTopbar siteTitle={siteTitle} homeHref={homeHref} nav={nav} activePath={activePath} />}

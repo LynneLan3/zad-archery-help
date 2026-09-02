@@ -1,0 +1,21 @@
+{
+  "slug": "jobs-unlock-order",
+  "route": "/guides/builds-classes/jobs-unlock-order/",
+  "title_draft": "All Zad Archery Jobs and How to Unlock Them",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "Official sources say there are five Archer Jobs."
+  ],
+  "missing_before_publish": [
+    "all five current names",
+    "unlock requirements",
+    "job-specific effects"
+  ],
+  "capture_targets": [
+    "full jobs screen showing locked/unlocked jobs and requirements"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S14_DEMO_STORE"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "input": {
+    "query": "unknown",
+    "playerProblem": "solve this",
+    "secondaryTasks": [
+      "planning"
+    ],
+    "evidence": {
+      "gameType": "calendar"
+    }
+  },
+  "output": {
+    "task": "planning",
+    "basis": "game-prior",
+    "confidence": "low"
+  },
+  "note": "secondaryTasks is accepted by the input contract but is not used to assign final Prototype; final Prototype is derived from resolved primary task."
+}

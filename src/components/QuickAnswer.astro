@@ -1,0 +1,15 @@
+---
+import { ui } from '../lib/ui';
+
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+const t = ui();
+---
+
+<aside class="gw-answer" aria-label={t.quickAnswer}>
+	<p class="gw-answer__label">{t.quickAnswer}</p>
+	<p class="gw-answer__text">{text}</p>
+</aside>

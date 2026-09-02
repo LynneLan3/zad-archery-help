@@ -1,0 +1,27 @@
+{
+  "slug": "mining-gems",
+  "route": "/guides/crafting-gear/mining-gems/",
+  "title_draft": "Zad Archery Mining and Monster Gems Guide",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "Mining is an official progression system.",
+    "Patch 1.0.2 mentions monster gems and lower-level farming."
+  ],
+  "missing_before_publish": [
+    "ore/gem names",
+    "where mining is unlocked",
+    "mining UI and upgrade path",
+    "how monster gems modify skills",
+    "best farming levels/routes"
+  ],
+  "capture_targets": [
+    "mining screen",
+    "monster gem screen",
+    "before/after transformed skill"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S03_PATCH_1_0_2",
+    "S08_ITCH"
+  ]
+}

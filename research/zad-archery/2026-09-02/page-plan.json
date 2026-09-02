@@ -1,0 +1,116 @@
+{
+  "launch_principle": "Publish verified answer pages first. Do not create thin or invented build/mining/crafting guides just to fill cards.",
+  "homepage": {
+    "route": "/",
+    "popular_searches": [
+      {
+        "label": "How long is the game?",
+        "route": "/guides/progression/how-long-to-beat-zad-archery/"
+      },
+      {
+        "label": "Achievements",
+        "route": "/achievements/"
+      },
+      {
+        "label": "Steam Deck",
+        "route": "/guides/platforms/steam-deck/"
+      },
+      {
+        "label": "Demo save transfer",
+        "route": "/guides/progression/demo-save-transfer/"
+      },
+      {
+        "label": "Mobile version",
+        "route": "/guides/platforms/mobile/"
+      }
+    ],
+    "players_are_asking": [
+      "How long is Zad Archery?",
+      "Does demo progress carry over?",
+      "Does it work on Steam Deck?",
+      "Is there an iOS/Android version?"
+    ],
+    "popular_right_now": [
+      "/guides/getting-started/",
+      "/guides/progression/how-long-to-beat-zad-archery/",
+      "/achievements/"
+    ],
+    "recently_updated": [
+      "/updates/patch-1-0-2/",
+      "/guides/progression/demo-save-transfer/",
+      "/guides/platforms/steam-deck/"
+    ]
+  },
+  "categories": [
+    {
+      "route": "/guides/builds-classes/",
+      "title": "Builds & Classes",
+      "launch_state": "THIN_HOLD_EXPANSION",
+      "ready_children": [
+        "/guides/getting-started/"
+      ],
+      "hold_children": [
+        "/guides/builds-classes/best-early-build/",
+        "/guides/builds-classes/jobs-unlock-order/",
+        "/guides/builds-classes/skill-tree/"
+      ]
+    },
+    {
+      "route": "/guides/progression/",
+      "title": "Progression",
+      "launch_state": "READY",
+      "ready_children": [
+        "/guides/getting-started/",
+        "/guides/progression/how-long-to-beat-zad-archery/",
+        "/guides/progression/demo-save-transfer/"
+      ]
+    },
+    {
+      "route": "/guides/crafting-gear/",
+      "title": "Crafting & Gear",
+      "launch_state": "HOLD_DEEP_GUIDES",
+      "ready_children": [],
+      "hold_children": [
+        "/guides/crafting-gear/sell-salvage-items/",
+        "/guides/crafting-gear/mining-gems/",
+        "/guides/crafting-gear/crafting-upgrades/"
+      ]
+    },
+    {
+      "route": "/guides/combat-bosses/",
+      "title": "Combat & Bosses",
+      "launch_state": "HOLD_DEEP_GUIDES",
+      "ready_children": [],
+      "hold_children": [
+        "/guides/combat-bosses/guardian-king/",
+        "/guides/combat-bosses/final-boss/"
+      ]
+    },
+    {
+      "route": "/achievements/",
+      "title": "Achievements",
+      "launch_state": "READY_WITH_LIVE_COUNT_NOTE",
+      "ready_children": [
+        "/achievements/"
+      ]
+    }
+  ],
+  "ready_articles": [
+    "/guides/getting-started/",
+    "/guides/progression/how-long-to-beat-zad-archery/",
+    "/guides/progression/demo-save-transfer/",
+    "/guides/platforms/steam-deck/",
+    "/guides/platforms/mobile/",
+    "/achievements/",
+    "/updates/patch-1-0-2/"
+  ],
+  "hold_articles": [
+    "/guides/builds-classes/best-early-build/",
+    "/guides/builds-classes/jobs-unlock-order/",
+    "/guides/builds-classes/skill-tree/",
+    "/guides/crafting-gear/sell-salvage-items/",
+    "/guides/crafting-gear/mining-gems/",
+    "/guides/crafting-gear/crafting-upgrades/",
+    "/guides/combat-bosses/guardian-king/"
+  ]
+}

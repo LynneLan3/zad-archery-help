@@ -1,0 +1,8 @@
+{
+  "page": "Homepage",
+  "url": "/v4-preview/",
+  "surface": "discovery",
+  "desktop": "desktop.png",
+  "mobile": "mobile.png",
+  "revision": "Removed visible priority/ranking language; retained fixture-driven ordering."
+}

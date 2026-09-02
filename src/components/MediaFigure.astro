@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { MediaAsset } from '../lib/media';
+import { mediaAspectRatio } from '../lib/media';
+
+interface Props {
+	image: ImageMetadata;
+	media: MediaAsset;
+	class?: string;
+	loading?: 'eager' | 'lazy';
+	sizes?: string;
+	mode?: 'hero' | 'evidence' | 'card';
+}
+
+const { image, media, class: className, loading = 'lazy', sizes = '100vw', mode = 'evidence' } = Astro.props;
+const ratio = mediaAspectRatio(media.aspectRatio);
+const imageStyle = media.objectPosition ? { objectPosition: media.objectPosition } : undefined;
+const renderWidth = Math.min(1280, image.width ?? 1280);
+const ratioValue = ratio ? (() => { const [width, height] = ratio.split('/').map(Number); return width && height ? width / height : 16 / 9; })() : 16 / 9;
+const renderHeight = Math.round(renderWidth / ratioValue);
+---
+
+<figure
+	class:list={['gw-media', `gw-media--${mode}`, className]}
+	style={{ aspectRatio: ratio ?? '16 / 9' }}
+	data-media-bounds="fixed"
+>
+	<Image
+		src={image}
+		alt={media.alt}
+		width={renderWidth}
+		height={renderHeight}
+		sizes={sizes}
+		loading={loading}
+		decoding="async"
+		style={imageStyle}
+		data-asset-width={image.width}
+		data-asset-height={image.height}
+		data-asset-usage={mode === 'hero' ? 'articleHero' : 'inlineMedia'}
+	/>
+	{(media.caption || media.sourceLabel) && (
+		<figcaption class="gw-media__caption">
+			{media.caption && <span class="gw-media__caption-text">{media.caption}</span>}
+			{media.sourceLabel && (
+				<span class="gw-media__source">
+					{media.sourceUrl ? (
+						<a href={media.sourceUrl} target="_blank" rel="noopener noreferrer" data-outbound-kind={mode === 'evidence' ? 'evidence' : 'content'}>
+							{media.sourceLabel}
+						</a>
+					) : media.sourceLabel}
+				</span>
+			)}
+		</figcaption>
+	)}
+</figure>

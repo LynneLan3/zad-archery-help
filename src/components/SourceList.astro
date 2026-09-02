@@ -1,0 +1,25 @@
+---
+import { ui } from '../lib/ui';
+
+const t = ui();
+const entry = Astro.locals.starlightRoute.entry;
+const sources = entry.data.sources ?? [];
+---
+
+{
+	sources.length > 0 && (
+		<section class="gw-sources" aria-labelledby="gw-sources-heading">
+			<h2 id="gw-sources-heading">{t.sourcesHeading}</h2>
+			<ul>
+				{sources.map((source) => (
+					<li>
+						<a href={source.url} rel="noopener noreferrer" target="_blank" data-outbound-kind="source">
+							<span class="gw-sources__title">{source.title}</span>
+							<span class="gw-sources__type">{t.pageSourceTypes[source.type]}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

@@ -1,0 +1,206 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+
+site:
+  id: fixture-game
+  mode: hub
+  locale: zh-CN
+  siteUrl: https://fixture-wiki.example
+  hubPath: /fixture-game/
+  title: Fixture Game Wiki
+  shortName: Fixture Game
+  description: 用于生成器测试的虚构游戏 Wiki。
+  disclaimer: 非官方粉丝资料站。
+
+game:
+  name: Fixture Game
+  hubTitle: Fixture Game 攻略 Wiki
+  tagline: 高置信度页面生成测试用虚构游戏。
+  releaseStatus: released
+  releaseDate: 2026-08-01
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms:
+    - PC
+    - PS5
+
+theme:
+  accentColor: "#d79b16"
+  accentForeground: "#111111"
+  heroAssetId: hero
+  heroPosition: center
+
+categories:
+  - id: getting-started
+    label: 新手入门
+    description: 第一次游玩时需要了解的内容。
+    icon: rocket
+    order: 1
+    imageAssetId: null
+  - id: gameplay
+    label: 玩法
+    description: 核心系统与操作说明。
+    icon: puzzle
+    order: 2
+    imageAssetId: gameplay-still
+  - id: game-info
+    label: 游戏信息
+    description: 配置与发行信息。
+    icon: information
+    order: 3
+    imageAssetId: null
+
+pages:
+  - id: beginner-guide
+    title: 新手入门指南
+    description: 第一次进入 Fixture Game 时应优先了解的内容。
+    category: getting-started
+    slug: beginner-guide
+    pageType: overview
+    homepagePriority: 1
+    sections:
+      - id: suggested-order
+        title: 建议顺序
+      - id: platform-check
+        title: 平台与配置
+      - id: opening-guide
+        title: 开场引导
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    role: core
+    intents:
+      - getting-started
+    quickAnswer: 先确认系统需求，再按本页顺序开始。
+    eyebrow: Starter Route
+    facts:
+      - label: 难度
+        value: 入门
+      - label: 预计时间
+        value: 15 分钟
+    related:
+      - system-requirements
+    relations:
+      - pageId: system-requirements
+        type: related
+      - pageId: gameplay-overview
+        type: next-step
+      - pageId: system-requirements
+        type: next-step
+    coverAssetId: null
+    changeSummary: 初次发布。
+  - id: system-requirements
+    title: 系统需求
+    description: 已确认的平台与配置信息汇总。
+    category: game-info
+    slug: system-requirements
+    source: site-input/pages/system-requirements.md
+    status: confirmed
+    featured: false
+    sidebarOrder: 1
+    role: supporting
+    intents:
+      - system-requirements
+    related:
+      - beginner-guide
+    changeSummary: 初次发布。
+  - id: gameplay-overview
+    title: 玩法概览
+    description: 核心循环与已确认系统说明。
+    category: gameplay
+    slug: gameplay-overview
+    source: site-input/pages/gameplay-overview.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    role: supporting
+    intents:
+      - gameplay-loop
+    eyebrow: Core Systems
+    facts:
+      - label: 模式
+        value: 单人
+      - label: 核心循环
+        value: 探索 → 战斗 → 升级
+    relations:
+      - pageId: beginner-guide
+        type: related
+    assetType: comparison
+    sources:
+      - type: official
+        title: Fixture Game FAQ
+        url: https://example.com/faq
+      - type: steam
+        title: Steam store page
+        url: https://example.com/steam
+    evidence:
+      - asset: evidence/gameplay.svg
+        alt: Fixture Game gameplay still used as comparison evidence
+        caption: Placeholder still for the comparison page.
+        sourceType: official
+        sourceUrl: https://example.com/press
+    socialImage:
+      asset: social/guide-og.svg
+      alt: Fixture Game gameplay overview social preview
+    coverAssetId: gameplay-still
+    changeSummary: 初次发布。
+
+homepage:
+  heroBadge: 中文攻略站
+  primaryCta:
+    label: 开始新手指南
+    pageId: beginner-guide
+  secondaryCta:
+    label: 浏览全部攻略
+    anchor: browse-guides
+  popularQuestions:
+    - label: 新手应该先做什么？
+      pageId: beginner-guide
+    - label: 配置要求是什么？
+      pageId: system-requirements
+  startHere:
+    - pageId: beginner-guide
+      label: 新手入门
+      badge: 从这里开始
+    - pageId: gameplay-overview
+      label: 玩法
+  evidence:
+    title: 游戏实机画面
+    description: 测试用占位截图。
+    items:
+      - assetId: gameplay-still
+        caption: 官方游戏截图（测试占位）
+        pageId: beginner-guide
+
+assets:
+  - id: hero
+    source: site-input/assets/hero.svg
+    target: hero/main.svg
+    alt: Fixture Game 主视觉占位图
+    sourceType: user-provided
+    usageStatus: approved
+  - id: gameplay-still
+    source: site-input/assets/gameplay.svg
+    target: evidence/gameplay.svg
+    alt: Fixture Game 玩法占位截图
+    sourceType: user-provided
+    usageStatus: approved
+  - id: default-og
+    source: site-input/assets/default-og.svg
+    target: social/default-og.svg
+    alt: Fixture Game guides and wiki
+    sourceType: user-provided
+    usageStatus: approved
+  - id: guide-og
+    source: site-input/assets/guide-og.svg
+    target: social/guide-og.svg
+    alt: Fixture Game gameplay overview social preview
+    sourceType: user-provided
+    usageStatus: approved
+
+social:
+  defaultImage:
+    asset: social/default-og.svg
+    alt: Fixture Game guides and wiki

@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import type { GameCategory } from '../../config/game-types';
+import type { ImageMetadata } from 'astro';
+import { categoryHref } from '../../lib/category-url';
+interface Props { category: GameCategory; image?: ImageMetadata }
+const { category, image } = Astro.props;
+---
+<a class="exp-category-block" href={categoryHref(category.id)}>
+	{image && <Image src={image} alt="" width={800} height={450} loading="lazy" />}
+	<span class="exp-category-block__veil"></span>
+	<span class="exp-category-block__content"><small>{category.icon}</small><strong>{category.label}</strong><span>{category.description}</span></span>
+</a>

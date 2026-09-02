@@ -1,0 +1,7 @@
+---
+import { getNavigationTrail, type V4Navigation } from '../../v4/navigation';
+const { navigation, pageId, gameName } = Astro.props as { navigation: V4Navigation; pageId: string; gameName: string };
+const trail = getNavigationTrail(navigation, pageId);
+const homeHref = navigation.primary.find((item) => item.id === 'home')?.href ?? '/';
+---
+{trail.length > 0 && <nav class="v4-breadcrumb" aria-label="Breadcrumb"><a href={homeHref}>{gameName}</a>{trail.map((item) => item.href ? <><span aria-hidden="true">/</span><a href={item.href}>{item.label}</a></> : <><span aria-hidden="true">/</span><span aria-current="page">{item.label}</span></>)}</nav>}

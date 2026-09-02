@@ -1,0 +1,396 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { DEFAULT_TOOLKIT_STORAGE_KEY, type ToolkitConfig, type ToolkitItem } from '../../lib/toolkit';
+import {
+	getCanonicalGuideUrlForMapMarker,
+	getToolkitMapGuideGroups,
+} from '../../lib/toolkit-map';
+import '../../styles/location-explorer.css';
+
+export interface LocationExplorerMarker {
+	id: string;
+	name: string;
+	category: string;
+	region?: string;
+	x: number;
+	y: number;
+	description?: string;
+	href?: string;
+	image?: ImageMetadata;
+	sourceUrl?: string;
+}
+
+export interface LocationExplorerBasemap {
+	image: ImageMetadata;
+	alt: string;
+	sourceName?: string;
+	sourceUrl?: string;
+	temporary?: boolean;
+}
+
+interface Props {
+	title: string;
+	description?: string;
+	markers: readonly LocationExplorerMarker[];
+	basemap?: LocationExplorerBasemap;
+	categories?: readonly string[];
+	toolkit?: ToolkitConfig;
+	toolkitItems?: readonly ToolkitItem[];
+}
+
+const { title, description, markers, basemap, categories, toolkit, toolkitItems = [] } = Astro.props;
+const visibleCategories = categories?.length ? categories : [...new Set(markers.map((marker) => marker.category))];
+const toolkitEnabled = Boolean(toolkit?.enabled && toolkitItems.length);
+const toolkitStorageKey = toolkit?.storageKey || DEFAULT_TOOLKIT_STORAGE_KEY;
+const toolkitCategories = [...new Set(toolkitItems.map((item) => item.category))];
+const toolkitItemByMarkerId = new Map(toolkitItems.filter((item) => item.mapMarkerId).map((item) => [item.mapMarkerId, item]));
+const mapGuideGroups = toolkitEnabled ? getToolkitMapGuideGroups(toolkitItems, markers) : [];
+const mapGuideGroupByMarkerId = new Map(
+	mapGuideGroups.flatMap((group) => group.targets.map((target) => [target.mapMarkerId, group.key] as const)),
+);
+---
+
+<section class="location-explorer" data-location-explorer>
+	<header class="location-explorer__hero">
+		<p class="location-explorer__eyebrow">Location Explorer</p>
+		<h1>{title}</h1>
+		{description && <p>{description}</p>}
+	</header>
+
+	{toolkitEnabled && (
+		<section class="location-toolkit" data-location-toolkit data-toolkit-storage-key={toolkitStorageKey} aria-labelledby="location-toolkit-heading">
+			<div class="location-toolkit__header">
+				<div>
+					<p class="location-explorer__eyebrow">Player Toolkit</p>
+					<h2 id="location-toolkit-heading">{toolkit?.title || 'Map & Progress Tracker'}</h2>
+				</div>
+				<div class="location-toolkit__actions">
+					<strong><span data-toolkit-completed>0</span> / {toolkitItems.length} tracked</strong>
+					<button type="button" data-toolkit-reset>Reset progress</button>
+				</div>
+			</div>
+			<div class="location-toolkit__bar" aria-label="Toolkit progress"><span data-toolkit-progress-bar></span></div>
+			<div class="location-toolkit__filters">
+				<label>Search checklist <input type="search" placeholder="Search by name or region" data-toolkit-search /></label>
+				<label>Category <select data-toolkit-category><option value="all">All categories</option>{toolkitCategories.map((category) => <option value={category}>{category}</option>)}</select></label>
+				<label class="location-toolkit__hide"><input type="checkbox" data-toolkit-hide-completed /> Hide completed</label>
+			</div>
+			<div class="location-toolkit__categories" aria-label="Toolkit category progress">
+				{toolkitCategories.map((category) => {
+					const total = toolkitItems.filter((item) => item.category === category).length;
+					return <span data-toolkit-category-progress={category}>{category} <strong><span data-toolkit-category-completed>0</span> / {total}</strong></span>;
+				})}
+			</div>
+			<div class="location-toolkit__list" data-toolkit-list>
+				{toolkitItems.map((item) => (
+					<article class="location-toolkit__item" data-toolkit-item={item.id} data-toolkit-item-category={item.category} data-toolkit-item-region={item.region ?? ''}>
+						<label><input type="checkbox" data-toolkit-checkbox={item.id} /><span data-toolkit-label>Mark complete</span></label>
+						<div><span class="location-toolkit__item-category">{item.category}</span><h3>{item.name}</h3>{item.region && <p>{item.region}</p>}{item.description && <p>{item.description}</p>}</div>
+						<div class="location-toolkit__item-actions">
+							{item.guideUrl && <a href={item.guideUrl}>Read Guide →</a>}
+							{item.mapMarkerId && <button type="button" data-toolkit-show-on-map={item.mapMarkerId}>Show on Map</button>}
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+	)}
+
+	<section class="location-explorer__toolbar" aria-label="Location filters">
+		<label>
+			<span>Search locations</span>
+			<input type="search" placeholder="Search by name or region" data-location-search />
+		</label>
+		<label>
+			<span>Category</span>
+			<select data-location-category>
+				<option value="all">All categories</option>
+				{visibleCategories.map((category) => <option value={category}>{category}</option>)}
+			</select>
+		</label>
+		<button type="button" data-location-reset>Reset</button>
+		<span data-location-count>{markers.length} location{markers.length === 1 ? '' : 's'}</span>
+	</section>
+	{toolkitEnabled && <p class="location-explorer__guide-context" data-location-guide-context hidden></p>}
+
+	<div class="location-explorer__layout">
+		<section class="location-explorer__map" aria-label="Location map">
+			<div class="location-explorer__viewport" data-location-viewport>
+				<div class="location-explorer__surface" data-location-surface>
+					{basemap ? <Image src={basemap.image} alt={basemap.alt} class="location-explorer__basemap" width={960} height={960} /> : <div class="location-explorer__surface-empty">Configure a basemap for this explorer.</div>}
+					{basemap?.sourceName && <small class="location-explorer__attribution">Basemap: {basemap.sourceUrl ? <a href={basemap.sourceUrl} target="_blank" rel="noreferrer">{basemap.sourceName}</a> : basemap.sourceName}{basemap.temporary ? ' · temporary' : ''}</small>}
+					{markers.map((marker) => {
+						const item = toolkitItemByMarkerId.get(marker.id);
+						return (
+						<button
+							type="button"
+							class="location-explorer__marker"
+							style={`left: ${marker.x}%; top: ${marker.y}%;`}
+							data-location-marker={marker.id}
+							data-location-category={marker.category}
+							data-location-region={marker.region ?? ''}
+							data-toolkit-id={item?.id}
+							data-location-guide-key={mapGuideGroupByMarkerId.get(marker.id)}
+							aria-label={`Open details for ${marker.name}`}
+						>
+							<span aria-hidden="true"></span><span>{marker.name}</span><b aria-hidden="true">✓</b>
+						</button>
+						);
+					})}
+				</div>
+			</div>
+			<div class="location-explorer__zoom" aria-label="Map zoom controls">
+				<button type="button" data-location-zoom-out aria-label="Zoom out">−</button>
+				<span data-location-zoom-label>100%</span>
+				<button type="button" data-location-zoom-in aria-label="Zoom in">+</button>
+			</div>
+		</section>
+
+		<aside class="location-explorer__details" aria-live="polite" data-location-details>
+			<div data-location-empty>
+				<p>Select a location to see its details.</p>
+			</div>
+			{markers.map((marker) => {
+				const item = toolkitItemByMarkerId.get(marker.id);
+				const guideUrl = getCanonicalGuideUrlForMapMarker(marker.id, toolkitItems, markers);
+				return (
+				<article data-location-detail={marker.id} hidden>
+					<p class="location-explorer__eyebrow">{marker.category}</p>
+					<h2>{marker.name}</h2>
+					{marker.region && <p>{marker.region}</p>}
+					{marker.description && <p>{marker.description}</p>}
+					{item && <label class="location-toolkit__complete"><input type="checkbox" data-toolkit-checkbox={item.id} /><span data-toolkit-label>Mark complete</span></label>}
+					{marker.image && <Image src={marker.image} alt="" width={640} height={360} loading="lazy" />}
+					{guideUrl && <a href={guideUrl}>Open guide →</a>}
+					{marker.sourceUrl && <a href={marker.sourceUrl} target="_blank" rel="noreferrer">Source ↗</a>}
+				</article>
+				);
+			})}
+		</aside>
+	</div>
+</section>
+
+<script>
+	const app = document.querySelector('[data-location-explorer]');
+	if (app) {
+		const search = app.querySelector('[data-location-search]');
+		const category = app.querySelector('[data-location-category]');
+		const count = app.querySelector('[data-location-count]');
+		const markers = Array.from(app.querySelectorAll('[data-location-marker]'));
+		const details = Array.from(app.querySelectorAll('[data-location-detail]'));
+		const empty = app.querySelector('[data-location-empty]');
+		const surface = app.querySelector('[data-location-surface]');
+		const zoomLabel = app.querySelector('[data-location-zoom-label]');
+		const guideContext = app.querySelector('[data-location-guide-context]');
+		const toolkit = app.querySelector('[data-location-toolkit]');
+		const toolkitSearch = app.querySelector('[data-toolkit-search]');
+		const toolkitCategory = app.querySelector('[data-toolkit-category]');
+		const toolkitHideCompleted = app.querySelector('[data-toolkit-hide-completed]');
+		const toolkitRows = Array.from(app.querySelectorAll('[data-toolkit-item]'));
+		const toolkitCheckboxes = Array.from(app.querySelectorAll('[data-toolkit-checkbox]'));
+		const toolkitMarkers = new Map(markers.map((marker) => [marker.getAttribute('data-location-marker'), marker]));
+		const validGuideKeys = new Set(markers.map((marker) => marker.getAttribute('data-location-guide-key')).filter(Boolean));
+		const validToolkitIds = new Set(toolkitRows.map((row) => row.getAttribute('data-toolkit-item')).filter(Boolean));
+		const storageKey = toolkit?.getAttribute('data-toolkit-storage-key') || '';
+		let completedIds = new Set();
+		let zoom = 1;
+		let activeGuideKey = '';
+
+		function readProgress() {
+			if (!toolkit || !storageKey) return new Set();
+			try {
+				const raw = window.localStorage.getItem(storageKey);
+				if (!raw) return new Set();
+				const parsed = JSON.parse(raw);
+				if (parsed?.version !== 1 || !Array.isArray(parsed.completedIds)) return new Set();
+				return new Set(parsed.completedIds.filter((id: unknown) => typeof id === 'string' && validToolkitIds.has(id)));
+			} catch {
+				return new Set();
+			}
+		}
+
+		function saveProgress() {
+			if (!toolkit || !storageKey) return;
+			try { window.localStorage.setItem(storageKey, JSON.stringify({ version: 1, completedIds: [...completedIds] })); } catch { /* optional storage */ }
+		}
+
+		function applyToolkitFilters() {
+			if (!toolkit) return;
+			const query = toolkitSearch instanceof HTMLInputElement ? toolkitSearch.value.trim().toLowerCase() : '';
+			const activeCategory = toolkitCategory instanceof HTMLSelectElement ? toolkitCategory.value : 'all';
+			const hideCompleted = toolkitHideCompleted instanceof HTMLInputElement && toolkitHideCompleted.checked;
+			toolkitRows.forEach((row) => {
+				const id = row.getAttribute('data-toolkit-item');
+				const matches = (activeCategory === 'all' || row.getAttribute('data-toolkit-item-category') === activeCategory) &&
+					(row.textContent?.toLowerCase().includes(query) || row.getAttribute('data-toolkit-item-region')?.toLowerCase().includes(query)) &&
+					!(hideCompleted && id && completedIds.has(id));
+				row.toggleAttribute('hidden', !matches);
+			});
+			markers.forEach((marker) => {
+				const id = marker.getAttribute('data-toolkit-id');
+				if (hideCompleted && id && completedIds.has(id)) marker.setAttribute('data-toolkit-hidden-completed', 'true');
+				else marker.removeAttribute('data-toolkit-hidden-completed');
+			});
+		}
+
+		function updateToolkitUI() {
+			if (!toolkit) return;
+			const total = validToolkitIds.size;
+			const percent = total ? Math.round((completedIds.size / total) * 100) : 0;
+			const completed = toolkit.querySelector('[data-toolkit-completed]');
+			const bar = toolkit.querySelector('[data-toolkit-progress-bar]') as HTMLElement | null;
+			if (completed) completed.textContent = String(completedIds.size);
+			if (bar) bar.style.width = `${percent}%`;
+			toolkitCheckboxes.forEach((checkbox) => {
+				const id = checkbox.getAttribute('data-toolkit-checkbox');
+				const checked = Boolean(id && completedIds.has(id));
+				if (checkbox instanceof HTMLInputElement) checkbox.checked = checked;
+				const label = checkbox.parentElement?.querySelector('[data-toolkit-label]');
+				if (label) label.textContent = checked ? 'Completed' : 'Mark complete';
+			});
+			markers.forEach((marker) => {
+				const id = marker.getAttribute('data-toolkit-id');
+				marker.classList.toggle('is-completed', Boolean(id && completedIds.has(id)));
+			});
+			toolkit.querySelectorAll('[data-toolkit-category-progress]').forEach((categoryNode) => {
+				const name = categoryNode.getAttribute('data-toolkit-category-progress');
+				const rows = toolkitRows.filter((row) => row.getAttribute('data-toolkit-item-category') === name);
+				const done = rows.filter((row) => completedIds.has(row.getAttribute('data-toolkit-item'))).length;
+				const node = categoryNode.querySelector('[data-toolkit-category-completed]');
+				if (node) node.textContent = String(done);
+			});
+			applyToolkitFilters();
+		}
+
+		function selectMarker(id: string | null, reveal = false) {
+			details.forEach((detail) => { (detail as HTMLElement).hidden = detail.getAttribute('data-location-detail') !== id; });
+			if (empty) (empty as HTMLElement).hidden = true;
+			markers.forEach((marker) => marker.classList.toggle('is-selected', marker.getAttribute('data-location-marker') === id));
+			const marker = toolkitMarkers.get(id);
+			if (marker && reveal) {
+				marker.removeAttribute('hidden');
+				if (surface instanceof HTMLElement) marker.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+			}
+		}
+
+		function setGuideUrl(key: string) {
+			const url = new URL(window.location.href);
+			if (key) url.searchParams.set('guide', key);
+			else url.searchParams.delete('guide');
+			url.searchParams.delete('marker');
+			window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+		}
+
+		function setGuideContext(key: string) {
+			activeGuideKey = key;
+			if (!(guideContext instanceof HTMLElement)) return;
+			if (!key) {
+				guideContext.hidden = true;
+				guideContext.textContent = '';
+				return;
+			}
+			const count = markers.filter((marker) => marker.getAttribute('data-location-guide-key') === key).length;
+			const label = key.split('-').filter(Boolean).map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+			guideContext.textContent = `${count} location${count === 1 ? '' : 's'} from ${label} Guide`;
+			guideContext.hidden = false;
+		}
+
+		function clearSelection() {
+			details.forEach((detail) => { (detail as HTMLElement).hidden = true; });
+			if (empty) (empty as HTMLElement).hidden = false;
+			markers.forEach((marker) => marker.classList.remove('is-selected'));
+		}
+
+		function revealGuideTargets(guideKey: string) {
+			if (!guideKey || !validGuideKeys.has(guideKey)) return false;
+			if (search instanceof HTMLInputElement) search.value = '';
+			if (category instanceof HTMLSelectElement) category.value = 'all';
+			setGuideContext(guideKey);
+			setGuideUrl(guideKey);
+			clearSelection();
+			applyFilters();
+			return true;
+		}
+
+		function showMarkerFromToolkit(id: string | null) {
+			if (!id || !toolkitMarkers.has(id)) return;
+			if (search instanceof HTMLInputElement) search.value = '';
+			if (category instanceof HTMLSelectElement) category.value = 'all';
+			setGuideContext('');
+			applyFilters();
+			selectMarker(id, true);
+			const url = new URL(window.location.href);
+			url.searchParams.set('marker', id);
+			url.searchParams.delete('guide');
+			window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+		}
+
+		function applyFilters() {
+			const query = search instanceof HTMLInputElement ? search.value.trim().toLowerCase() : '';
+			const activeCategory = category instanceof HTMLSelectElement ? category.value : 'all';
+			let visible = 0;
+			markers.forEach((marker) => {
+				const markerGuideKey = marker.getAttribute('data-location-guide-key') || '';
+				const matchesGuide = !activeGuideKey || markerGuideKey === activeGuideKey;
+				const matches = matchesGuide && (activeCategory === 'all' || marker.getAttribute('data-location-category') === activeCategory) &&
+					(marker.textContent?.toLowerCase().includes(query) || marker.getAttribute('data-location-region')?.toLowerCase().includes(query));
+				marker.toggleAttribute('hidden', !matches);
+				if (matches) visible += 1;
+			});
+			if (count) count.textContent = `${visible} location${visible === 1 ? '' : 's'}`;
+		}
+
+		function setZoom(nextZoom: number) {
+			zoom = Math.min(2.2, Math.max(1, nextZoom));
+			if (surface instanceof HTMLElement) surface.style.setProperty('--location-scale', zoom.toFixed(1));
+			if (zoomLabel) zoomLabel.textContent = `${Math.round(zoom * 100)}%`;
+		}
+
+		markers.forEach((marker) => marker.addEventListener('click', () => {
+			const id = marker.getAttribute('data-location-marker');
+			setGuideContext('');
+			selectMarker(id);
+			const url = new URL(window.location.href);
+			if (id) url.searchParams.set('marker', id);
+			url.searchParams.delete('guide');
+			window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+		}));
+		toolkitCheckboxes.forEach((checkbox) => checkbox.addEventListener('change', () => {
+			const id = checkbox.getAttribute('data-toolkit-checkbox');
+			if (!id || !validToolkitIds.has(id)) return;
+			if (completedIds.has(id)) completedIds.delete(id); else completedIds.add(id);
+			saveProgress();
+			updateToolkitUI();
+		}));
+		toolkitSearch?.addEventListener('input', applyToolkitFilters);
+		toolkitCategory?.addEventListener('change', applyToolkitFilters);
+		toolkitHideCompleted?.addEventListener('change', applyToolkitFilters);
+		app.querySelectorAll('[data-toolkit-show-on-map]').forEach((button) => button.addEventListener('click', () => showMarkerFromToolkit(button.getAttribute('data-toolkit-show-on-map'))));
+		app.querySelector('[data-toolkit-reset]')?.addEventListener('click', () => {
+			if (!window.confirm('Reset toolkit progress on this device?')) return;
+			completedIds = new Set();
+			if (storageKey) {
+				try { window.localStorage.removeItem(storageKey); } catch { /* optional storage */ }
+			}
+			updateToolkitUI();
+		});
+		search?.addEventListener('input', applyFilters);
+		category?.addEventListener('change', applyFilters);
+		app.querySelector('[data-location-reset]')?.addEventListener('click', () => {
+			if (search instanceof HTMLInputElement) search.value = '';
+			if (category instanceof HTMLSelectElement) category.value = 'all';
+			setZoom(1);
+			applyFilters();
+		});
+		app.querySelector('[data-location-zoom-in]')?.addEventListener('click', () => setZoom(zoom + 0.1));
+		app.querySelector('[data-location-zoom-out]')?.addEventListener('click', () => setZoom(zoom - 0.1));
+		completedIds = readProgress();
+		updateToolkitUI();
+		applyFilters();
+		const initialMarker = new URL(window.location.href).searchParams.get('marker');
+		const initialGuide = new URL(window.location.href).searchParams.get('guide');
+		if (initialMarker && toolkitMarkers.has(initialMarker)) selectMarker(initialMarker, true);
+		else if (initialGuide) revealGuideTargets(initialGuide);
+	}
+</script>

@@ -1,0 +1,65 @@
+---
+import GuideMapAction from './GuideMapAction.astro';
+import { DEFAULT_TOOLKIT_STORAGE_KEY, type ToolkitItem } from '../../lib/toolkit';
+import type { ToolkitMapMarker } from '../../lib/toolkit-map';
+import { DEFAULT_READINESS_STORAGE_KEY, toolkitItemsForRule, type ProgressReadinessRule } from '../../lib/readiness';
+
+interface Props {
+	rules: readonly ProgressReadinessRule[];
+	toolkitItems?: readonly ToolkitItem[];
+	markers?: readonly ToolkitMapMarker[];
+	toolkitStorageKey?: string;
+	readinessStorageKey?: string;
+	mapPath?: string;
+	title?: string;
+	description?: string;
+}
+
+const { rules, toolkitItems = [], markers = [], toolkitStorageKey = DEFAULT_TOOLKIT_STORAGE_KEY, readinessStorageKey = DEFAULT_READINESS_STORAGE_KEY, mapPath, title = 'Progress Readiness', description = 'Check what needs attention, what is optional, and what is safe to leave for the next cycle.' } = Astro.props;
+const criticalRules = rules.filter((rule) => rule.tier === 'critical');
+const recommendedRules = rules.filter((rule) => rule.tier === 'recommended');
+const safeRules = rules.filter((rule) => rule.tier === 'safe');
+const verifiedMarkerIds = new Set(markers.map((marker) => marker.id));
+const mapHref = (markerId: string) => mapPath && verifiedMarkerIds.has(markerId) ? `${mapPath.replace(/\/+$/, '')}/?marker=${encodeURIComponent(markerId)}` : undefined;
+---
+
+<section class="progress-readiness" data-progress-readiness data-toolkit-storage-key={toolkitStorageKey} data-readiness-storage-key={readinessStorageKey} data-toolkit-ids={JSON.stringify(toolkitItems.map((item) => item.id))} aria-labelledby="progress-readiness-title">
+	<header class="progress-readiness__header"><div><p class="progress-readiness__eyebrow">Decision layer</p><h2 id="progress-readiness-title">{title}</h2><p>{description}</p></div><button type="button" data-reset-readiness>Reset checks</button></header>
+	<div class="progress-readiness__summary" aria-live="polite"><div><span>Critical</span><strong data-readiness-critical-summary>Loading…</strong></div><div><span>Recommended</span><strong data-readiness-recommended-summary>Loading…</strong></div><div><span>Safe</span><strong>Reference only · no score</strong></div></div>
+
+	<section class="progress-readiness__section" aria-labelledby="progress-readiness-critical"><h3 id="progress-readiness-critical">CRITICAL</h3><div class="progress-readiness__cards">
+		{criticalRules.map((rule) => <article class="progress-readiness__card" data-readiness-rule={rule.id} data-readiness-tier={rule.tier} data-readiness-resolver={rule.statusResolver ?? 'informational'} data-readiness-recoverability={rule.recoverability ?? 'not-applicable'}><div class="progress-readiness__topline"><span>{rule.tier}</span>{rule.patchSensitive && <b>Patch-sensitive</b>}</div><h4>{rule.title}</h4><p>{rule.description}</p>{rule.shortReason && <small>{rule.shortReason}</small>}{rule.statusResolver === 'manual' && rule.manualKey && <label class="progress-readiness__manual"><span>Status</span><select data-readiness-manual={rule.manualKey} aria-label={`Status for ${rule.title}`}>{rule.manualOptions?.map((option) => <option value={option.value}>{option.label}</option>)}</select></label>}<p class="progress-readiness__status" data-readiness-status>{rule.statusResolver === 'informational' ? 'Informational · no completion state' : 'Check manually'}</p><div class="progress-readiness__actions">{rule.guideUrl && <a href={rule.guideUrl}>Read Guide →</a>}{rule.mapMarkerIds?.map((markerId) => { const href = mapHref(markerId); return href && <a href={href}>Show on Map →</a>; })}</div></article>)}
+	</div></section>
+
+	<section class="progress-readiness__section" aria-labelledby="progress-readiness-recommended"><h3 id="progress-readiness-recommended">RECOMMENDED</h3><div class="progress-readiness__cards">
+		{recommendedRules.map((rule) => { const items = toolkitItemsForRule(rule, toolkitItems); const resolver = rule.statusResolver ?? (items.length ? 'toolkit' : 'informational'); return <article class="progress-readiness__card" data-readiness-rule={rule.id} data-readiness-tier={rule.tier} data-readiness-resolver={resolver} data-readiness-recoverability={rule.recoverability ?? 'not-applicable'}><div class="progress-readiness__topline"><span>{rule.tier}</span>{rule.recoverability === 'next-cycle' && <b>Repeatable next cycle</b>}</div><h4>{rule.title}</h4><p>{rule.description}</p>{rule.shortReason && <small>{rule.shortReason}</small>}{rule.statusResolver === 'manual' && rule.manualKey && <label class="progress-readiness__manual"><span>Status</span><select data-readiness-manual={rule.manualKey} aria-label={`Status for ${rule.title}`}>{rule.manualOptions?.map((option) => <option value={option.value}>{option.label}</option>)}</select></label>}<p class="progress-readiness__status" data-readiness-status>{rule.statusResolver === 'manual' ? 'Manual recommendation' : items.length ? 'Loading toolkit items…' : 'Informational · no completion state'}</p>{rule.guideUrl && mapPath && <GuideMapAction guideUrl={rule.guideUrl} mapPath={mapPath} toolkitItems={toolkitItems} markers={markers} />}<div class="progress-readiness__actions">{rule.guideUrl && <a href={rule.guideUrl}>Read Guide →</a>}</div>{items.length > 0 && <div class="progress-readiness__toolkit-items">{items.map((item) => <article data-readiness-toolkit-item={item.id}><label><input type="checkbox" data-readiness-toolkit-checkbox={item.id} /><span data-readiness-toolkit-label>Mark Complete</span></label><div><strong>{item.name}</strong>{item.region && <small>{item.region}</small>}</div><div class="progress-readiness__actions">{item.guideUrl && <a href={item.guideUrl}>Read Guide →</a>}{item.mapMarkerId && mapHref(item.mapMarkerId) && <a href={mapHref(item.mapMarkerId)}>Show on Map →</a>}</div></article>)}</div>}{rule.toolkitItemIds?.length && !items.length && <p class="progress-readiness__status">Toolkit data is not configured for this site.</p>}</article>; })}
+	</div></section>
+
+	<section class="progress-readiness__section progress-readiness__section--safe" aria-labelledby="progress-readiness-safe"><h3 id="progress-readiness-safe">SAFE</h3><div class="progress-readiness__safe-grid">{safeRules.map((rule) => <article><div><h4>{rule.title}</h4><p>{rule.description}</p></div><strong>{rule.carryOver ?? rule.resetBehavior ?? 'Informational'}</strong></article>)}</div></section>
+</section>
+
+<script>
+	const readinessRoot = document.querySelector('[data-progress-readiness]');
+	if (readinessRoot instanceof HTMLElement) {
+		const app = readinessRoot;
+		const toolkitKey = app.getAttribute('data-toolkit-storage-key') || 'game-toolkit-progress-v1';
+		const readinessKey = app.getAttribute('data-readiness-storage-key') || 'game-readiness-state-v1';
+		const validIds = new Set(JSON.parse(app.getAttribute('data-toolkit-ids') || '[]'));
+		const toolkitItems = Array.from(app.querySelectorAll('[data-readiness-toolkit-item]'));
+		const toolkitInputs = Array.from(app.querySelectorAll('[data-readiness-toolkit-checkbox]'));
+		const manualInputs = Array.from(app.querySelectorAll('[data-readiness-manual]'));
+		let completedIds = new Set<string>(); let manualState: Record<string, string> = {};
+		function readState() { try { const toolkit = JSON.parse(window.localStorage.getItem(toolkitKey) || '{}'); completedIds = new Set<string>(Array.isArray(toolkit?.completedIds) && toolkit.version === 1 ? toolkit.completedIds.filter((id: unknown): id is string => typeof id === 'string' && validIds.has(id)) : []); } catch { completedIds = new Set<string>(); } try { const readiness = JSON.parse(window.localStorage.getItem(readinessKey) || '{}'); manualState = readiness && typeof readiness === 'object' ? readiness as Record<string, string> : {}; } catch { manualState = {}; } }
+		function saveToolkit() { try { window.localStorage.setItem(toolkitKey, JSON.stringify({ version: 1, completedIds: Array.from(completedIds) })); } catch {} }
+		function saveManual() { try { window.localStorage.setItem(readinessKey, JSON.stringify({ version: 1, ...manualState })); } catch {} }
+		function outcome(value: string, card: Element | null) { if (card?.getAttribute('data-readiness-recoverability') === 'fresh-save-only' && value === 'missed') return { text: 'Missed on this save · Fresh save required', state: 'missed' }; if (value === 'unknown') return { text: 'Check manually', state: 'unknown' }; if (value === 'missing' || value === 'incomplete' || value === 'missed') return { text: 'Needs attention', state: 'needs-attention' }; return { text: 'Confirmed for this check', state: 'confirmed' }; }
+		function renderManual() { manualInputs.forEach((input) => { const key = input.getAttribute('data-readiness-manual'); const card = input.closest('[data-readiness-rule]'); if (!key || !(input instanceof HTMLSelectElement)) return; const value = manualState[key] || 'unknown'; input.value = Array.from(input.options).some((option) => option.value === value) ? value : 'unknown'; const next = outcome(input.value, card); const status = card?.querySelector('[data-readiness-status]'); if (status) status.textContent = next.text; card?.classList.toggle('is-unrecoverable', next.state === 'missed'); card?.classList.toggle('is-unresolved', next.state === 'unknown' || next.state === 'needs-attention'); card?.setAttribute('data-readiness-state', next.state); }); }
+		function renderToolkit() { toolkitItems.forEach((item) => { const id = item.getAttribute('data-readiness-toolkit-item'); const done = Boolean(id && completedIds.has(id)); item.toggleAttribute('hidden', done); const checkbox = item.querySelector('[data-readiness-toolkit-checkbox]'); if (checkbox instanceof HTMLInputElement) checkbox.checked = done; const label = item.querySelector('[data-readiness-toolkit-label]'); if (label) label.textContent = done ? 'Completed' : 'Mark Complete'; }); }
+		function renderSummary() { const critical = Array.from(app.querySelectorAll('[data-readiness-tier="critical"]')).filter((card) => ['unknown', 'needs-attention', 'missed'].includes(card.getAttribute('data-readiness-state') || '')).length; const remaining = toolkitItems.filter((item) => { const id = item.getAttribute('data-readiness-toolkit-item'); return Boolean(id && !completedIds.has(id)); }).length; const criticalNode = app.querySelector('[data-readiness-critical-summary]'); const recommendedNode = app.querySelector('[data-readiness-recommended-summary]'); if (criticalNode) criticalNode.textContent = critical ? `${critical} need attention` : 'No unresolved checks'; if (recommendedNode) recommendedNode.textContent = remaining ? `${remaining} toolkit item${remaining === 1 ? '' : 's'} unfinished` : 'Toolkit cleanup complete'; }
+		function render() { readState(); renderManual(); renderToolkit(); renderSummary(); }
+		manualInputs.forEach((input) => input.addEventListener('change', () => { const key = input.getAttribute('data-readiness-manual'); if (key && input instanceof HTMLSelectElement) { manualState[key] = input.value; saveManual(); renderManual(); renderSummary(); } }));
+		toolkitInputs.forEach((input) => input.addEventListener('change', () => { const id = input.getAttribute('data-readiness-toolkit-checkbox'); if (!id || !validIds.has(id)) return; if (input instanceof HTMLInputElement && input.checked) completedIds.add(id); else completedIds.delete(id); saveToolkit(); renderToolkit(); renderSummary(); }));
+		app.querySelector('[data-reset-readiness]')?.addEventListener('click', () => { manualState = {}; try { window.localStorage.removeItem(readinessKey); } catch {} renderManual(); renderSummary(); });
+		window.addEventListener('storage', (event) => { if (event.key === toolkitKey || event.key === readinessKey) render(); }); render();
+	}
+</script>

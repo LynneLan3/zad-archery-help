@@ -1,0 +1,11 @@
+{
+  "page": "P9 Tool — Armory / Planner",
+  "url": "/v4-preview/armory-db/",
+  "prototype": "P9",
+  "playerTask": "tool-database",
+  "primitiveRecipe": ["A01", "X01", "X02", "E03", "X05"],
+  "mediaUsed": [],
+  "interactiveBehavior": "Filter changes the result set, sort changes ordering, planner selection changes local state, Save persists locally, and Share serializes state in the URL.",
+  "desktopScreenshot": "artifacts/v4-calibration/p9-tool/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/p9-tool/mobile.png"
+}

@@ -1,0 +1,16 @@
+{
+  "entrypoint": "src/v4/page-composer.ts::composePage",
+  "callChain": [
+    "site-input/v4-example/site.json",
+    "scripts/v4/generate-v4.ts::generateV4",
+    "resolveIntent",
+    "createPageData",
+    "composePage",
+    "src/pages/v4-preview/[...page].astro::SemanticPrimitive"
+  ],
+  "prototypeCount": 10,
+  "fixtureIdsFound": [],
+  "genericArticleLayout": false,
+  "prototypeInference": false,
+  "payloadGeneration": false
+}

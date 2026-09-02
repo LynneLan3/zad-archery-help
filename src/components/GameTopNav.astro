@@ -1,0 +1,45 @@
+---
+import { game } from '../config/game';
+import { categoryHref, categoryIdFromPath } from '../lib/guides';
+import { hubHref } from '../lib/paths';
+import { ui } from '../lib/ui';
+
+const t = ui();
+const categories = [...game.categories].sort((a, b) => a.order - b.order);
+const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const hubPath = hubHref(game.hubPath).replace(/\/+$/, '') || '/';
+const isHub = pathname === hubPath;
+const entryCategory =
+	typeof Astro.locals.starlightRoute.entry.data.category === 'string'
+		? Astro.locals.starlightRoute.entry.data.category
+		: undefined;
+const currentCategory = categoryIdFromPath(Astro.url.pathname) ?? entryCategory;
+---
+
+<nav class="gw-topnav" aria-label={t.guideCategories}>
+	<ul class="gw-topnav__list">
+		<li>
+			<a
+				class:list={['gw-topnav__link', isHub && 'is-active']}
+				href={hubHref(game.hubPath)}
+				aria-current={isHub ? 'page' : undefined}>{t.guidesNav}</a
+			>
+		</li>
+		{
+			categories.map((category) => {
+				const active = !isHub && currentCategory === category.id;
+				return (
+					<li>
+						<a
+							class:list={['gw-topnav__link', active && 'is-active']}
+							href={categoryHref(category.id)}
+							aria-current={active ? 'page' : undefined}
+						>
+							{category.label}
+						</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+</nav>

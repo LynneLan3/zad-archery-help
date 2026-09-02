@@ -1,0 +1,8 @@
+---
+import type { GuideEntry } from '../../lib/guides';
+import { categoryOf, guideHref } from '../../lib/guides';
+import { resolveGuideCardImage, guideCardImageAlt } from '../../lib/card-images';
+const { entry } = Astro.props as { entry: GuideEntry };
+const image = resolveGuideCardImage(entry); const category = categoryOf(entry);
+---
+<a class="v3-card" href={guideHref(entry)} data-page-type={entry.data.pageType}><>{image && <img class="v3-card__image" src={image.src} alt={guideCardImageAlt(entry)} loading="lazy" />}</><span class="v3-card__body"><span class="v3-label">{entry.data.eyebrow ?? category?.label ?? entry.data.pageType}</span><span class="v3-card__title">{entry.data.title}</span><span class="v3-card__summary">{entry.data.description}</span>{entry.data.status && <span class="v3-status">{entry.data.status}</span>}</span></a>

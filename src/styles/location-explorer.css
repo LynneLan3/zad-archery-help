@@ -1,0 +1,72 @@
+.location-explorer {
+	--location-bg: var(--xp-bg, var(--sl-color-bg, #0f1219));
+	--location-surface: var(--xp-surface, var(--sl-color-gray-6, #1a1f28));
+	--location-text: var(--xp-text, var(--sl-color-text, #d2d9e2));
+	--location-bright: var(--xp-text-bright, var(--sl-color-white, #f4f7fa));
+	--location-muted: var(--xp-text-muted, var(--sl-color-gray-2, #b2bdca));
+	--location-accent: var(--xp-accent-text, var(--sl-color-text-accent, #a78bfa));
+	color: var(--location-text);
+}
+
+.location-explorer__hero { max-width: 48rem; margin-bottom: 2rem; }
+.location-explorer__hero h1 { margin: 0.35rem 0 0.75rem; color: var(--location-bright); }
+.location-explorer__hero p { color: var(--location-muted); }
+.location-explorer__eyebrow { margin: 0; color: var(--location-accent); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.location-explorer__toolbar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.5fr) auto auto; gap: 0.75rem; align-items: end; padding: 1rem; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); background: color-mix(in srgb, var(--location-surface) 70%, transparent); }
+.location-explorer__toolbar label { display: grid; gap: 0.35rem; color: var(--location-muted); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.location-explorer__toolbar input, .location-explorer__toolbar select, .location-explorer__toolbar button { min-height: 2.5rem; padding: 0.55rem 0.7rem; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); border-radius: 0.35rem; background: var(--location-bg); color: var(--location-text); font: inherit; }
+.location-explorer__toolbar button { cursor: pointer; }
+.location-explorer__guide-context { margin: 0.75rem 0 0; padding: 0.7rem 0.85rem; border: 1px solid color-mix(in srgb, var(--location-accent) 42%, transparent); background: color-mix(in srgb, var(--location-accent) 9%, var(--location-surface)); color: var(--location-bright); font-size: 0.85rem; font-weight: 700; }
+.location-explorer__layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(16rem, 0.8fr); gap: 1rem; margin-top: 1rem; }
+.location-explorer__map, .location-explorer__details { min-width: 0; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); background: color-mix(in srgb, var(--location-surface) 55%, transparent); }
+.location-explorer__viewport { overflow: auto; max-height: 44rem; }
+.location-explorer__surface { position: relative; width: 100%; min-width: 30rem; aspect-ratio: 1; transform: scale(var(--location-scale, 1)); transform-origin: top left; }
+.location-explorer__basemap { display: block; width: 100%; height: 100%; object-fit: cover; }
+.location-explorer__surface-empty { display: grid; place-items: center; height: 100%; color: var(--location-muted); }
+.location-explorer__attribution { position: absolute; right: 0.65rem; bottom: 0.65rem; padding: 0.35rem 0.5rem; background: rgb(0 0 0 / 0.65); color: white; }
+.location-explorer__attribution a { color: white; }
+.location-explorer__marker { position: absolute; z-index: 1; transform: translate(-50%, -50%); display: grid; gap: 0.25rem; justify-items: center; border: 0; background: transparent; color: white; cursor: pointer; font: inherit; text-shadow: 0 1px 3px black; }
+.location-explorer__marker span:first-child { width: 0.9rem; height: 0.9rem; border: 2px solid white; border-radius: 50%; background: var(--location-accent); box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 0.25); }
+.location-explorer__marker:hover span:first-child, .location-explorer__marker:focus-visible span:first-child { transform: scale(1.2); }
+.location-explorer__marker[data-toolkit-hidden-completed="true"] { display: none; }
+.location-explorer__marker.is-completed span:first-child { background: #5ee3af; border-color: #e5fff5; }
+.location-explorer__marker b { display: none; position: absolute; top: -0.35rem; right: -0.35rem; width: 1rem; height: 1rem; border-radius: 50%; background: #5ee3af; color: #062019; font-size: 0.65rem; line-height: 1rem; text-shadow: none; }
+.location-explorer__marker.is-completed b { display: block; }
+.location-explorer__zoom { display: flex; justify-content: center; align-items: center; gap: 0.75rem; padding: 0.65rem; border-top: 1px solid color-mix(in srgb, var(--location-text) 12%, transparent); }
+.location-explorer__zoom button { width: 2rem; height: 2rem; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); background: transparent; color: var(--location-text); cursor: pointer; }
+.location-explorer__details { padding: 1.25rem; }
+.location-explorer__details h2 { margin: 0.35rem 0 0.75rem; color: var(--location-bright); }
+.location-explorer__details img { display: block; width: 100%; height: auto; margin: 1rem 0; }
+.location-explorer__details a { display: inline-block; margin: 0.25rem 0.75rem 0 0; color: var(--location-accent); }
+
+.location-toolkit { margin: 1.25rem 0; padding: 1rem; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); background: color-mix(in srgb, var(--location-surface) 70%, transparent); }
+.location-toolkit__header, .location-toolkit__actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.location-toolkit h2 { margin: 0.25rem 0 0; color: var(--location-bright); }
+.location-toolkit__actions button, .location-toolkit__filters input, .location-toolkit__filters select { min-height: 2.35rem; padding: 0.45rem 0.65rem; border: 1px solid color-mix(in srgb, var(--location-text) 18%, transparent); border-radius: 0.35rem; background: var(--location-bg); color: var(--location-text); font: inherit; }
+.location-toolkit__actions button { cursor: pointer; }
+.location-toolkit__bar { height: 0.45rem; margin: 0.85rem 0; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--location-text) 12%, transparent); }
+.location-toolkit__bar span { display: block; width: 0; height: 100%; background: var(--location-accent); transition: width 160ms ease; }
+.location-toolkit__filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.5fr) auto; gap: 0.75rem; align-items: end; }
+.location-toolkit__filters label { display: grid; gap: 0.35rem; color: var(--location-muted); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.location-toolkit__hide { display: flex !important; align-items: center; min-height: 2.35rem; text-transform: none !important; letter-spacing: normal !important; cursor: pointer; }
+.location-toolkit__hide input, .location-toolkit__complete input { width: 1.1rem; height: 1.1rem; accent-color: var(--location-accent); }
+.location-toolkit__categories { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.85rem 0; color: var(--location-muted); font-size: 0.8rem; }
+.location-toolkit__categories span { padding: 0.3rem 0.45rem; border: 1px solid color-mix(in srgb, var(--location-text) 12%, transparent); border-radius: 999px; }
+.location-toolkit__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
+.location-toolkit__item { display: flex; min-width: 0; flex-direction: column; gap: 0.5rem; padding: 0.75rem; border: 1px solid color-mix(in srgb, var(--location-text) 14%, transparent); background: color-mix(in srgb, var(--location-bg) 55%, transparent); }
+.location-toolkit__item[hidden] { display: none; }
+.location-toolkit__item > label, .location-toolkit__complete { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--location-bright); cursor: pointer; }
+.location-toolkit__item h3 { margin: 0.15rem 0 0; color: var(--location-bright); font-size: 1rem; }
+.location-toolkit__item p { margin: 0.3rem 0 0; color: var(--location-muted); font-size: 0.8rem; line-height: 1.45; }
+.location-toolkit__item-category { color: var(--location-accent); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.location-toolkit__item-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: auto; padding-top: 0.45rem; }
+.location-toolkit__item-actions a, .location-toolkit__item-actions button { margin: 0; padding: 0; border: 0; background: transparent; color: var(--location-accent); font: inherit; cursor: pointer; }
+.location-toolkit__complete { margin: 0.85rem 0; padding: 0.55rem; border: 1px solid color-mix(in srgb, var(--location-text) 14%, transparent); }
+.location-toolkit [data-toolkit-reset]:focus-visible, .location-toolkit input:focus-visible, .location-toolkit select:focus-visible, .location-toolkit button:focus-visible, .location-toolkit a:focus-visible, .location-toolkit__complete:focus-within { outline: 2px solid var(--location-accent); outline-offset: 2px; }
+
+@media (max-width: 50rem) {
+	.location-explorer__toolbar, .location-explorer__layout { grid-template-columns: 1fr; }
+	.location-explorer__surface { min-width: 26rem; }
+	.location-toolkit__filters, .location-toolkit__list { grid-template-columns: 1fr; }
+	.location-toolkit__header, .location-toolkit__actions { align-items: flex-start; flex-direction: column; }
+}

@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"description": "Example Game demo files that the site generator may remove on first generated-site run when content hash still matches.",
+	"files": [
+		{
+			"path": "src/content/docs/getting-started/overview.md",
+			"sha256": "eeb74b8519888a8b003397d83b13a223802b923fecec1e60d163a155d7913614"
+		},
+		{
+			"path": "src/content/docs/gameplay/example-guide.md",
+			"sha256": "c0d9694c382644ee2a7649410b24228dcfb9c783e45de4c7de389063bc5a1bfc"
+		},
+		{
+			"path": "src/content/docs/gameplay/second-example-guide.md",
+			"sha256": "d1d13bbe7255a3a3db29cbdad7760d541e21379b9f7ef8ac25ae2a77ffc5dee6"
+		},
+		{
+			"path": "src/content/docs/world/example-location.md",
+			"sha256": "e25f9c6e00a4747c63ed940989891b758caffad730444fb4bbe0f1d31d266016"
+		},
+		{
+			"path": "src/content/docs/world/how-to-make-money.md",
+			"sha256": "48d278617bc35342185f74b71c3d1a1584d5624dbb1b4a2145bf2da71adbc2c1"
+		},
+		{
+			"path": "src/content/docs/story/example-character.md",
+			"sha256": "a3b3a2e6f47eac1e2cf59739a359827b17ff12937d2cc44ae5d29c168ce4ca75"
+		},
+		{
+			"path": "src/content/docs/game-info/release-info.md",
+			"sha256": "b33140681919c77ad2b856fb473e9e2ddf5ce644b132371b631eb7b7aa2f3a8e"
+		},
+		{
+			"path": "src/content/docs/school-life/classes.md",
+			"sha256": "cc04b439165596b2401837c1201ff0509f64ade13917bd81d7282e18a75a6cf2"
+		}
+	]
+}

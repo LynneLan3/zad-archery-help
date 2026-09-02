@@ -1,0 +1,317 @@
+[
+  {
+    "primitiveId": "A02",
+    "payload": {},
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid A02 payload: missing answer"
+    },
+    "builderResult": {
+      "ok": false,
+      "error": "Invalid A02 payload: missing answer"
+    }
+  },
+  {
+    "primitiveId": "E03",
+    "payload": {
+      "columns": "wrong",
+      "rows": []
+    },
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid E03 payload: columns must be an array"
+    },
+    "builderResult": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "E03",
+          "playerProblem": "E03"
+        },
+        "state": {},
+        "intent": {
+          "query": "E03",
+          "playerProblem": "E03",
+          "primaryTask": "collection-browse",
+          "prototype": "P2",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "E02",
+              "status": "include",
+              "reason": "Collection browse needs a scannable entity set."
+            },
+            {
+              "primitiveId": "E03",
+              "status": "conditional",
+              "reason": "A table is a candidate when structured rows exist."
+            },
+            {
+              "primitiveId": "X01",
+              "status": "omit",
+              "reason": "Filter needs task-reducing facets"
+            },
+            {
+              "primitiveId": "X02",
+              "status": "conditional",
+              "reason": "Sort needs an ordered dataset."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "E02",
+            "status": "include",
+            "reason": "Collection browse needs a scannable entity set."
+          },
+          {
+            "primitiveId": "E03",
+            "status": "omit",
+            "reason": "A table is a candidate when structured rows exist."
+          },
+          {
+            "primitiveId": "X01",
+            "status": "omit",
+            "reason": "Filter needs task-reducing facets"
+          },
+          {
+            "primitiveId": "X02",
+            "status": "omit",
+            "reason": "Sort needs an ordered dataset."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "primitiveId": "D01",
+    "payload": {
+      "options": [],
+      "dimensions": []
+    },
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid D01 payload: missing cells"
+    },
+    "builderResult": {
+      "ok": false,
+      "error": "Invalid D01 payload: missing cells"
+    }
+  },
+  {
+    "primitiveId": "P02",
+    "payload": {
+      "steps": "wrong"
+    },
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid P02 payload: steps must be an array"
+    },
+    "builderResult": {
+      "ok": false,
+      "error": "Invalid P02 payload: steps must be an array"
+    }
+  },
+  {
+    "primitiveId": "L02",
+    "payload": {
+      "source": 4
+    },
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid L02 payload: source must be a string"
+    },
+    "builderResult": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "L02",
+          "playerProblem": "L02"
+        },
+        "state": {},
+        "intent": {
+          "query": "L02",
+          "playerProblem": "L02",
+          "primaryTask": "location",
+          "prototype": "P5",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "L01",
+              "status": "include",
+              "reason": "Spatial intent can be answered with location facts."
+            },
+            {
+              "primitiveId": "L02",
+              "status": "conditional",
+              "reason": "Map needs reliable spatial data."
+            },
+            {
+              "primitiveId": "L03",
+              "status": "omit",
+              "reason": "Route needs reliable route data."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "L01",
+            "status": "include",
+            "reason": "Spatial intent can be answered with location facts."
+          },
+          {
+            "primitiveId": "L02",
+            "status": "omit",
+            "reason": "Map needs reliable spatial data."
+          },
+          {
+            "primitiveId": "L03",
+            "status": "omit",
+            "reason": "Route needs reliable route data."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "primitiveId": "X05",
+    "payload": {
+      "state": [],
+      "controls": []
+    },
+    "validationResult": {
+      "ok": false,
+      "error": "Invalid X05 payload: state must be an object"
+    },
+    "builderResult": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "X05",
+          "playerProblem": "X05"
+        },
+        "state": {},
+        "intent": {
+          "query": "X05",
+          "playerProblem": "X05",
+          "primaryTask": "tool-database",
+          "prototype": "P9",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "X01",
+              "status": "omit",
+              "reason": "Filter needs useful facets."
+            },
+            {
+              "primitiveId": "X02",
+              "status": "conditional",
+              "reason": "Sortable data needs a dataset."
+            },
+            {
+              "primitiveId": "X05",
+              "status": "conditional",
+              "reason": "Workspace needs a real planning task."
+            },
+            {
+              "primitiveId": "E03",
+              "status": "include",
+              "reason": "A tool needs structured result rows."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "X01",
+            "status": "omit",
+            "reason": "Filter needs useful facets."
+          },
+          {
+            "primitiveId": "X02",
+            "status": "omit",
+            "reason": "Sortable data needs a dataset."
+          },
+          {
+            "primitiveId": "X05",
+            "status": "omit",
+            "reason": "Workspace needs a real planning task."
+          },
+          {
+            "primitiveId": "E03",
+            "status": "include",
+            "reason": "A tool needs structured result rows."
+          }
+        ]
+      }
+    }
+  }
+]

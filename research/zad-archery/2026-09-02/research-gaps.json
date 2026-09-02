@@ -1,0 +1,75 @@
+{
+  "blocking_principle": "A page is blocked when its headline promise requires current gameplay facts that are absent from reliable public evidence.",
+  "gaps": [
+    {
+      "id": "G01_JOB_NAMES_AND_UNLOCKS",
+      "priority": "P0",
+      "blocks": [
+        "best-early-build",
+        "jobs-unlock-order"
+      ],
+      "need": "Exact five job names, job effects and unlock requirements/order.",
+      "best_evidence": [
+        "current-build screenshot",
+        "full-release gameplay video"
+      ]
+    },
+    {
+      "id": "G02_SKILL_TREE",
+      "priority": "P0",
+      "blocks": [
+        "best-early-build",
+        "skill-tree"
+      ],
+      "need": "Current node names, costs, branches, early priorities and any reset/respec behavior.",
+      "best_evidence": [
+        "current-build screenshot sequence",
+        "video with visible tree"
+      ]
+    },
+    {
+      "id": "G03_CRAFTING_CURRENT",
+      "priority": "P0",
+      "blocks": [
+        "crafting-upgrades",
+        "sell-salvage-items"
+      ],
+      "need": "Full-release crafting/forging/sell controls, rarity/affix behavior and upgrade choices.",
+      "best_evidence": [
+        "current-build screenshot",
+        "current-version video"
+      ]
+    },
+    {
+      "id": "G04_MINING_AND_GEMS",
+      "priority": "P0",
+      "blocks": [
+        "mining-gems"
+      ],
+      "need": "Mining unlock, materials/ore names, monster gem mechanics and how mining transforms skills.",
+      "best_evidence": [
+        "current-build screenshot/video"
+      ]
+    },
+    {
+      "id": "G05_GUARDIAN_KING",
+      "priority": "P1",
+      "blocks": [
+        "guardian-king"
+      ],
+      "need": "Guardian rules, King access and boss strategy after patch 1.0.2.",
+      "best_evidence": [
+        "current-build gameplay"
+      ]
+    },
+    {
+      "id": "G06_ACHIEVEMENT_COUNT",
+      "priority": "P0_RECHECK",
+      "blocks": [],
+      "need": "Resolve pre-release 25 vs live 12 achievement count.",
+      "best_evidence": [
+        "live Steam achievement UI/API"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "skill-tree",
+  "route": "/guides/builds-classes/skill-tree/",
+  "title_draft": "Zad Archery Skill Tree: What to Upgrade First",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "Official sources describe a massive skill tree with meaningful upgrades."
+  ],
+  "missing_before_publish": [
+    "node names",
+    "costs",
+    "branch structure",
+    "best early priorities",
+    "respec/reset behavior"
+  ],
+  "capture_targets": [
+    "full current skill tree at multiple progression points"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S14_DEMO_STORE"
+  ]
+}

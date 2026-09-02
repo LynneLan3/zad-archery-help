@@ -1,0 +1,174 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+import GuideEvidence from '../GuideEvidence.astro';
+import SourceList from '../SourceList.astro';
+import ExperienceGuideSections from '../experience/ExperienceGuideSections.astro';
+import ExperienceHomepage from '../experience/ExperienceHomepage.astro';
+import { isTrustPath } from '../../lib/trust';
+import { isExperienceGuide, isExperienceHomepage } from '../../lib/experience-guide';
+import { loadGuideContent } from '../../lib/guide-content';
+import ContentTrust from '../ContentTrust.astro';
+import HomepageV3 from '../v3/HomepageV3.astro';
+import ArticleV3 from '../v3/ArticleV3.astro';
+import { isV3Presentation, isV3Article } from '../../lib/v3/presentation';
+
+const entry = Astro.locals.starlightRoute.entry;
+const isHome = isExperienceHomepage(entry);
+const isSplash = entry.data.template === 'splash';
+const isTrust = isTrustPath(Astro.url.pathname);
+const isExperience = isExperienceGuide(entry, Astro.url.pathname);
+const content = isExperience ? await loadGuideContent(entry) : undefined;
+const sections = content?.sections ?? [];
+const totalSections = sections.length;
+const isV3ArticlePage = isV3Presentation && isV3Article(entry, Astro.url.pathname);
+---
+
+{
+	isV3ArticlePage ? <ArticleV3 entry={entry}><slot /></ArticleV3> : isV3Presentation && isHome ? <HomepageV3 /> : isHome ? (
+		// Formal Homepage: fully data-driven composition replaces the legacy
+		// GamePortal splash slot content.
+		<>
+			<script is:inline>
+				(function () {
+					var root = document.documentElement;
+					root.dataset.theme = 'dark';
+					root.style.colorScheme = 'dark';
+					var observer = new MutationObserver(function () {
+						if (root.dataset.theme !== 'dark') root.dataset.theme = 'dark';
+					});
+					observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+				})();
+			</script>
+			<ExperienceHomepage />
+		</>
+	) : isExperience ? (
+		<div class="exp-guide-body-wrap" data-exp-guide-nav>
+			{totalSections >= 3 && (
+				<details class="exp-mobile-contents" data-exp-mobile-contents>
+					<summary>
+						<span>Contents</span>
+						<span aria-hidden="true">·</span>
+						<span data-exp-mobile-current>01</span>
+						<span aria-hidden="true">/</span>
+						<span>{String(totalSections).padStart(2, '0')}</span>
+					</summary>
+					<ol class="exp-mobile-contents__list">
+						{sections.map((section, index) => (
+							<li>
+								<a href={`#section-${section.id}`} data-exp-toc-link>
+									<span>{String(index + 1).padStart(2, '0')}</span>
+									{section.title}
+								</a>
+							</li>
+						))}
+					</ol>
+					<a class="exp-mobile-contents__top" href="#top">↑ Top</a>
+				</details>
+			)}
+			<div class:list={['exp-guide-body-grid', totalSections >= 3 && 'exp-guide-body-grid--with-toc']}>
+				<article class="exp-guide-prose" data-exp-guide-article>
+					{sections.map((section) => <span id={`section-${section.id}`} data-exp-section-anchor aria-hidden="true" />)}
+					<slot />
+				</article>
+				{totalSections >= 3 && (
+					<aside class="exp-guide-toc" aria-labelledby="exp-guide-toc-title">
+						<nav>
+							<h2 id="exp-guide-toc-title" class="exp-guide-toc__title">On this page</h2>
+							<ol class="exp-guide-toc__list">
+								{sections.map((section, index) => (
+									<li>
+									<a href={`#section-${section.id}`} data-exp-toc-link>
+											<span>{String(index + 1).padStart(2, '0')}</span>
+											{section.title}
+										</a>
+									</li>
+								))}
+							</ol>
+							<a class="exp-guide-toc__top" href="#top">↑ Top</a>
+						</nav>
+					</aside>
+				)}
+			</div>
+			<ExperienceGuideSections />
+			{totalSections >= 3 && (
+				<script is:inline>
+					(function () {
+						var root = document.querySelector('[data-exp-guide-nav]');
+						if (!root) return;
+						var headings = Array.prototype.slice.call(root.querySelectorAll('[data-exp-section-anchor]'));
+						var links = Array.prototype.slice.call(root.querySelectorAll('[data-exp-toc-link]'));
+						var mobileCurrent = root.querySelector('[data-exp-mobile-current]');
+						var mobileContents = root.querySelector('[data-exp-mobile-contents]');
+						if (!headings.length || !links.length) return;
+
+						function setActive(id) {
+							var activeIndex = 0;
+							links.forEach(function (link) {
+								var isActive = link.getAttribute('href') === '#' + id;
+								if (isActive) {
+									link.setAttribute('aria-current', 'true');
+									activeIndex = headings.findIndex(function (heading) { return heading.id === id; });
+								} else {
+									link.removeAttribute('aria-current');
+								}
+							});
+							if (mobileCurrent && activeIndex >= 0) {
+								mobileCurrent.textContent = String(activeIndex + 1).padStart(2, '0');
+							}
+						}
+
+						function jumpToAnchor(event) {
+							var href = event.currentTarget.getAttribute('href');
+							if (!href || href.charAt(0) !== '#') return;
+							var target = document.getElementById(href.slice(1));
+							if (!target) return;
+							event.preventDefault();
+							target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+							if (mobileContents && mobileContents.open) mobileContents.open = false;
+							history.replaceState(null, '', href);
+						}
+
+						links.forEach(function (link) {
+							link.addEventListener('click', jumpToAnchor);
+						});
+
+						if ('IntersectionObserver' in window) {
+							var observer = new IntersectionObserver(function (entries) {
+								entries.forEach(function (entry) {
+									if (entry.isIntersecting) setActive(entry.target.id);
+								});
+							}, { rootMargin: '-18% 0px -70% 0px', threshold: 0 });
+							headings.forEach(function (heading) { observer.observe(heading); });
+						}
+
+						window.addEventListener('scroll', function () {
+							var active = headings[0];
+							var offset = 120;
+							headings.forEach(function (heading) {
+								if (heading.getBoundingClientRect().top <= offset) active = heading;
+							});
+							if (active) setActive(active.id);
+						}, { passive: true });
+
+						setActive(headings[0].id);
+					})();
+				</script>
+			)}
+		</div>
+	) : (
+		<>
+			<Default>
+				<slot />
+			</Default>
+			{!isSplash && !isTrust && entry.data.trust && <ContentTrust trust={entry.data.trust} />}
+			{
+				!isSplash && !isTrust && (
+					<>
+						<GuideEvidence />
+						<SourceList />
+					</>
+				)
+			}
+		</>
+	)
+}

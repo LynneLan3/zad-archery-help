@@ -1,0 +1,20 @@
+{
+  "files": [
+    "src/pages/v4-preview.astro",
+    "src/pages/v4-preview/search.astro",
+    "src/pages/v4-preview/category.astro",
+    "scripts/v4/standalone/pages/index.astro",
+    "scripts/v4/standalone/pages/search.astro",
+    "scripts/v4/standalone/pages/category.astro"
+  ],
+  "fixtureIdsFound": [],
+  "emberfallLiteralFound": false,
+  "exampleGameLiteralFound": false,
+  "staticPageArrayFallback": false,
+  "emptySectionGuards": {
+    "homepage": true,
+    "browse": true,
+    "category": true
+  },
+  "surfacesUseGeneratedData": true
+}

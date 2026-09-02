@@ -1,0 +1,15 @@
+---
+interface Props {
+	backHref: string;
+	backLabel: string;
+}
+
+const { backHref, backLabel } = Astro.props;
+---
+
+<nav class="gw-trust-back" aria-label={backLabel}>
+	<a href={backHref}>{backLabel}</a>
+</nav>
+<div class="gw-trust-content">
+	<slot />
+</div>

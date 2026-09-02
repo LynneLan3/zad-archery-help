@@ -1,0 +1,57 @@
+[
+  {
+    "id": "A",
+    "input": {
+      "query": "terraria bosses",
+      "playerProblem": "choose one",
+      "primaryTask": "choice-comparison"
+    },
+    "resolvedPrimaryTask": "choice-comparison",
+    "resolvedPrototype": "P3",
+    "basis": "primary-task",
+    "expectedBasis": "primary-task",
+    "match": true
+  },
+  {
+    "id": "B",
+    "input": {
+      "query": "diablo 4 build planner",
+      "playerProblem": "operate a workspace"
+    },
+    "resolvedPrimaryTask": "tool-database",
+    "resolvedPrototype": "P9",
+    "basis": "query-semantics",
+    "expectedBasis": "query-semantics",
+    "match": true
+  },
+  {
+    "id": "C",
+    "input": {
+      "query": "terraria",
+      "playerProblem": "solve the current task",
+      "evidence": {
+        "answerShape": "comparison"
+      }
+    },
+    "resolvedPrimaryTask": "choice-comparison",
+    "resolvedPrototype": "P3",
+    "basis": "answer-shape",
+    "expectedBasis": "answer-shape",
+    "match": true
+  },
+  {
+    "id": "D",
+    "input": {
+      "query": "unknown query",
+      "playerProblem": "solve this",
+      "evidence": {
+        "gameType": "calendar"
+      }
+    },
+    "resolvedPrimaryTask": "planning",
+    "resolvedPrototype": "P10",
+    "basis": "game-prior",
+    "expectedBasis": "game-prior",
+    "match": true
+  }
+]

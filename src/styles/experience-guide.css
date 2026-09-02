@@ -1,0 +1,1039 @@
+/**
+ * Experience Guide styles — editorial presentation for Guide content pages
+ * rendered through the Experience Guide layout inside the Starlight shell.
+ *
+ * Width contract (single container system):
+ * - `--xp-guide-wide`  : outer container for every guide region
+ *   (crumb / header / hero / facts / body / sections).
+ * - `--xp-guide-reading`: comfortable measure for prose; the body region is
+ *   a grid of `reading + sticky on-this-page column` so title, hero, metadata,
+ *   quick answer, body, sources, next questions, and related route all sit on
+ *   the same visual axis. Images may run full wide; text stays at reading.
+ *
+ * Dividers are intentionally weak: hierarchy comes from spacing, background,
+ * and typography, not full-width bright rules.
+ */
+
+/* ═══════════════════════════════════════════════════
+   STARLIGHT SHELL RESET (Experience Guide only)
+   ═══════════════════════════════════════════════════ */
+
+/* PageFrame override emits `.exp-guide-frame` in place of the fixed
+   header/sidebar frame; TwoColumnContent emits a bare `.main-pane`.
+   Reset Starlight's content chrome so the editorial width system owns
+   the layout. */
+.exp-guide-frame {
+	--xp-guide-wide: 72rem;
+	--xp-guide-reading: 52rem;
+	width: 100%;
+	padding-top: 3.85rem;
+	padding-inline-start: 0;
+	min-height: 100vh;
+	background: var(--xp-bg);
+	color: var(--xp-text);
+}
+
+body:has(.exp-guide-frame) .exp-topbar {
+	position: fixed;
+	inset: 0 0 auto;
+}
+
+.exp-guide-frame .main-pane,
+.exp-guide-frame main,
+.exp-guide-frame .content-panel {
+	width: 100%;
+	min-width: 0;
+	background: var(--xp-bg);
+	color: var(--xp-text);
+}
+
+.exp-guide-frame main {
+	padding: 0;
+}
+
+.exp-guide-frame .content-panel {
+	padding: 0;
+}
+
+.exp-guide-frame .content-panel + .content-panel {
+	border-top: none;
+}
+
+.exp-guide-frame .sl-container {
+	max-width: none;
+	width: auto;
+	margin-inline: 0;
+}
+
+/* Hide Starlight's per-heading anchor link icons inside the editorial body
+   (their styles only target .sl-markdown-content, which the Experience guide
+   does not use, so they would otherwise render as bare SVGs). */
+.exp-guide-prose .sl-anchor-link {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   WIDTH SYSTEM WRAPPERS — one container for the whole page
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-crumb-wrap,
+.exp-guide-header-wrap,
+.exp-guide-hero-wrap,
+.exp-guide-facts-wrap,
+.exp-guide-body-wrap,
+.exp-guide-sections-block {
+	max-width: var(--xp-guide-wide);
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+.exp-guide-body-wrap {
+	padding-bottom: 2.5rem;
+	counter-reset: exp-guide-section;
+}
+
+/* Body grid: reading column + sticky on-this-page rail. */
+.exp-guide-body-grid {
+	display: grid;
+	grid-template-columns: minmax(0, var(--xp-guide-reading));
+	justify-content: start;
+	gap: 0;
+}
+
+.exp-guide-body-grid--with-toc {
+	grid-template-columns: minmax(0, var(--xp-guide-reading)) minmax(13.75rem, 15.5rem);
+	gap: clamp(2.5rem, 4vw, 3.5rem);
+	align-items: start;
+}
+
+/* ═══════════════════════════════════════════════════
+   BREADCRUMB
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-crumb {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 1.5rem 0 0;
+	font-size: var(--xp-text-sm);
+	color: var(--xp-text-dim);
+}
+
+.exp-guide-crumb a {
+	color: var(--xp-accent-text);
+	text-decoration: none;
+}
+
+.exp-guide-crumb a:hover { text-decoration: underline; }
+
+.exp-guide-crumb__sep { opacity: 0.5; }
+
+.exp-guide-crumb span[aria-current='page'] {
+	min-width: 0;
+	color: var(--xp-text-muted);
+	overflow-wrap: anywhere;
+}
+
+/* ═══════════════════════════════════════════════════
+   GUIDE HEADER
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-header { padding: 1.5rem 0 0; }
+@media (min-width: 50rem) { .exp-guide-header { padding: 2.25rem 0 0; } }
+
+.exp-guide-header__eyebrow { margin-bottom: 0.75rem; }
+
+.exp-guide-header__title { margin: 0 0 0.85rem; }
+
+.exp-guide-header__dek {
+	margin: 0 0 1.25rem;
+	max-width: var(--xp-guide-reading);
+	overflow-wrap: anywhere;
+}
+
+.exp-guide-header__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.85rem;
+	align-items: center;
+	font-size: var(--xp-text-sm);
+	color: var(--xp-text-muted);
+	margin-bottom: 2rem;
+}
+
+.guide-map-action {
+	display: grid;
+	gap: 0.45rem;
+	max-width: var(--xp-guide-reading);
+	margin: 0 0 2rem;
+}
+
+.guide-map-action__kicker {
+	font-size: 0.65rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--xp-accent-text);
+}
+
+.guide-map-action__link {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	min-width: 0;
+	padding: 0.85rem 1rem;
+	border: 1px solid color-mix(in srgb, var(--xp-accent) 46%, var(--xp-border));
+	background: color-mix(in srgb, var(--xp-accent) 8%, var(--xp-surface));
+	color: var(--xp-text-bright);
+	text-decoration: none;
+	transition: border-color 140ms, background 140ms, transform 140ms;
+}
+
+.guide-map-action__link:hover,
+.guide-map-action__link:focus-visible {
+	border-color: var(--xp-accent-text);
+	background: color-mix(in srgb, var(--xp-accent) 15%, var(--xp-surface));
+	transform: translateY(-1px);
+}
+
+.guide-map-action__link:focus-visible {
+	outline: 2px solid var(--xp-accent-text);
+	outline-offset: 3px;
+}
+
+.guide-map-action__icon {
+	display: grid;
+	flex: 0 0 2rem;
+	place-items: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid color-mix(in srgb, var(--xp-accent) 62%, var(--xp-border));
+	border-radius: 50%;
+	color: var(--xp-accent-text);
+	font-size: 1.2rem;
+}
+
+.guide-map-action__copy {
+	display: grid;
+	gap: 0.15rem;
+	min-width: 0;
+}
+
+.guide-map-action__copy strong,
+.guide-map-action__copy span {
+	overflow-wrap: anywhere;
+}
+
+.guide-map-action__copy strong { font-size: 0.95rem; }
+.guide-map-action__copy span { font-size: var(--xp-text-sm); color: var(--xp-text-muted); }
+
+.guide-map-action__arrow {
+	margin-inline-start: auto;
+	flex: 0 0 auto;
+	font-size: 1.15rem;
+	color: var(--xp-accent-text);
+}
+
+/* GuideStatus pill reuses gw- classes; keep them readable on experience bg. */
+.exp-guide-header__meta .gw-status {
+	display: inline-block;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+	border: 1px solid var(--xp-border-subtle);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--xp-text-bright);
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO — full guide width, above the reading grid
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-hero-image {
+	margin: 0 0 2.5rem;
+	overflow: hidden;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-hero-image img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 21 / 9;
+	object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════════════
+   FACTS STRIP — weak card, no full-width rule
+   ═══════════════════════════════════════════════════ */
+
+.exp-facts-strip {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0;
+	margin: 0 0 2rem;
+	border: 1px solid var(--xp-border-subtle);
+	overflow: hidden;
+}
+
+@media (max-width: 30rem) {
+	.exp-facts-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+.exp-facts-strip__item {
+	padding: 0.75rem 1rem;
+	border-right: 1px solid var(--xp-border-subtle);
+}
+
+.exp-facts-strip__item:last-child { border-right: none; }
+
+@media (max-width: 30rem) {
+	.exp-facts-strip__item:nth-child(2) { border-right: none; }
+	.exp-facts-strip__item:nth-child(n+3) { border-top: 1px solid var(--xp-border-subtle); }
+}
+
+.exp-facts-strip dt {
+	margin: 0;
+	font-size: 0.65rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--xp-text-dim);
+	line-height: 1.3;
+}
+
+.exp-facts-strip dd {
+	margin: 0.25rem 0 0;
+	font-size: var(--xp-text-base);
+	font-weight: 650;
+	color: var(--xp-text-bright);
+	line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════
+   QUICK ANSWER
+   ═══════════════════════════════════════════════════ */
+
+.exp-answer {
+	max-width: var(--xp-guide-reading);
+	margin: 0 0 2.5rem;
+	padding: 1rem 1.15rem;
+	border-left: 3px solid var(--xp-accent);
+	background: color-mix(in srgb, var(--xp-accent) 6%, transparent);
+}
+
+.exp-answer__label {
+	margin: 0 0 0.35rem;
+	font-size: 0.65rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--xp-accent-text);
+}
+
+.exp-answer__text {
+	margin: 0;
+	font-size: var(--xp-text-base);
+	line-height: 1.6;
+	color: var(--xp-text-bright);
+	overflow-wrap: anywhere;
+}
+
+/* ═══════════════════════════════════════════════════
+   STICKY ON-THIS-PAGE RAIL (desktop) + MOBILE CONTENTS
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-toc {
+	position: sticky;
+	top: 5.25rem;
+	max-height: calc(100vh - 6.5rem);
+	overflow: auto;
+	padding: 1rem 0 1rem 1.25rem;
+	border-left: 1px solid var(--xp-border-subtle);
+	color: var(--xp-text-muted);
+}
+
+.exp-guide-toc__title {
+	margin: 0 0 0.85rem;
+	font-size: 0.68rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--xp-text-dim);
+}
+
+.exp-guide-toc__list {
+	display: grid;
+	gap: 0.15rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.exp-guide-toc a,
+.exp-mobile-contents a {
+	text-decoration: none;
+}
+
+.exp-guide-toc__list a {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.45rem;
+	align-items: baseline;
+	padding: 0.45rem 0.2rem;
+	border-radius: 6px;
+	color: var(--xp-text-muted);
+	font-size: 0.86rem;
+	line-height: 1.35;
+	overflow-wrap: anywhere;
+	transition: color 120ms, background 120ms;
+}
+
+.exp-guide-toc__list a span {
+	color: var(--xp-accent-dim);
+	font-size: 0.74rem;
+	font-weight: 800;
+}
+
+.exp-guide-toc__list a:hover,
+.exp-guide-toc__list a:focus-visible,
+.exp-guide-toc__list a[aria-current='true'] {
+	color: var(--xp-text-bright);
+	background: color-mix(in srgb, var(--xp-surface) 32%, transparent);
+	outline: none;
+}
+
+.exp-guide-toc__list a[aria-current='true'] {
+	box-shadow: inset 2px 0 0 var(--xp-accent);
+}
+
+.exp-guide-toc__list a:focus-visible {
+	box-shadow:
+		inset 2px 0 0 var(--xp-accent),
+		0 0 0 3px color-mix(in srgb, var(--xp-accent) 20%, transparent);
+}
+
+.exp-guide-toc__top {
+	display: inline-flex;
+	margin-top: 1rem;
+	color: var(--xp-accent-text);
+	font-size: var(--xp-text-sm);
+	font-weight: 700;
+}
+
+.exp-mobile-contents {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   BODY — prose + editorial numbering
+   ═══════════════════════════════════════════════════ */
+
+/* Editorial number for top-level H2 sections only. */
+.exp-guide-prose h2 {
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
+	counter-increment: exp-guide-section;
+	scroll-margin-top: 6rem;
+}
+
+.exp-guide-prose h2::before {
+	content: counter(exp-guide-section, decimal-leading-zero);
+	font-weight: 900;
+	letter-spacing: -0.06em;
+	color: var(--xp-accent-dim);
+	font-size: clamp(1.4rem, 3vw, 2rem);
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.exp-guide-prose h1,
+.exp-guide-prose h2,
+.exp-guide-prose h3,
+.exp-guide-prose p,
+.exp-guide-prose a { overflow-wrap: anywhere; }
+
+.exp-guide-prose img,
+.exp-guide-prose video,
+.exp-guide-prose table,
+.exp-guide-prose pre { max-width: 100%; }
+
+.exp-guide-prose h3,
+.exp-guide-prose h4 {
+	scroll-margin-top: 6rem;
+}
+
+/* Prose typography — reading rhythm, no full-width rules between sections */
+.exp-guide-prose {
+	color: var(--xp-text);
+	line-height: 1.8;
+	font-size: var(--xp-text-base);
+	overflow-wrap: anywhere;
+}
+
+.exp-guide-prose > :first-child { margin-top: 0; }
+
+/* Typed section anchors keep TOC behavior independent of Writer heading text. */
+.exp-guide-prose [data-exp-section-anchor] {
+	display: block;
+	position: relative;
+	height: 0;
+	scroll-margin-top: 6rem;
+}
+
+.exp-guide-prose p {
+	max-width: var(--xp-guide-reading);
+	margin: 0 0 1.15rem;
+}
+
+.exp-guide-prose h2 {
+	margin: 3rem 0 0.5rem;
+	padding-top: 3rem;
+	font-size: clamp(1.4rem, 3vw, 1.9rem);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 1.15;
+	color: var(--xp-text-bright);
+}
+
+.exp-guide-prose > h2:first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.exp-guide-prose h3 {
+	margin: 2rem 0 0.65rem;
+	font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+	font-weight: 750;
+	color: var(--xp-text-bright);
+}
+
+.exp-guide-prose h4 {
+	margin: 1.5rem 0 0.5rem;
+	font-size: var(--xp-text-base);
+	font-weight: 700;
+	color: var(--xp-text-bright);
+}
+
+.exp-guide-prose ul,
+.exp-guide-prose ol {
+	max-width: var(--xp-guide-reading);
+	margin: 0 0 1.15rem;
+	padding-left: 1.4rem;
+}
+
+.exp-guide-prose li { margin: 0.25rem 0; }
+
+.exp-guide-prose li > ul,
+.exp-guide-prose li > ol { margin-bottom: 0.25rem; }
+
+.exp-guide-prose a {
+	color: var(--xp-accent-text);
+	text-decoration: none;
+}
+
+.exp-guide-prose a:hover { text-decoration: underline; }
+
+.exp-guide-prose table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.25rem 0;
+	font-size: var(--xp-text-sm);
+}
+
+.exp-guide-prose th,
+.exp-guide-prose td {
+	padding: 0.65rem 0.85rem;
+	border: 1px solid var(--xp-border-subtle);
+	text-align: left;
+}
+
+.exp-guide-prose th {
+	font-weight: 700;
+	color: var(--xp-text-bright);
+	background: color-mix(in srgb, var(--xp-surface) 50%, transparent);
+}
+
+.exp-guide-prose img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 1.5rem 0;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-prose code {
+	padding: 0.12rem 0.35rem;
+	border-radius: 4px;
+	background: color-mix(in srgb, var(--xp-surface) 70%, transparent);
+	font-size: 0.9em;
+	color: var(--xp-text-bright);
+}
+
+.exp-guide-prose pre {
+	overflow-x: auto;
+	margin: 1.25rem 0;
+	padding: 1rem;
+	border: 1px solid var(--xp-border-subtle);
+	background: var(--xp-surface-dark);
+}
+
+.exp-guide-prose blockquote {
+	margin: 1.25rem 0;
+	padding: 0.25rem 0 0.25rem 1rem;
+	border-left: 3px solid var(--xp-border-subtle);
+	color: var(--xp-text-muted);
+}
+
+/* Starlight asides keep their semantics inside the editorial body */
+.exp-guide-prose .starlight-aside {
+	margin: 1.25rem 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   EVIDENCE / SOURCES / NEXT / REFERENCES — same wide container
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-sections-block {
+	padding-bottom: 2.5rem;
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence h2,
+.exp-guide-sources-wrap .gw-sources h2 {
+	margin: 0 0 1rem;
+	font-size: 0.68rem;
+	font-weight: 800;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--xp-accent);
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence ul,
+.exp-guide-sources-wrap .gw-sources ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence li {
+	margin-bottom: 2rem;
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence figure {
+	margin: 0;
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence figure img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 21 / 9;
+	object-fit: cover;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence figcaption {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1rem;
+	align-items: baseline;
+	margin-top: 0.5rem;
+	font-size: var(--xp-text-xs);
+	color: var(--xp-text-muted);
+}
+
+.exp-guide-evidence-wrap .gw-guide-evidence a {
+	color: var(--xp-accent-text);
+	text-decoration: none;
+}
+
+.exp-guide-sources-wrap .gw-sources li + li {
+	border-top: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-sources-wrap .gw-sources a {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: baseline;
+	padding: 0.95rem 1rem;
+	border: 1px solid transparent;
+	text-decoration: none;
+	color: var(--xp-text-bright);
+	background: color-mix(in srgb, var(--xp-surface) 28%, transparent);
+	transition: border-color 120ms, background 120ms;
+}
+
+.exp-guide-sources-wrap .gw-sources a:hover,
+.exp-guide-sources-wrap .gw-sources a:focus-visible {
+	border-color: var(--xp-border-subtle);
+	background: color-mix(in srgb, var(--xp-surface) 42%, transparent);
+}
+
+.exp-guide-sources-wrap .gw-sources a:hover .gw-sources__title,
+.exp-guide-sources-wrap .gw-sources a:focus-visible .gw-sources__title {
+	color: var(--xp-accent-text);
+}
+
+.exp-guide-sources-wrap .gw-sources__title { font-weight: 650; }
+
+.exp-guide-sources-wrap .gw-sources__type {
+	font-size: var(--xp-text-xs);
+	color: var(--xp-text-muted);
+	white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   NEXT QUESTIONS
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-next {
+	padding-top: 3rem;
+	border-top: 1px solid var(--xp-border-subtle);
+	margin-top: 2.5rem;
+}
+
+.exp-guide-next__heading {
+	margin: 0.5rem 0 0;
+	font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+	font-weight: 750;
+	color: var(--xp-text-bright);
+}
+
+.exp-guide-next__list { display: grid; gap: 0; margin-top: 1.5rem; }
+
+.exp-guide-next__item {
+	display: grid;
+	grid-template-columns: 3rem 1fr auto;
+	gap: 0 1rem;
+	align-items: center;
+	min-width: 0;
+	overflow: hidden;
+	min-height: 3.5rem;
+	padding: 1rem 0.75rem;
+	border-bottom: 1px solid var(--xp-border-subtle);
+	text-decoration: none;
+	color: inherit;
+	transition: background 140ms, border-color 140ms, color 140ms;
+}
+
+.exp-guide-next__item:has(.exp-guide-next__media) {
+	grid-template-columns: 3rem minmax(7rem, 12rem) 1fr auto;
+}
+
+.exp-guide-next__media {
+	aspect-ratio: 16 / 9;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-next__item:last-child { border-bottom: none; }
+.exp-guide-next__item:hover,
+.exp-guide-next__item:focus-visible {
+	background: color-mix(in srgb, var(--xp-accent) 7%, transparent);
+	border-bottom-color: color-mix(in srgb, var(--xp-accent) 38%, var(--xp-border-subtle));
+	outline: none;
+}
+.exp-guide-next__item:focus-visible { box-shadow: inset 3px 0 var(--xp-accent); }
+.exp-guide-next__item:hover .exp-guide-next__title,
+.exp-guide-next__item:focus-visible .exp-guide-next__title { color: var(--xp-accent-text); }
+
+.exp-guide-next__number { flex-shrink: 0; }
+
+.exp-guide-next__body { display: grid; gap: 0.2rem; }
+
+.exp-guide-next__title {
+	font-size: clamp(1rem, 2vw, 1.1rem);
+	font-weight: 700;
+	color: var(--xp-text-bright);
+	transition: color 120ms;
+}
+
+.exp-guide-next__desc {
+	font-size: var(--xp-text-sm);
+	color: var(--xp-text-muted);
+}
+
+.exp-guide-next__arrow {
+	color: var(--xp-text-dim);
+	font-size: var(--xp-text-lg);
+	transition: color 140ms, transform 140ms;
+}
+.exp-guide-next__item:hover .exp-guide-next__arrow,
+.exp-guide-next__item:focus-visible .exp-guide-next__arrow { color: var(--xp-accent-text); transform: translateX(3px); }
+
+/* ═══════════════════════════════════════════════════
+   MORE REFERENCES (weak)
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-references {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-references__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.4rem;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.exp-guide-references__list a {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	min-height: 3rem;
+	padding: 0.5rem 0.65rem;
+	border: 1px solid transparent;
+	color: var(--xp-text-muted);
+	text-decoration: none;
+	font-size: var(--xp-text-sm);
+	transition: background 140ms, border-color 140ms, color 140ms;
+}
+
+.exp-guide-reference__media {
+	width: 4rem;
+	aspect-ratio: 16 / 9;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+@media (max-width: 49.99rem) {
+	.exp-guide-next__item:has(.exp-guide-next__media) {
+		grid-template-columns: 2.25rem 5.5rem 1fr auto;
+	}
+
+	.exp-guide-next__item:active,
+	.exp-guide-references__list a:active {
+		background: color-mix(in srgb, var(--xp-accent) 12%, transparent);
+		border-color: var(--xp-accent-text);
+	}
+}
+
+.exp-guide-references__list a:hover {
+	color: var(--xp-accent-text);
+	text-decoration: underline;
+}
+.exp-guide-references__list a:hover,
+.exp-guide-references__list a:focus-visible { background: color-mix(in srgb, var(--xp-accent) 7%, transparent); border-color: var(--xp-accent-text); outline: none; text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════
+   ROUTE CONTEXT + OTHER ROUTES
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-route-ctx {
+	margin-top: 2rem;
+	padding: 1.25rem 1.35rem;
+	border: 1px solid var(--xp-border-subtle);
+	background: color-mix(in srgb, var(--xp-surface) 30%, transparent);
+}
+
+.exp-guide-route-ctx__eyebrow {
+	font-size: 0.65rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--xp-text-dim);
+	margin-bottom: 0.35rem;
+}
+
+.exp-guide-route-ctx__label {
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 750;
+	color: var(--xp-text-bright);
+	margin-bottom: 0.85rem;
+}
+
+.exp-guide-route-ctx__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem;
+}
+
+.exp-guide-route-ctx__actions a {
+	color: var(--xp-accent-text);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.exp-guide-route-ctx__actions a:hover { text-decoration: underline; }
+
+.exp-guide-other-routes {
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--xp-border-subtle);
+}
+
+.exp-guide-other-routes .exp-eyebrow { margin-bottom: 1rem; }
+
+.exp-other-routes {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.75rem;
+}
+
+@media (min-width: 50rem) {
+	.exp-other-routes { grid-template-columns: repeat(3, 1fr); }
+}
+
+.exp-other-route {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	padding: 1.15rem 1.25rem;
+	border: 1px solid var(--xp-border-subtle);
+	text-decoration: none;
+	color: inherit;
+	transition: border-color 120ms;
+}
+
+.exp-other-route:hover { border-color: var(--xp-accent-text); }
+
+.exp-other-route__number { flex-shrink: 0; }
+
+.exp-other-route__label {
+	font-weight: 700;
+	color: var(--xp-text-bright);
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE — single column, floating contents rail
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 42rem) {
+	html:has(.exp-guide-frame),
+	body:has(.exp-guide-frame) {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	.exp-guide-frame,
+	.exp-guide-frame .main-pane,
+	.exp-guide-frame main,
+	.exp-guide-frame .content-panel,
+	.exp-guide-frame .sl-container {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		overflow-x: clip;
+	}
+
+	.exp-guide-header {
+		padding-top: 1.5rem;
+	}
+
+	.exp-guide-crumb-wrap,
+	.exp-guide-header-wrap,
+	.exp-guide-hero-wrap,
+	.exp-guide-facts-wrap,
+	.exp-guide-body-wrap,
+	.exp-guide-sections-block {
+		width: calc(100vw - 2rem);
+		max-width: calc(100vw - 2rem);
+		padding-inline: 0;
+	}
+
+	.exp-guide-body-grid,
+	.exp-guide-body-grid--with-toc {
+		display: block;
+	}
+
+	.exp-guide-toc {
+		display: none;
+	}
+
+	.exp-mobile-contents {
+		position: fixed;
+		inset: auto 1rem 1rem;
+		z-index: 90;
+		display: block;
+		margin: 0;
+		border: 1px solid var(--xp-border-subtle);
+		background: color-mix(in srgb, var(--xp-bg) 94%, transparent);
+		backdrop-filter: blur(12px);
+	}
+
+	.exp-mobile-contents summary {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.75rem 0.85rem;
+		color: var(--xp-text-bright);
+		font-size: var(--xp-text-sm);
+		font-weight: 750;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.exp-mobile-contents summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.exp-mobile-contents summary::after {
+		content: 'Open';
+		margin-left: auto;
+		color: var(--xp-accent-text);
+		font-size: var(--xp-text-xs);
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.exp-mobile-contents[open] summary::after {
+		content: 'Close';
+	}
+
+	.exp-mobile-contents__list {
+		display: grid;
+		gap: 0;
+		max-height: 30vh;
+		margin: 0;
+		padding: 0 0.85rem 0.4rem;
+		overflow: auto;
+		list-style: none;
+	}
+
+	.exp-mobile-contents__list a {
+		display: grid;
+		grid-template-columns: 2rem minmax(0, 1fr);
+		gap: 0.55rem;
+		padding: 0.65rem 0;
+		border-top: 1px solid var(--xp-border-subtle);
+		color: var(--xp-text-muted);
+		font-size: var(--xp-text-sm);
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+	}
+
+	.exp-mobile-contents__list a span {
+		color: var(--xp-accent-dim);
+		font-weight: 800;
+	}
+
+	.exp-mobile-contents__list a[aria-current='true'],
+	.exp-mobile-contents__list a:hover,
+	.exp-mobile-contents__list a:focus-visible {
+		color: var(--xp-text-bright);
+		outline: none;
+	}
+
+	.exp-mobile-contents__top {
+		display: inline-flex;
+		margin: 0 0.85rem 0.85rem;
+		color: var(--xp-accent-text);
+		font-size: var(--xp-text-sm);
+		font-weight: 800;
+	}
+
+	.exp-guide-prose h2 {
+		display: block;
+	}
+
+	.exp-guide-prose h2::before {
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+}

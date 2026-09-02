@@ -1,0 +1,47 @@
+---
+/**
+ * ExperienceRouteShowcase — homepage "Choose Your Route" section (V2.2-E1).
+ *
+ * Consumes `game.routes` only. Route numbers are derived from array index
+ * (`01`, `02`, …). `route.visual` is optional: when absent a content-only
+ * variant renders (no image, no placeholder, no broken-image state). The
+ * Renders only the homepage multi-route picker. Single-route homepages merge
+ * route + Start Here in ExperienceHomepage instead of pretending there is a
+ * choice to make.
+ */
+import type { GameRoute } from '../../config/game-types';
+import { routeNumber } from '../../lib/experience-homepage';
+import { ui } from '../../lib/ui';
+import RouteTopicCard from './routes/RouteTopicCard.astro';
+
+interface Props {
+	routes: readonly GameRoute[];
+}
+
+const { routes } = Astro.props;
+const t = ui();
+const shownRoutes = routes.slice(0, 4);
+const hiddenRouteCount = Math.max(routes.length - shownRoutes.length, 0);
+---
+
+<section class="exp-section exp-home-routes" id="routes" aria-labelledby="exp-home-routes-heading">
+	<div class="exp-content">
+		<p class="exp-eyebrow">{t.chooseYourRoute}</p>
+		<h2 class="exp-h2" id="exp-home-routes-heading">{t.chooseYourRouteTitle}</h2>
+		<p class="exp-lede">{t.routeGroupsLede}</p>
+	</div>
+	<div class="exp-content">
+		<div class="exp-routes">
+			{shownRoutes.map((route, index) => (
+				<RouteTopicCard route={route} number={routeNumber(index)} />
+			))}
+		</div>
+		{hiddenRouteCount > 0 && (
+			<p class="exp-home-routes__more">
+				<a class="exp-cta-link" href={shownRoutes[0]?.href.replace(/routes\/[^/]+\/$/, 'routes/') ?? '#routes'}>
+					{t.moreGuidesCount(hiddenRouteCount)}
+				</a>
+			</p>
+		)}
+	</div>
+</section>

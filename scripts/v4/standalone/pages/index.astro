@@ -1,0 +1,18 @@
+---
+import generated from '../v4/generated/example-site.json';
+import V4GlobalHeader from '../components/v4/V4GlobalHeader.astro';
+import V4ThemeStyle from '../components/v4/V4ThemeStyle.astro';
+import '../v4/visual-system.css';
+import '../v4/product-overrides.css';
+const surfaces = generated.homepage.surfaces;
+const bySurface = (surface: typeof surfaces[number]) => surface.pageIds.map((id) => generated.pages.find((item) => item.id === id)).filter(Boolean);
+---
+<style is:global>
+.v4-home-identity-media{max-width:100%;margin:1.25rem 0 0}.v4-home-identity-media img{display:block;width:100%;height:auto;border:1px solid var(--v4-line)}.v4-home-identity-media figcaption{color:var(--v4-muted);font-size:.78rem;margin-top:.35rem}
+</style>
+<V4ThemeStyle theme={generated.theme} />
+<html lang="en"><head><title>{generated.game.name} · Utility Wiki</title></head><body class="v4-shell"><main class="v4-home">
+<V4GlobalHeader game={generated.game} navigation={generated.navigation} currentPageId="home" />
+<header class="v4-site-identity"><div><p class="v4-kicker">Current guide</p><h1>{generated.game.name}</h1><p>Choose a focused answer from the current research set.</p></div></header>
+{surfaces.map((surface) => { const items = bySurface(surface); return items.length > 0 && <section class="v4-home-section"><div class="v4-section-heading"><div><span class="v4-kicker">Research surface</span><h2>{surface.label}</h2></div><span>{items.length} answers</span></div><div class="v4-discovery-list">{items.map((item) => item && <a class="v4-discovery-item" href={item.href}><span><strong>{item.title}</strong><small>{item.pageData.intent.playerProblem}</small></span><b>Open</b></a>)}</div></section>})}
+</main></body></html>

@@ -1,0 +1,7 @@
+---
+import Article from '../../components/zad/ZadArticlePage.astro';
+import generated from '../../v4/generated/example-site.json';
+export function getStaticPaths() { return generated.pages.filter((page: any) => page.href.startsWith('/updates/')).map((page: any) => ({ params: { slug: page.href.replace(/^\/updates\//, '').replace(/\/$/, '') }, props: { page } })); }
+const { page } = Astro.props;
+---
+<Article page={page} />

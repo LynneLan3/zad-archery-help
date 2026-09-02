@@ -1,0 +1,52 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+
+site:
+  id: fixture-game
+  mode: hub
+  locale: zh-CN
+  siteUrl: https://fixture-wiki.example
+  hubPath: /fixture-game/
+  title: Fixture Game Wiki
+  shortName: Fixture Game
+  description: Self-relation fixture.
+
+game:
+  name: Fixture Game
+  hubTitle: Fixture Game Wiki
+  tagline: Self-relation fixture.
+  releaseStatus: released
+  releaseDate: 2026-08-01
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms:
+    - PC
+
+theme:
+  accentColor: "#d79b16"
+
+categories:
+  - id: getting-started
+    label: Start
+    description: Start.
+    icon: rocket
+    order: 1
+
+pages:
+  - id: beginner-guide
+    title: Beginner
+    description: Beginner page.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    relations:
+      - pageId: beginner-guide
+        type: related
+
+homepage: {}
+
+assets: []

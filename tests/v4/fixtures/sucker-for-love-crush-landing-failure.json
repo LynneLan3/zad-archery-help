@@ -1,0 +1,13 @@
+{
+  "game": { "name": "Sucker for Love: Crush Landing", "slug": "sucker-for-love-crush-landing" },
+  "navigation": { "primary": [
+    { "id": "home", "label": "Home", "href": "/v4-preview/" },
+    { "id": "guide", "label": "Guide", "href": "/v4-preview/category/", "groups": [{ "id": "start", "label": "Start", "items": [{ "id": "overview", "label": "Overview", "href": "/v4-preview/overview/", "pageId": "overview" }] }] }
+  ], "utilities": [{ "id": "search", "label": "Search", "href": "/v4-preview/search/" }] },
+  "pages": [{
+    "id": "overview", "title": "Sucker for Love: Crush Landing overview", "href": "/v4-preview/overview/",
+    "query": "Sucker for Love Crush Landing overview", "playerProblem": "understand what Crush Landing is before playing", "primaryTask": "entity-lookup",
+    "facts": [{ "id": "fact-premise", "label": "Premise", "value": "A sentient comet named Hheily crash-lands in an apartment.", "verified": true }],
+    "evidence": [{ "evidenceId": "steam-store-3848900", "sourceType": "official", "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/", "finding": "Official Steam store description, checked 2026-09-01." }]
+  }]
+}

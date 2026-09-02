@@ -1,0 +1,7 @@
+---
+import type { GameCategory } from '../../config/game';
+import type { GuideEntry } from '../../lib/guides';
+import GuideGridV3 from './GuideGridV3.astro';
+const { category, entries } = Astro.props as { category: GameCategory; entries: GuideEntry[] };
+---
+<section class="v3-section"><span class="v3-eyebrow">Game content</span><h1>{category.label}</h1><p>{category.description}</p></section>{entries.length > 0 && <section class="v3-section"><h2>Priority Guides</h2><GuideGridV3 entries={entries.filter((e) => e.data.homepagePriority).slice(0, 4)} /></section>}<section class="v3-section"><h2>Guides in {category.label}</h2>{entries.length > 0 ? <GuideGridV3 entries={entries} /> : <p>No guides are published in this category yet.</p>}</section><a href="/">Back to the game hub</a>

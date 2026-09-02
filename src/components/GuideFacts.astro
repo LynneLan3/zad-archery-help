@@ -1,0 +1,17 @@
+---
+const { entry } = Astro.locals.starlightRoute;
+const facts: Array<{ label: string; value: string }> = entry.data.facts ?? [];
+---
+
+{
+	facts.length > 0 && (
+		<dl class="gw-facts-strip">
+			{facts.slice(0, 4).map((fact) => (
+				<div class="gw-facts-strip__item">
+					<dt>{fact.label}</dt>
+					<dd>{fact.value}</dd>
+				</div>
+			))}
+		</dl>
+	)
+}

@@ -1,0 +1,20 @@
+---
+/**
+ * Sidebar override — hides the Starlight left sidebar on Experience Guide
+ * pages and the formal Homepage while keeping it for Category Landings,
+ * trust pages, 404, and fallback docs.
+ */
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import { isExperienceGuide, isExperienceHomepage } from '../../lib/experience-guide';
+import { isV3Presentation, isV3Article } from '../../lib/v3/presentation';
+import { isCategoryLandingPath } from '../../lib/category-url';
+
+const isHome = isExperienceHomepage(Astro.locals.starlightRoute.entry);
+const isExperience = isExperienceGuide(
+	Astro.locals.starlightRoute.entry,
+	Astro.url.pathname,
+);
+const isV3 = isV3Presentation && (isExperienceHomepage(Astro.locals.starlightRoute.entry) || isV3Article(Astro.locals.starlightRoute.entry, Astro.url.pathname) || isCategoryLandingPath(Astro.url.pathname));
+---
+
+{isV3 || isHome || isExperience ? null : <Default><slot /></Default>}

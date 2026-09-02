@@ -1,0 +1,116 @@
+[
+  {
+    "question": "How long is Zad Archery?",
+    "intent": "completion_time",
+    "signal": "HIGH",
+    "sources": [
+      "S02_STEAM_NEWS_RELEASE_INFO",
+      "S06_REDDIT_RELEASE",
+      "S09_STEAM_DISCUSSIONS"
+    ],
+    "route": "/guides/progression/how-long-to-beat-zad-archery/",
+    "status": "READY"
+  },
+  {
+    "question": "Does Zad Archery demo progress carry over to the full game?",
+    "intent": "demo_save_transfer",
+    "signal": "HIGH",
+    "sources": [
+      "S06_REDDIT_RELEASE",
+      "S09_STEAM_DISCUSSIONS"
+    ],
+    "route": "/guides/progression/demo-save-transfer/",
+    "status": "READY"
+  },
+  {
+    "question": "Does Zad Archery work on Steam Deck?",
+    "intent": "steam_deck",
+    "signal": "MEDIUM_HIGH",
+    "sources": [
+      "S04_STEAM_DECK",
+      "S06_REDDIT_RELEASE"
+    ],
+    "route": "/guides/platforms/steam-deck/",
+    "status": "READY"
+  },
+  {
+    "question": "Is Zad Archery on mobile?",
+    "intent": "mobile",
+    "signal": "MEDIUM_HIGH",
+    "sources": [
+      "S06_REDDIT_RELEASE"
+    ],
+    "route": "/guides/platforms/mobile/",
+    "status": "READY"
+  },
+  {
+    "question": "What are the Zad Archery achievements?",
+    "intent": "achievements",
+    "signal": "MEDIUM_HIGH",
+    "sources": [
+      "S01_STEAM_STORE",
+      "S12_ACHIEVEMENTS",
+      "S03_PATCH_1_0_2"
+    ],
+    "route": "/achievements/",
+    "status": "READY_WITH_LIVE_COUNT_NOTE"
+  },
+  {
+    "question": "How do I sell or salvage items?",
+    "intent": "inventory_sell_salvage",
+    "signal": "MEDIUM",
+    "sources": [
+      "S10_SELLING_THREAD",
+      "S15_ITCH_COMMENTS"
+    ],
+    "route": "/guides/crafting-gear/sell-salvage-items/",
+    "status": "HOLD_CURRENT_BUILD_VERIFICATION"
+  },
+  {
+    "question": "Which job or build should I use first?",
+    "intent": "best_early_build",
+    "signal": "LIKELY_HIGH_AFTER_SEARCH_GROWTH",
+    "sources": [
+      "S01_STEAM_STORE",
+      "S14_DEMO_STORE",
+      "S11_FEEDBACK_THREAD"
+    ],
+    "route": "/guides/builds-classes/best-early-build/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE"
+  },
+  {
+    "question": "How do jobs unlock and what are all five jobs?",
+    "intent": "job_unlocks",
+    "signal": "LIKELY_HIGH",
+    "sources": [
+      "S01_STEAM_STORE",
+      "S14_DEMO_STORE"
+    ],
+    "route": "/guides/builds-classes/jobs-unlock-order/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE"
+  },
+  {
+    "question": "How does mining work and what do monster gems do?",
+    "intent": "mining_gems",
+    "signal": "LIKELY_MEDIUM_HIGH",
+    "sources": [
+      "S01_STEAM_STORE",
+      "S03_PATCH_1_0_2",
+      "S08_ITCH"
+    ],
+    "route": "/guides/crafting-gear/mining-gems/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE"
+  },
+  {
+    "question": "How do Guardian Perks and the King work?",
+    "intent": "guardian_king",
+    "signal": "MEDIUM",
+    "sources": [
+      "S01_STEAM_STORE",
+      "S03_PATCH_1_0_2",
+      "S12_ACHIEVEMENTS"
+    ],
+    "route": "/guides/combat-bosses/guardian-king/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE"
+  }
+]

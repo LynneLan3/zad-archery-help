@@ -1,0 +1,18 @@
+{
+  "schema_version": "hotword-research-package-v1",
+  "package_type": "INITIAL",
+  "research_package_id": "rp-artificial-emberfall-p1-001",
+  "target": { "game_name": "Artificial Emberfall" },
+  "page": { "id": "ember-core", "title": "Ember Core", "href": "/ember-core/", "topic": "ember core" },
+  "query": "artificial emberfall ember core",
+  "player_problem": "find the Ember Core requirements and where to get it",
+  "primary_task_signals": [{ "task": "entity-lookup", "evidence_refs": ["evidence-ember-core"] }],
+  "secondary_task_signals": [{ "task": "location", "evidence_refs": ["serp-ember-core"] }],
+  "priority": 1,
+  "game_facts": [{ "fact_id": "fact-ember-core", "claim": "Item", "value": "Ember Core", "certainty": "VERIFIED", "evidence_refs": ["evidence-ember-core"] }],
+  "search_evidence": [{ "evidence_id": "serp-ember-core", "source_type": "serp", "source_ref": "serp://artificial-emberfall/ember-core", "query_or_topic": "artificial emberfall ember core", "summary": "Search results indicate players seek the item's location.", "captured_at": "2026-08-31T00:00:00Z" }],
+  "evidence": [{ "evidence_id": "evidence-ember-core", "source_type": "official", "source_ref": "https://example.invalid/ember-core", "summary": "Artificial fixture evidence for the Ember Core claim.", "claim_relation": "supports-fact", "captured_at": "2026-08-30T00:00:00Z" }],
+  "freshness": { "version": "fixture-1", "platform": "PC", "data_window": "2026-08-30" },
+  "asset_intent": [{ "asset_id": "asset-ember-core", "purpose": "Identify the item beside its fact answer.", "role_hint": "entity", "target_page_id": "ember-core", "evidence_refs": ["evidence-ember-core"] }],
+  "asset_candidates": [{ "asset_id": "asset-ember-core", "role_hint": "entity", "path": "ember-core.png", "alt": "Ember Core", "usable": true, "provenance": "Artificial fixture asset", "evidence_refs": ["evidence-ember-core"] }]
+}

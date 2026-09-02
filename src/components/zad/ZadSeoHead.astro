@@ -1,0 +1,22 @@
+---
+const { title, description, canonical, article = false } = Astro.props as { title: string; description: string; canonical: string; article?: boolean };
+const image = 'https://zadarchery.help/zad-archery/09_steam_hero.jpg';
+const graph = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Zad Archery Help', url: 'https://zadarchery.help/', description },
+  ...(article ? [{ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, url: canonical, dateModified: '2026-09-02', image: [image], author: { '@type': 'Organization', name: 'Zad Archery Help' }, publisher: { '@type': 'Organization', name: 'Zad Archery Help' } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zadarchery.help/' }, { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://zadarchery.help/guides/' }, { '@type': 'ListItem', position: 3, name: title, item: canonical }] }] : []),
+];
+---
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Zad Archery Help" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content="Zad Archery archer facing target monsters in a green valley" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<script type="application/ld+json" set:html={JSON.stringify(graph)}></script>

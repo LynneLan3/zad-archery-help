@@ -1,0 +1,154 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+
+site:
+  id: serious-sam-shatterverse
+  mode: hub
+  locale: en
+  siteUrl: https://serious-sam-shatterverse.example
+  hubPath: /
+  title: Serious Sam Shatterverse Guide
+  shortName: Shatterverse Guide
+  description: A source-grounded Serious Sam Shatterverse launch guide.
+  disclaimer: Unofficial fan guide. Verify changing launch details against official sources.
+
+game:
+  name: "Serious Sam: Shatterverse"
+  hubTitle: "Serious Sam: Shatterverse Guide"
+  tagline: Co-op roguelite FPS chaos across shifting universes.
+  releaseStatus: pre-release
+  developer: Behaviour Interactive Inc.
+  publisher: Devolver Digital
+  platforms:
+    - PC
+    - PS5
+    - Xbox Series X|S
+
+theme:
+  accentColor: "#ef6c2f"
+  accentForeground: "#111111"
+  heroAssetId: shatterverse-gameplay-1
+  heroPosition: center
+
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: First checks for a new run.
+    icon: rocket
+    order: 1
+  - id: gameplay
+    label: Gameplay
+    description: Co-op, runs, boons, modifiers, and combat.
+    icon: puzzle
+    order: 2
+  - id: game-info
+    label: Game Info
+    description: Release and platform details.
+    icon: information
+    order: 3
+
+pages:
+  - id: getting-started
+    title: Getting Started in Shatterverse
+    description: What the official store page confirms about the first run.
+    category: getting-started
+    slug: first-run
+    source: site-input/pages/getting-started.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    role: core
+    intents: [getting-started]
+    quickAnswer: Start with the co-op roguelite loop, then use boons and run modifiers to shape later attempts.
+    coverAssetId: shatterverse-gameplay-1
+    cardImageAssetId: shatterverse-gameplay-1
+    related: [co-op]
+  - id: co-op
+    title: Co-op and Player Count
+    description: The official player-count and multiplayer details.
+    category: gameplay
+    slug: co-op
+    source: site-input/pages/co-op.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    role: core
+    intents: [co-op]
+    quickAnswer: The Steam listing describes Shatterverse as a co-op roguelite FPS for 1–5 players with online co-op.
+    coverAssetId: shatterverse-gameplay-2
+    cardImageAssetId: shatterverse-gameplay-2
+  - id: release-and-platforms
+    title: Release and Platforms
+    description: Confirmed release and platform information for the launch page.
+    category: game-info
+    slug: release-and-platforms
+    source: site-input/pages/release-and-platforms.md
+    status: confirmed
+    sidebarOrder: 1
+    role: supporting
+    intents: [release-platforms]
+    quickAnswer: The Steam listing gives an August 31, 2026 release date and lists PC, PS5, and Xbox Series X|S availability.
+    coverAssetId: shatterverse-gameplay-1
+    cardImageAssetId: shatterverse-gameplay-1
+
+homepage:
+  heroBadge: Official-media intake test
+  primaryCta:
+    label: Start here
+    pageId: getting-started
+  secondaryCta:
+    label: Browse guides
+    anchor: browse-guides
+  startHere:
+    - pageId: getting-started
+      label: Start a run
+    - pageId: co-op
+      label: Build a squad
+    - pageId: release-and-platforms
+      label: Check release details
+  popularQuestions:
+    - label: How many players can join?
+      pageId: co-op
+    - label: What kind of game is Shatterverse?
+      pageId: getting-started
+  evidence:
+    title: Official gameplay media
+    description: Store screenshots are reused only where they support the guide context.
+    items:
+      - assetId: shatterverse-gameplay-1
+        caption: Steam store gameplay screenshot used for the getting-started guide.
+        pageId: getting-started
+
+assets:
+  - id: shatterverse-header
+    source: site-input/assets/shatterverse-header.jpg
+    target: serious-sam/shatterverse-header.jpg
+    alt: Serious Sam facing a chaotic multiverse battle in the Shatterverse key art
+    sourceUrl: https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2067210/3171c0ddcebcb0888ed8ff80469792ded64a7aa4/header.jpg?t=1787672286
+    sourceType: store
+    usageStatus: review-required
+    kind: cover
+    aspectRatio: 16:9
+  - id: shatterverse-gameplay-1
+    source: site-input/assets/shatterverse-gameplay-1.jpg
+    target: serious-sam/shatterverse-gameplay-1.jpg
+    alt: First-person combat against monsters in a Shatterverse arena
+    sourceUrl: https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2067210/4601203879872214818bd830616620a53164d5fe/ss_4601203879872214818bd830616620a53164d5fe.1920x1080.jpg?t=1787672286
+    sourceType: store
+    usageStatus: review-required
+    kind: screenshot
+    aspectRatio: 16:9
+  - id: shatterverse-gameplay-2
+    source: site-input/assets/shatterverse-gameplay-2.jpg
+    target: serious-sam/shatterverse-gameplay-2.jpg
+    alt: Shatterverse combat scene with the player weapon visible in the foreground
+    sourceUrl: https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2067210/3b576cc96c4b2d552245ec7a581713aef8525430/ss_3b576cc96c4b2d552245ec7a581713aef8525430.1920x1080.jpg?t=1787672286
+    sourceType: store
+    usageStatus: review-required
+    kind: screenshot
+    aspectRatio: 16:9
+
+assetBootstrap:
+  allowedHosts:
+    - shared.akamai.steamstatic.com

@@ -1,0 +1,45 @@
+---
+import type { ComponentProps } from 'astro/types';
+import { Icon } from '@astrojs/starlight/components';
+import StatusBadge from './experience/StatusBadge.astro';
+import { categoryOf, guideHref, type GuideEntry } from '../lib/guides';
+import CardThumbnail from './CardThumbnail.astro';
+import { guideCardImageAlt, resolveGuideCardImage } from '../lib/card-images';
+
+interface Props {
+	entry: GuideEntry;
+	featured?: boolean;
+	variant?: 'featured' | 'compact';
+}
+
+const { entry, featured = false, variant } = Astro.props;
+const density = variant ?? (featured ? 'featured' : 'compact');
+const href = guideHref(entry);
+const category = categoryOf(entry);
+const cardImage = resolveGuideCardImage(entry);
+
+type StarlightIconName = ComponentProps<typeof Icon>['name'];
+---
+
+<a class:list={['gw-card', `gw-card--${entry.data.pageType}`, density === 'featured' && 'gw-card--featured']} href={href} data-page-type={entry.data.pageType} data-analytics-event="guide_click" data-analytics-title={entry.data.title} data-analytics-placement="browse_guides">
+	{
+		cardImage && <CardThumbnail class="gw-card__media" image={cardImage} alt={guideCardImageAlt(entry)} />
+	}
+	<span class="gw-card__body">
+		<span class="gw-card__meta">
+			{
+				!cardImage && category && density === 'featured' && (
+					<span class="gw-card__icon" aria-hidden="true">
+						<Icon name={category.icon as StarlightIconName} size="1rem" />
+					</span>
+				)
+			}
+			{(entry.data.eyebrow ?? category?.label) && (
+				<span class="gw-card__category">{entry.data.eyebrow ?? category?.label}</span>
+			)}
+			{entry.data.status && <StatusBadge status={entry.data.status} />}
+		</span>
+		<span class="gw-card__title">{entry.data.title}</span>
+		{entry.data.description && <span class="gw-card__desc">{entry.data.description}</span>}
+	</span>
+</a>

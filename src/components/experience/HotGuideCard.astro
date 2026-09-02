@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import type { GuideEntry } from '../../lib/guides';
+import { guideHref, categoryOf } from '../../lib/guides';
+import { resolveGuideCardImage, guideCardImageAlt } from '../../lib/card-images';
+import StatusBadge from './StatusBadge.astro';
+const { entry } = Astro.props as { entry: GuideEntry };
+const image = resolveGuideCardImage(entry);
+const category = categoryOf(entry);
+---
+<a class="exp-hot-guide" href={guideHref(entry)} data-analytics-event="guide_click" data-analytics-title={entry.data.title} data-analytics-placement="hot_guides">
+	{image && <span class="exp-hot-guide__media"><Image src={image} alt={guideCardImageAlt(entry)} width={800} height={450} loading="lazy" /></span>}
+	<span class="exp-hot-guide__body">
+		<span class="exp-hot-guide__meta">{category?.label ?? entry.data.eyebrow ?? 'Guide'} {entry.data.status && <StatusBadge status={entry.data.status} />}</span>
+		<strong>{entry.data.title}</strong>
+		{entry.data.description && <span>{entry.data.description}</span>}
+	</span>
+</a>

@@ -1,0 +1,47 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+site:
+  id: collision-game
+  mode: hub
+  locale: en
+  siteUrl: https://collision.example
+  hubPath: /collision/
+  title: Collision Wiki
+  shortName: Collision
+  description: Fixture for unmanaged file collision.
+game:
+  name: Collision Game
+  hubTitle: Collision Game Wiki
+  tagline: Collision fixture.
+  releaseStatus: unknown
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms: [PC]
+theme:
+  accentColor: "#222222"
+  heroAssetId: hero
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: Starter category.
+    icon: rocket
+    order: 1
+pages:
+  - id: beginner-guide
+    title: Beginner Guide
+    description: Collides with a hand-written file in tests.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+homepage: {}
+assets:
+  - id: hero
+    source: site-input/assets/hero.svg
+    target: hero/main.svg
+    alt: Hero alt
+    sourceType: user-provided
+    usageStatus: approved

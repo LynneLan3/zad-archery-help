@@ -1,0 +1,72 @@
+[
+  {
+    "route": "/guides/getting-started/",
+    "status": "READY",
+    "title": "Zad Archery Beginner Guide: What the Main Systems Do"
+  },
+  {
+    "route": "/guides/progression/how-long-to-beat-zad-archery/",
+    "status": "READY",
+    "title": "How Long Is Zad Archery? Main Run and 100% Estimate"
+  },
+  {
+    "route": "/guides/progression/demo-save-transfer/",
+    "status": "READY",
+    "title": "Does Zad Archery Demo Progress Carry Over?"
+  },
+  {
+    "route": "/guides/platforms/steam-deck/",
+    "status": "READY",
+    "title": "Zad Archery on Steam Deck: Compatibility and Caveats"
+  },
+  {
+    "route": "/guides/platforms/mobile/",
+    "status": "READY",
+    "title": "Zad Archery Mobile: iOS and Android Availability"
+  },
+  {
+    "route": "/achievements/",
+    "status": "READY_WITH_LIVE_COUNT_NOTE",
+    "title": "Zad Archery Achievements: Current Steam List and Unlocks"
+  },
+  {
+    "route": "/updates/patch-1-0-2/",
+    "status": "READY",
+    "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes"
+  },
+  {
+    "route": "/guides/builds-classes/best-early-build/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "Best Early Build in Zad Archery"
+  },
+  {
+    "route": "/guides/builds-classes/jobs-unlock-order/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "All Zad Archery Jobs and How to Unlock Them"
+  },
+  {
+    "route": "/guides/builds-classes/skill-tree/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "Zad Archery Skill Tree: What to Upgrade First"
+  },
+  {
+    "route": "/guides/crafting-gear/sell-salvage-items/",
+    "status": "HOLD_CURRENT_BUILD_VERIFICATION",
+    "title": "How to Sell or Salvage Items in Zad Archery"
+  },
+  {
+    "route": "/guides/crafting-gear/mining-gems/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "Zad Archery Mining and Monster Gems Guide"
+  },
+  {
+    "route": "/guides/crafting-gear/crafting-upgrades/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "Zad Archery Crafting Guide: What to Upgrade First"
+  },
+  {
+    "route": "/guides/combat-bosses/guardian-king/",
+    "status": "HOLD_GAMEPLAY_EVIDENCE",
+    "title": "Zad Archery Guardian Perks and the King"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "root": "/Users/lanling/Code/hot_words_websites/_g016-v4-cleanroom-emberfall/dist",
+  "pages": [
+    {
+      "file": "index.html",
+      "exists": true,
+      "internalHrefCount": 20,
+      "brokenInternalHrefs": [],
+      "containsLegacyStarter": false
+    },
+    {
+      "file": "search/index.html",
+      "exists": true,
+      "internalHrefCount": 18,
+      "brokenInternalHrefs": [],
+      "containsLegacyStarter": false
+    },
+    {
+      "file": "category/index.html",
+      "exists": true,
+      "internalHrefCount": 17,
+      "brokenInternalHrefs": [],
+      "containsLegacyStarter": false
+    }
+  ]
+}

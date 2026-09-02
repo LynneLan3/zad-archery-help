@@ -1,0 +1,49 @@
+{
+  "entrypoint": "scripts/v4/generate-v4.ts#generateV4Standalone",
+  "canonicalBoundaries": {
+    "homepage": "/",
+    "search": "/search/",
+    "category": "/category/",
+    "pageRoutes": "input pages hrefs"
+  },
+  "reports": [
+    {
+      "fixture": "full",
+      "pages": 11,
+      "routeUnique": true,
+      "navUnique": true,
+      "allUnique": true,
+      "generatedEqual": true,
+      "treeA": {
+        "count": 25,
+        "sha256": "92f2d7cf8cd44a1d6bd13b7c7457ddcf5029952d573ca81209cd492b595122c3"
+      },
+      "treeB": {
+        "count": 25,
+        "sha256": "92f2d7cf8cd44a1d6bd13b7c7457ddcf5029952d573ca81209cd492b595122c3"
+      }
+    },
+    {
+      "fixture": "sparse",
+      "pages": 3,
+      "routeUnique": true,
+      "navUnique": true,
+      "allUnique": true,
+      "generatedEqual": true,
+      "treeA": {
+        "count": 25,
+        "sha256": "1035c09397d3e534f21bd88caa731b0f4c69133ef66bbfdeff5857e9a1b6144f"
+      },
+      "treeB": {
+        "count": 25,
+        "sha256": "1035c09397d3e534f21bd88caa731b0f4c69133ef66bbfdeff5857e9a1b6144f"
+      }
+    }
+  ],
+  "forbiddenRoutes": [
+    "/v4-preview/",
+    "/v4-debug/",
+    "/starter/",
+    "/getting-started/"
+  ]
+}

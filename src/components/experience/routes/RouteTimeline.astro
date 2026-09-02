@@ -1,0 +1,43 @@
+---
+/**
+ * Route Timeline — "Follow the Route" ordered guide list for a Route Hub.
+ *
+ * Preserves the exact site-spec page order (no alphabetic/category/featured
+ * sorting). Each step shows number, optional eyebrow, title, description,
+ * optional image (only when the data provides one), and href.
+ */
+import { assetUrl } from './asset-url';
+import { ui } from '../../../lib/ui';
+import type { GameRoutePage } from '../../../config/game-types';
+
+interface Props {
+	pages: readonly GameRoutePage[];
+}
+
+const { pages } = Astro.props;
+const t = ui();
+---
+
+<div class="exp-route-guide-grid">
+	{pages.map((page, index) => {
+		const imageUrl = assetUrl(page.image);
+		return (
+			<a class="exp-route-step" href={page.href}>
+				<span class="exp-number exp-number--md exp-route-step__number">
+					{String(index + 1).padStart(2, '0')}
+				</span>
+				<div class="exp-route-step__body">
+					{page.eyebrow && <span class="exp-route-step__eyebrow">{page.eyebrow}</span>}
+					<span class="exp-route-step__title">{page.label ?? page.title}</span>
+					<span class="exp-route-step__desc">{page.description}</span>
+					<span class="exp-cta-link exp-route-step__cta">{t.readGuide}</span>
+				</div>
+				{page.image && imageUrl && (
+					<div class="exp-route-step__visual">
+						<img src={imageUrl} alt={`${page.title} preview`} />
+					</div>
+				)}
+			</a>
+		);
+	})}
+</div>

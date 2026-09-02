@@ -1,0 +1,429 @@
+{
+  "input": "site-input/v4-example/site.json",
+  "compositions": [
+    {
+      "prototype": "P1",
+      "pageId": "ember-core",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02"
+        },
+        {
+          "instanceId": "facts",
+          "primitiveId": "E01"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02"
+        },
+        {
+          "instanceId": "facts",
+          "primitiveId": "E01"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ]
+    },
+    {
+      "prototype": "P2",
+      "pageId": "ember-catalog",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "grid",
+          "primitiveId": "E02"
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01"
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02"
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "grid",
+          "primitiveId": "E02"
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01"
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02"
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03"
+        }
+      ]
+    },
+    {
+      "prototype": "P3",
+      "pageId": "class-choice",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "platform",
+          "primitiveId": "S02"
+        },
+        {
+          "instanceId": "comparison",
+          "primitiveId": "D01"
+        },
+        {
+          "instanceId": "matrix",
+          "primitiveId": "D03"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "platform",
+          "primitiveId": "S02"
+        },
+        {
+          "instanceId": "comparison",
+          "primitiveId": "D01"
+        },
+        {
+          "instanceId": "matrix",
+          "primitiveId": "D03"
+        }
+      ]
+    },
+    {
+      "prototype": "P4",
+      "pageId": "forge-guide",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "requirements",
+          "primitiveId": "P01"
+        },
+        {
+          "instanceId": "steps",
+          "primitiveId": "P02"
+        },
+        {
+          "instanceId": "recovery",
+          "primitiveId": "P04"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "requirements",
+          "primitiveId": "P01"
+        },
+        {
+          "instanceId": "steps",
+          "primitiveId": "P02"
+        },
+        {
+          "instanceId": "recovery",
+          "primitiveId": "P04"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ]
+    },
+    {
+      "prototype": "P5",
+      "pageId": "marsh-map",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "location",
+          "primitiveId": "L01"
+        },
+        {
+          "instanceId": "map",
+          "primitiveId": "L02"
+        },
+        {
+          "instanceId": "route",
+          "primitiveId": "L03"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "location",
+          "primitiveId": "L01"
+        },
+        {
+          "instanceId": "map",
+          "primitiveId": "L02"
+        },
+        {
+          "instanceId": "route",
+          "primitiveId": "L03"
+        }
+      ]
+    },
+    {
+      "prototype": "P6",
+      "pageId": "ashfall-progression",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "progress",
+          "primitiveId": "P03"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "progress",
+          "primitiveId": "P03"
+        }
+      ]
+    },
+    {
+      "prototype": "P7",
+      "pageId": "heat-system",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "context",
+          "primitiveId": "A03"
+        },
+        {
+          "instanceId": "formula",
+          "primitiveId": "X03"
+        },
+        {
+          "instanceId": "calculator",
+          "primitiveId": "X04"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "context",
+          "primitiveId": "A03"
+        },
+        {
+          "instanceId": "formula",
+          "primitiveId": "X03"
+        },
+        {
+          "instanceId": "calculator",
+          "primitiveId": "X04"
+        }
+      ]
+    },
+    {
+      "prototype": "P8",
+      "pageId": "season-meta",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "version",
+          "primitiveId": "S01"
+        },
+        {
+          "instanceId": "season",
+          "primitiveId": "S03"
+        },
+        {
+          "instanceId": "freshness",
+          "primitiveId": "S04"
+        },
+        {
+          "instanceId": "ranking",
+          "primitiveId": "D02"
+        },
+        {
+          "instanceId": "tradeoffs",
+          "primitiveId": "D01"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "version",
+          "primitiveId": "S01"
+        },
+        {
+          "instanceId": "season",
+          "primitiveId": "S03"
+        },
+        {
+          "instanceId": "freshness",
+          "primitiveId": "S04"
+        },
+        {
+          "instanceId": "ranking",
+          "primitiveId": "D02"
+        },
+        {
+          "instanceId": "tradeoffs",
+          "primitiveId": "D01"
+        }
+      ]
+    },
+    {
+      "prototype": "P9",
+      "pageId": "armory-db",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01"
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02"
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03"
+        },
+        {
+          "instanceId": "workspace",
+          "primitiveId": "X05"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "workspace",
+          "primitiveId": "X05"
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01"
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02"
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03"
+        }
+      ]
+    },
+    {
+      "prototype": "P10",
+      "pageId": "ashfall-calendar",
+      "inputPrimitiveInstances": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "period",
+          "primitiveId": "S03"
+        },
+        {
+          "instanceId": "freshness",
+          "primitiveId": "S04"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ],
+      "composedOrder": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01"
+        },
+        {
+          "instanceId": "period",
+          "primitiveId": "S03"
+        },
+        {
+          "instanceId": "freshness",
+          "primitiveId": "S04"
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01"
+        }
+      ]
+    }
+  ]
+}

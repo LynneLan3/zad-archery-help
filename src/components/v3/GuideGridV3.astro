@@ -1,0 +1,6 @@
+---
+import type { GuideEntry } from '../../lib/guides';
+import GuideCardV3 from './GuideCardV3.astro';
+const { entries } = Astro.props as { entries: GuideEntry[] };
+---
+<div class="v3-grid">{entries.map((entry) => <GuideCardV3 entry={entry} />)}</div>

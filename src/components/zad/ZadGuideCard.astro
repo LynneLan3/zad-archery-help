@@ -1,0 +1,8 @@
+---
+const { page, label = 'Guide' } = Astro.props as { page: any; label?: string };
+const image = page.pageData?.media?.[0]?.localRef;
+---
+<a class="zad-card" href={page.href}>
+  <div class="zad-card-media">{image && <img src={image} alt={`${page.title} cover image`} loading="lazy" width="720" height="420" />}</div>
+  <div class="zad-card-body"><span class="zad-label">{label}</span><h3>{page.title}</h3><p>{page.pageData?.page?.playerProblem ?? 'Open the guide for a verified answer.'}</p><span class="zad-card-link">Read guide <span aria-hidden="true">→</span></span></div>
+</a>

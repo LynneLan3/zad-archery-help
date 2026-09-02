@@ -1,0 +1,12 @@
+---
+import { statusLabel } from '../lib/ui';
+import type { GuideStatusValue } from '../lib/status';
+
+interface Props {
+	status: GuideStatusValue;
+}
+
+const { status } = Astro.props;
+---
+
+<span class:list={['gw-status', `gw-status--${status}`]}>{statusLabel(status)}</span>

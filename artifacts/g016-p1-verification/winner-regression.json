@@ -1,0 +1,587 @@
+{
+  "winnerCount": 44,
+  "results": [
+    {
+      "winnerId": 1,
+      "query": "bg3 classes",
+      "expectedPrototype": "P3",
+      "input": {
+        "query": "bg3 classes",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "choice-comparison",
+      "actualPrototype": "P3",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 2,
+      "query": "bg3 companions",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "bg3 companions",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 3,
+      "query": "bg3 adamantine forge",
+      "expectedPrototype": "P5",
+      "input": {
+        "query": "bg3 adamantine forge",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "location",
+      "actualPrototype": "P5",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 4,
+      "query": "bg3 quests",
+      "expectedPrototype": "P6",
+      "input": {
+        "query": "bg3 quests",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "progression",
+      "actualPrototype": "P6",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 5,
+      "query": "bg3 weapons",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "bg3 weapons",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 6,
+      "query": "white lady hollow knight",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "white lady hollow knight",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 7,
+      "query": "dream nail",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "dream nail",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 8,
+      "query": "hollow knight charms",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "hollow knight charms",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 9,
+      "query": "hornet hollow knight",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "hornet hollow knight",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 10,
+      "query": "minecraft villager",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "minecraft villager",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 11,
+      "query": "minecraft cake",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "minecraft cake",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 12,
+      "query": "minecraft mobs",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "minecraft mobs",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 13,
+      "query": "best minecraft enchantments",
+      "expectedPrototype": "P8",
+      "input": {
+        "query": "best minecraft enchantments",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "recommendation",
+      "actualPrototype": "P8",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 14,
+      "query": "minecraft enchantments",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "minecraft enchantments",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 15,
+      "query": "stardew valley farming",
+      "expectedPrototype": "P6",
+      "input": {
+        "query": "stardew valley farming",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "progression",
+      "actualPrototype": "P6",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 16,
+      "query": "stardew valley fall",
+      "expectedPrototype": "P10",
+      "input": {
+        "query": "stardew valley fall",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "planning",
+      "actualPrototype": "P10",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 17,
+      "query": "stardew valley crafting",
+      "expectedPrototype": "P4",
+      "input": {
+        "query": "stardew valley crafting",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "procedure",
+      "actualPrototype": "P4",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 18,
+      "query": "stardew valley summer seeds",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "stardew valley summer seeds",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 19,
+      "query": "stardew valley cauliflower",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "stardew valley cauliflower",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 20,
+      "query": "poe currency",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "poe currency",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 21,
+      "query": "poe ascendancy class",
+      "expectedPrototype": "P3",
+      "input": {
+        "query": "poe ascendancy class",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "choice-comparison",
+      "actualPrototype": "P3",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 22,
+      "query": "poe skill gems",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "poe skill gems",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 23,
+      "query": "terraria bosses",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "terraria bosses",
+        "playerProblem": "answer the query",
+        "evidence": {
+          "answerShape": "catalog"
+        }
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "answer-shape",
+      "match": true
+    },
+    {
+      "winnerId": 24,
+      "query": "terraria hardmode guide",
+      "expectedPrototype": "P6",
+      "input": {
+        "query": "terraria hardmode guide",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "progression",
+      "actualPrototype": "P6",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 25,
+      "query": "terraria wings",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "terraria wings",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 26,
+      "query": "terraria npcs",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "terraria npcs",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 27,
+      "query": "terraria shimmer",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "terraria shimmer",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 28,
+      "query": "diablo 4 builds",
+      "expectedPrototype": "P8",
+      "input": {
+        "query": "diablo 4 builds",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "recommendation",
+      "actualPrototype": "P8",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 29,
+      "query": "diablo 4 build planner",
+      "expectedPrototype": "P9",
+      "input": {
+        "query": "diablo 4 build planner",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "tool-database",
+      "actualPrototype": "P9",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 30,
+      "query": "diablo 4 uniques",
+      "expectedPrototype": "P9",
+      "input": {
+        "query": "diablo 4 uniques",
+        "playerProblem": "answer the query",
+        "evidence": {
+          "answerShape": "tool"
+        }
+      },
+      "actualPrimaryTask": "tool-database",
+      "actualPrototype": "P9",
+      "basis": "answer-shape",
+      "match": true
+    },
+    {
+      "winnerId": 31,
+      "query": "no hesitation",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "no hesitation",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 32,
+      "query": "eyasluna",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "eyasluna",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 33,
+      "query": "matador 64",
+      "expectedPrototype": "P1",
+      "input": {
+        "query": "matador 64",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "entity-lookup",
+      "actualPrototype": "P1",
+      "basis": "game-prior",
+      "match": true
+    },
+    {
+      "winnerId": 34,
+      "query": "destiny 2 god rolls",
+      "expectedPrototype": "P8",
+      "input": {
+        "query": "destiny 2 god rolls",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "recommendation",
+      "actualPrototype": "P8",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 35,
+      "query": "destiny 2 loadouts",
+      "expectedPrototype": "P9",
+      "input": {
+        "query": "destiny 2 loadouts",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "tool-database",
+      "actualPrototype": "P9",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 36,
+      "query": "ark taming",
+      "expectedPrototype": "P4",
+      "input": {
+        "query": "ark taming",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "procedure",
+      "actualPrototype": "P4",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 37,
+      "query": "ark resource map the island",
+      "expectedPrototype": "P5",
+      "input": {
+        "query": "ark resource map the island",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "location",
+      "actualPrototype": "P5",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 38,
+      "query": "ark creatures",
+      "expectedPrototype": "P2",
+      "input": {
+        "query": "ark creatures",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "collection-browse",
+      "actualPrototype": "P2",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 39,
+      "query": "ark bosses",
+      "expectedPrototype": "P6",
+      "input": {
+        "query": "ark bosses",
+        "playerProblem": "answer the query",
+        "evidence": {
+          "answerShape": "progression"
+        }
+      },
+      "actualPrimaryTask": "progression",
+      "actualPrototype": "P6",
+      "basis": "answer-shape",
+      "match": true
+    },
+    {
+      "winnerId": 40,
+      "query": "satisfactory dedicated server",
+      "expectedPrototype": "P4",
+      "input": {
+        "query": "satisfactory dedicated server",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "procedure",
+      "actualPrototype": "P4",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 41,
+      "query": "satisfactory blueprints",
+      "expectedPrototype": "P4",
+      "input": {
+        "query": "satisfactory blueprints",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "procedure",
+      "actualPrototype": "P4",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 42,
+      "query": "satisfactory power",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "satisfactory power",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 43,
+      "query": "satisfactory fluids guide",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "satisfactory fluids guide",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    },
+    {
+      "winnerId": 44,
+      "query": "satisfactory train throughput",
+      "expectedPrototype": "P7",
+      "input": {
+        "query": "satisfactory train throughput",
+        "playerProblem": "answer the query"
+      },
+      "actualPrimaryTask": "mechanics",
+      "actualPrototype": "P7",
+      "basis": "query-semantics",
+      "match": true
+    }
+  ],
+  "mismatchCount": 0
+}

@@ -1,0 +1,14 @@
+---
+import { game } from '../../config/game';
+import { v3NavItems } from '../../lib/v3/presentation';
+import '../../styles/v3/presentation.css';
+
+interface Props { title?: string; description?: string; canonical?: string; activePath?: string; }
+const { title = game.title ?? game.shortName, description, canonical, activePath = '' } = Astro.props;
+const nav = v3NavItems();
+---
+<div class="v3-shell" data-v3 data-v3-title={title} data-v3-description={description} data-v3-canonical={canonical}>
+<header class="v3-shell__header"><div class="v3-shell__bar"><a class="v3-shell__brand" href={game.hubPath}>{game.shortName}</a><button class="v3-shell__search" type="button" aria-label="Search">Search</button></div><nav class="v3-shell__nav" aria-label="Primary navigation">{nav.map((item) => <a href={item.href} aria-current={activePath === item.href ? 'page' : undefined}>{item.label}</a>)}</nav></header>
+<main class="v3-shell__main"><slot /></main>
+<div class="v3-shell__footer-wrap"><footer class="v3-shell__footer"><a href={`${game.hubPath}#about`}>About</a><p>{game.disclaimer ?? game.title}</p></footer></div>
+</div>

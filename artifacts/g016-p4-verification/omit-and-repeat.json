@@ -1,0 +1,86 @@
+{
+  "omit": {
+    "recipe": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "L01",
+        "status": "include",
+        "reason": "Spatial intent can be answered with location facts."
+      },
+      {
+        "primitiveId": "L02",
+        "status": "omit",
+        "reason": "Map needs reliable spatial data."
+      },
+      {
+        "primitiveId": "L03",
+        "status": "omit",
+        "reason": "Route needs reliable route data."
+      }
+    ],
+    "composed": [
+      {
+        "instanceId": "location",
+        "primitiveId": "L01"
+      }
+    ]
+  },
+  "repeat": {
+    "input": [
+      {
+        "instanceId": "facts-a",
+        "primitiveId": "E01",
+        "payload": {
+          "facts": [
+            {
+              "label": "Type",
+              "value": "Resource"
+            }
+          ]
+        }
+      },
+      {
+        "instanceId": "facts-b",
+        "primitiveId": "E01",
+        "payload": {
+          "facts": [
+            {
+              "label": "Use",
+              "value": "Forge"
+            }
+          ]
+        }
+      }
+    ],
+    "composed": [
+      {
+        "instanceId": "facts-a",
+        "primitiveId": "E01",
+        "payload": {
+          "facts": [
+            {
+              "label": "Type",
+              "value": "Resource"
+            }
+          ]
+        }
+      },
+      {
+        "instanceId": "facts-b",
+        "primitiveId": "E01",
+        "payload": {
+          "facts": [
+            {
+              "label": "Use",
+              "value": "Forge"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

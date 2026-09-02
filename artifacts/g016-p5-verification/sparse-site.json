@@ -1,0 +1,56 @@
+{
+  "input": {
+    "pageIds": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "homepage": {
+    "pageIds": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "sections": {
+      "startHere": [
+        "s2",
+        "s3"
+      ],
+      "browse": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "search": {
+    "count": 3,
+    "pageIds": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "category": {
+    "groups": [
+      {
+        "id": "only",
+        "pageIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "navigation": {
+    "pageIds": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "allPageIdsExist": true
+  },
+  "noEmberfallFallback": true
+}

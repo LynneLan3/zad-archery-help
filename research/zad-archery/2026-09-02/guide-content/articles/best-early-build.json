@@ -1,0 +1,26 @@
+{
+  "slug": "best-early-build",
+  "route": "/guides/builds-classes/best-early-build/",
+  "title_draft": "Best Early Build in Zad Archery",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "There are five Archer Jobs.",
+    "The game has a large skill tree and multiple upgradeable skills."
+  ],
+  "missing_before_publish": [
+    "exact live job names",
+    "unlock order/conditions",
+    "current skill tree node names",
+    "early-game damage/survival tradeoffs",
+    "repeatable comparison evidence for at least 2 build paths"
+  ],
+  "capture_targets": [
+    "job selection screen",
+    "skill tree before/after early progression",
+    "combat result with candidate early builds"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S14_DEMO_STORE"
+  ]
+}

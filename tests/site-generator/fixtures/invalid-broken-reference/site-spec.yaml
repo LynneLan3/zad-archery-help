@@ -1,0 +1,52 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+site:
+  id: broken-ref-game
+  mode: hub
+  locale: en
+  siteUrl: https://broken-ref.example
+  hubPath: /broken-ref/
+  title: Broken Ref Wiki
+  shortName: Broken Ref
+  description: Fixture for broken page references.
+game:
+  name: Broken Ref Game
+  hubTitle: Broken Ref Game Wiki
+  tagline: Broken reference fixture.
+  releaseStatus: announced
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms: [PC]
+theme:
+  accentColor: "#abcdef"
+  heroAssetId: hero
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: Starter category.
+    icon: rocket
+    order: 1
+pages:
+  - id: beginner-guide
+    title: Beginner Guide
+    description: Has a bad related id.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+    related:
+      - system-requirements
+homepage:
+  primaryCta:
+    label: Missing page
+    pageId: does-not-exist
+assets:
+  - id: hero
+    source: site-input/assets/hero.svg
+    target: hero/main.svg
+    alt: Hero alt
+    sourceType: user-provided
+    usageStatus: approved

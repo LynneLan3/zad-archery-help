@@ -1,0 +1,19 @@
+# Source Registry
+
+| ID | Tier | Source | Primary use |
+|---|---|---|---|
+| `S01_STEAM_STORE` | A_OFFICIAL | [Zad Archery on Steam](https://store.steampowered.com/app/4412000/Zad_Archery/) | release date 2026-09-01; developer/publisher Samharia Studios; core systems: skill tree, 5 Archer jobs, loot, skills, crafting, mining, Shaping, Masteries, Guardian Perks |
+| `S02_STEAM_NEWS_RELEASE_INFO` | A_OFFICIAL | [Zad Archery Releases in 24 Hours + Info](https://store.steampowered.com/news/app/4412000/view/703277854914249378) | developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems |
+| `S03_PATCH_1_0_2` | A_OFFICIAL_VIA_STEAMDB | [Patch 1.0.2](https://steamdb.info/patchnotes/25063956/) | monster gems below highest level bug fixed; missing Guardian could lock the King and was fixed; Defeat the King achievement unlock issue fixed |
+| `S04_STEAM_DECK` | A_STEAM_METADATA_VIA_STEAMDB | [Zad Archery Steam configuration](https://steamdb.info/app/4412000/config/) | Steam Deck category Playable; default controller configuration exposes all functionality; text is legible |
+| `S05_STEAM_CHARTS` | B_METADATA_DYNAMIC | [Zad Archery Steam charts](https://steamdb.info/app/4412000/charts/) | launch traction snapshot; all-time/24h peak snapshot; followers snapshot |
+| `S06_REDDIT_RELEASE` | B_DEVELOPER_AND_COMMUNITY | [Zad Archery Has Been Released!](https://www.reddit.com/r/incremental_games/comments/1w4bc84/zad_archery_has_been_released/) | developer confirms demo save cannot carry because full game changed significantly; developer links iOS and Android releases; developer says mobile versions have no IAP/no ads |
+| `S07_REDDIT_DEMO` | B_DEVELOPER_AND_COMMUNITY | [Zad Archery incremental game demo post](https://www.reddit.com/r/incremental_games/comments/1rueoa3/zad_archery_an_incremental_game_about_looting/) | demo included skill tree, crafting/items, jobs/skills; inventory/crafting/selling usability questions existed before release |
+| `S08_ITCH` | B_DEVELOPER | [Zad Archery by Samharia](https://samharia.itch.io/zad-archery) | skill tree, 5 jobs, loot, skills, crafting; alchemy; gathering including mining and herbing |
+| `S09_STEAM_DISCUSSIONS` | C_COMMUNITY_INTENT | [Zad Archery General Discussions](https://steamcommunity.com/app/4412000/discussions/0/) | live player questions include duration, demo progression, selling items, selecting archer; community intent discovery |
+| `S10_SELLING_THREAD` | C_COMMUNITY_DEMO | [Selling items is clunky](https://steamcommunity.com/app/4412000/discussions/0/589559717132711412/) | demo-era selling/salvage control discussion; Steam Deck selling concern in demo |
+| `S11_FEEDBACK_THREAD` | C_COMMUNITY_DEMO | [Some feedback](https://steamcommunity.com/app/4412000/discussions/0/767437664460887567/) | players discuss crafting compare-to-equipped, forging, movement speed, regen |
+| `S12_ACHIEVEMENTS` | B_LIVE_METADATA | [Zad Archery Achievements - Exophase](https://www.exophase.com/game/zad-archery-steam/achievements/) | 12 currently exposed achievement names and unlock descriptions |
+| `S13_OFFICIAL_TRAILER` | A_OFFICIAL_MEDIA | [Zad Archery - Official Trailer](https://www.youtube.com/watch?v=58d3mBSc6LU) | official gameplay visual reference; gameplay/media evidence candidate |
+| `S14_DEMO_STORE` | A_OFFICIAL | [Zad Archery Demo Steam page](https://store.steampowered.com/app/4432820/Zad_Archery_Demo/) | demo had first and second job classes, first four skills, loot/items and crafting; full version described as adding three job classes, 15+ skills, deeper crafting, alchemy, gathering, card shaping |
+| `S15_ITCH_COMMENTS` | C_COMMUNITY_DEMO | [Zad Archery itch.io comments](https://samharia.itch.io/zad-archery/comments) | real player UX questions around inventory, equipping and selling; positive interest in UI and skill tree |

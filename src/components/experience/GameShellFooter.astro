@@ -1,0 +1,27 @@
+---
+/**
+ * GameShellFooter — reusable experience footer fragment.
+ * Body-level markup (no document wrapper) so it works both inside `GameShell`
+ * and inside the Starlight shell on Experience Guide pages.
+ */
+import type { FooterLink } from './GameShell.astro';
+
+interface Props {
+	footerLinks?: FooterLink[];
+	footerText?: string;
+	siteTitle?: string;
+}
+
+const { footerLinks = [], footerText, siteTitle } = Astro.props;
+---
+
+<footer class="exp-footer">
+	<p>{footerText ?? siteTitle ?? ''}</p>
+	{footerLinks.length > 0 && (
+		<div class="exp-footer__links">
+			{footerLinks.map((link) => (
+				<a href={link.href}>{link.label}</a>
+			))}
+		</div>
+	)}
+</footer>

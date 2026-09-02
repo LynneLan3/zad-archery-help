@@ -1,0 +1,8 @@
+{
+  "page": "P1 Entity — Ember Core",
+  "url": "/v4-preview/ember-core/",
+  "prototype": "P1",
+  "desktop": "desktop.png",
+  "mobile": "mobile.png",
+  "revision": "Entity media is rendered in the identity header; repeated source copy is reduced."
+}

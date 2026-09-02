@@ -1,0 +1,20 @@
+---
+import type { V4Navigation } from '../../v4/navigation';
+const { game, navigation, currentPageId } = Astro.props as { game: { name: string; slug?: string; identityAsset?: string; identityLabel?: string }; navigation: V4Navigation; currentPageId?: string };
+const searchUtility = navigation.utilities?.find((item) => item.id === 'search');
+const homeHref = navigation.primary.find((item) => item.id === 'home')?.href ?? '/';
+const activeCategory = navigation.primary.find((item) => item.id === currentPageId || item.pageId === currentPageId || item.groups?.some((group) => group.items.some((entry) => entry.pageId === currentPageId)));
+const isActive = (item: { id?: string; pageId?: string; groups?: readonly { items: readonly { pageId?: string }[] }[] }) => item.id === currentPageId || item.pageId === currentPageId || item.groups?.some((group) => group.items.some((entry) => entry.pageId === currentPageId));
+const searchIsActive = searchUtility?.id === currentPageId;
+---
+<header class="v4-global-header">
+  <div class="v4-global-header-main">
+    <a class="v4-global-brand" href={homeHref}><span class="v4-mark" data-game-mark={game.slug ?? game.name}>{game.identityAsset ? <img src={game.identityAsset} alt="Zad Archery logo" width="64" height="64" /> : <svg viewBox="0 0 32 32" role="img"><path d="M16 2c2 7 10 8 10 17a10 10 0 1 1-20 0c0-4 2-7 6-10-1 5 1 7 4 8-1-5 1-10 0-15Z" /></svg>}</span><span>{game.name}<small class="v4-brand-subtitle">{game.identityLabel ?? 'Field guide'}</small></span></a>
+    <nav class="v4-primary-nav" aria-label="Primary navigation">
+      {navigation.primary.map((item) => <a class:list={{ 'is-active': isActive(item) }} aria-current={isActive(item) ? 'page' : undefined} href={item.href}>{item.label}</a>)}
+    </nav>
+    {searchUtility && <a class:list={['v4-global-search', searchIsActive && 'is-active']} aria-current={searchIsActive ? 'page' : undefined} href={searchUtility.href} aria-label={`Search ${game.name}`}>{searchUtility.label}</a>}
+    <details class="v4-mobile-menu"><summary>Menu</summary><div class="v4-mobile-menu-panel"><nav aria-label="Mobile primary navigation">{navigation.primary.map((item) => <a class:list={{ 'is-active': isActive(item) }} aria-current={isActive(item) ? 'page' : undefined} href={item.href}>{item.label}</a>)}</nav>{searchUtility && <a class:list={{ 'is-active': searchIsActive }} aria-current={searchIsActive ? 'page' : undefined} href={searchUtility.href}>{searchUtility.label} the guide</a>}</div></details>
+  </div>
+  {activeCategory?.groups?.length && <nav class="v4-secondary-nav" aria-label={`${activeCategory.label} sections`}>{activeCategory.groups.map((group) => <details><summary>{group.label}</summary><div>{group.items.map((item) => <a class:list={{ 'is-active': item.pageId === currentPageId }} aria-current={item.pageId === currentPageId ? 'page' : undefined} href={item.href}>{item.label}</a>)}</div></details>)}</nav>}
+</header>

@@ -1,0 +1,14 @@
+---
+interface Props { status: string; label?: string }
+const { status, label } = Astro.props;
+const normalized = status.toLowerCase();
+const tone = normalized.includes('fix') || normalized.includes('confirmed') ? 'fixed'
+	: normalized.includes('workaround') || normalized.includes('needs') ? 'workaround'
+	: normalized.includes('bug') || normalized.includes('ongoing') ? 'ongoing'
+	: normalized.includes('verified') ? 'verified'
+	: normalized.includes('new') ? 'new'
+	: normalized.includes('updated') ? 'updated'
+	: normalized.includes('missable') ? 'missable' : 'neutral';
+const display = label ?? status.replace(/-/g, ' ');
+---
+<span class:list={['exp-status-badge', `exp-status-badge--${tone}`]}>{display}</span>

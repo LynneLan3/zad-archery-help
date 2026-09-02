@@ -1,0 +1,573 @@
+{
+  "game": {
+    "name": "Sucker for Love: Crush Landing",
+    "slug": "sucker-for-love-crush-landing",
+    "accent": "#ef6f9c",
+    "accentForeground": "#190710",
+    "identity": {
+      "palette": {
+        "background": "#140b12",
+        "panel": "#25131e",
+        "ink": "#fff0f5"
+      },
+      "typography": "sans"
+    }
+  },
+  "navigation": {
+    "primary": [
+      {
+        "id": "home",
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "id": "guide",
+        "label": "Guide",
+        "href": "/category/",
+        "groups": [
+          {
+            "id": "start",
+            "label": "Start here",
+            "items": [
+              {
+                "id": "overview",
+                "label": "Overview",
+                "href": "/overview/",
+                "pageId": "overview"
+              },
+              {
+                "id": "official-features",
+                "label": "Official features",
+                "href": "/official-features/",
+                "pageId": "official-features"
+              },
+              {
+                "id": "start-with-the-demo",
+                "label": "Start with the demo",
+                "href": "/start-with-the-demo/",
+                "pageId": "start-with-the-demo"
+              }
+            ]
+          },
+          {
+            "id": "before-playing",
+            "label": "Before playing",
+            "items": [
+              {
+                "id": "pc-requirements",
+                "label": "PC requirements",
+                "href": "/pc-requirements/",
+                "pageId": "pc-requirements"
+              },
+              {
+                "id": "content-notes",
+                "label": "Content notes",
+                "href": "/content-notes/",
+                "pageId": "content-notes"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "utilities": [
+      {
+        "id": "search",
+        "label": "Search",
+        "href": "/search/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Sucker for Love: Crush Landing overview",
+      "href": "/overview/",
+      "query": "Sucker for Love Crush Landing overview",
+      "playerProblem": "understand the official premise, release, and basic platform details before playing",
+      "primaryTask": "entity-lookup",
+      "priority": 10,
+      "facts": [
+        {
+          "id": "premise",
+          "label": "Premise",
+          "value": "Hheily, a sentient comet, crash-lands in the protagonist's apartment; the story asks the player to feed her flame.",
+          "verified": true
+        },
+        {
+          "id": "format",
+          "label": "Format",
+          "value": "Horror-comedy visual novel.",
+          "verified": true
+        },
+        {
+          "id": "developer",
+          "label": "Developer",
+          "value": "Akabaka.",
+          "verified": true
+        },
+        {
+          "id": "publisher",
+          "label": "Publisher",
+          "value": "Black Lantern Collective.",
+          "verified": true
+        },
+        {
+          "id": "release-date",
+          "label": "Steam release date",
+          "value": "August 31, 2026.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "steam-store-3848900",
+          "sourceType": "official-store",
+          "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/",
+          "finding": "Steam's official listing identifies the game, its premise, developer, publisher, and release date.",
+          "lastVerified": "2026-09-01"
+        }
+      ],
+      "freshness": {
+        "platform": "PC / Steam",
+        "dataWindow": "Official listing checked 2026-09-01"
+      },
+      "pagePackage": {
+        "body": {
+          "intro": "This launch profile keeps to information stated by the official Steam listing. It does not claim walkthrough, endings, or puzzle details that have not yet been verified from an authoritative source.",
+          "sections": [
+            {
+              "id": "scope",
+              "title": "What this first guide covers",
+              "paragraphs": [
+                "Use the pages here to confirm the official premise, platform information, stated features, demo entry point, minimum PC requirements, and content notice before starting."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "official-source",
+              "question": "Where do these launch facts come from?",
+              "answer": "They are taken from the official Steam listing for App ID 3848900, checked on September 1, 2026."
+            }
+          ]
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "overview-header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Sucker for Love: Crush Landing",
+            "task": "Official overview",
+            "subject": "Launch profile"
+          },
+          "evidenceRefs": ["steam-store-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "overview-answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Sucker for Love: Crush Landing is a horror-comedy visual novel from Akabaka, released on Steam on August 31, 2026.",
+            "qualifier": "The premise centers on Hheily, a sentient comet who crash-lands in the protagonist's apartment.",
+            "nextAction": "/official-features/"
+          },
+          "evidenceRefs": ["steam-store-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "overview-facts",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              { "label": "Developer", "value": "Akabaka" },
+              { "label": "Publisher", "value": "Black Lantern Collective" },
+              { "label": "Steam release", "value": "August 31, 2026" },
+              { "label": "Platform scope", "value": "PC / Steam" }
+            ]
+          },
+          "evidenceRefs": ["steam-store-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "overview-next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/official-features/",
+                "label": "Browse official features",
+                "reason": "See the features the official listing describes."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "official-features",
+      "title": "Official features",
+      "href": "/official-features/",
+      "query": "Sucker for Love Crush Landing features",
+      "playerProblem": "browse the features confirmed on the official Steam listing",
+      "primaryTask": "collection-browse",
+      "priority": 9,
+      "evidence": [
+        {
+          "evidenceId": "steam-features-3848900",
+          "sourceType": "official-store",
+          "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/",
+          "finding": "Steam's official feature list describes multiple endings, fully voiced dialogue, hand-crafted music and artwork, and 360-degree hand-drawn 2D apartment environments.",
+          "lastVerified": "2026-09-01"
+        }
+      ],
+      "freshness": {
+        "platform": "PC / Steam",
+        "dataWindow": "Official listing checked 2026-09-01"
+      },
+      "pagePackage": {
+        "body": {
+          "intro": "This is a browseable restatement of the official feature list, not a ranking or a claim about content the store page does not describe.",
+          "sections": [],
+          "faq": []
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "features-header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Official features",
+            "task": "Feature browse",
+            "subject": "Steam listing"
+          },
+          "evidenceRefs": ["steam-features-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "features-grid",
+          "primitiveId": "E02",
+          "payload": {
+            "group": "Listed by the official Steam page",
+            "entities": [
+              {
+                "id": "story",
+                "name": "Horror, comedy, and romance story",
+                "summary": "The store describes a story drawing on Lovecraftian horror and romance.",
+                "meta": "Official description"
+              },
+              {
+                "id": "endings",
+                "name": "Multiple endings",
+                "summary": "The official listing says actions can lead to multiple endings.",
+                "meta": "Official feature"
+              },
+              {
+                "id": "dialogue",
+                "name": "Fully voiced dialogue",
+                "summary": "The listing describes thousands of lines of fully voiced dialogue.",
+                "meta": "Official feature"
+              },
+              {
+                "id": "art-and-music",
+                "name": "Hand-crafted art and music",
+                "summary": "The official listing describes hand-crafted music and artwork in an old-school anime and visual-novel style.",
+                "meta": "Official feature"
+              },
+              {
+                "id": "apartment",
+                "name": "360-degree apartment environments",
+                "summary": "The apartment is described as hand-drawn 2D environments presented in 360 degrees.",
+                "meta": "Official feature"
+              }
+            ]
+          },
+          "evidenceRefs": ["steam-features-3848900"],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "start-with-the-demo",
+      "title": "Start with the official demo",
+      "href": "/start-with-the-demo/",
+      "query": "Sucker for Love Crush Landing demo",
+      "playerProblem": "find the official demo entry point before buying or playing the full game",
+      "primaryTask": "procedure",
+      "primitiveSupport": {
+        "P01": "available"
+      },
+      "priority": 8,
+      "evidence": [
+        {
+          "evidenceId": "steam-demo-3848900",
+          "sourceType": "official-store",
+          "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/",
+          "finding": "The official Steam listing includes a Download Demo entry point.",
+          "lastVerified": "2026-09-01"
+        }
+      ],
+      "freshness": {
+        "platform": "PC / Steam",
+        "dataWindow": "Official listing checked 2026-09-01"
+      },
+      "pagePackage": {
+        "body": {
+          "intro": "These steps only point to the official Steam demo entry point. They deliberately do not present an in-game route, puzzle solution, or ending path.",
+          "sections": [],
+          "faq": [
+            {
+              "id": "demo-source",
+              "question": "Where is the demo listed?",
+              "answer": "The official Steam store page for the game includes the Download Demo entry point."
+            }
+          ]
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "demo-header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Start with the official demo",
+            "task": "Find the demo",
+            "subject": "Steam"
+          },
+          "evidenceRefs": ["steam-demo-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "demo-requirements",
+          "primitiveId": "P01",
+          "payload": {
+            "requirements": [
+              {
+                "id": "steam-listing",
+                "label": "Official Steam listing",
+                "status": "required",
+                "howToMeet": "Open the game's official Steam store page."
+              },
+              {
+                "id": "pc-check",
+                "label": "Compatible PC",
+                "status": "check",
+                "howToMeet": "Compare the PC requirements page with your system before installing."
+              }
+            ]
+          },
+          "evidenceRefs": ["steam-demo-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "demo-steps",
+          "primitiveId": "P02",
+          "payload": {
+            "steps": [
+              {
+                "id": "open-store",
+                "order": 1,
+                "action": "Open the official Sucker for Love: Crush Landing Steam listing.",
+                "result": "The game page shows its official store information and demo entry point.",
+                "evidenceRefs": ["steam-demo-3848900"]
+              },
+              {
+                "id": "choose-demo",
+                "order": 2,
+                "action": "Choose the Download Demo entry on the Steam listing.",
+                "result": "Continue through Steam's install flow for the demo."
+              }
+            ]
+          },
+          "evidenceRefs": ["steam-demo-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "demo-next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/pc-requirements/",
+                "label": "Check PC requirements",
+                "reason": "Confirm the official minimum Windows and memory requirement first."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "pc-requirements",
+      "title": "PC requirements",
+      "href": "/pc-requirements/",
+      "query": "Sucker for Love Crush Landing system requirements",
+      "playerProblem": "check the minimum PC requirements stated by the official Steam listing",
+      "primaryTask": "entity-lookup",
+      "priority": 7,
+      "facts": [
+        {
+          "id": "os",
+          "label": "Minimum operating system",
+          "value": "Windows 10.",
+          "verified": true
+        },
+        {
+          "id": "memory",
+          "label": "Minimum memory",
+          "value": "4 GB RAM.",
+          "verified": true
+        },
+        {
+          "id": "language",
+          "label": "Listed language support",
+          "value": "English interface, full audio, and subtitles.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "steam-requirements-3848900",
+          "sourceType": "official-store",
+          "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/",
+          "finding": "Steam lists Windows 10 and 4 GB RAM as the minimum PC requirements, and lists English interface, full audio, and subtitles.",
+          "lastVerified": "2026-09-01"
+        }
+      ],
+      "freshness": {
+        "platform": "PC / Steam",
+        "dataWindow": "Official listing checked 2026-09-01"
+      },
+      "pagePackage": {
+        "body": {
+          "intro": "These are the minimum requirements shown on the official Steam listing, not an independent performance guarantee for every PC configuration.",
+          "sections": [],
+          "faq": []
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "requirements-header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "PC requirements",
+            "task": "Check requirements",
+            "subject": "Steam minimums"
+          },
+          "evidenceRefs": ["steam-requirements-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "requirements-answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Steam lists Windows 10 and 4 GB RAM as the minimum requirements for Sucker for Love: Crush Landing.",
+            "qualifier": "Check the current Steam listing for the full and most recent requirements before installing.",
+            "nextAction": "/start-with-the-demo/"
+          },
+          "evidenceRefs": ["steam-requirements-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "requirements-facts",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              { "label": "Operating system", "value": "Windows 10" },
+              { "label": "Memory", "value": "4 GB RAM" },
+              { "label": "Interface", "value": "English" },
+              { "label": "Audio and subtitles", "value": "English" }
+            ]
+          },
+          "evidenceRefs": ["steam-requirements-3848900"],
+          "mediaRefs": []
+        }
+      ]
+    },
+    {
+      "id": "content-notes",
+      "title": "Content notes",
+      "href": "/content-notes/",
+      "query": "Sucker for Love Crush Landing content warning",
+      "playerProblem": "check the developer's mature-content notice before playing",
+      "primaryTask": "entity-lookup",
+      "priority": 6,
+      "facts": [
+        {
+          "id": "adult-themes",
+          "label": "Developer content notice",
+          "value": "The game engages with adult themes and some comically disturbing body horror.",
+          "verified": true
+        },
+        {
+          "id": "explicit-content",
+          "label": "Explicit content",
+          "value": "The developer states that the game does not feature explicit content.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "steam-mature-content-3848900",
+          "sourceType": "official-store",
+          "sourceRef": "https://store.steampowered.com/app/3848900/Sucker_for_Love_Crush_Landing/",
+          "finding": "The developer's Steam mature-content notice mentions adult themes and comically disturbing body horror, and says the game does not feature explicit content.",
+          "lastVerified": "2026-09-01"
+        }
+      ],
+      "freshness": {
+        "platform": "PC / Steam",
+        "dataWindow": "Official listing checked 2026-09-01"
+      },
+      "pagePackage": {
+        "body": {
+          "intro": "This page paraphrases the developer-provided mature-content notice on Steam. Individual comfort levels differ, so read the current original notice before deciding whether to play.",
+          "sections": [],
+          "faq": []
+        }
+      },
+      "primitiveData": [
+        {
+          "instanceId": "content-header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Content notes",
+            "task": "Check the content notice",
+            "subject": "Developer statement"
+          },
+          "evidenceRefs": ["steam-mature-content-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "content-answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "The developer's Steam notice mentions adult themes and comically disturbing body horror, while stating that the game has no explicit content.",
+            "qualifier": "Read the current original Steam notice for the developer's complete wording.",
+            "nextAction": "/overview/"
+          },
+          "evidenceRefs": ["steam-mature-content-3848900"],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "content-facts",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              { "label": "Adult themes", "value": "Included in the developer's content notice" },
+              { "label": "Body horror", "value": "Described by the developer as comically disturbing" },
+              { "label": "Explicit content", "value": "Developer states none is featured" }
+            ]
+          },
+          "evidenceRefs": ["steam-mature-content-3848900"],
+          "mediaRefs": []
+        }
+      ]
+    }
+  ]
+}

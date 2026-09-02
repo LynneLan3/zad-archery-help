@@ -1,0 +1,334 @@
+{
+  "coverage": {
+    "P1": {
+      "id": "ember-core",
+      "href": "/ember-core/",
+      "task": "entity-lookup",
+      "primitives": [
+        "A01",
+        "A02",
+        "E01",
+        "N01"
+      ],
+      "media": [
+        {
+          "id": "media-1",
+          "localRef": "/v4/emberfall-core.svg"
+        }
+      ],
+      "mediaRefs": [
+        "media-1"
+      ]
+    },
+    "P10": {
+      "id": "ashfall-calendar",
+      "href": "/ashfall-calendar/",
+      "task": "planning",
+      "primitives": [
+        "A01",
+        "S03",
+        "S04",
+        "N01"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P2": {
+      "id": "ember-catalog",
+      "href": "/ember-catalog/",
+      "task": "collection-browse",
+      "primitives": [
+        "A01",
+        "E02",
+        "X01",
+        "X02",
+        "E03"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P3": {
+      "id": "class-choice",
+      "href": "/class-choice/",
+      "task": "choice-comparison",
+      "primitives": [
+        "A01",
+        "S02",
+        "D01",
+        "D03"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P4": {
+      "id": "forge-guide",
+      "href": "/forge-guide/",
+      "task": "procedure",
+      "primitives": [
+        "A01",
+        "P01",
+        "P02",
+        "P04",
+        "N01"
+      ],
+      "media": [
+        {
+          "id": "media-1",
+          "localRef": "/v4/emberfall-forge.svg"
+        }
+      ],
+      "mediaRefs": []
+    },
+    "P5": {
+      "id": "unmapped-location",
+      "href": "/unmapped-location/",
+      "task": "location",
+      "primitives": [
+        "A01",
+        "L01"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P6": {
+      "id": "ashfall-progression",
+      "href": "/ashfall-progression/",
+      "task": "progression",
+      "primitives": [
+        "A01",
+        "P03"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P7": {
+      "id": "heat-system",
+      "href": "/heat-system/",
+      "task": "mechanics",
+      "primitives": [
+        "A01",
+        "A03",
+        "X03",
+        "X04"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P8": {
+      "id": "season-meta",
+      "href": "/season-meta/",
+      "task": "recommendation",
+      "primitives": [
+        "A01",
+        "S01",
+        "S03",
+        "S04",
+        "D02",
+        "D01"
+      ],
+      "media": [],
+      "mediaRefs": []
+    },
+    "P9": {
+      "id": "armory-db",
+      "href": "/armory-db/",
+      "task": "tool-database",
+      "primitives": [
+        "A01",
+        "X05",
+        "X01",
+        "X02",
+        "E03"
+      ],
+      "media": [],
+      "mediaRefs": []
+    }
+  },
+  "boundary": {
+    "prototypeCount": 10,
+    "prototypes": [
+      "P1",
+      "P10",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9"
+    ],
+    "hasMedia": [
+      "ember-core",
+      "forge-guide",
+      "marsh-map"
+    ],
+    "noMedia": [
+      "unmapped-location",
+      "heat-system",
+      "armory-db",
+      "ember-catalog",
+      "class-choice",
+      "ashfall-progression",
+      "season-meta",
+      "ashfall-calendar"
+    ],
+    "noMapPrimitive": true,
+    "conditionalOrOmit": [
+      {
+        "id": "forge-guide",
+        "recipe": [
+          {
+            "id": "P01",
+            "status": "conditional"
+          },
+          {
+            "id": "P04",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "unmapped-location",
+        "recipe": [
+          {
+            "id": "L02",
+            "status": "omit"
+          },
+          {
+            "id": "L03",
+            "status": "omit"
+          }
+        ]
+      },
+      {
+        "id": "armory-db",
+        "recipe": [
+          {
+            "id": "X02",
+            "status": "conditional"
+          },
+          {
+            "id": "X05",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "ember-catalog",
+        "recipe": [
+          {
+            "id": "E03",
+            "status": "conditional"
+          },
+          {
+            "id": "X02",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "class-choice",
+        "recipe": [
+          {
+            "id": "D02",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "ashfall-progression",
+        "recipe": [
+          {
+            "id": "P02",
+            "status": "conditional"
+          },
+          {
+            "id": "P04",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "season-meta",
+        "recipe": [
+          {
+            "id": "S01",
+            "status": "conditional"
+          },
+          {
+            "id": "S03",
+            "status": "conditional"
+          },
+          {
+            "id": "S04",
+            "status": "conditional"
+          },
+          {
+            "id": "D01",
+            "status": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "ashfall-calendar",
+        "recipe": [
+          {
+            "id": "S04",
+            "status": "conditional"
+          },
+          {
+            "id": "N01",
+            "status": "conditional"
+          }
+        ]
+      }
+    ],
+    "forbiddenLeak": false,
+    "screenshotCount": 26,
+    "screenshotFormats": {
+      "category-desktop.jpg": "jpeg",
+      "category-mobile.jpg": "jpeg",
+      "homepage-desktop.jpg": "jpeg",
+      "homepage-mobile.jpg": "jpeg",
+      "p1-entity-desktop.jpg": "jpeg",
+      "p1-entity-mobile.jpg": "jpeg",
+      "p10-planning-desktop.jpg": "jpeg",
+      "p10-planning-mobile.jpg": "jpeg",
+      "p2-catalog-desktop.jpg": "jpeg",
+      "p2-catalog-mobile.jpg": "jpeg",
+      "p3-choice-desktop.jpg": "jpeg",
+      "p3-choice-mobile.jpg": "jpeg",
+      "p4-how-to-desktop.jpg": "jpeg",
+      "p4-how-to-mobile.jpg": "jpeg",
+      "p5-location-desktop.jpg": "jpeg",
+      "p5-location-mobile.jpg": "jpeg",
+      "p6-progression-desktop.jpg": "jpeg",
+      "p6-progression-mobile.jpg": "jpeg",
+      "p7-mechanics-desktop.jpg": "jpeg",
+      "p7-mechanics-mobile.jpg": "jpeg",
+      "p8-recommendation-desktop.jpg": "jpeg",
+      "p8-recommendation-mobile.jpg": "jpeg",
+      "p9-tool-desktop.jpg": "jpeg",
+      "p9-tool-mobile.jpg": "jpeg",
+      "search-desktop.jpg": "jpeg",
+      "search-mobile.jpg": "jpeg"
+    }
+  },
+  "canonicalRoutes": [
+    "/",
+    "/search/",
+    "/category/",
+    "/ember-core/",
+    "/forge-guide/",
+    "/marsh-map/",
+    "/unmapped-location/",
+    "/heat-system/",
+    "/armory-db/",
+    "/ember-catalog/",
+    "/class-choice/",
+    "/ashfall-progression/",
+    "/season-meta/",
+    "/ashfall-calendar/"
+  ]
+}

@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { loadGuideContent } from '../../lib/guide-content';
+import { categoryOf, guideHref } from '../../lib/guides';
+import { resolveGuideCardImage, guideCardImageAlt } from '../../lib/card-images';
+import GuideCardV3 from './GuideCardV3.astro';
+const { entry } = Astro.props as { entry: CollectionEntry<'docs'> };
+const content = await loadGuideContent(entry); const image = resolveGuideCardImage(entry); const category = categoryOf(entry);
+const pageSections = content.sections;
+---
+<article class="v3-article"><header class="v3-article__hero"><span class="v3-eyebrow">{entry.data.eyebrow ?? category?.label ?? entry.data.pageType}</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p><div class="v3-meta">{entry.data.status && <span class="v3-status">{entry.data.status}</span>}<span>{entry.data.pageType}</span></div>{image && <img src={image.src} alt={guideCardImageAlt(entry)} loading="eager" />}</header>{entry.data.quickAnswer && <aside class="v3-answer"><strong>Quick Answer</strong><p>{entry.data.quickAnswer}</p></aside>}<div class="v3-article__layout"><div><div class="v3-article__body"><slot /></div>{(content.related.length > 0 || content.nextGuides.length > 0) && <section class="v3-section"><h2>Related Guides</h2><div class="v3-grid">{[...content.nextGuides, ...content.related].slice(0, 3).map((related) => <GuideCardV3 entry={related} />)}</div></section>}<nav class="v3-pager" aria-label="Previous and next guide">{content.nextGuides[0] && <a href={guideHref(content.nextGuides[0])}>Next: {content.nextGuides[0].data.title}</a>}</nav><section class="v3-section"><h2>Sources</h2>{entry.data.sources?.length ? <ul class="v3-source-list">{entry.data.sources.map((source) => <li><a href={source.url} rel="nofollow noopener">{source.title}</a></li>)}</ul> : <p>Sources are listed when available.</p>}</section></div>{pageSections.length > 0 && <aside class="v3-toc"><strong>On this page</strong><ol>{pageSections.map((section) => <li><a href={`#section-${section.id}`}>{section.title}</a></li>)}</ol></aside>}</div></article>

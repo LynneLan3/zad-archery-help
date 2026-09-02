@@ -1,0 +1,49 @@
+---
+import type { ToolkitItem } from '../../lib/toolkit';
+import {
+	getGuideMapKey,
+	getGuideMapLabel,
+	getMapTargetsForGuideUrl,
+	type ToolkitMapMarker,
+} from '../../lib/toolkit-map';
+
+interface Props {
+	guideUrl?: string;
+	mapPath?: string;
+	toolkitItems?: readonly ToolkitItem[];
+	markers?: readonly ToolkitMapMarker[];
+}
+
+const {
+	guideUrl = Astro.url.pathname,
+	mapPath,
+	toolkitItems = [],
+	markers = [],
+} = Astro.props;
+const targets = getMapTargetsForGuideUrl(guideUrl, toolkitItems, markers);
+const mapHref = mapPath ? (mapPath.endsWith('/') ? mapPath : `${mapPath}/`) : undefined;
+const guideKey = getGuideMapKey(guideUrl);
+const href = targets.length === 1 && mapHref
+	? `${mapHref}?marker=${encodeURIComponent(targets[0].mapMarkerId)}`
+	: targets.length > 1 && mapHref
+		? `${mapHref}?guide=${encodeURIComponent(guideKey)}`
+		: undefined;
+const title = targets.length === 1
+	? 'View on Map'
+	: `View ${targets.length} locations on Map`;
+const detail = targets.length === 1 ? targets[0].name : `${getGuideMapLabel(guideUrl)} Guide`;
+---
+
+{href && (
+	<div class="guide-map-action" aria-label="Player Toolkit map action">
+		<span class="guide-map-action__kicker">Player Toolkit</span>
+		<a class="guide-map-action__link" href={href}>
+			<span class="guide-map-action__icon" aria-hidden="true">⌖</span>
+			<span class="guide-map-action__copy">
+				<strong>{title}</strong>
+				<span>{detail}</span>
+			</span>
+			<span class="guide-map-action__arrow" aria-hidden="true">→</span>
+		</a>
+	</div>
+)}

@@ -1,0 +1,173 @@
+[
+  {
+    "prototype": "P1",
+    "resolvedPrototype": "P1",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "A02",
+        "status": "include",
+        "reason": "Entity lookup needs a direct answer."
+      },
+      {
+        "primitiveId": "E01",
+        "status": "include",
+        "reason": "Entity facts use structured facts."
+      },
+      {
+        "primitiveId": "N01",
+        "status": "include",
+        "reason": "A related next task continues the lookup."
+      }
+    ]
+  },
+  {
+    "prototype": "P3",
+    "resolvedPrototype": "P3",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "S02",
+        "status": "include",
+        "reason": "Choice can depend on platform state."
+      },
+      {
+        "primitiveId": "D01",
+        "status": "include",
+        "reason": "Choice needs alternatives and dimensions."
+      },
+      {
+        "primitiveId": "D02",
+        "status": "conditional",
+        "reason": "Ranking needs a credible current basis."
+      },
+      {
+        "primitiveId": "D03",
+        "status": "include",
+        "reason": "Choice conditions explain selection."
+      }
+    ]
+  },
+  {
+    "prototype": "P4",
+    "resolvedPrototype": "P4",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "P01",
+        "status": "conditional",
+        "reason": "Requirements need real prerequisites."
+      },
+      {
+        "primitiveId": "P02",
+        "status": "include",
+        "reason": "Procedure answers are ordered actions."
+      },
+      {
+        "primitiveId": "P04",
+        "status": "conditional",
+        "reason": "Recovery needs real failure states."
+      },
+      {
+        "primitiveId": "N01",
+        "status": "include",
+        "reason": "A next task continues the procedure."
+      }
+    ]
+  },
+  {
+    "prototype": "P5",
+    "resolvedPrototype": "P5",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "L01",
+        "status": "include",
+        "reason": "Spatial intent can be answered with location facts."
+      },
+      {
+        "primitiveId": "L02",
+        "status": "conditional",
+        "reason": "Map needs reliable spatial data."
+      },
+      {
+        "primitiveId": "L03",
+        "status": "omit",
+        "reason": "Route needs reliable route data."
+      }
+    ]
+  },
+  {
+    "prototype": "P7",
+    "resolvedPrototype": "P7",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "A03",
+        "status": "include",
+        "reason": "Mechanics need scope and conditions."
+      },
+      {
+        "primitiveId": "X03",
+        "status": "omit",
+        "reason": "Formula needs an explicit relationship."
+      },
+      {
+        "primitiveId": "X04",
+        "status": "conditional",
+        "reason": "Calculator needs meaningful variables and decision value."
+      }
+    ]
+  },
+  {
+    "prototype": "P9",
+    "resolvedPrototype": "P9",
+    "candidates": [
+      {
+        "primitiveId": "A01",
+        "status": "include",
+        "reason": "Every answer surface identifies its task."
+      },
+      {
+        "primitiveId": "X01",
+        "status": "omit",
+        "reason": "Filter needs useful facets."
+      },
+      {
+        "primitiveId": "X02",
+        "status": "conditional",
+        "reason": "Sortable data needs a dataset."
+      },
+      {
+        "primitiveId": "X05",
+        "status": "conditional",
+        "reason": "Workspace needs a real planning task."
+      },
+      {
+        "primitiveId": "E03",
+        "status": "include",
+        "reason": "A tool needs structured result rows."
+      }
+    ]
+  }
+]

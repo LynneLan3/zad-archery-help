@@ -1,0 +1,149 @@
+{
+  "input": {
+    "page": {
+      "id": "p2-test",
+      "title": "P2 Test",
+      "href": "/p2-test/"
+    },
+    "primitiveIds": [
+      "E01",
+      "E01"
+    ],
+    "instanceIds": [
+      "facts-a",
+      "facts-b"
+    ]
+  },
+  "output": {
+    "ok": true,
+    "output": {
+      "pageDataVersion": "v4",
+      "page": {
+        "id": "p2-test",
+        "title": "P2 Test",
+        "href": "/p2-test/",
+        "query": "dream nail",
+        "playerProblem": "look up the entity"
+      },
+      "state": {},
+      "intent": {
+        "query": "dream nail",
+        "playerProblem": "look up the entity",
+        "primaryTask": "entity-lookup",
+        "prototype": "P1",
+        "priority": 0,
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ],
+        "resolution": {
+          "basis": "primary-task",
+          "confidence": "high"
+        }
+      },
+      "facts": [],
+      "evidence": [
+        {
+          "evidenceId": "e1",
+          "sourceType": "fixture",
+          "finding": "shared"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "media-1",
+          "role": "entity",
+          "source": "/entity.svg",
+          "localRef": "/entity.svg",
+          "alt": "Entity"
+        }
+      ],
+      "assets": [
+        {
+          "role": "entity",
+          "path": "/entity.svg",
+          "alt": "Entity",
+          "usable": true
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "facts-a",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              {
+                "label": "Type",
+                "value": "Item"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e1"
+          ],
+          "mediaRefs": [
+            "media-1"
+          ]
+        },
+        {
+          "instanceId": "facts-b",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              {
+                "label": "Use",
+                "value": "Forge"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e1"
+          ],
+          "mediaRefs": [
+            "media-1"
+          ]
+        }
+      ],
+      "primitiveRecipe": [
+        {
+          "primitiveId": "A01",
+          "status": "include",
+          "reason": "Every answer surface identifies its task."
+        },
+        {
+          "primitiveId": "A02",
+          "status": "include",
+          "reason": "Entity lookup needs a direct answer."
+        },
+        {
+          "primitiveId": "E01",
+          "status": "include",
+          "reason": "Entity facts use structured facts."
+        },
+        {
+          "primitiveId": "N01",
+          "status": "include",
+          "reason": "A related next task continues the lookup."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+---
+import { adSlotDataset, type AdPlacement } from '../lib/monetization';
+
+interface Props {
+	placement: AdPlacement;
+}
+
+const { placement } = Astro.props;
+const dataset = adSlotDataset(placement);
+---
+
+{dataset && <div data-ad-slot={dataset['data-ad-slot']} />}

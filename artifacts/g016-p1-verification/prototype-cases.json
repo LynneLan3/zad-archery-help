@@ -1,0 +1,125 @@
+[
+  {
+    "fixture": "dream nail",
+    "input": {
+      "query": "dream nail",
+      "playerProblem": "look up an entity"
+    },
+    "expectedPrototype": "P1",
+    "resolvedPrimaryTask": "entity-lookup",
+    "actualPrototype": "P1",
+    "basis": "game-prior",
+    "match": true
+  },
+  {
+    "fixture": "minecraft mobs",
+    "input": {
+      "query": "minecraft mobs",
+      "playerProblem": "browse a collection"
+    },
+    "expectedPrototype": "P2",
+    "resolvedPrimaryTask": "collection-browse",
+    "actualPrototype": "P2",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "bg3 classes",
+    "input": {
+      "query": "bg3 classes",
+      "playerProblem": "choose between options"
+    },
+    "expectedPrototype": "P3",
+    "resolvedPrimaryTask": "choice-comparison",
+    "actualPrototype": "P3",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "ark taming",
+    "input": {
+      "query": "ark taming",
+      "playerProblem": "complete a procedure"
+    },
+    "expectedPrototype": "P4",
+    "resolvedPrimaryTask": "procedure",
+    "actualPrototype": "P4",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "ark resource map the island",
+    "input": {
+      "query": "ark resource map the island",
+      "playerProblem": "find a place"
+    },
+    "expectedPrototype": "P5",
+    "resolvedPrimaryTask": "location",
+    "actualPrototype": "P5",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "ark bosses",
+    "input": {
+      "query": "ark bosses",
+      "playerProblem": "follow progression",
+      "evidence": {
+        "answerShape": "progression"
+      }
+    },
+    "expectedPrototype": "P6",
+    "resolvedPrimaryTask": "progression",
+    "actualPrototype": "P6",
+    "basis": "answer-shape",
+    "match": true
+  },
+  {
+    "fixture": "minecraft enchantments",
+    "input": {
+      "query": "minecraft enchantments",
+      "playerProblem": "understand a mechanic"
+    },
+    "expectedPrototype": "P7",
+    "resolvedPrimaryTask": "mechanics",
+    "actualPrototype": "P7",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "best minecraft enchantments",
+    "input": {
+      "query": "best minecraft enchantments",
+      "playerProblem": "choose the best option"
+    },
+    "expectedPrototype": "P8",
+    "resolvedPrimaryTask": "recommendation",
+    "actualPrototype": "P8",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "diablo 4 build planner",
+    "input": {
+      "query": "diablo 4 build planner",
+      "playerProblem": "operate a tool"
+    },
+    "expectedPrototype": "P9",
+    "resolvedPrimaryTask": "tool-database",
+    "actualPrototype": "P9",
+    "basis": "query-semantics",
+    "match": true
+  },
+  {
+    "fixture": "stardew valley fall",
+    "input": {
+      "query": "stardew valley fall",
+      "playerProblem": "plan around time"
+    },
+    "expectedPrototype": "P10",
+    "resolvedPrimaryTask": "planning",
+    "actualPrototype": "P10",
+    "basis": "query-semantics",
+    "match": true
+  }
+]

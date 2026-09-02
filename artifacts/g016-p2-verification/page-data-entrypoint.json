@@ -1,0 +1,15 @@
+{
+  "module": "src/v4/page-data-contract.ts",
+  "function": "createPageData",
+  "input": "PageDataInput",
+  "output": "PageData",
+  "callChain": [
+    "site-input/v4-example/site.json",
+    "scripts/v4/generate-v4.ts::generateV4",
+    "resolveIntent",
+    "bindTaskMedia",
+    "createPageData",
+    "composePage"
+  ],
+  "generatorCallSite": "scripts/v4/generate-v4.ts:99"
+}

@@ -1,0 +1,823 @@
+/**
+ * Route UI — formal styles for the Guides Index and Route Hub.
+ *
+ * Builds on the primitives in experience.css. These are stable,
+ * data-driven presentations for the production Experience layer.
+ *
+ * Optional-data rules:
+ * - Route `visual` absent → `.exp-route-section--content-only` /
+ *   `.exp-route-hero--content-only` render intentional layouts with no image slot.
+ * - Page `image` absent → no image block in the timeline.
+ */
+
+/* ═══════════════════════════════════════════════════
+   GUIDES INDEX HERO
+   ═══════════════════════════════════════════════════ */
+
+.exp-index-hero { padding: 3rem 0 1.5rem; }
+
+@media (min-width: 50rem) {
+	.exp-index-hero { padding: 4rem 0 2rem; }
+}
+
+/* ═══════════════════════════════════════════════════
+   GUIDES INDEX — ROUTE SECTIONS
+   ═══════════════════════════════════════════════════ */
+
+.exp-route-section {
+	padding-block: 2rem;
+}
+
+.exp-route-section:last-child { padding-bottom: 2rem; }
+
+.exp-route-section__inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+
+.exp-route-section__visual {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	min-height: 0;
+	overflow: hidden;
+	aspect-ratio: 2.55 / 1;
+	border: 1px solid var(--xp-border-subtle);
+	background: var(--xp-surface-dark);
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	transition: border-color 160ms, transform 160ms;
+}
+
+.exp-route-section__visual img {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 100%;
+	min-height: 0;
+	max-height: 100%;
+	object-fit: cover;
+	opacity: 0.82;
+	transition: opacity 180ms, transform 180ms;
+}
+
+.exp-route-section__visual::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: color-mix(in srgb, var(--xp-accent) 0%, transparent);
+	transition: background 180ms;
+}
+
+.exp-route-section__visual:hover,
+.exp-route-section__visual:focus-visible {
+	border-color: color-mix(in srgb, var(--xp-accent) 52%, var(--xp-border));
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.exp-route-section__visual:focus-visible {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--xp-accent) 24%, transparent);
+}
+
+.exp-route-section__visual:hover img,
+.exp-route-section__visual:focus-visible img {
+	opacity: 0.92;
+	transform: scale(1.015);
+}
+
+.exp-route-section__visual:hover::after,
+.exp-route-section__visual:focus-visible::after {
+	background: color-mix(in srgb, var(--xp-accent) 10%, transparent);
+}
+
+.exp-route-section__visual-cta {
+	position: absolute;
+	right: 1rem;
+	bottom: 0.9rem;
+	z-index: 2;
+	padding: 0.35rem 0.65rem;
+	border: 1px solid color-mix(in srgb, var(--xp-accent) 36%, transparent);
+	background: color-mix(in srgb, var(--xp-bg) 76%, transparent);
+	color: var(--xp-accent-text);
+	opacity: 0.92;
+	transform: translateY(0.25rem);
+	font-size: var(--xp-text-xs);
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	transition: opacity 180ms, transform 180ms, border-color 180ms;
+}
+
+.exp-route-section__visual:hover .exp-route-section__visual-cta,
+.exp-route-section__visual:focus-visible .exp-route-section__visual-cta {
+	opacity: 1;
+	transform: translateY(0);
+	border-color: color-mix(in srgb, var(--xp-accent) 64%, transparent);
+}
+
+@media (min-width: 50rem) {
+	.exp-route-section__inner {
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: start;
+	}
+	.exp-route-section:nth-child(even) .exp-route-section__visual { order: 2; }
+	.exp-route-section:nth-child(even) .exp-route-section__content { order: 1; }
+}
+
+/* Content-only variant — no image slot, still a deliberate layout */
+.exp-route-section--content-only .exp-route-section__inner {
+	grid-template-columns: 1fr;
+	max-width: 52rem;
+	padding-block: 0.75rem;
+	border-top: 1px solid var(--xp-border-subtle);
+	border-bottom: 1px solid var(--xp-border-subtle);
+}
+
+.exp-route-section__head {
+	display: flex;
+	align-items: baseline;
+	gap: 0.85rem;
+	margin-bottom: 0.5rem;
+}
+
+.exp-route-section__label {
+	display: grid;
+	gap: 0.45rem;
+	font-size: clamp(1.5rem, 3.5vw, 2rem);
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1.1;
+	color: var(--xp-text-bright);
+	text-decoration: none;
+	transition: color 120ms;
+}
+
+.exp-route-section__label:hover,
+.exp-route-section__label:focus-visible {
+	color: var(--xp-accent-text);
+	outline: none;
+}
+
+.exp-route-section__label:focus-visible {
+	box-shadow: 0 2px 0 var(--xp-accent);
+}
+
+.exp-route-section--content-only .exp-route-section__head {
+	display: grid;
+	gap: 0.4rem;
+}
+
+.exp-route-section--content-only .exp-route-section__label {
+	text-transform: uppercase;
+	letter-spacing: 0;
+	font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.exp-route-section__content {
+	display: grid;
+	align-content: start;
+}
+
+.exp-route-section__desc {
+	margin: 0;
+	font-size: var(--xp-text-sm);
+	line-height: 1.55;
+	color: var(--xp-text-muted);
+}
+
+.exp-route-section__guides { display: grid; gap: 0; }
+
+.exp-route-section__guide-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	min-height: 3.5rem;
+	padding: 0.8rem 0.75rem;
+	border-bottom: 1px solid var(--xp-border-subtle);
+	text-decoration: none;
+	color: var(--xp-text-bright);
+	font-size: var(--xp-text-base);
+	font-weight: 650;
+	transition: background 140ms, border-color 140ms, color 140ms;
+}
+
+.exp-route-section__guide-link:hover,
+.exp-route-section__guide-link:focus-visible {
+	background: color-mix(in srgb, var(--xp-accent) 7%, transparent);
+	border-bottom-color: color-mix(in srgb, var(--xp-accent) 38%, var(--xp-border-subtle));
+	color: var(--xp-accent-text);
+	outline: none;
+}
+.exp-route-section__guide-link:focus-visible { box-shadow: inset 3px 0 var(--xp-accent); }
+.exp-route-section__guide-link:last-child { border-bottom: none; }
+
+.exp-route-section__guide-arrow {
+	flex-shrink: 0;
+	color: var(--xp-text-dim);
+	transition: color 140ms, transform 140ms;
+}
+.exp-route-section__guide-link:hover .exp-route-section__guide-arrow,
+.exp-route-section__guide-link:focus-visible .exp-route-section__guide-arrow { color: var(--xp-accent-text); transform: translateX(3px); }
+
+/* ═══════════════════════════════════════════════════
+   ROUTE HUB — HERO
+   ═══════════════════════════════════════════════════ */
+
+.exp-route-hero {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.exp-route-hero__visual {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.exp-route-hero__visual img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 40%;
+	opacity: 0.5;
+}
+
+.exp-route-hero__visual::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background:
+		linear-gradient(0deg,
+			var(--xp-bg) 0%,
+			color-mix(in srgb, var(--xp-bg) 85%, transparent) 30%,
+			color-mix(in srgb, var(--xp-bg) 40%, transparent) 60%,
+			color-mix(in srgb, var(--xp-bg) 70%, transparent) 100%);
+}
+
+/* Content-only hero — deliberate surface instead of an image slot */
+.exp-route-hero--content-only {
+	background:
+		radial-gradient(ellipse at 85% 10%,
+			color-mix(in srgb, var(--xp-accent) 14%, transparent),
+			transparent 55%),
+		var(--xp-surface-dark);
+	border-bottom: 1px solid var(--xp-border-subtle);
+}
+
+.exp-route-hero__inner {
+	position: relative;
+	z-index: 1;
+	max-width: var(--xp-content);
+	margin: 0 auto;
+	padding: 4rem 1.5rem 2.75rem;
+}
+
+@media (min-width: 50rem) {
+	.exp-route-hero__inner { padding: 5rem 1.5rem 3.5rem; }
+}
+
+.exp-route-hero__number { margin-bottom: 0.75rem; }
+
+.exp-route-hero__eyebrow { margin-bottom: 0.75rem; }
+
+.exp-route-hero__desc {
+	margin: 1.25rem 0 0;
+	max-width: 40rem;
+}
+
+/* ═══════════════════════════════════════════════════
+   FAST ANSWERS
+   ═══════════════════════════════════════════════════ */
+
+.exp-fast-answers { display: grid; gap: 0; }
+
+.exp-fast-answer {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 0.35rem 2rem;
+	align-items: baseline;
+	padding: 1.15rem 1rem;
+	border: 1px solid transparent;
+	border-bottom: 1px solid var(--xp-border-subtle);
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	transition: border-color 140ms, background 140ms, transform 140ms;
+}
+
+.exp-fast-answer:last-child { border-bottom: none; }
+
+.exp-fast-answer:hover,
+.exp-fast-answer:focus-visible {
+	border-color: color-mix(in srgb, var(--xp-accent) 52%, var(--xp-border));
+	background: color-mix(in srgb, var(--xp-surface) 28%, transparent);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.exp-fast-answer:focus-visible {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--xp-accent) 22%, transparent);
+}
+
+.exp-fast-answer__q {
+	font-size: clamp(1rem, 2.2vw, 1.15rem);
+	font-weight: 700;
+	color: var(--xp-text-bright);
+	line-height: 1.3;
+}
+
+.exp-fast-answer__a {
+	grid-column: 1;
+	font-size: var(--xp-text-sm);
+	color: var(--xp-text-muted);
+	line-height: 1.5;
+}
+
+.exp-fast-answer__link {
+	grid-column: 2;
+	grid-row: 1 / 3;
+	align-self: center;
+	transition: color 120ms, transform 120ms;
+}
+
+.exp-fast-answer:hover .exp-fast-answer__link,
+.exp-fast-answer:focus-visible .exp-fast-answer__link {
+	color: var(--xp-accent-text);
+	transform: translateX(2px);
+}
+
+/* ═══════════════════════════════════════════════════
+   FOLLOW THE ROUTE — TIMELINE
+   ═══════════════════════════════════════════════════ */
+
+.exp-route-path {
+	display: grid;
+	gap: 0;
+	position: relative;
+}
+
+.exp-route-path::before {
+	content: '';
+	position: absolute;
+	left: 1.6rem;
+	top: 2.5rem;
+	bottom: 2.5rem;
+	width: 2px;
+	pointer-events: none;
+	background: color-mix(in srgb, var(--xp-accent) 20%, transparent);
+}
+
+@media (max-width: 49.99rem) {
+	.exp-route-path::before { left: 1.15rem; }
+}
+
+.exp-route-step {
+	display: grid;
+	grid-template-columns: 3.5rem 1fr;
+	gap: 0 1.25rem;
+	min-width: 0;
+	overflow: hidden;
+	min-height: 3.5rem;
+	padding: 1.1rem 0.75rem;
+	border-bottom: 1px solid var(--xp-border-subtle);
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+}
+
+@media (max-width: 49.99rem) {
+	.exp-route-step { grid-template-columns: 2.5rem 1fr; }
+}
+
+.exp-route-step:hover,
+.exp-route-step:focus-visible {
+	background: color-mix(in srgb, var(--xp-accent) 7%, transparent);
+	border-bottom-color: color-mix(in srgb, var(--xp-accent) 38%, var(--xp-border-subtle));
+	outline: none;
+}
+.exp-route-step:focus-visible { box-shadow: inset 3px 0 var(--xp-accent); }
+.exp-route-step:hover .exp-route-step__title,
+.exp-route-step:focus-visible .exp-route-step__title { color: var(--xp-accent-text); }
+
+.exp-route-step__body {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.exp-route-step__eyebrow {
+	font-size: var(--xp-text-xs);
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--xp-accent-text);
+}
+
+.exp-route-step__title {
+	font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+	font-weight: 750;
+	color: var(--xp-text-bright);
+	transition: color 120ms;
+}
+
+.exp-route-step__desc {
+	font-size: var(--xp-text-sm);
+	color: var(--xp-text-muted);
+	line-height: 1.55;
+	max-width: 36rem;
+}
+
+.exp-route-step__visual {
+	grid-column: 2;
+	margin-top: 0.65rem;
+	display: block;
+	width: min(100%, 22rem);
+	min-width: 0;
+	max-width: 100%;
+	min-height: 0;
+	aspect-ratio: 2.55 / 1;
+}
+
+.exp-route-step__visual img {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 100%;
+	min-height: 0;
+	max-height: 100%;
+	object-fit: cover;
+	border: 1px solid var(--xp-border-subtle);
+}
+
+.exp-route-step__number {
+	align-self: start;
+}
+
+.exp-route-guide-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.85rem;
+}
+
+.exp-route-guide-grid .exp-route-step {
+	grid-template-columns: auto 1fr;
+	gap: 0 1rem;
+	min-height: 3.5rem;
+	padding: 0.9rem 1.1rem;
+	border: 1px solid var(--xp-border);
+	background: color-mix(in srgb, var(--xp-surface) 28%, transparent);
+	transition: border-color 140ms, background 140ms, transform 140ms;
+}
+
+.exp-route-guide-grid .exp-route-step:hover,
+.exp-route-guide-grid .exp-route-step:focus-visible {
+	border-color: color-mix(in srgb, var(--xp-accent) 54%, var(--xp-border));
+	background: color-mix(in srgb, var(--xp-surface) 42%, transparent);
+	transform: translateY(-1px);
+}
+
+.exp-route-guide-grid .exp-route-step__body {
+	align-content: start;
+}
+
+.exp-route-step__cta {
+	margin-top: 0.25rem;
+}
+
+.exp-route-guide-grid .exp-route-step__visual {
+	grid-column: 2;
+	max-width: none;
+}
+
+@media (min-width: 58rem) {
+	.exp-route-guide-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.exp-route-guide-grid .exp-route-step {
+		min-height: 100%;
+	}
+}
+
+/* ═══════════════════════════════════════════════════
+   OTHER ROUTES
+   ═══════════════════════════════════════════════════ */
+
+.exp-other-routes {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.75rem;
+}
+
+@media (min-width: 50rem) {
+	.exp-other-routes { grid-template-columns: repeat(3, 1fr); }
+}
+
+.exp-other-route {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	min-height: 3.5rem;
+	padding: 0.95rem 1.25rem;
+	border: 1px solid var(--xp-border);
+	text-decoration: none;
+	color: inherit;
+	transition: background 140ms, border-color 140ms, color 140ms;
+}
+
+.exp-other-route:hover,
+.exp-other-route:focus-visible { border-color: var(--xp-accent-text); background: color-mix(in srgb, var(--xp-accent) 7%, transparent); outline: none; }
+.exp-other-route:focus-visible { box-shadow: inset 3px 0 var(--xp-accent); }
+
+.exp-other-route__number {
+	flex-shrink: 0;
+}
+
+.exp-other-route__label {
+	font-weight: 700;
+	color: var(--xp-text-bright);
+	transition: color 140ms;
+}
+.exp-other-route:hover .exp-other-route__label,
+.exp-other-route:focus-visible .exp-other-route__label { color: var(--xp-accent-text); }
+
+/* ═══════════════════════════════════════════════════
+   GUIDE → ROUTE CONTEXT (basic capability)
+   ═══════════════════════════════════════════════════ */
+
+.exp-guide-route-ctx {
+	margin-top: 2rem;
+	padding: 1.25rem 1.35rem;
+	border: 1px solid var(--xp-border);
+	background: color-mix(in srgb, var(--xp-surface) 30%, transparent);
+}
+
+.exp-guide-route-ctx__eyebrow {
+	font-size: 0.65rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--xp-text-dim);
+	margin-bottom: 0.35rem;
+}
+
+.exp-guide-route-ctx__label {
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 750;
+	color: var(--xp-text-bright);
+	margin-bottom: 0.85rem;
+}
+
+.exp-guide-route-ctx__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem;
+}
+
+.exp-guide-route-ctx__actions a {
+	color: var(--xp-accent-text);
+	text-decoration: none;
+}
+
+.exp-guide-route-ctx__actions a:hover { text-decoration: underline; }
+
+@media (max-width: 49.99rem) {
+	.exp-route-section__guide-link:active,
+	.exp-route-step:active,
+	.exp-other-route:active { background: color-mix(in srgb, var(--xp-accent) 14%, transparent); }
+}
+
+/* ═══════════════════════════════════════════════════
+   ROUTES INDEX — PLAYER TASK MAP
+   ===================================================
+   /routes/ is the Player Task Map: one row per route, larger and more
+   minimal than the Guides Index. Number + optional visual + title +
+   description + "Open route" CTA. No guide lists.
+   ═══════════════════════════════════════════════════ */
+
+.exp-taskmap-hero { padding: 4rem 0 2rem; }
+
+@media (min-width: 50rem) {
+	.exp-taskmap-hero { padding: 5rem 0 2.5rem; }
+}
+
+.exp-taskmap {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+@media (min-width: 50rem) {
+	.exp-taskmap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.exp-task-route {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	min-width: 0;
+	overflow: hidden;
+	padding: 3.5rem 0;
+	border-bottom: 1px solid var(--xp-border-subtle);
+	text-decoration: none;
+	color: inherit;
+}
+
+.exp-task-route:last-child { border-bottom: none; }
+
+.exp-task-route__visual {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	min-height: 0;
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+}
+
+.exp-task-route__visual {
+	border: 1px solid var(--xp-border-subtle);
+	background: var(--xp-surface-dark);
+}
+
+.exp-task-route__visual img {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 100%;
+	min-height: 0;
+	max-height: 100%;
+	object-fit: cover;
+	opacity: 0.84;
+}
+
+.exp-task-route__watermark {
+	position: absolute;
+	right: 1.25rem;
+	bottom: 0.75rem;
+}
+
+.exp-task-route__content {
+	display: grid;
+	justify-items: start;
+	gap: 0.6rem;
+	align-content: start;
+}
+
+.exp-task-route__number { margin-bottom: 0.35rem; }
+
+.exp-task-route__title {
+	font-size: clamp(1.9rem, 4vw, 2.6rem);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+	color: var(--xp-text-bright);
+	transition: color 120ms;
+}
+
+.exp-task-route:hover .exp-task-route__title { color: var(--xp-accent-text); }
+
+.exp-task-route__desc {
+	margin: 0;
+	max-width: 40rem;
+	font-size: var(--xp-text-base);
+	line-height: 1.55;
+	color: var(--xp-text-muted);
+}
+
+.exp-task-route__cta { margin-top: 0.5rem; }
+
+/* Content-only variant — no image slot, still a deliberate layout */
+.exp-task-route--content-only {
+	display: block;
+	padding-block: 4rem;
+	border-top: 1px solid var(--xp-border-subtle);
+}
+
+.exp-task-route--content-only .exp-task-route__content {
+	max-width: 52rem;
+	padding-left: clamp(0rem, 4vw, 3rem);
+	border-left: 1px solid var(--xp-border-subtle);
+}
+
+.exp-task-route--content-only .exp-task-route__title {
+	text-transform: uppercase;
+	letter-spacing: 0;
+	font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+/* V2 Experience convergence: task-first surfaces with guide-led hierarchy. */
+.exp-index-hero,
+.exp-taskmap-hero { padding-block: 2.25rem 1.25rem; }
+
+.exp-index-hero .exp-lede,
+.exp-taskmap-hero .exp-lede { max-width: 42rem; }
+
+.exp-route-section {
+	margin-bottom: 0.85rem;
+	padding: 1.15rem;
+	border: 1px solid var(--xp-border);
+	background: color-mix(in srgb, var(--xp-surface) 34%, transparent);
+	transition: border-color 150ms, background 150ms, transform 150ms, box-shadow 150ms;
+}
+.exp-route-section:hover,
+.exp-route-section:focus-within {
+	border-color: color-mix(in srgb, var(--xp-accent) 65%, var(--xp-border));
+	background: color-mix(in srgb, var(--xp-accent) 8%, var(--xp-surface));
+	transform: translateY(-2px);
+	box-shadow: 0 1rem 2rem color-mix(in srgb, #000 20%, transparent);
+}
+.exp-route-section__inner { gap: 1.25rem; }
+.exp-route-section__visual { aspect-ratio: 2.8 / 1; }
+.exp-route-section__content { gap: 0.8rem; }
+.exp-route-section__head { margin-bottom: 0; }
+.exp-route-section__label { font-size: clamp(1.3rem, 2.8vw, 1.8rem); }
+.exp-route-section__guides { border: 1px solid var(--xp-border-subtle); background: color-mix(in srgb, var(--xp-bg) 45%, transparent); }
+.exp-route-section__guide-link { min-height: 3.15rem; padding-inline: 0.9rem; }
+.exp-route-section > .exp-route-section__inner > .exp-route-section__content > .exp-cta-link { justify-self: start; }
+
+.exp-taskmap { gap: 0.85rem; }
+.exp-taskmap .exp-route-topic-card { height: 100%; }
+
+.exp-guides-library {
+	margin-top: 2.5rem;
+	margin-bottom: 3.5rem;
+	padding-top: 2rem;
+	padding-bottom: 0;
+	border-top: 1px solid var(--xp-border);
+}
+.exp-guides-library__heading {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.25rem;
+}
+.exp-guides-library__count {
+	padding: 0.3rem 0.55rem;
+	border: 1px solid var(--xp-border);
+	color: var(--xp-accent-text);
+	font-size: var(--xp-text-xs);
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.exp-guides-library .gw-grid { gap: 0.75rem; }
+.exp-guides-library .gw-card {
+	min-height: 10rem;
+	padding: 1rem;
+	border-color: var(--xp-border);
+	border-radius: 0;
+	background: color-mix(in srgb, var(--xp-surface) 46%, transparent);
+	transition: border-color 150ms, background 150ms, transform 150ms, box-shadow 150ms;
+}
+.exp-guides-library .gw-card:hover,
+.exp-guides-library .gw-card:focus-visible {
+	border-color: var(--xp-accent-text);
+	background: color-mix(in srgb, var(--xp-accent) 12%, var(--xp-surface));
+	transform: translateY(-2px);
+	box-shadow: 0 0.9rem 1.8rem color-mix(in srgb, #000 20%, transparent);
+}
+.exp-guides-library .gw-card:focus-visible { outline: 3px solid color-mix(in srgb, var(--xp-accent) 30%, transparent); outline-offset: 2px; }
+.exp-guides-library .gw-card__title { font-size: 1.1rem; }
+.exp-guides-library .gw-card__desc { line-height: 1.45; }
+
+@media (max-width: 49.99rem) {
+	.exp-index-hero,
+	.exp-taskmap-hero { padding-block: 1.75rem 0.9rem; }
+	.exp-route-section { padding: 0.8rem; margin-bottom: 0.65rem; }
+	.exp-route-section__inner { gap: 0.8rem; }
+	.exp-route-section__visual { aspect-ratio: 2.4 / 1; }
+	.exp-route-section__head { gap: 0.55rem; }
+	.exp-route-section__label { font-size: 1.25rem; }
+	.exp-route-section__guide-link { min-height: 3.1rem; padding-inline: 0.7rem; }
+	.exp-guides-library { margin-top: 1.8rem; margin-bottom: 2.5rem; }
+	.exp-guides-library__heading { align-items: start; }
+	.exp-guides-library .gw-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 50rem) {
+	.exp-task-route {
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	.exp-task-route--content-only {
+		grid-template-columns: 1fr;
+	}
+	.exp-task-route:nth-child(even) .exp-task-route__visual { order: 2; }
+	.exp-task-route:nth-child(even) .exp-task-route__content { order: 1; }
+}

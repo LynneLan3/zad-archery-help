@@ -1,0 +1,46 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+site:
+  id: path-traversal-game
+  mode: hub
+  locale: en
+  siteUrl: https://path-traversal.example
+  hubPath: /path-traversal/
+  title: Path Traversal Wiki
+  shortName: Path Traversal
+  description: Fixture for asset path traversal.
+game:
+  name: Path Traversal Game
+  hubTitle: Path Traversal Game Wiki
+  tagline: Path traversal fixture.
+  releaseStatus: unknown
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms: [PC]
+theme:
+  accentColor: "#654321"
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: Starter category.
+    icon: rocket
+    order: 1
+pages:
+  - id: beginner-guide
+    title: Beginner Guide
+    description: Valid page with unsafe asset target.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+homepage: {}
+assets:
+  - id: escape
+    source: site-input/assets/hero.svg
+    target: ../../outside.jpg
+    alt: Escape attempt
+    sourceType: user-provided
+    usageStatus: unknown

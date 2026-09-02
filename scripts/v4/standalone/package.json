@@ -1,0 +1,8 @@
+{
+  "name": "v4-standalone-generated-site",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "astro check", "build": "astro build" },
+  "dependencies": { "@astrojs/check": "^0.9.4", "@astrojs/sitemap": "^3.7.3", "astro": "^7.1.6", "sharp": "^0.35.3", "typescript": "^5.9.2" },
+  "devDependencies": { "@types/node": "^22.13.10", "tsx": "^4.20.5" }
+}

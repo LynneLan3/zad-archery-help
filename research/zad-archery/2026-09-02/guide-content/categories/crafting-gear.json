@@ -1,0 +1,11 @@
+{
+  "route": "/guides/crafting-gear/",
+  "title": "Crafting & Gear",
+  "description_draft": "Crafting, gear, mining and material systems. Exact recipes and best upgrades require current-build evidence before publication.",
+  "research_status": "PARTIAL_HOLD_DEEP_CONTENT",
+  "player_questions": [
+    "How do I sell or salvage items?",
+    "How does mining work?",
+    "What should I craft or upgrade first?"
+  ]
+}

@@ -1,0 +1,1091 @@
+{
+  "game": {
+    "name": "Emberfall",
+    "slug": "emberfall",
+    "accent": "#f59e0b",
+    "accentForeground": "#1c1202"
+  },
+  "theme": {
+    "base": "neutral-dark",
+    "accent": "#f59e0b",
+    "accentForeground": "#1c1202",
+    "functionalEvidenceFirst": true,
+    "heroOptional": true,
+    "permanentDocsSidebar": false
+  },
+  "navigation": {
+    "primary": [
+      {
+        "id": "home",
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "id": "guide",
+        "label": "Guide",
+        "href": "/category/",
+        "groups": [
+          {
+            "id": "find",
+            "label": "Find things",
+            "items": [
+              {
+                "id": "ember-core",
+                "label": "Ember Core",
+                "href": "/ember-core/",
+                "pageId": "ember-core"
+              }
+            ]
+          },
+          {
+            "id": "route",
+            "label": "Follow a route",
+            "items": [
+              {
+                "id": "forge-guide",
+                "label": "Forge Guide",
+                "href": "/forge-guide/",
+                "pageId": "forge-guide"
+              },
+              {
+                "id": "marsh-map",
+                "label": "Cinder Marsh Map",
+                "href": "/marsh-map/",
+                "pageId": "marsh-map"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "utilities": [
+      {
+        "id": "search",
+        "label": "Search",
+        "href": "/search/"
+      }
+    ]
+  },
+  "homepage": {
+    "pageIds": [
+      "ember-core",
+      "forge-guide",
+      "marsh-map"
+    ]
+  },
+  "pages": [
+    {
+      "id": "ember-core",
+      "title": "Ember Core",
+      "href": "/ember-core/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "ember-core",
+          "title": "Ember Core",
+          "href": "/ember-core/",
+          "query": "ember core",
+          "playerProblem": "look up the item"
+        },
+        "state": {
+          "version": "0.9",
+          "dataWindow": "Ashfall cycle"
+        },
+        "intent": {
+          "query": "ember core",
+          "playerProblem": "look up the item",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [
+          {
+            "id": "type",
+            "label": "Type",
+            "value": "Resource",
+            "verified": true
+          },
+          {
+            "id": "source",
+            "label": "Source",
+            "value": "Cinder Marsh seams",
+            "verified": true
+          },
+          {
+            "id": "use",
+            "label": "Primary use",
+            "value": "Forge heat-resistant tools",
+            "verified": true
+          },
+          {
+            "id": "rarity",
+            "label": "Rarity",
+            "value": "Uncommon",
+            "verified": true
+          },
+          {
+            "id": "heat",
+            "label": "Heat value",
+            "value": "12 units",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "e1",
+            "sourceType": "fixture-lore",
+            "sourceRef": "fixture://ember-core",
+            "finding": "The Ember Core guide records its source and forge use."
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-1",
+            "role": "entity",
+            "source": "/v4/emberfall-core.svg",
+            "localRef": "/v4/emberfall-core.svg",
+            "alt": "Ember Core crystal",
+            "provenance": "Artificial Fixture asset"
+          }
+        ],
+        "freshness": {
+          "version": "0.9",
+          "dataWindow": "Ashfall cycle"
+        },
+        "assets": [
+          {
+            "role": "entity",
+            "path": "/v4/emberfall-core.svg",
+            "alt": "Ember Core crystal",
+            "usable": true,
+            "provenance": "Artificial Fixture asset"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Ember Core",
+              "task": "Entity lookup",
+              "subject": "Resource"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [
+              "media-1"
+            ]
+          },
+          {
+            "instanceId": "answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Use Ember Core at the forge to craft heat-resistant tools.",
+              "nextAction": {
+                "href": "/forge-guide/"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "facts",
+            "primitiveId": "E01",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Type",
+                  "value": "Resource"
+                },
+                {
+                  "label": "Source",
+                  "value": "Cinder Marsh seams"
+                },
+                {
+                  "label": "Primary use",
+                  "value": "Forge heat-resistant tools"
+                },
+                {
+                  "label": "Rarity",
+                  "value": "Uncommon",
+                  "state": "Current state"
+                },
+                {
+                  "label": "Heat value",
+                  "value": "12 units"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e1"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "next",
+            "primitiveId": "N01",
+            "payload": {
+              "steps": [
+                {
+                  "href": "/forge-guide/",
+                  "label": "Forge with the Core",
+                  "reason": "Turn the resource into a heat-resistant tool."
+                }
+              ]
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "header",
+            "payload": {
+              "title": "Ember Core",
+              "task": "Entity lookup",
+              "subject": "Resource"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [
+              "media-1"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "answer",
+            "payload": {
+              "answer": "Use Ember Core at the forge to craft heat-resistant tools.",
+              "nextAction": {
+                "href": "/forge-guide/"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          },
+          {
+            "id": "E01",
+            "label": "Fact Card",
+            "interactive": false,
+            "instanceId": "facts",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Type",
+                  "value": "Resource"
+                },
+                {
+                  "label": "Source",
+                  "value": "Cinder Marsh seams"
+                },
+                {
+                  "label": "Primary use",
+                  "value": "Forge heat-resistant tools"
+                },
+                {
+                  "label": "Rarity",
+                  "value": "Uncommon",
+                  "state": "Current state"
+                },
+                {
+                  "label": "Heat value",
+                  "value": "12 units"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e1"
+            ],
+            "mediaRefs": [],
+            "behavior": "entity-facts",
+            "data": [
+              {
+                "label": "Type",
+                "value": "Resource"
+              },
+              {
+                "label": "Source",
+                "value": "Cinder Marsh seams"
+              },
+              {
+                "label": "Primary use",
+                "value": "Forge heat-resistant tools"
+              },
+              {
+                "label": "Rarity",
+                "value": "Uncommon",
+                "state": "Current state"
+              },
+              {
+                "label": "Heat value",
+                "value": "12 units"
+              }
+            ]
+          },
+          {
+            "id": "N01",
+            "label": "Related Next Step",
+            "interactive": false,
+            "instanceId": "next",
+            "payload": {
+              "steps": [
+                {
+                  "href": "/forge-guide/",
+                  "label": "Forge with the Core",
+                  "reason": "Turn the resource into a heat-resistant tool."
+                }
+              ]
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "related-next-step",
+            "data": [
+              {
+                "href": "/forge-guide/",
+                "label": "Forge with the Core",
+                "reason": "Turn the resource into a heat-resistant tool."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "forge-guide",
+      "title": "Forge Guide",
+      "href": "/forge-guide/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "forge-guide",
+          "title": "Forge Guide",
+          "href": "/forge-guide/",
+          "query": "how to forge",
+          "playerProblem": "complete the forging procedure"
+        },
+        "state": {},
+        "intent": {
+          "query": "how to forge",
+          "playerProblem": "complete the forging procedure",
+          "primaryTask": "procedure",
+          "prototype": "P4",
+          "priority": 9,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P01",
+              "status": "conditional",
+              "reason": "Requirements need real prerequisites."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "include",
+              "reason": "Procedure answers are ordered actions."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the procedure."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [
+          {
+            "evidenceId": "e2",
+            "sourceType": "fixture-procedure",
+            "sourceRef": "fixture://forge-guide",
+            "finding": "The three forge actions produce a tempered tool."
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-1",
+            "role": "step",
+            "source": "/v4/emberfall-forge.svg",
+            "localRef": "/v4/emberfall-forge.svg",
+            "alt": "Forge sequence diagram",
+            "provenance": "Artificial Fixture asset"
+          }
+        ],
+        "assets": [
+          {
+            "role": "step",
+            "path": "/v4/emberfall-forge.svg",
+            "alt": "Forge sequence diagram",
+            "usable": true,
+            "provenance": "Artificial Fixture asset"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Forge Guide",
+              "task": "How-to",
+              "subject": "Tempered tool"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "requirements",
+            "primitiveId": "P01",
+            "payload": {
+              "requirements": [
+                {
+                  "id": "core",
+                  "label": "Ember Core",
+                  "status": "ready",
+                  "howToMeet": "Gather one from a Cinder Marsh seam."
+                },
+                {
+                  "id": "handle",
+                  "label": "Quenched handle",
+                  "status": "ready",
+                  "howToMeet": "Cool the handle at the marsh basin."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "steps",
+            "primitiveId": "P02",
+            "payload": {
+              "steps": [
+                {
+                  "id": "heat",
+                  "order": 1,
+                  "action": "Heat the Ember Core in the forge",
+                  "result": "The core glows white."
+                },
+                {
+                  "id": "handle",
+                  "order": 2,
+                  "action": "Seat the quenched handle",
+                  "result": "The forge binds the grip.",
+                  "evidenceRefs": [
+                    "e2"
+                  ],
+                  "mediaRefs": [
+                    "media-1"
+                  ]
+                },
+                {
+                  "id": "seal",
+                  "order": 3,
+                  "action": "Seal the tool before the core cools",
+                  "result": "A tempered tool is added to your kit."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "recovery",
+            "primitiveId": "P04",
+            "payload": {
+              "cases": [
+                {
+                  "symptom": "The core cools before sealing",
+                  "cause": "The handle was not ready",
+                  "recovery": "Quench the handle first, then restart the heat step."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "next",
+            "primitiveId": "N01",
+            "payload": {
+              "steps": [
+                {
+                  "href": "/heat-system/",
+                  "label": "Tune forge heat",
+                  "reason": "Understand the heat limit before repeating the procedure."
+                }
+              ]
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P01",
+            "status": "include",
+            "reason": "Requirements need real prerequisites."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "include",
+            "reason": "Procedure answers are ordered actions."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "include",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the procedure."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "header",
+            "payload": {
+              "title": "Forge Guide",
+              "task": "How-to",
+              "subject": "Tempered tool"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "P01",
+            "label": "Requirements",
+            "interactive": false,
+            "instanceId": "requirements",
+            "payload": {
+              "requirements": [
+                {
+                  "id": "core",
+                  "label": "Ember Core",
+                  "status": "ready",
+                  "howToMeet": "Gather one from a Cinder Marsh seam."
+                },
+                {
+                  "id": "handle",
+                  "label": "Quenched handle",
+                  "status": "ready",
+                  "howToMeet": "Cool the handle at the marsh basin."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": [],
+            "behavior": "requirements",
+            "data": []
+          },
+          {
+            "id": "P02",
+            "label": "Step Sequence",
+            "interactive": false,
+            "instanceId": "steps",
+            "payload": {
+              "steps": [
+                {
+                  "id": "heat",
+                  "order": 1,
+                  "action": "Heat the Ember Core in the forge",
+                  "result": "The core glows white."
+                },
+                {
+                  "id": "handle",
+                  "order": 2,
+                  "action": "Seat the quenched handle",
+                  "result": "The forge binds the grip.",
+                  "evidenceRefs": [
+                    "e2"
+                  ],
+                  "mediaRefs": [
+                    "media-1"
+                  ]
+                },
+                {
+                  "id": "seal",
+                  "order": 3,
+                  "action": "Seal the tool before the core cools",
+                  "result": "A tempered tool is added to your kit."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": [],
+            "behavior": "ordered-steps",
+            "data": [
+              {
+                "id": "heat",
+                "order": 1,
+                "action": "Heat the Ember Core in the forge",
+                "result": "The core glows white."
+              },
+              {
+                "id": "handle",
+                "order": 2,
+                "action": "Seat the quenched handle",
+                "result": "The forge binds the grip.",
+                "evidenceRefs": [
+                  "e2"
+                ],
+                "mediaRefs": [
+                  "media-1"
+                ]
+              },
+              {
+                "id": "seal",
+                "order": 3,
+                "action": "Seal the tool before the core cools",
+                "result": "A tempered tool is added to your kit."
+              }
+            ]
+          },
+          {
+            "id": "P04",
+            "label": "Failure & Recovery",
+            "interactive": false,
+            "instanceId": "recovery",
+            "payload": {
+              "cases": [
+                {
+                  "symptom": "The core cools before sealing",
+                  "cause": "The handle was not ready",
+                  "recovery": "Quench the handle first, then restart the heat step."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e2"
+            ],
+            "mediaRefs": [],
+            "behavior": "recovery",
+            "data": []
+          },
+          {
+            "id": "N01",
+            "label": "Related Next Step",
+            "interactive": false,
+            "instanceId": "next",
+            "payload": {
+              "steps": [
+                {
+                  "href": "/heat-system/",
+                  "label": "Tune forge heat",
+                  "reason": "Understand the heat limit before repeating the procedure."
+                }
+              ]
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "related-next-step",
+            "data": [
+              {
+                "href": "/heat-system/",
+                "label": "Tune forge heat",
+                "reason": "Understand the heat limit before repeating the procedure."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "marsh-map",
+      "title": "Cinder Marsh Map",
+      "href": "/marsh-map/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "marsh-map",
+          "title": "Cinder Marsh Map",
+          "href": "/marsh-map/",
+          "query": "emberfall resource map",
+          "playerProblem": "find the resource location"
+        },
+        "state": {},
+        "intent": {
+          "query": "emberfall resource map",
+          "playerProblem": "find the resource location",
+          "primaryTask": "location",
+          "prototype": "P5",
+          "priority": 8,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "L01",
+              "status": "include",
+              "reason": "Spatial intent can be answered with location facts."
+            },
+            {
+              "primitiveId": "L02",
+              "status": "include",
+              "reason": "Map needs reliable spatial data."
+            },
+            {
+              "primitiveId": "L03",
+              "status": "include",
+              "reason": "Route needs reliable route data."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [
+          {
+            "evidenceId": "e3",
+            "sourceType": "fixture-map",
+            "sourceRef": "fixture://cinder-marsh",
+            "finding": "The north ridge seam is marked on the Cinder Marsh map."
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-1",
+            "role": "map",
+            "source": "/v4/emberfall-map.svg",
+            "localRef": "/v4/emberfall-map.svg",
+            "alt": "Cinder Marsh resource map",
+            "caption": "Reference map of Cinder Marsh",
+            "provenance": "Artificial Fixture asset",
+            "width": 1200,
+            "height": 640
+          }
+        ],
+        "assets": [
+          {
+            "role": "map",
+            "path": "/v4/emberfall-map.svg",
+            "alt": "Cinder Marsh resource map",
+            "usable": true,
+            "caption": "Reference map of Cinder Marsh",
+            "provenance": "Artificial Fixture asset",
+            "width": 1200,
+            "height": 640
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Cinder Marsh Map",
+              "task": "Location",
+              "subject": "Ember Core seam"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "location",
+            "primitiveId": "L01",
+            "payload": {
+              "area": "Cinder Marsh",
+              "coordinates": {
+                "x": 42,
+                "y": 18,
+                "region": "North ridge"
+              },
+              "landmark": "Split-Reed Gate",
+              "access": "Enter from the North Gate after the Ashfall bell."
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "map",
+            "primitiveId": "L02",
+            "payload": {
+              "source": "Cinder Marsh survey",
+              "markers": [
+                {
+                  "id": "seam",
+                  "label": "North ridge Ember Core seam",
+                  "x": 42,
+                  "y": 18,
+                  "locationRef": "north-ridge"
+                }
+              ],
+              "layers": [
+                {
+                  "id": "resources",
+                  "label": "Resources",
+                  "enabled": true
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": [
+              "media-1"
+            ]
+          },
+          {
+            "instanceId": "route",
+            "primitiveId": "L03",
+            "payload": {
+              "start": "North Gate",
+              "waypoints": [
+                {
+                  "id": "reed",
+                  "label": "Split-Reed Gate",
+                  "instruction": "Keep the basin on your right."
+                },
+                {
+                  "id": "ridge",
+                  "label": "North ridge",
+                  "instruction": "Climb past the ash posts."
+                }
+              ],
+              "destination": "Ember Core seam"
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "L01",
+            "status": "include",
+            "reason": "Spatial intent can be answered with location facts."
+          },
+          {
+            "primitiveId": "L02",
+            "status": "include",
+            "reason": "Map needs reliable spatial data."
+          },
+          {
+            "primitiveId": "L03",
+            "status": "include",
+            "reason": "Route needs reliable route data."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "header",
+            "payload": {
+              "title": "Cinder Marsh Map",
+              "task": "Location",
+              "subject": "Ember Core seam"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "L01",
+            "label": "Location Fact",
+            "interactive": false,
+            "instanceId": "location",
+            "payload": {
+              "area": "Cinder Marsh",
+              "coordinates": {
+                "x": 42,
+                "y": 18,
+                "region": "North ridge"
+              },
+              "landmark": "Split-Reed Gate",
+              "access": "Enter from the North Gate after the Ashfall bell."
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": [],
+            "behavior": "location-facts",
+            "data": []
+          },
+          {
+            "id": "L02",
+            "label": "Map",
+            "interactive": true,
+            "instanceId": "map",
+            "payload": {
+              "source": "Cinder Marsh survey",
+              "markers": [
+                {
+                  "id": "seam",
+                  "label": "North ridge Ember Core seam",
+                  "x": 42,
+                  "y": 18,
+                  "locationRef": "north-ridge"
+                }
+              ],
+              "layers": [
+                {
+                  "id": "resources",
+                  "label": "Resources",
+                  "enabled": true
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": [
+              "media-1"
+            ],
+            "behavior": "map",
+            "data": [
+              {
+                "id": "seam",
+                "label": "North ridge Ember Core seam",
+                "x": 42,
+                "y": 18,
+                "locationRef": "north-ridge"
+              }
+            ]
+          },
+          {
+            "id": "L03",
+            "label": "Route Sequence",
+            "interactive": false,
+            "instanceId": "route",
+            "payload": {
+              "start": "North Gate",
+              "waypoints": [
+                {
+                  "id": "reed",
+                  "label": "Split-Reed Gate",
+                  "instruction": "Keep the basin on your right."
+                },
+                {
+                  "id": "ridge",
+                  "label": "North ridge",
+                  "instruction": "Climb past the ash posts."
+                }
+              ],
+              "destination": "Ember Core seam"
+            },
+            "evidenceRefs": [
+              "e3"
+            ],
+            "mediaRefs": [],
+            "behavior": "route",
+            "data": []
+          }
+        ]
+      }
+    }
+  ]
+}

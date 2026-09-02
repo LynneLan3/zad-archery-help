@@ -1,0 +1,20 @@
+---
+import MediaFigure from './MediaFigure.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const cover = entry.data.cover;
+---
+
+{
+	cover && (
+		<div class="gw-guide-hero">
+			<MediaFigure
+				image={cover}
+				media={{ src: cover.src, alt: entry.data.coverMedia?.alt ?? entry.data.imageAlt ?? entry.data.title, ...entry.data.coverMedia }}
+				mode="hero"
+				sizes="(max-width: 72rem) 100vw, 960px"
+				loading="eager"
+			/>
+		</div>
+	)
+}

@@ -1,0 +1,68 @@
+{
+  "identity": {
+    "game": "Zad Archery",
+    "verified_search_variants": [
+      "Zad Archery",
+      "Zad Archery: Idle RPG",
+      "Zad Archery Demo"
+    ],
+    "do_not_invent_aliases": [
+      "ZA",
+      "ZadArchery wiki slang"
+    ],
+    "steam_app_id": 4412000,
+    "developer": "Samharia Studios",
+    "publisher": "Samharia Studios",
+    "release_date": "2026-09-01",
+    "site_domain": "zadarchery.help"
+  },
+  "official_game_description_summary": "Incremental archery RPG/action game: clear waves of target-like monsters, collect loot, and grow through skill tree, jobs, skills, crafting, mining and later progression systems.",
+  "verified_systems": [
+    "Massive Skill Tree",
+    "5 Archer Jobs",
+    "Loot",
+    "Upgradeable Skills",
+    "Crafting",
+    "Mining",
+    "Alchemy (developer/demo sources)",
+    "Gathering/Herbing (developer/demo sources)",
+    "Shaping",
+    "Masteries",
+    "Guardian Perks"
+  ],
+  "platforms": {
+    "steam": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "steam_deck": "Playable; some controller glyph mismatch may appear",
+    "mobile": "Developer linked iOS and Android versions in launch Reddit thread; mobile title is 'Zad Archery: Idle RPG'."
+  },
+  "length": {
+    "official": "Designed around ~5 hours; build choices and loot can change duration, especially for completionists.",
+    "community_launch_reports": "Several Reddit launch-day comments reported roughly 4 to 5.5 hours.",
+    "claim_rule": "Use '~5 hours' as the headline estimate; label community reports separately."
+  },
+  "achievements": {
+    "live_observed_count": 12,
+    "pre_release_developer_claim": 25,
+    "discrepancy": true,
+    "rule": "Do not publish '25 achievements' as current fact. Page should say 12 are currently exposed by live Steam metadata as of 2026-09-02, while a pre-release announcement mentioned 25."
+  },
+  "launch_patch": {
+    "version": "1.0.2",
+    "date": "2026-09-01",
+    "important_fixes": [
+      "monster gems below highest level now count",
+      "missing Guardian/King lock fixed",
+      "Defeat the King Steam achievement fix",
+      "native display resolution added"
+    ]
+  },
+  "search_demand_context": {
+    "google_trends_user_evidence": "US Trends screenshots supplied by user show Zad Archery at effectively 0 average relative interest for both past week and past month against In Stars And Time benchmark; treat as very early search demand.",
+    "community_signal": "Steam discussions and Reddit already contain concrete post-purchase questions, especially playtime, demo save carryover, Steam Deck/mobile, item selling and progression.",
+    "strategy": "Launch narrowly around verified questions first; expand build/mining/crafting pages only after gameplay/video evidence."
+  }
+}

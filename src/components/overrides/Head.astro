@@ -1,0 +1,45 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+import Analytics from '../Analytics.astro';
+import SocialMeta from '../SocialMeta.astro';
+import { isExperienceGuide } from '../../lib/experience-guide';
+import '../../styles/experience.css';
+import '../../styles/experience-guide.css';
+import '../../styles/experience-homepage.css';
+import '../../styles/experience-presentation.css';
+
+const isExperience =
+	isExperienceGuide(
+		Astro.locals.starlightRoute.entry,
+		Astro.url.pathname,
+	) && Astro.locals.starlightRoute.entry.id !== 'privacy';
+---
+
+{
+	isExperience && (
+		<>
+			<script is:inline>
+				(function () {
+					var root = document.documentElement;
+					root.dataset.theme = 'dark';
+					root.style.colorScheme = 'dark';
+					var observer = new MutationObserver(function () {
+						if (root.dataset.theme !== 'dark') root.dataset.theme = 'dark';
+					});
+					observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+				})();
+			</script>
+		</>
+	)
+}
+<Default />
+{
+	isExperience && (
+		<script is:inline>
+			document.documentElement.dataset.theme = 'dark';
+			document.documentElement.style.colorScheme = 'dark';
+		</script>
+	)
+}
+<SocialMeta />
+<Analytics />

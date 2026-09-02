@@ -1,0 +1,17 @@
+---
+import VercelAnalyticsProvider from '@vercel/analytics/astro';
+import { game } from '../config/game';
+import { resolveAnalyticsEnvironment, shouldLoadVercelAnalytics } from '../lib/analytics';
+
+const environment = resolveAnalyticsEnvironment({
+	isProd: import.meta.env.PROD,
+	vercelEnv: import.meta.env.VERCEL_ENV,
+});
+const enabled = shouldLoadVercelAnalytics({
+	analyticsEnabled: Boolean(game.analytics?.enabled),
+	vercelAnalyticsEnabled: Boolean(game.analytics?.vercelAnalytics?.enabled),
+	environment,
+});
+---
+
+{enabled && <VercelAnalyticsProvider mode="production" />}

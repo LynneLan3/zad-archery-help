@@ -1,0 +1,23 @@
+---
+import GuideCard from './GuideCard.astro';
+import type { GuideEntry } from '../lib/guides';
+import { sortGuidesByCardImage } from '../lib/card-images';
+
+interface Props {
+	entries: GuideEntry[];
+	featured?: boolean;
+}
+
+const { entries, featured = false } = Astro.props;
+const orderedEntries = sortGuidesByCardImage(entries);
+---
+
+{
+	entries.length > 0 && (
+		<div class:list={['gw-grid', featured && 'gw-grid--featured']}>
+			{orderedEntries.map((entry) => (
+				<GuideCard {entry} featured={featured} />
+			))}
+		</div>
+	)
+}

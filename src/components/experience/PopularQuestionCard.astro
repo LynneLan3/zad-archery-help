@@ -1,0 +1,9 @@
+---
+interface Props { label: string; href: string; context?: string }
+const { label, href, context } = Astro.props;
+---
+<a class="exp-popular-question" href={href} data-analytics-event="popular_question_click" data-analytics-title={label} data-analytics-placement="popular_questions">
+	<span class="exp-popular-question__icon" aria-hidden="true">?</span>
+	<span><strong>{label}</strong>{context && <small>{context}</small>}</span>
+	<span class="exp-popular-question__arrow" aria-hidden="true">→</span>
+</a>

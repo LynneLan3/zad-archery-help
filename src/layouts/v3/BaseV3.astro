@@ -1,0 +1,10 @@
+---
+import { game } from '../../config/game';
+import '../../styles/v3/presentation.css';
+const { title = game.title ?? game.shortName, description } = Astro.props;
+---
+<!doctype html>
+<html lang={game.locale === 'zh-CN' ? 'zh-CN' : 'en'} data-v3-document>
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{title}</title>{description && <meta name="description" content={description} />}</head>
+<body><slot /></body>
+</html>

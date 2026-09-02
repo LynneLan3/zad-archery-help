@@ -1,0 +1,22 @@
+{
+  "slug": "sell-salvage-items",
+  "route": "/guides/crafting-gear/sell-salvage-items/",
+  "title_draft": "How to Sell or Salvage Items in Zad Archery",
+  "research_status": "HOLD_CURRENT_BUILD_VERIFICATION",
+  "known": [
+    "Demo players repeatedly discussed awkward sell/salvage controls."
+  ],
+  "missing_before_publish": [
+    "current full-release control",
+    "bulk selling behavior",
+    "Steam Deck input"
+  ],
+  "capture_targets": [
+    "current inventory tooltip showing exact sell/salvage input",
+    "Steam Deck input if available"
+  ],
+  "sources": [
+    "S10_SELLING_THREAD",
+    "S15_ITCH_COMMENTS"
+  ]
+}

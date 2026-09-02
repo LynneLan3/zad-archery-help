@@ -1,0 +1,693 @@
+[
+  {
+    "id": "ember-core",
+    "upstreamInput": {
+      "id": "ember-core",
+      "title": "Ember Core",
+      "href": "/v4-preview/ember-core/",
+      "query": "ember core",
+      "playerProblem": "look up the item",
+      "primaryTask": "entity-lookup"
+    },
+    "pageData": {
+      "pageDataVersion": "v4",
+      "page": {
+        "id": "ember-core",
+        "title": "Ember Core",
+        "href": "/v4-preview/ember-core/",
+        "query": "ember core",
+        "playerProblem": "look up the item"
+      },
+      "state": {
+        "version": "0.9",
+        "dataWindow": "Ashfall cycle"
+      },
+      "intent": {
+        "query": "ember core",
+        "playerProblem": "look up the item",
+        "primaryTask": "entity-lookup",
+        "prototype": "P1",
+        "priority": 10,
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ],
+        "resolution": {
+          "basis": "primary-task",
+          "confidence": "high"
+        }
+      },
+      "facts": [
+        {
+          "id": "type",
+          "label": "Type",
+          "value": "Resource",
+          "verified": true
+        },
+        {
+          "id": "source",
+          "label": "Source",
+          "value": "Cinder Marsh seams",
+          "verified": true
+        },
+        {
+          "id": "use",
+          "label": "Primary use",
+          "value": "Forge heat-resistant tools",
+          "verified": true
+        },
+        {
+          "id": "rarity",
+          "label": "Rarity",
+          "value": "Uncommon",
+          "verified": true
+        },
+        {
+          "id": "heat",
+          "label": "Heat value",
+          "value": "12 units",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "e1",
+          "sourceType": "fixture-lore",
+          "sourceRef": "fixture://ember-core",
+          "finding": "The Ember Core guide records its source and forge use."
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "media-1",
+          "role": "entity",
+          "source": "/v4/emberfall-core.svg",
+          "localRef": "/v4/emberfall-core.svg",
+          "alt": "Ember Core crystal",
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "freshness": {
+        "version": "0.9",
+        "dataWindow": "Ashfall cycle"
+      },
+      "assets": [
+        {
+          "role": "entity",
+          "path": "/v4/emberfall-core.svg",
+          "alt": "Ember Core crystal",
+          "usable": true,
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Ember Core",
+            "task": "Entity lookup",
+            "subject": "Resource"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": [
+            "media-1"
+          ]
+        },
+        {
+          "instanceId": "answer",
+          "primitiveId": "A02",
+          "payload": {
+            "answer": "Use Ember Core at the forge to craft heat-resistant tools.",
+            "nextAction": {
+              "href": "/v4-preview/forge-guide/"
+            }
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "facts",
+          "primitiveId": "E01",
+          "payload": {
+            "facts": [
+              {
+                "label": "Type",
+                "value": "Resource"
+              },
+              {
+                "label": "Source",
+                "value": "Cinder Marsh seams"
+              },
+              {
+                "label": "Primary use",
+                "value": "Forge heat-resistant tools"
+              },
+              {
+                "label": "Rarity",
+                "value": "Uncommon",
+                "state": "Current state"
+              },
+              {
+                "label": "Heat value",
+                "value": "12 units"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e1"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/v4-preview/forge-guide/",
+                "label": "Forge with the Core",
+                "reason": "Turn the resource into a heat-resistant tool."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ],
+      "primitiveRecipe": [
+        {
+          "primitiveId": "A01",
+          "status": "include",
+          "reason": "Every answer surface identifies its task."
+        },
+        {
+          "primitiveId": "A02",
+          "status": "include",
+          "reason": "Entity lookup needs a direct answer."
+        },
+        {
+          "primitiveId": "E01",
+          "status": "include",
+          "reason": "Entity facts use structured facts."
+        },
+        {
+          "primitiveId": "N01",
+          "status": "include",
+          "reason": "A related next task continues the lookup."
+        }
+      ]
+    }
+  },
+  {
+    "id": "forge-guide",
+    "upstreamInput": {
+      "id": "forge-guide",
+      "title": "Forge Guide",
+      "href": "/v4-preview/forge-guide/",
+      "query": "how to forge",
+      "playerProblem": "complete the forging procedure",
+      "primaryTask": "procedure"
+    },
+    "pageData": {
+      "pageDataVersion": "v4",
+      "page": {
+        "id": "forge-guide",
+        "title": "Forge Guide",
+        "href": "/v4-preview/forge-guide/",
+        "query": "how to forge",
+        "playerProblem": "complete the forging procedure"
+      },
+      "state": {},
+      "intent": {
+        "query": "how to forge",
+        "playerProblem": "complete the forging procedure",
+        "primaryTask": "procedure",
+        "prototype": "P4",
+        "priority": 9,
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P01",
+            "status": "conditional",
+            "reason": "Requirements need real prerequisites."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "include",
+            "reason": "Procedure answers are ordered actions."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "conditional",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the procedure."
+          }
+        ],
+        "resolution": {
+          "basis": "primary-task",
+          "confidence": "high"
+        }
+      },
+      "facts": [],
+      "evidence": [
+        {
+          "evidenceId": "e2",
+          "sourceType": "fixture-procedure",
+          "sourceRef": "fixture://forge-guide",
+          "finding": "The three forge actions produce a tempered tool."
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "media-1",
+          "role": "step",
+          "source": "/v4/emberfall-forge.svg",
+          "localRef": "/v4/emberfall-forge.svg",
+          "alt": "Forge sequence diagram",
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "assets": [
+        {
+          "role": "step",
+          "path": "/v4/emberfall-forge.svg",
+          "alt": "Forge sequence diagram",
+          "usable": true,
+          "provenance": "Artificial Fixture asset"
+        }
+      ],
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Forge Guide",
+            "task": "How-to",
+            "subject": "Tempered tool"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "requirements",
+          "primitiveId": "P01",
+          "payload": {
+            "requirements": [
+              {
+                "id": "core",
+                "label": "Ember Core",
+                "status": "ready",
+                "howToMeet": "Gather one from a Cinder Marsh seam."
+              },
+              {
+                "id": "handle",
+                "label": "Quenched handle",
+                "status": "ready",
+                "howToMeet": "Cool the handle at the marsh basin."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "steps",
+          "primitiveId": "P02",
+          "payload": {
+            "steps": [
+              {
+                "id": "heat",
+                "order": 1,
+                "action": "Heat the Ember Core in the forge",
+                "result": "The core glows white."
+              },
+              {
+                "id": "handle",
+                "order": 2,
+                "action": "Seat the quenched handle",
+                "result": "The forge binds the grip.",
+                "evidenceRefs": [
+                  "e2"
+                ],
+                "mediaRefs": [
+                  "media-1"
+                ]
+              },
+              {
+                "id": "seal",
+                "order": 3,
+                "action": "Seal the tool before the core cools",
+                "result": "A tempered tool is added to your kit."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "recovery",
+          "primitiveId": "P04",
+          "payload": {
+            "cases": [
+              {
+                "symptom": "The core cools before sealing",
+                "cause": "The handle was not ready",
+                "recovery": "Quench the handle first, then restart the heat step."
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e2"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "next",
+          "primitiveId": "N01",
+          "payload": {
+            "steps": [
+              {
+                "href": "/v4-preview/heat-system/",
+                "label": "Tune forge heat",
+                "reason": "Understand the heat limit before repeating the procedure."
+              }
+            ]
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        }
+      ],
+      "primitiveRecipe": [
+        {
+          "primitiveId": "A01",
+          "status": "include",
+          "reason": "Every answer surface identifies its task."
+        },
+        {
+          "primitiveId": "P01",
+          "status": "include",
+          "reason": "Requirements need real prerequisites."
+        },
+        {
+          "primitiveId": "P02",
+          "status": "include",
+          "reason": "Procedure answers are ordered actions."
+        },
+        {
+          "primitiveId": "P04",
+          "status": "include",
+          "reason": "Recovery needs real failure states."
+        },
+        {
+          "primitiveId": "N01",
+          "status": "include",
+          "reason": "A next task continues the procedure."
+        }
+      ]
+    }
+  },
+  {
+    "id": "armory-db",
+    "upstreamInput": {
+      "id": "armory-db",
+      "title": "Armory Planner",
+      "href": "/v4-preview/armory-db/",
+      "query": "emberfall build planner",
+      "playerProblem": "search and arrange a build",
+      "primaryTask": "tool-database",
+      "resolverEvidence": {
+        "filterFacets": [
+          "class",
+          "weapon"
+        ]
+      }
+    },
+    "pageData": {
+      "pageDataVersion": "v4",
+      "page": {
+        "id": "armory-db",
+        "title": "Armory Planner",
+        "href": "/v4-preview/armory-db/",
+        "query": "emberfall build planner",
+        "playerProblem": "search and arrange a build"
+      },
+      "state": {},
+      "intent": {
+        "query": "emberfall build planner",
+        "playerProblem": "search and arrange a build",
+        "primaryTask": "tool-database",
+        "prototype": "P9",
+        "priority": 6,
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "X01",
+            "status": "include",
+            "reason": "Filter needs useful facets."
+          },
+          {
+            "primitiveId": "X02",
+            "status": "conditional",
+            "reason": "Sortable data needs a dataset."
+          },
+          {
+            "primitiveId": "X05",
+            "status": "conditional",
+            "reason": "Workspace needs a real planning task."
+          },
+          {
+            "primitiveId": "E03",
+            "status": "include",
+            "reason": "A tool needs structured result rows."
+          }
+        ],
+        "resolution": {
+          "basis": "primary-task",
+          "confidence": "high"
+        }
+      },
+      "facts": [],
+      "evidence": [
+        {
+          "evidenceId": "e5",
+          "sourceType": "fixture-dataset",
+          "sourceRef": "fixture://armory",
+          "finding": "The Armory lists tools by class and power."
+        }
+      ],
+      "media": [],
+      "assets": [],
+      "primitiveData": [
+        {
+          "instanceId": "header",
+          "primitiveId": "A01",
+          "payload": {
+            "title": "Armory Planner",
+            "task": "Tool database",
+            "subject": "Build workspace"
+          },
+          "evidenceRefs": [],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "filter",
+          "primitiveId": "X01",
+          "payload": {
+            "facets": [
+              {
+                "id": "class",
+                "label": "Class",
+                "values": [
+                  "Warden",
+                  "Arcanist"
+                ]
+              },
+              {
+                "id": "weapon",
+                "label": "Weapon",
+                "values": [
+                  "Cinder Axe",
+                  "Marsh Bow"
+                ]
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "sort",
+          "primitiveId": "X02",
+          "payload": {
+            "columns": [
+              {
+                "id": "name",
+                "label": "Name"
+              },
+              {
+                "id": "power",
+                "label": "Power"
+              }
+            ],
+            "rows": [
+              {
+                "name": "Cinder Axe",
+                "power": 12,
+                "class": "Warden"
+              },
+              {
+                "name": "Marsh Bow",
+                "power": 9,
+                "class": "Arcanist"
+              },
+              {
+                "name": "Ash Staff",
+                "power": 15,
+                "class": "Arcanist"
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "table",
+          "primitiveId": "E03",
+          "payload": {
+            "columns": [
+              {
+                "id": "name",
+                "label": "Name"
+              },
+              {
+                "id": "class",
+                "label": "Class"
+              },
+              {
+                "id": "power",
+                "label": "Power"
+              }
+            ],
+            "rows": [
+              {
+                "name": "Cinder Axe",
+                "class": "Warden",
+                "power": 12
+              },
+              {
+                "name": "Marsh Bow",
+                "class": "Arcanist",
+                "power": 9
+              },
+              {
+                "name": "Ash Staff",
+                "class": "Arcanist",
+                "power": 15
+              }
+            ]
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        },
+        {
+          "instanceId": "workspace",
+          "primitiveId": "X05",
+          "payload": {
+            "state": {
+              "slot": "empty",
+              "saved": false
+            },
+            "controls": [
+              {
+                "id": "cinder-axe",
+                "label": "Add Cinder Axe",
+                "type": "button"
+              },
+              {
+                "id": "ash-staff",
+                "label": "Add Ash Staff",
+                "type": "button"
+              }
+            ],
+            "result": "Choose a tool to begin.",
+            "saveShare": {
+              "saved": false
+            }
+          },
+          "evidenceRefs": [
+            "e5"
+          ],
+          "mediaRefs": []
+        }
+      ],
+      "primitiveRecipe": [
+        {
+          "primitiveId": "A01",
+          "status": "include",
+          "reason": "Every answer surface identifies its task."
+        },
+        {
+          "primitiveId": "X01",
+          "status": "include",
+          "reason": "Filter needs useful facets."
+        },
+        {
+          "primitiveId": "X02",
+          "status": "include",
+          "reason": "Sortable data needs a dataset."
+        },
+        {
+          "primitiveId": "X05",
+          "status": "include",
+          "reason": "Workspace needs a real planning task."
+        },
+        {
+          "primitiveId": "E03",
+          "status": "include",
+          "reason": "A tool needs structured result rows."
+        }
+      ]
+    }
+  }
+]

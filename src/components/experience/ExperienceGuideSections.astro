@@ -1,0 +1,121 @@
+---
+/**
+ * ExperienceGuideSections — editorial bottom sections for Guide content pages.
+ * Rendered after the Markdown body on Experience guides:
+ * evidence, source record, next questions, more references, route context,
+ * and other routes.
+ */
+import GuideEvidence from '../GuideEvidence.astro';
+import SourceList from '../SourceList.astro';
+import PageRouteContext from './routes/PageRouteContext.astro';
+import { ui } from '../../lib/ui';
+import { experienceNav } from '../../lib/experience-nav';
+import { getGuides, guideHref } from '../../lib/guides';
+import { loadGuideContent } from '../../lib/guide-content';
+import CardThumbnail from '../CardThumbnail.astro';
+import { guideCardImageAlt, resolveGuideCardImage, sortGuidesByCardImage } from '../../lib/card-images';
+import ContentTrust from '../ContentTrust.astro';
+import RelatedGuide from './RelatedGuide.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const t = ui();
+const { guidesHref } = await experienceNav();
+const content = await loadGuideContent(entry);
+const data = entry.data;
+const orderedNextGuides = sortGuidesByCardImage(content.nextGuides);
+const orderedRelatedGuides = sortGuidesByCardImage(content.related);
+const hasTrustDetails = Boolean(data.trust?.sources?.length || data.trust?.note);
+const allGuides = await getGuides();
+const routeIndex = content.primaryRoute?.pages.findIndex((page) => page.href === guideHref(entry)) ?? -1;
+const previousGuide = routeIndex > 0 ? allGuides.find((guide) => guideHref(guide) === content.primaryRoute?.pages[routeIndex - 1]?.href) : undefined;
+const nextGuide = routeIndex >= 0 ? allGuides.find((guide) => guideHref(guide) === content.primaryRoute?.pages[routeIndex + 1]?.href) : undefined;
+---
+
+{/* Evidence — content width when present */}
+{((data.evidence ?? []).length > 0) && (
+	<div class="exp-guide-evidence-wrap exp-guide-sections-block">
+		<GuideEvidence />
+	</div>
+)}
+
+{/* Source record — reading width when present */}
+{((data.sources ?? []).length > 0) && (
+	<div class="exp-guide-sources-wrap exp-guide-sections-block">
+		<SourceList />
+	</div>
+)}
+
+{hasTrustDetails && (
+	<div class="exp-guide-trust-wrap exp-guide-sections-block">
+		<ContentTrust trust={data.trust!} />
+	</div>
+)}
+
+{/* Next Questions — from relations[type=next-step], max 3 */}
+{content.nextGuides.length > 0 && (
+	<div class="exp-guide-next-wrap exp-guide-sections-block">
+		<section class="exp-guide-next" aria-labelledby="exp-guide-next-heading">
+			<p class="exp-eyebrow">{t.nextQuestions}</p>
+			<h2 class="exp-guide-next__heading" id="exp-guide-next-heading">{t.nextQuestionsLede}</h2>
+			<div class="exp-guide-next__list">
+				{orderedNextGuides.map((guide, index) => (
+					<a class="exp-guide-next__item" href={guideHref(guide)} data-analytics-event="guide_click" data-analytics-title={guide.data.title} data-analytics-placement="guide_internal_link">
+						<span class="exp-number exp-number--sm exp-guide-next__number">
+							{String(index + 1).padStart(2, '0')}
+						</span>
+						{resolveGuideCardImage(guide) && <CardThumbnail class="exp-guide-next__media" image={resolveGuideCardImage(guide)!} alt={guideCardImageAlt(guide)} />}
+						<div class="exp-guide-next__body">
+							<span class="exp-guide-next__title">{guide.data.title}</span>
+							{guide.data.description && (
+								<span class="exp-guide-next__desc">{guide.data.description}</span>
+							)}
+						</div>
+						<span class="exp-guide-next__arrow" aria-hidden="true">→</span>
+					</a>
+				))}
+			</div>
+		</section>
+	</div>
+)}
+
+{/* More References — weak, only guides not already surfaced as next steps */}
+{content.related.length > 0 && (
+	<div class="exp-guide-references-wrap exp-guide-sections-block">
+		<section class="exp-guide-references" aria-labelledby="exp-guide-references-heading">
+			<p class="exp-eyebrow" id="exp-guide-references-heading">{t.moreReferences}</p>
+			<div class="exp-related-grid">{orderedRelatedGuides.map((guide) => <RelatedGuide entry={guide} />)}</div>
+		</section>
+	</div>
+)}
+
+{(previousGuide || nextGuide) && <div class="exp-guide-sections-block exp-guide-continuity">
+	{previousGuide && <a class="exp-guide-continuity__item" href={guideHref(previousGuide)}><small>Previous</small><strong>{previousGuide.data.title}</strong></a>}
+	{nextGuide && <a class="exp-guide-continuity__item exp-guide-continuity__item--next" href={guideHref(nextGuide)}><small>Next guide</small><strong>{nextGuide.data.title} <span>Continue →</span></strong></a>}
+</div>}
+
+{/* Route context — all routes this guide belongs to */}
+{content.currentRoutes.length > 0 && (
+	<div class="exp-guide-route-wrap exp-guide-sections-block">
+		<PageRouteContext pageId={content.pageId} routes={content.routes} guidesHref={guidesHref} />
+	</div>
+)}
+
+{/* Other Routes — weak, derived from runtime config, max 3 */}
+{content.otherRoutes.length > 0 && (
+	<div class="exp-guide-other-wrap exp-guide-sections-block">
+		<nav class="exp-guide-other-routes" aria-label={t.exploreAnotherRoute}>
+			<p class="exp-eyebrow">{t.exploreAnotherRoute}</p>
+			<div class="exp-other-routes">
+				{content.otherRoutes.map((route) => {
+					const number = String(content.routes.indexOf(route) + 1).padStart(2, '0');
+					return (
+						<a class="exp-other-route" href={route.href}>
+							<span class="exp-number exp-number--xs exp-other-route__number">{number}</span>
+							<span class="exp-other-route__label">{route.title}</span>
+						</a>
+					);
+				})}
+			</div>
+		</nav>
+	</div>
+)}

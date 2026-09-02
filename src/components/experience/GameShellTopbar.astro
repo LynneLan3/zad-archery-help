@@ -1,0 +1,154 @@
+---
+/**
+ * GameShellTopbar — reusable top bar + mobile nav + Pagefind search overlay.
+ *
+ * A body-level fragment (no `<html>`/`<body>` wrapper) so it can be embedded
+ * either in `GameShell` or inside the Starlight shell on Experience Guide pages.
+ */
+import type { NavItem } from './GameShell.astro';
+
+interface Props {
+	siteTitle: string;
+	homeHref: string;
+	nav: NavItem[];
+	activePath?: string;
+}
+
+const { siteTitle, homeHref, nav, activePath = '' } = Astro.props;
+
+function isActive(item: NavItem): boolean {
+	if (!activePath) return false;
+	const clean = activePath.replace(/\/+$/, '');
+	if (clean === item.href.replace(/\/+$/, '')) return true;
+	return (item.activeMatch ?? []).some((prefix) => {
+		const p = prefix.replace(/\/+$/, '');
+		return clean === p || clean.startsWith(`${p}/`);
+	});
+}
+---
+
+<header class="exp-topbar">
+	<div class="exp-topbar__inner">
+		<a class="exp-topbar__brand" href={homeHref}>
+			<span class="exp-topbar__mark" aria-hidden="true">✦</span>
+			{siteTitle}
+		</a>
+		<nav class="exp-topbar__nav" aria-label="Main navigation">
+			{nav.map((item) => (
+				<a
+					class:list={['exp-topbar__link', isActive(item) && 'is-active']}
+					href={item.href}
+					aria-current={isActive(item) ? 'page' : undefined}
+				>
+					{item.label}
+				</a>
+			))}
+		</nav>
+		<div class="exp-topbar__actions">
+			<button
+				class="exp-topbar__search-trigger"
+				type="button"
+				aria-label="Search"
+				data-exp-search-open
+			>
+				Search <kbd>/</kbd>
+			</button>
+			<button class="exp-topbar__mobile-toggle" type="button" aria-label="Menu" aria-expanded="false" data-exp-mobile-toggle>☰</button>
+		</div>
+	</div>
+</header>
+<nav class="exp-mobile-nav" aria-label="Mobile menu" data-exp-mobile-nav>
+	{nav.map((item) => (
+		<a
+			class:list={['exp-topbar__link', isActive(item) && 'is-active']}
+			href={item.href}
+			aria-current={isActive(item) ? 'page' : undefined}
+		>
+			{item.label}
+		</a>
+	))}
+	<button class="exp-topbar__search-trigger" type="button" data-exp-search-open>Search</button>
+</nav>
+<nav class="exp-mobile-bottom" aria-label="Quick navigation">
+	{nav.slice(0, 4).map((item) => (
+		<a class:list={['exp-mobile-bottom__item', isActive(item) && 'is-active']} href={item.href} aria-current={isActive(item) ? 'page' : undefined}>
+			<span aria-hidden="true">{item.label.slice(0, 1)}</span><small>{item.label}</small>
+		</a>
+	))}
+	<button class="exp-mobile-bottom__item" type="button" data-exp-mobile-toggle><span aria-hidden="true">☰</span><small>Menu</small></button>
+</nav>
+
+{/* Search overlay (Pagefind) */}
+<div class="exp-search-overlay" data-exp-search-overlay>
+	<div class="exp-search-dialog" data-exp-search-dialog>
+		<div id="exp-pagefind-container"></div>
+	</div>
+</div>
+
+<script is:inline>
+	(function () {
+		var toggles = document.querySelectorAll('[data-exp-mobile-toggle], [data-exp-mobile-menu-toggle]');
+		var mobileNav = document.querySelector('[data-exp-mobile-nav]');
+		if (toggles.length && mobileNav) {
+			function toggleMenu() {
+				var open = mobileNav.getAttribute('data-open') === 'true';
+				mobileNav.setAttribute('data-open', open ? 'false' : 'true');
+				toggles.forEach(function (toggle) { toggle.setAttribute('aria-expanded', open ? 'false' : 'true'); });
+			}
+			toggles.forEach(function (toggle) { toggle.addEventListener('click', toggleMenu); });
+		}
+
+		var overlay = document.querySelector('[data-exp-search-overlay]');
+		var triggers = document.querySelectorAll('[data-exp-search-open]');
+		var pfInit = false;
+
+		function openSearch() {
+			if (!overlay) return;
+			overlay.setAttribute('data-open', 'true');
+			if (!pfInit) {
+				pfInit = true;
+				var script = document.createElement('script');
+				script.src = '/pagefind/pagefind-ui.js';
+				script.onload = function () {
+					if (typeof PagefindUI !== 'undefined') {
+						new PagefindUI({
+							element: '#exp-pagefind-container',
+							showSubResults: true,
+							showImages: false,
+						});
+					}
+					var input = document.querySelector('#exp-pagefind-container input');
+					if (input) input.focus();
+				};
+				document.head.appendChild(script);
+			} else {
+				var input = document.querySelector('#exp-pagefind-container input');
+				if (input) input.focus();
+			}
+		}
+
+		function closeSearch() {
+			if (overlay) overlay.setAttribute('data-open', 'false');
+		}
+
+		triggers.forEach(function (btn) {
+			btn.addEventListener('click', openSearch);
+		});
+
+		if (overlay) {
+			overlay.addEventListener('click', function (e) {
+				if (e.target === overlay) closeSearch();
+			});
+		}
+
+		document.addEventListener('keydown', function (e) {
+			if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+				var tag = (document.activeElement || {}).tagName;
+				if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+				e.preventDefault();
+				openSearch();
+			}
+			if (e.key === 'Escape') closeSearch();
+		});
+	})();
+</script>

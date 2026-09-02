@@ -1,0 +1,250 @@
+[
+  {
+    "primitiveId": "A01",
+    "validPayload": {
+      "title": "Title",
+      "task": "Task",
+      "subject": "Subject"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "A02",
+    "validPayload": {
+      "answer": "Answer"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "A03",
+    "validPayload": {
+      "scope": "Scope"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "S01",
+    "validPayload": {
+      "value": "0.9"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "S02",
+    "validPayload": {
+      "value": "PC"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "S03",
+    "validPayload": {
+      "value": "Summer"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "S04",
+    "validPayload": {
+      "value": "Current"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "E01",
+    "validPayload": {
+      "facts": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "E02",
+    "validPayload": {
+      "entities": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "E03",
+    "validPayload": {
+      "columns": [],
+      "rows": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "D01",
+    "validPayload": {
+      "options": [],
+      "dimensions": [],
+      "cells": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "D02",
+    "validPayload": {
+      "entries": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "D03",
+    "validPayload": {
+      "scenarios": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "P01",
+    "validPayload": {
+      "requirements": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "P02",
+    "validPayload": {
+      "steps": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "P03",
+    "validPayload": {
+      "milestones": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "P04",
+    "validPayload": {
+      "cases": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "L01",
+    "validPayload": {
+      "area": "Area"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "L02",
+    "validPayload": {
+      "source": "Map source"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "L03",
+    "validPayload": {
+      "start": "Start",
+      "waypoints": [],
+      "destination": "End"
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "X01",
+    "validPayload": {
+      "facets": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "X02",
+    "validPayload": {
+      "columns": [],
+      "rows": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "X03",
+    "validPayload": {
+      "expression": "a + b",
+      "variables": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "X04",
+    "validPayload": {
+      "inputs": [],
+      "calculation": "a + b",
+      "result": {
+        "value": 2
+      }
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "X05",
+    "validPayload": {
+      "state": {},
+      "controls": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  },
+  {
+    "primitiveId": "N01",
+    "validPayload": {
+      "steps": []
+    },
+    "validationResult": {
+      "ok": true
+    }
+  }
+]

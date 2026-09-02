@@ -1,0 +1,27 @@
+{
+  "slug": "guardian-king",
+  "route": "/guides/combat-bosses/guardian-king/",
+  "title_draft": "Zad Archery Guardian Perks and the King",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "Guardian Perks are an official system.",
+    "The King is the target of the 'Strongest Archer in Zad' achievement.",
+    "Patch 1.0.2 fixed a missing Guardian that could lock the King."
+  ],
+  "missing_before_publish": [
+    "Guardian spawn/unlock rules",
+    "King unlock requirements",
+    "boss mechanics",
+    "recommended build"
+  ],
+  "capture_targets": [
+    "Guardian screen",
+    "King unlock screen",
+    "King fight"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S03_PATCH_1_0_2",
+    "S12_ACHIEVEMENTS"
+  ]
+}

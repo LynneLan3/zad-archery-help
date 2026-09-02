@@ -1,0 +1,30 @@
+---
+import generated from '../v4/generated/example-site.json';
+import plan from '../../research/zad-archery/2026-09-02/page-plan.json';
+import questions from '../../research/zad-archery/2026-09-02/player-questions.json';
+import categories from '../../research/zad-archery/2026-09-02/guide-content/categories/progression.json';
+import V4GlobalHeader from '../components/v4/V4GlobalHeader.astro';
+import ZadGuideCard from '../components/zad/ZadGuideCard.astro';
+import ZadFooter from '../components/zad/ZadFooter.astro';
+import ZadSeoHead from '../components/zad/ZadSeoHead.astro';
+import '../v4/visual-system.css';
+import '../v4/product-overrides.css';
+const identity = generated.game.identity ?? {};
+const style = `--v4-identity-background:url(${identity.background});--v4-display-font:Inter,ui-sans-serif,sans-serif;--v4-bg:#f6f0e6;--v4-panel:#fffaf1;--v4-ink:#2c251e;`;
+const pages = generated.pages.filter((page: any) => page.id !== 'home');
+const byHref = new Map(pages.map((page: any) => [page.href, page]));
+const card = (href: string) => byHref.get(href);
+const popular = plan.homepage.popular_right_now.map(card).filter(Boolean);
+const recent = plan.homepage.recently_updated.map(card).filter(Boolean);
+const asking = questions.filter((item: any) => item.status.startsWith('READY'));
+const readyAsking = asking.map((item: any) => ({ ...item, page: card(item.route) })).filter((item: any) => item.page);
+const identityStyle = style;
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Zad Archery Guide - Every arrow, answered.</title><meta name="description" content="Verified Zad Archery guides for progression, platforms, achievements, updates and the systems behind every run." /><link rel="canonical" href="https://zadarchery.help/" /><link rel="preload" as="image" href="/zad-archery/10_steam_library_hero.jpg" /><ZadSeoHead title="Zad Archery Guide - Every arrow, answered." description="Verified Zad Archery guides for progression, achievements, platform support and launch updates." canonical="https://zadarchery.help/" /></head><body class="v4-shell zad-shell" style={identityStyle}><main class="zad-site"><V4GlobalHeader game={{...generated.game, identityAsset:'/zad-archery/12_kotaku_cover.jpg', identityLabel:'Guide site'}} navigation={generated.navigation} currentPageId="home" />
+  <section class="zad-hero"><div class="zad-hero-image"></div><div class="zad-hero-content"><p class="zad-eyebrow">Zad Archery Help <span>·</span> Launch guide</p><h1>Every arrow,<br /><em>answered.</em></h1><p class="zad-hero-copy">Find clear help for progression, achievements, platform support, updates, and the beginner systems that shape every run.</p><form class="zad-hero-search" action="/search/" role="search"><label class="sr-only" for="hero-search">Search Zad Archery guides</label><input id="hero-search" name="q" type="search" placeholder="Search Zad Archery guides…" /><button type="submit">Search <span aria-hidden="true">↗</span></button></form><div class="zad-popular-searches"><strong>Popular searches</strong>{plan.homepage.popular_searches.map((item: any) => <a href={item.route}>{item.label}</a>)}</div></div><span class="zad-patch-badge">Patch 1.0.2 <span>·</span> Sep 1, 2026</span></section>
+  <section class="zad-section zad-asking"><div class="zad-section-heading"><div><p class="zad-eyebrow">Player questions</p><h2>Players are asking</h2></div><p>Fast answers to the questions showing up at launch.</p></div><div class="zad-question-grid">{readyAsking.map((item: any) => <a class="zad-question" href={item.route}><span>Q</span><strong>{item.question}</strong><b>→</b></a>)}</div></section>
+  <section class="zad-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Start with the useful stuff</p><h2>Popular right now</h2></div><a class="zad-section-link" href="/guides/">View all guides →</a></div><div class="zad-card-grid">{popular.map((page: any) => <ZadGuideCard page={page} label={page.id.includes('achievement') ? 'Achievements' : 'Getting started'} />)}</div></section>
+  <section class="zad-section zad-category-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Find your next answer</p><h2>Browse by category</h2></div><p>{categories.description_draft}</p></div><div class="zad-category-grid"><a href="/guides/progression/"><span class="zad-category-icon">↗</span><strong>Progression</strong><p>Playtime, demo changes and the systems that shape a run.</p><b>3 guides</b></a><a href="/guides/platforms/"><span class="zad-category-icon">⌘</span><strong>Platforms</strong><p>Steam Deck, mobile availability and practical platform notes.</p><b>2 guides</b></a><a href="/achievements/"><span class="zad-category-icon">✦</span><strong>Achievements</strong><p>The current live Steam list, with the count discrepancy called out.</p><b>1 guide</b></a><a href="/updates/"><span class="zad-category-icon">↻</span><strong>Updates</strong><p>Patch notes that change how you read the current game.</p><b>1 guide</b></a></div></section>
+  <section class="zad-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Fresh from the guide desk</p><h2>Recently updated</h2></div></div><div class="zad-card-grid">{recent.map((page: any) => <ZadGuideCard page={page} label="Updated" />)}</div></section>
+  <section class="zad-editorial"><div><p class="zad-eyebrow">A better kind of game guide</p><h2>Answers first. Built for the next run.</h2></div><p>Zad Archery is compact, but its systems stack up quickly. Find the useful answer near the top, then follow the guide that gets you back into the action.</p><a href="/guides/getting-started/">Start with the beginner guide →</a></section>
+  <ZadFooter /></main></body></html>

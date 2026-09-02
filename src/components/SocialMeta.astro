@@ -1,0 +1,36 @@
+---
+import { getImage } from 'astro:assets';
+import { game } from '../config/game';
+import { resolveGameAsset } from '../lib/assets';
+import { resolveSocialImage, toAbsoluteUrl } from '../lib/social';
+
+const imageRef = resolveSocialImage({
+	pathname: Astro.url.pathname,
+	pages: game.pages,
+	defaultImage: game.social?.defaultImage,
+});
+
+let imageUrl: string | undefined;
+let imageAlt: string | undefined;
+
+if (imageRef) {
+	const image = resolveGameAsset(imageRef.asset, 'socialImage.asset');
+	if (image) {
+		const optimized = await getImage({ src: image });
+		const site = Astro.site?.href ?? game.siteUrl;
+		imageUrl = toAbsoluteUrl(optimized.src, site);
+		imageAlt = imageRef.alt;
+	}
+}
+---
+
+{
+	imageUrl && imageAlt && (
+		<>
+			<meta property="og:image" content={imageUrl} />
+			<meta property="og:image:alt" content={imageAlt} />
+			<meta name="twitter:image" content={imageUrl} />
+			<meta name="twitter:image:alt" content={imageAlt} />
+		</>
+	)
+}

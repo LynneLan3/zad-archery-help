@@ -1,0 +1,15 @@
+---
+import type { PageBody, PageBodySection, PageFaq } from '../../v4/page-data-contract';
+const { body, onlyFaq = false, includeIntro = true, includeFaq = true } = Astro.props as { body: PageBody; onlyFaq?: boolean; includeIntro?: boolean; includeFaq?: boolean };
+const typedSections: readonly PageBodySection[] = body?.sections ?? [];
+const typedFaq: readonly PageFaq[] = body?.faq ?? [];
+const sections = typedSections;
+const faq = typedFaq;
+---
+{!onlyFaq && includeIntro && body?.intro && <p class="v4-body-intro">{body.intro}</p>}
+{!onlyFaq && sections.map((section) => <section id={section.id} class="v4-body-section">
+  {section.title && <h2>{section.title}</h2>}
+  {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+  {section.bullets && section.bullets.length > 0 && <ul>{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+</section>)}
+{includeFaq && faq.length > 0 && <section id="faq" class="v4-faq"><h2>FAQ</h2>{faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>}

@@ -1,0 +1,42 @@
+---
+import { resolveGameAsset } from '../lib/assets';
+import { isPlaceholderAssetPath } from '../lib/asset-path';
+import MediaFigure from './MediaFigure.astro';
+import type { MediaAsset } from '../lib/media';
+import { ui } from '../lib/ui';
+
+const t = ui();
+const entry = Astro.locals.starlightRoute.entry;
+const configured = entry.data.evidence ?? [];
+const items = configured.flatMap((item, index) => {
+	const image = isPlaceholderAssetPath(item.asset) ? undefined : resolveGameAsset(item.asset, `frontmatter.evidence[${index}].asset`);
+	if (!image) return [];
+	return {
+		image,
+		media: {
+			src: item.asset,
+			alt: item.alt,
+			caption: item.caption,
+			sourceLabel: item.sourceLabel ?? (item.sourceType ? t.evidenceSourceTypes[item.sourceType] : undefined),
+			sourceUrl: item.sourceUrl,
+			kind: 'evidence',
+			aspectRatio: 'auto',
+		} satisfies MediaAsset,
+	};
+});
+---
+
+{
+	items.length > 0 && (
+		<section class="gw-guide-evidence" aria-labelledby="gw-guide-evidence-heading">
+			<h2 id="gw-guide-evidence-heading">{t.guideEvidenceHeading}</h2>
+			<ul>
+				{items.map((item) => (
+					<li>
+						<MediaFigure image={item.image} media={item.media} mode="evidence" sizes="(min-width: 50em) 48rem, 100vw" />
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

@@ -1,0 +1,7 @@
+---
+const { theme } = Astro.props as { theme: { accent: string; accentForeground: string } };
+---
+<script is:inline define:vars={{ accent: theme.accent, accentForeground: theme.accentForeground }}>
+  document.documentElement.style.setProperty('--v4-accent', accent);
+  document.documentElement.style.setProperty('--v4-accent-ink', accentForeground);
+</script>

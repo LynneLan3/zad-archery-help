@@ -1,0 +1,26 @@
+---
+import { enabledTrustPages } from '../lib/trust';
+import { ui } from '../lib/ui';
+
+const t = ui();
+const pages = enabledTrustPages();
+const labels: Record<(typeof pages)[number]['kind'], string> = {
+	about: t.trustAbout,
+	editorialMethod: t.trustEditorialMethod,
+	privacy: t.trustPrivacy,
+	affiliateDisclosure: t.trustAffiliateDisclosure,
+};
+---
+
+{
+	pages.length > 0 && (
+		<nav class="gw-trust-footer" aria-label={t.trustFooterLabel}>
+			{pages.map((page, index) => (
+				<>
+					{index > 0 && <span class="gw-trust-footer__sep" aria-hidden="true"> · </span>}
+					<a href={page.path}>{labels[page.kind]}</a>
+				</>
+			))}
+		</nav>
+	)
+}

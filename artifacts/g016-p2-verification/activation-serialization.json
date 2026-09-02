@@ -1,0 +1,243 @@
+[
+  {
+    "support": "available",
+    "output": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "resource location",
+          "playerProblem": "find a place"
+        },
+        "state": {},
+        "intent": {
+          "query": "resource location",
+          "playerProblem": "find a place",
+          "primaryTask": "location",
+          "prototype": "P5",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "L01",
+              "status": "include",
+              "reason": "Spatial intent can be answered with location facts."
+            },
+            {
+              "primitiveId": "L02",
+              "status": "conditional",
+              "reason": "Map needs reliable spatial data."
+            },
+            {
+              "primitiveId": "L03",
+              "status": "omit",
+              "reason": "Route needs reliable route data."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [
+          {
+            "instanceId": "map-available",
+            "primitiveId": "L02",
+            "payload": {
+              "source": "map"
+            },
+            "evidenceRefs": [],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "L01",
+            "status": "include",
+            "reason": "Spatial intent can be answered with location facts."
+          },
+          {
+            "primitiveId": "L02",
+            "status": "include",
+            "reason": "Map needs reliable spatial data."
+          },
+          {
+            "primitiveId": "L03",
+            "status": "omit",
+            "reason": "Route needs reliable route data."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "support": "unresolved",
+    "output": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "resource location",
+          "playerProblem": "find a place"
+        },
+        "state": {},
+        "intent": {
+          "query": "resource location",
+          "playerProblem": "find a place",
+          "primaryTask": "location",
+          "prototype": "P5",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "L01",
+              "status": "include",
+              "reason": "Spatial intent can be answered with location facts."
+            },
+            {
+              "primitiveId": "L02",
+              "status": "conditional",
+              "reason": "Map needs reliable spatial data."
+            },
+            {
+              "primitiveId": "L03",
+              "status": "omit",
+              "reason": "Route needs reliable route data."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "L01",
+            "status": "include",
+            "reason": "Spatial intent can be answered with location facts."
+          },
+          {
+            "primitiveId": "L02",
+            "status": "omit",
+            "reason": "Map needs reliable spatial data."
+          },
+          {
+            "primitiveId": "L03",
+            "status": "omit",
+            "reason": "Route needs reliable route data."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "support": "unsupported",
+    "output": {
+      "ok": true,
+      "output": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "p2-test",
+          "title": "P2 Test",
+          "href": "/p2-test/",
+          "query": "resource location",
+          "playerProblem": "find a place"
+        },
+        "state": {},
+        "intent": {
+          "query": "resource location",
+          "playerProblem": "find a place",
+          "primaryTask": "location",
+          "prototype": "P5",
+          "priority": 0,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "L01",
+              "status": "include",
+              "reason": "Spatial intent can be answered with location facts."
+            },
+            {
+              "primitiveId": "L02",
+              "status": "conditional",
+              "reason": "Map needs reliable spatial data."
+            },
+            {
+              "primitiveId": "L03",
+              "status": "omit",
+              "reason": "Route needs reliable route data."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "facts": [],
+        "evidence": [],
+        "media": [],
+        "assets": [],
+        "primitiveData": [],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "L01",
+            "status": "include",
+            "reason": "Spatial intent can be answered with location facts."
+          },
+          {
+            "primitiveId": "L02",
+            "status": "omit",
+            "reason": "Map needs reliable spatial data."
+          },
+          {
+            "primitiveId": "L03",
+            "status": "omit",
+            "reason": "Route needs reliable route data."
+          }
+        ]
+      }
+    }
+  }
+]

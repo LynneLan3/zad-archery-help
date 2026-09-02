@@ -1,0 +1,181 @@
+{
+  "input": "site-input/v4-example/site.json",
+  "generatedPageIds": [
+    "ember-core",
+    "forge-guide",
+    "marsh-map",
+    "unmapped-location",
+    "heat-system",
+    "armory-db",
+    "ember-catalog",
+    "class-choice",
+    "ashfall-progression",
+    "season-meta",
+    "ashfall-calendar"
+  ],
+  "homepage": {
+    "pageIds": [
+      "ember-core",
+      "forge-guide",
+      "ember-catalog",
+      "marsh-map",
+      "class-choice",
+      "heat-system",
+      "armory-db",
+      "ashfall-progression",
+      "season-meta",
+      "ashfall-calendar",
+      "unmapped-location"
+    ],
+    "orderedPageIds": [
+      "ember-core",
+      "forge-guide",
+      "ember-catalog",
+      "marsh-map",
+      "class-choice",
+      "heat-system",
+      "armory-db",
+      "ashfall-progression",
+      "season-meta",
+      "ashfall-calendar",
+      "unmapped-location"
+    ]
+  },
+  "search": {
+    "count": 11,
+    "entries": [
+      {
+        "id": "ember-core",
+        "title": "Ember Core",
+        "href": "/v4-preview/ember-core/",
+        "prototype": "P1"
+      },
+      {
+        "id": "forge-guide",
+        "title": "Forge Guide",
+        "href": "/v4-preview/forge-guide/",
+        "prototype": "P4"
+      },
+      {
+        "id": "marsh-map",
+        "title": "Cinder Marsh Map",
+        "href": "/v4-preview/marsh-map/",
+        "prototype": "P5"
+      },
+      {
+        "id": "unmapped-location",
+        "title": "Unnamed Location",
+        "href": "/v4-preview/unmapped-location/",
+        "prototype": "P5"
+      },
+      {
+        "id": "heat-system",
+        "title": "Heat System",
+        "href": "/v4-preview/heat-system/",
+        "prototype": "P7"
+      },
+      {
+        "id": "armory-db",
+        "title": "Armory Planner",
+        "href": "/v4-preview/armory-db/",
+        "prototype": "P9"
+      },
+      {
+        "id": "ember-catalog",
+        "title": "Emberfall Field Guide",
+        "href": "/v4-preview/ember-catalog/",
+        "prototype": "P2"
+      },
+      {
+        "id": "class-choice",
+        "title": "Choose Your Emberfall Path",
+        "href": "/v4-preview/class-choice/",
+        "prototype": "P3"
+      },
+      {
+        "id": "ashfall-progression",
+        "title": "Ashfall Route Progression",
+        "href": "/v4-preview/ashfall-progression/",
+        "prototype": "P6"
+      },
+      {
+        "id": "season-meta",
+        "title": "Ashfall Path Recommendations",
+        "href": "/v4-preview/season-meta/",
+        "prototype": "P8"
+      },
+      {
+        "id": "ashfall-calendar",
+        "title": "Ashfall Planning Calendar",
+        "href": "/v4-preview/ashfall-calendar/",
+        "prototype": "P10"
+      }
+    ],
+    "allLinksResolveToGeneratedPages": true
+  },
+  "category": {
+    "groups": [
+      {
+        "id": "find",
+        "label": "Find things",
+        "pageIds": [
+          "ember-core",
+          "ember-catalog"
+        ]
+      },
+      {
+        "id": "decide",
+        "label": "Make decisions",
+        "pageIds": [
+          "class-choice",
+          "season-meta"
+        ]
+      },
+      {
+        "id": "route",
+        "label": "Follow a route",
+        "pageIds": [
+          "forge-guide",
+          "marsh-map",
+          "ashfall-progression"
+        ]
+      },
+      {
+        "id": "systems",
+        "label": "Operate systems",
+        "pageIds": [
+          "heat-system",
+          "armory-db",
+          "ashfall-calendar"
+        ]
+      }
+    ]
+  },
+  "navigation": {
+    "itemPageIds": [
+      "ember-core",
+      "ember-catalog",
+      "class-choice",
+      "season-meta",
+      "forge-guide",
+      "marsh-map",
+      "ashfall-progression",
+      "heat-system",
+      "armory-db",
+      "ashfall-calendar"
+    ],
+    "allPageIdsExist": true,
+    "browsePageIds": [
+      "ember-core",
+      "ember-catalog",
+      "class-choice",
+      "season-meta",
+      "forge-guide",
+      "marsh-map",
+      "ashfall-progression",
+      "heat-system",
+      "armory-db",
+      "ashfall-calendar"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+---
+import { getGuides, guideHref, resolveRelated } from '../lib/guides';
+import { mergeRelatedSlugs, nextStepSlugs } from '../lib/page-relations';
+import { isTrustPath } from '../lib/trust';
+import { ui } from '../lib/ui';
+import CardThumbnail from './CardThumbnail.astro';
+import { guideCardImageAlt, resolveGuideCardImage, sortGuidesByCardImage } from '../lib/card-images';
+
+const t = ui();
+if (isTrustPath(Astro.url.pathname)) {
+	return null;
+}
+const entry = Astro.locals.starlightRoute.entry;
+const nextSlugs = nextStepSlugs(entry.data.relations);
+const relatedSlugs = mergeRelatedSlugs(entry.data.related, entry.data.relations).filter(
+	(slug) => !nextSlugs.includes(slug),
+);
+const related = relatedSlugs.length > 0 ? resolveRelated(await getGuides(), relatedSlugs, entry.id) : [];
+const orderedRelated = sortGuidesByCardImage(related);
+---
+
+{
+	related.length > 0 && (
+		<section class="gw-related" aria-labelledby="gw-related-heading">
+			<h2 id="gw-related-heading">{t.relatedGuides}</h2>
+			<ul>
+				{orderedRelated.map((guide) => (
+					<li>
+						<a href={guideHref(guide)} data-analytics-event="guide_click" data-analytics-title={guide.data.title} data-analytics-placement="guide_internal_link">
+							{resolveGuideCardImage(guide) && <CardThumbnail class="gw-related__media" image={resolveGuideCardImage(guide)!} alt={guideCardImageAlt(guide)} />}
+							<span class="gw-related__title">{guide.data.title}</span>
+							{guide.data.description && (
+								<span class="gw-related__desc">{guide.data.description}</span>
+							)}
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

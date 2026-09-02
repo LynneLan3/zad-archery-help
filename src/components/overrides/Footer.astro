@@ -1,0 +1,51 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+import AdSlot from '../AdSlot.astro';
+import FooterTrustLinks from '../FooterTrustLinks.astro';
+import NextStepGuide from '../NextStepGuide.astro';
+import RelatedGuides from '../RelatedGuides.astro';
+import GameShellFooter from '../experience/GameShellFooter.astro';
+import { game } from '../../config/game';
+import { isTrustPath } from '../../lib/trust';
+import { isExperienceGuide, isExperienceHomepage } from '../../lib/experience-guide';
+import { experienceNav } from '../../lib/experience-nav';
+import { isV3Presentation, isV3Article } from '../../lib/v3/presentation';
+
+const entry = Astro.locals.starlightRoute.entry;
+const isHome = isExperienceHomepage(entry);
+const isSplash = entry.data.template === 'splash';
+const isTrust = isTrustPath(Astro.url.pathname);
+const isExperience = isExperienceGuide(entry, Astro.url.pathname);
+const { footerLinks } = await experienceNav();
+const siteTitle = game.shortName ?? game.title;
+const isV3 = isV3Presentation && (entry.data.template === 'splash' || isV3Article(entry, Astro.url.pathname) || Astro.url.pathname.split('/').filter(Boolean).length === 1 && game.categories.some((category) => Astro.url.pathname.includes(`/${category.id}/`)));
+---
+
+{
+	isV3 ? null : isHome ? (
+		<>
+			<GameShellFooter footerLinks={footerLinks} siteTitle={siteTitle} />
+			<FooterTrustLinks />
+		</>
+	) : isExperience ? (
+		<>
+			<AdSlot placement="guide-before-related" />
+			<GameShellFooter footerLinks={footerLinks} siteTitle={siteTitle} />
+			<FooterTrustLinks />
+		</>
+	) : (
+		<>
+			{!isSplash && !isTrust && (
+				<>
+					<NextStepGuide />
+					<AdSlot placement="guide-before-related" />
+					<RelatedGuides />
+				</>
+			)}
+			<Default>
+				<slot />
+			</Default>
+			<FooterTrustLinks />
+		</>
+	)
+}

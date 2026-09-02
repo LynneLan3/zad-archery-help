@@ -1,0 +1,11 @@
+{
+  "page": "P1 Entity — Ember Core",
+  "url": "/v4-preview/ember-core/",
+  "prototype": "P1",
+  "playerTask": "entity-lookup",
+  "primitiveRecipe": ["A01", "A02", "E01"],
+  "mediaUsed": ["media-1: Ember Core crystal"],
+  "interactiveBehavior": "Task-oriented related link; identity evidence is rendered adjacent to the answer.",
+  "desktopScreenshot": "artifacts/v4-calibration/p1-entity/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/p1-entity/mobile.png"
+}

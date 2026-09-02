@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	image: ImageMetadata;
+	alt?: string;
+	class?: string;
+	width?: number;
+	height?: number;
+}
+
+const { image, alt = '', class: className, width = 640 } = Astro.props;
+const renderWidth = Math.min(width, image.width ?? width);
+const renderHeight = Math.round(renderWidth / (16 / 9));
+---
+
+<span class:list={['card-thumbnail', className]}>
+	<Image src={image} alt={alt} width={renderWidth} height={renderHeight} loading="lazy" decoding="async" data-asset-width={image.width} data-asset-height={image.height} data-asset-usage="guideCard" />
+</span>

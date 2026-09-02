@@ -1,0 +1,2170 @@
+{
+  "game": {
+    "name": "Zad Archery Help",
+    "slug": "zad-archery",
+    "accent": "#d49a22",
+    "accentForeground": "#23170d",
+    "identity": {
+      "palette": {
+        "background": "#f6f0e6",
+        "panel": "#fffaf1",
+        "ink": "#2c251e"
+      },
+      "typography": "sans",
+      "background": "/zad-archery/10_steam_library_hero.jpg"
+    }
+  },
+  "theme": {
+    "base": "neutral-dark",
+    "accent": "#d49a22",
+    "accentForeground": "#23170d",
+    "functionalEvidenceFirst": true,
+    "heroOptional": true,
+    "permanentDocsSidebar": false
+  },
+  "navigation": {
+    "primary": [
+      {
+        "id": "home",
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "id": "guides",
+        "label": "Guides",
+        "href": "/guides/"
+      },
+      {
+        "id": "progression",
+        "label": "Progression",
+        "href": "/guides/progression/"
+      },
+      {
+        "id": "achievements",
+        "label": "Achievements",
+        "href": "/achievements/"
+      }
+    ],
+    "utilities": [
+      {
+        "id": "search",
+        "label": "Search",
+        "href": "/search/"
+      }
+    ],
+    "secondary": [
+      {
+        "id": "achievements",
+        "label": "Zad Archery Achievements: Current Steam List and Unlocks",
+        "href": "/achievements/",
+        "pageId": "achievements"
+      },
+      {
+        "id": "guides-progression-demo-save-transfer",
+        "label": "Does Zad Archery Demo Progress Carry Over?",
+        "href": "/guides/progression/demo-save-transfer/",
+        "pageId": "guides-progression-demo-save-transfer"
+      },
+      {
+        "id": "guides-getting-started",
+        "label": "Zad Archery Beginner Guide: What the Main Systems Do",
+        "href": "/guides/getting-started/",
+        "pageId": "guides-getting-started"
+      },
+      {
+        "id": "guides-progression-how-long-to-beat-zad-archery",
+        "label": "How Long Is Zad Archery? Main Run and 100% Estimate",
+        "href": "/guides/progression/how-long-to-beat-zad-archery/",
+        "pageId": "guides-progression-how-long-to-beat-zad-archery"
+      },
+      {
+        "id": "guides-platforms-mobile",
+        "label": "Zad Archery Mobile: iOS and Android Availability",
+        "href": "/guides/platforms/mobile/",
+        "pageId": "guides-platforms-mobile"
+      },
+      {
+        "id": "updates-patch-1-0-2",
+        "label": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+        "href": "/updates/patch-1-0-2/",
+        "pageId": "updates-patch-1-0-2"
+      },
+      {
+        "id": "guides-platforms-steam-deck",
+        "label": "Zad Archery on Steam Deck: Compatibility and Caveats",
+        "href": "/guides/platforms/steam-deck/",
+        "pageId": "guides-platforms-steam-deck"
+      }
+    ]
+  },
+  "homepage": {
+    "pageIds": [
+      "home",
+      "achievements",
+      "guides-getting-started",
+      "guides-platforms-mobile",
+      "guides-platforms-steam-deck",
+      "guides-progression-demo-save-transfer",
+      "guides-progression-how-long-to-beat-zad-archery",
+      "updates-patch-1-0-2"
+    ],
+    "assets": [
+      {
+        "mediaId": "zad-hero",
+        "role": "hero",
+        "path": "/zad-archery/10_steam_library_hero.jpg",
+        "alt": "Zad Archery archer facing target monsters in a green valley",
+        "caption": "Official Zad Archery art used for brand and hero presentation.",
+        "provenance": "User-supplied Zad Archery workspace asset; marketing/decorative only.",
+        "usable": true,
+        "type": "image/jpeg"
+      }
+    ],
+    "surfaces": [
+      {
+        "id": "hot-now",
+        "label": "Hot Now",
+        "pageIds": [
+          "home"
+        ]
+      },
+      {
+        "id": "popular-questions",
+        "label": "Popular Questions",
+        "pageIds": [
+          "guides-platforms-steam-deck",
+          "guides-progression-how-long-to-beat-zad-archery"
+        ]
+      },
+      {
+        "id": "primary-catalog",
+        "label": "Primary Catalog",
+        "pageIds": [
+          "achievements"
+        ]
+      },
+      {
+        "id": "primary-task",
+        "label": "Primary Task",
+        "pageIds": [
+          "guides-getting-started",
+          "guides-platforms-mobile"
+        ]
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Zad Archery Help",
+      "href": "/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "home",
+          "title": "Zad Archery Help",
+          "href": "/",
+          "query": "Zad Archery guides",
+          "playerProblem": "find a verified answer"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "Zad Archery guides",
+          "playerProblem": "find a verified answer",
+          "primaryTask": "collection-browse",
+          "prototype": "P2",
+          "priority": 20,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "E02",
+              "status": "include",
+              "reason": "Collection browse needs a scannable entity set."
+            },
+            {
+              "primitiveId": "E03",
+              "status": "conditional",
+              "reason": "A table is a candidate when structured rows exist."
+            },
+            {
+              "primitiveId": "X01",
+              "status": "omit",
+              "reason": "Filter needs task-reducing facets"
+            },
+            {
+              "primitiveId": "X02",
+              "status": "conditional",
+              "reason": "Sort needs an ordered dataset."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Incremental archery RPG/action game: clear waves of target-like monsters, collect loot, and grow through skill tree, jobs, skills, crafting, mining and later progression systems.",
+          "sections": [],
+          "faq": []
+        },
+        "facts": [
+          {
+            "id": "achievements-0",
+            "label": "Why the count may look inconsistent",
+            "value": "The pre-release developer announcement said 25 achievements would be available.",
+            "verified": true
+          },
+          {
+            "id": "achievements-1",
+            "label": "Why the count may look inconsistent",
+            "value": "The live store/achievement metadata currently exposes 12.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S01_STEAM_STORE",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/app/4412000/Zad_Archery/",
+            "finding": "release date 2026-09-01; developer/publisher Samharia Studios; core systems: skill tree, 5 Archer jobs, loot, skills, crafting, mining, Shaping, Masteries, Guardian Perks; Windows/macOS/Linux; Steam achievements / Steam Cloud / Family Sharing; 14 interface languages",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S02_STEAM_NEWS_RELEASE_INFO",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/news/app/4412000/view/703277854914249378",
+            "finding": "developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems; pre-release statement claimed 25 achievements",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S03_PATCH_1_0_2",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25063956/",
+            "finding": "monster gems below highest level bug fixed; missing Guardian could lock the King and was fixed; Defeat the King achievement unlock issue fixed; native screen resolution option added",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S12_ACHIEVEMENTS",
+            "sourceType": "B_LIVE_METADATA",
+            "sourceRef": "https://www.exophase.com/game/zad-archery-steam/achievements/",
+            "finding": "12 currently exposed achievement names and unlock descriptions",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [],
+        "primitiveData": [
+          {
+            "instanceId": "answer-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Help",
+              "task": "find a verified answer",
+              "subject": "Zad Archery Help"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "verified-facts",
+            "primitiveId": "E01",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Why the count may look inconsistent",
+                  "value": "The pre-release developer announcement said 25 achievements would be available."
+                },
+                {
+                  "label": "Why the count may look inconsistent",
+                  "value": "The live store/achievement metadata currently exposes 12."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "E02",
+            "status": "include",
+            "reason": "Collection browse needs a scannable entity set."
+          },
+          {
+            "primitiveId": "E03",
+            "status": "omit",
+            "reason": "A table is a candidate when structured rows exist."
+          },
+          {
+            "primitiveId": "X01",
+            "status": "omit",
+            "reason": "Filter needs task-reducing facets"
+          },
+          {
+            "primitiveId": "X02",
+            "status": "omit",
+            "reason": "Sort needs an ordered dataset."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "answer-header",
+            "payload": {
+              "title": "Zad Archery Help",
+              "task": "find a verified answer",
+              "subject": "Zad Archery Help"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "E01",
+            "label": "Fact Card",
+            "interactive": false,
+            "instanceId": "verified-facts",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Why the count may look inconsistent",
+                  "value": "The pre-release developer announcement said 25 achievements would be available."
+                },
+                {
+                  "label": "Why the count may look inconsistent",
+                  "value": "The live store/achievement metadata currently exposes 12."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [],
+            "behavior": "entity-facts",
+            "data": [
+              {
+                "label": "Why the count may look inconsistent",
+                "value": "The pre-release developer announcement said 25 achievements would be available."
+              },
+              {
+                "label": "Why the count may look inconsistent",
+                "value": "The live store/achievement metadata currently exposes 12."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "achievements",
+      "title": "Zad Archery Achievements: Current Steam List and Unlocks",
+      "href": "/achievements/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "achievements",
+          "title": "Zad Archery Achievements: Current Steam List and Unlocks",
+          "href": "/achievements/",
+          "query": "Zad Archery Achievements: Current Steam List and Unlocks",
+          "playerProblem": "achievements"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "Zad Archery Achievements: Current Steam List and Unlocks",
+          "playerProblem": "achievements",
+          "primaryTask": "collection-browse",
+          "prototype": "P2",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "E02",
+              "status": "include",
+              "reason": "Collection browse needs a scannable entity set."
+            },
+            {
+              "primitiveId": "E03",
+              "status": "conditional",
+              "reason": "A table is a candidate when structured rows exist."
+            },
+            {
+              "primitiveId": "X01",
+              "status": "omit",
+              "reason": "Filter needs task-reducing facets"
+            },
+            {
+              "primitiveId": "X02",
+              "status": "conditional",
+              "reason": "Sort needs an ordered dataset."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "As of September 2, 2026, live achievement metadata exposes 12 Zad Archery achievements. They cover the main progression systems, getting legendary gear, defeating the King and reaching Level 40. A pre-release developer post mentioned 25 achievements, so the live count should be rechecked before each update.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Current achievement list",
+              "paragraphs": [],
+              "bullets": [
+                "Bullseye: Destroy a target",
+                "Archer: Unlock the Archer",
+                "A New Path: Unlock the Jobs system",
+                "Artisan: Unlock Crafting",
+                "Prospector: Unlock Mining",
+                "Shaper: Unlock Shaping",
+                "Grandmaster: Unlock Mastery",
+                "Stargazer: Unlock Guardian Perks",
+                "Strongest Archer in Zad: Defeat the King",
+                "Legendary Gear: Gain a legendary bow or armor",
+                "Treasure Hunter: Open a chest",
+                "Perfectionist: Reach Level 40"
+              ]
+            },
+            {
+              "id": "section-2",
+              "title": "Why the count may look inconsistent",
+              "paragraphs": [
+                "The pre-release developer announcement said 25 achievements would be available.",
+                "The live store/achievement metadata currently exposes 12.",
+                "Patch 1.0.2 specifically fixed the Defeat the King achievement when Steam was unreachable."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": []
+        },
+        "facts": [
+          {
+            "id": "achievements-0",
+            "label": "Why the count may look inconsistent",
+            "value": "The pre-release developer announcement said 25 achievements would be available.",
+            "verified": true
+          },
+          {
+            "id": "achievements-1",
+            "label": "Why the count may look inconsistent",
+            "value": "The live store/achievement metadata currently exposes 12.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S01_STEAM_STORE",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/app/4412000/Zad_Archery/",
+            "finding": "release date 2026-09-01; developer/publisher Samharia Studios; core systems: skill tree, 5 Archer jobs, loot, skills, crafting, mining, Shaping, Masteries, Guardian Perks; Windows/macOS/Linux; Steam achievements / Steam Cloud / Family Sharing; 14 interface languages",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S02_STEAM_NEWS_RELEASE_INFO",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/news/app/4412000/view/703277854914249378",
+            "finding": "developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems; pre-release statement claimed 25 achievements",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S03_PATCH_1_0_2",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25063956/",
+            "finding": "monster gems below highest level bug fixed; missing Guardian could lock the King and was fixed; Defeat the King achievement unlock issue fixed; native screen resolution option added",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S12_ACHIEVEMENTS",
+            "sourceType": "B_LIVE_METADATA",
+            "sourceRef": "https://www.exophase.com/game/zad-archery-steam/achievements/",
+            "finding": "12 currently exposed achievement names and unlock descriptions",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-achievements",
+            "role": "entity",
+            "source": "/zad-archery/11_kotaku_gameplay.jpg",
+            "localRef": "/zad-archery/11_kotaku_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Achievements: Current Steam List and Unlocks",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [
+          {
+            "mediaId": "media-achievements",
+            "role": "entity",
+            "path": "/zad-archery/11_kotaku_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Achievements: Current Steam List and Unlocks",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "achievements-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Achievements: Current Steam List and Unlocks",
+              "task": "achievements",
+              "subject": "Achievements"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [
+              "media-achievements"
+            ]
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "E02",
+            "status": "include",
+            "reason": "Collection browse needs a scannable entity set."
+          },
+          {
+            "primitiveId": "E03",
+            "status": "omit",
+            "reason": "A table is a candidate when structured rows exist."
+          },
+          {
+            "primitiveId": "X01",
+            "status": "omit",
+            "reason": "Filter needs task-reducing facets"
+          },
+          {
+            "primitiveId": "X02",
+            "status": "omit",
+            "reason": "Sort needs an ordered dataset."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "achievements-header",
+            "payload": {
+              "title": "Zad Archery Achievements: Current Steam List and Unlocks",
+              "task": "achievements",
+              "subject": "Achievements"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S03_PATCH_1_0_2",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [
+              "media-achievements"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-progression-demo-save-transfer",
+      "title": "Does Zad Archery Demo Progress Carry Over?",
+      "href": "/guides/progression/demo-save-transfer/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-progression-demo-save-transfer",
+          "title": "Does Zad Archery Demo Progress Carry Over?",
+          "href": "/guides/progression/demo-save-transfer/",
+          "query": "Does Zad Archery Demo Progress Carry Over?",
+          "playerProblem": "demo save transfer"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "Does Zad Archery Demo Progress Carry Over?",
+          "playerProblem": "demo save transfer",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "No. Samharia Studios said the full game changed significantly from the demo, so demo save data cannot carry into the release version. The old demo remains available through itch.io.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Does the demo save transfer?",
+              "paragraphs": [
+                "The developer directly said demo save data cannot carry because the game changed a lot from the demo."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Can you still play the demo?",
+              "paragraphs": [
+                "The developer said the Steam demo was removed but the demo can still be found on itch.io."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "Why the full game is different",
+              "paragraphs": [
+                "The demo store description said the demo covered early job classes, four skills, loot/items and crafting, while the full version added more jobs, 15+ additional skills and deeper systems."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": []
+        },
+        "facts": [
+          {
+            "id": "guides-progression-demo-save-transfer-0",
+            "label": "Does the demo save transfer?",
+            "value": "The developer directly said demo save data cannot carry because the game changed a lot from the demo.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-demo-save-transfer-0",
+            "label": "Can you still play the demo?",
+            "value": "The developer said the Steam demo was removed but the demo can still be found on itch.io.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-demo-save-transfer-0",
+            "label": "Why the full game is different",
+            "value": "The demo store description said the demo covered early job classes, four skills, loot/items and crafting, while the full version added more jobs, 15+ additional skills and deeper systems.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S06_REDDIT_RELEASE",
+            "sourceType": "B_DEVELOPER_AND_COMMUNITY",
+            "sourceRef": "https://www.reddit.com/r/incremental_games/comments/1w4bc84/zad_archery_has_been_released/",
+            "finding": "developer confirms demo save cannot carry because full game changed significantly; developer links iOS and Android releases; developer says mobile versions have no IAP/no ads; players ask about playtime, Steam Deck, mobile, update cadence; community completion reports around 4-5.5 hours",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S08_ITCH",
+            "sourceType": "B_DEVELOPER",
+            "sourceRef": "https://samharia.itch.io/zad-archery",
+            "finding": "skill tree, 5 jobs, loot, skills, crafting; alchemy; gathering including mining and herbing",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S14_DEMO_STORE",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/app/4432820/Zad_Archery_Demo/",
+            "finding": "demo had first and second job classes, first four skills, loot/items and crafting; full version described as adding three job classes, 15+ skills, deeper crafting, alchemy, gathering, card shaping",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-progression-demo-save-transfer",
+            "role": "entity",
+            "source": "/zad-archery/02_gameplay.jpg",
+            "localRef": "/zad-archery/02_gameplay.jpg",
+            "alt": "Zad Archery visual for Does Zad Archery Demo Progress Carry Over?",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-progression-demo-save-transfer",
+            "role": "entity",
+            "path": "/zad-archery/02_gameplay.jpg",
+            "alt": "Zad Archery visual for Does Zad Archery Demo Progress Carry Over?",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-progression-demo-save-transfer-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Does Zad Archery Demo Progress Carry Over?",
+              "task": "demo save transfer",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE",
+              "S08_ITCH",
+              "S14_DEMO_STORE"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-demo-save-transfer"
+            ]
+          },
+          {
+            "instanceId": "guides-progression-demo-save-transfer-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "No. Samharia Studios said the full game changed significantly from the demo, so demo save data cannot carry into the release version. The old demo remains available through itch.io."
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-progression-demo-save-transfer-header",
+            "payload": {
+              "title": "Does Zad Archery Demo Progress Carry Over?",
+              "task": "demo save transfer",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE",
+              "S08_ITCH",
+              "S14_DEMO_STORE"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-demo-save-transfer"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "guides-progression-demo-save-transfer-answer",
+            "payload": {
+              "answer": "No. Samharia Studios said the full game changed significantly from the demo, so demo save data cannot carry into the release version. The old demo remains available through itch.io."
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-getting-started",
+      "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+      "href": "/guides/getting-started/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-getting-started",
+          "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "href": "/guides/getting-started/",
+          "query": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "playerProblem": "beginner system overview"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "playerProblem": "beginner system overview",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "What kind of game is Zad Archery?",
+              "paragraphs": [
+                "The core loop is clearing target-like enemies, taking loot and reinvesting into upgrades and skills.",
+                "Steam tags the game as Incremental, Idler, Loot, Platformer, Roguelite, RPG, Strategy, Crafting and Mining."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "The verified progression systems",
+              "paragraphs": [
+                "The live Steam description explicitly lists a large Skill Tree, five Archer Jobs, loot, skills, crafting and mining.",
+                "The same live description names Shaping, Masteries and Guardian Perks as later systems.",
+                "Developer/demo material additionally describes alchemy and gathering/herbing."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "How long should a first run take?",
+              "paragraphs": [
+                "The developer said the game is designed around five hours, with build and loot differences affecting duration.",
+                "Launch-day Reddit reports cluster around roughly four to five and a half hours."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "How many jobs are in Zad Archery?",
+              "answer": "The official Steam description says there are five Archer Jobs."
+            },
+            {
+              "id": "faq-2",
+              "question": "Is Zad Archery an idle game?",
+              "answer": "Steam lists it as both Incremental and Idler, but the public descriptions also emphasize active wave clearing and build progression."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-getting-started-0",
+            "label": "What kind of game is Zad Archery?",
+            "value": "The core loop is clearing target-like enemies, taking loot and reinvesting into upgrades and skills.",
+            "verified": true
+          },
+          {
+            "id": "guides-getting-started-1",
+            "label": "What kind of game is Zad Archery?",
+            "value": "Steam tags the game as Incremental, Idler, Loot, Platformer, Roguelite, RPG, Strategy, Crafting and Mining.",
+            "verified": true
+          },
+          {
+            "id": "guides-getting-started-0",
+            "label": "The verified progression systems",
+            "value": "The live Steam description explicitly lists a large Skill Tree, five Archer Jobs, loot, skills, crafting and mining.",
+            "verified": true
+          },
+          {
+            "id": "guides-getting-started-1",
+            "label": "The verified progression systems",
+            "value": "The same live description names Shaping, Masteries and Guardian Perks as later systems.",
+            "verified": true
+          },
+          {
+            "id": "guides-getting-started-0",
+            "label": "How long should a first run take?",
+            "value": "The developer said the game is designed around five hours, with build and loot differences affecting duration.",
+            "verified": true
+          },
+          {
+            "id": "guides-getting-started-1",
+            "label": "How long should a first run take?",
+            "value": "Launch-day Reddit reports cluster around roughly four to five and a half hours.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S01_STEAM_STORE",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/app/4412000/Zad_Archery/",
+            "finding": "release date 2026-09-01; developer/publisher Samharia Studios; core systems: skill tree, 5 Archer jobs, loot, skills, crafting, mining, Shaping, Masteries, Guardian Perks; Windows/macOS/Linux; Steam achievements / Steam Cloud / Family Sharing; 14 interface languages",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S02_STEAM_NEWS_RELEASE_INFO",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/news/app/4412000/view/703277854914249378",
+            "finding": "developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems; pre-release statement claimed 25 achievements",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S08_ITCH",
+            "sourceType": "B_DEVELOPER",
+            "sourceRef": "https://samharia.itch.io/zad-archery",
+            "finding": "skill tree, 5 jobs, loot, skills, crafting; alchemy; gathering including mining and herbing",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S14_DEMO_STORE",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/app/4432820/Zad_Archery_Demo/",
+            "finding": "demo had first and second job classes, first four skills, loot/items and crafting; full version described as adding three job classes, 15+ skills, deeper crafting, alchemy, gathering, card shaping",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-getting-started",
+            "role": "entity",
+            "source": "/zad-archery/07_steam_header.jpg",
+            "localRef": "/zad-archery/07_steam_header.jpg",
+            "alt": "Zad Archery visual for Zad Archery Beginner Guide: What the Main Systems Do",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-getting-started",
+            "role": "entity",
+            "path": "/zad-archery/07_steam_header.jpg",
+            "alt": "Zad Archery visual for Zad Archery Beginner Guide: What the Main Systems Do",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-getting-started-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+              "task": "beginner system overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S08_ITCH",
+              "S14_DEMO_STORE"
+            ],
+            "mediaRefs": [
+              "media-guides-getting-started"
+            ]
+          },
+          {
+            "instanceId": "guides-getting-started-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'."
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-getting-started-header",
+            "payload": {
+              "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+              "task": "beginner system overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE",
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S08_ITCH",
+              "S14_DEMO_STORE"
+            ],
+            "mediaRefs": [
+              "media-guides-getting-started"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "guides-getting-started-answer",
+            "payload": {
+              "answer": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'."
+            },
+            "evidenceRefs": [
+              "S01_STEAM_STORE"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-progression-how-long-to-beat-zad-archery",
+      "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+      "href": "/guides/progression/how-long-to-beat-zad-archery/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-progression-how-long-to-beat-zad-archery",
+          "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "href": "/guides/progression/how-long-to-beat-zad-archery/",
+          "query": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "playerProblem": "game length"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "playerProblem": "game length",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4–5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Official playtime target",
+              "paragraphs": [
+                "Before launch, Samharia Studios said the game was designed to take around five hours.",
+                "The developer specifically noted that build choices and loot affect duration, especially for players pursuing 100% achievements."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "What launch-day players reported",
+              "paragraphs": [
+                "One Reddit player reported reaching Level 40, defeating the final boss and maxing almost every system in about 5.5 hours.",
+                "Another launch-day comment reported maxing out in about four hours."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "What can make your run longer?",
+              "paragraphs": [
+                "Loot and build choices are explicitly named by the developer as factors that change completion time.",
+                "Achievement hunting should be treated separately from the main run because the live achievement list includes milestones such as Level 40, Legendary Gear and defeating the King."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Can Zad Archery be finished in one sitting?",
+              "answer": "Yes. The official target is roughly five hours, and multiple launch-day reports fall around four to five and a half hours."
+            },
+            {
+              "id": "faq-2",
+              "question": "How long does 100% take?",
+              "answer": "There is not enough reliable post-launch timing data yet. The developer only said achievement hunting can extend the run."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-0",
+            "label": "Official playtime target",
+            "value": "Before launch, Samharia Studios said the game was designed to take around five hours.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-1",
+            "label": "Official playtime target",
+            "value": "The developer specifically noted that build choices and loot affect duration, especially for players pursuing 100% achievements.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-0",
+            "label": "What launch-day players reported",
+            "value": "One Reddit player reported reaching Level 40, defeating the final boss and maxing almost every system in about 5.5 hours.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-1",
+            "label": "What launch-day players reported",
+            "value": "Another launch-day comment reported maxing out in about four hours.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-0",
+            "label": "What can make your run longer?",
+            "value": "Loot and build choices are explicitly named by the developer as factors that change completion time.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-how-long-to-beat-zad-archery-1",
+            "label": "What can make your run longer?",
+            "value": "Achievement hunting should be treated separately from the main run because the live achievement list includes milestones such as Level 40, Legendary Gear and defeating the King.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S02_STEAM_NEWS_RELEASE_INFO",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://store.steampowered.com/news/app/4412000/view/703277854914249378",
+            "finding": "developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems; pre-release statement claimed 25 achievements",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S06_REDDIT_RELEASE",
+            "sourceType": "B_DEVELOPER_AND_COMMUNITY",
+            "sourceRef": "https://www.reddit.com/r/incremental_games/comments/1w4bc84/zad_archery_has_been_released/",
+            "finding": "developer confirms demo save cannot carry because full game changed significantly; developer links iOS and Android releases; developer says mobile versions have no IAP/no ads; players ask about playtime, Steam Deck, mobile, update cadence; community completion reports around 4-5.5 hours",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S12_ACHIEVEMENTS",
+            "sourceType": "B_LIVE_METADATA",
+            "sourceRef": "https://www.exophase.com/game/zad-archery-steam/achievements/",
+            "finding": "12 currently exposed achievement names and unlock descriptions",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-progression-how-long-to-beat-zad-archery",
+            "role": "entity",
+            "source": "/zad-archery/10_steam_library_hero.jpg",
+            "localRef": "/zad-archery/10_steam_library_hero.jpg",
+            "alt": "Zad Archery visual for How Long Is Zad Archery? Main Run and 100% Estimate",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-progression-how-long-to-beat-zad-archery",
+            "role": "entity",
+            "path": "/zad-archery/10_steam_library_hero.jpg",
+            "alt": "Zad Archery visual for How Long Is Zad Archery? Main Run and 100% Estimate",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-progression-how-long-to-beat-zad-archery-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+              "task": "game length",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S06_REDDIT_RELEASE",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-how-long-to-beat-zad-archery"
+            ]
+          },
+          {
+            "instanceId": "guides-progression-how-long-to-beat-zad-archery-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4 - 5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run."
+            },
+            "evidenceRefs": [
+              "S02_STEAM_NEWS_RELEASE_INFO"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-progression-how-long-to-beat-zad-archery-header",
+            "payload": {
+              "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+              "task": "game length",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S02_STEAM_NEWS_RELEASE_INFO",
+              "S06_REDDIT_RELEASE",
+              "S12_ACHIEVEMENTS"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-how-long-to-beat-zad-archery"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "guides-progression-how-long-to-beat-zad-archery-answer",
+            "payload": {
+              "answer": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4 - 5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run."
+            },
+            "evidenceRefs": [
+              "S02_STEAM_NEWS_RELEASE_INFO"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-platforms-mobile",
+      "title": "Zad Archery Mobile: iOS and Android Availability",
+      "href": "/guides/platforms/mobile/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-platforms-mobile",
+          "title": "Zad Archery Mobile: iOS and Android Availability",
+          "href": "/guides/platforms/mobile/",
+          "query": "Zad Archery Mobile: iOS and Android Availability",
+          "playerProblem": "mobile availability"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Platform compatibility"
+        },
+        "intent": {
+          "query": "Zad Archery Mobile: iOS and Android Availability",
+          "playerProblem": "mobile availability",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Yes. In the launch Reddit thread, the developer linked both iOS and Android versions under the mobile title 'Zad Archery: Idle RPG' and said those versions have no in-app purchases and no ads.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Is Zad Archery on iPhone and Android?",
+              "paragraphs": [
+                "The developer posted direct iOS and Android links in the launch thread.",
+                "The developer stated the mobile releases have no IAP and no ads."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Mobile search name",
+              "paragraphs": [
+                "The mobile listing is referred to as 'Zad Archery: Idle RPG'."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": []
+        },
+        "facts": [
+          {
+            "id": "guides-platforms-mobile-0",
+            "label": "Is Zad Archery on iPhone and Android?",
+            "value": "The developer posted direct iOS and Android links in the launch thread.",
+            "verified": true
+          },
+          {
+            "id": "guides-platforms-mobile-1",
+            "label": "Is Zad Archery on iPhone and Android?",
+            "value": "The developer stated the mobile releases have no IAP and no ads.",
+            "verified": true
+          },
+          {
+            "id": "guides-platforms-mobile-0",
+            "label": "Mobile search name",
+            "value": "The mobile listing is referred to as 'Zad Archery: Idle RPG'.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S06_REDDIT_RELEASE",
+            "sourceType": "B_DEVELOPER_AND_COMMUNITY",
+            "sourceRef": "https://www.reddit.com/r/incremental_games/comments/1w4bc84/zad_archery_has_been_released/",
+            "finding": "developer confirms demo save cannot carry because full game changed significantly; developer links iOS and Android releases; developer says mobile versions have no IAP/no ads; players ask about playtime, Steam Deck, mobile, update cadence; community completion reports around 4-5.5 hours",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-platforms-mobile",
+            "role": "entity",
+            "source": "/zad-archery/12_kotaku_cover.jpg",
+            "localRef": "/zad-archery/12_kotaku_cover.jpg",
+            "alt": "Zad Archery visual for Zad Archery Mobile: iOS and Android Availability",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Platform compatibility"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-platforms-mobile",
+            "role": "entity",
+            "path": "/zad-archery/12_kotaku_cover.jpg",
+            "alt": "Zad Archery visual for Zad Archery Mobile: iOS and Android Availability",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-platforms-mobile-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Mobile: iOS and Android Availability",
+              "task": "mobile availability",
+              "subject": "Platforms"
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [
+              "media-guides-platforms-mobile"
+            ]
+          },
+          {
+            "instanceId": "guides-platforms-mobile-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Yes. In the launch Reddit thread, the developer linked both iOS and Android versions under the mobile title 'Zad Archery: Idle RPG' and said those versions have no in-app purchases and no ads."
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-platforms-mobile-header",
+            "payload": {
+              "title": "Zad Archery Mobile: iOS and Android Availability",
+              "task": "mobile availability",
+              "subject": "Platforms"
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [
+              "media-guides-platforms-mobile"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "guides-platforms-mobile-answer",
+            "payload": {
+              "answer": "Yes. In the launch Reddit thread, the developer linked both iOS and Android versions under the mobile title 'Zad Archery: Idle RPG' and said those versions have no in-app purchases and no ads."
+            },
+            "evidenceRefs": [
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "updates-patch-1-0-2",
+      "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+      "href": "/updates/patch-1-0-2/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "updates-patch-1-0-2",
+          "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "href": "/updates/patch-1-0-2/",
+          "query": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "playerProblem": "patch notes"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "intent": {
+          "query": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "playerProblem": "patch notes",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Progression fixes",
+              "paragraphs": [
+                "Monster gems now count when farming a level below the player's highest.",
+                "A Guardian that failed to appear could permanently lock the King; missed Guardians are restored on restart.",
+                "Defeat the King achievement unlock was fixed for cases where Steam was unreachable."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Display/settings fix",
+              "paragraphs": [
+                "The player's own screen resolution is now added as the first option in settings."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": []
+        },
+        "facts": [
+          {
+            "id": "updates-patch-1-0-2-0",
+            "label": "Progression fixes",
+            "value": "Monster gems now count when farming a level below the player's highest.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-0-2-1",
+            "label": "Progression fixes",
+            "value": "A Guardian that failed to appear could permanently lock the King; missed Guardians are restored on restart.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-0-2-0",
+            "label": "Display/settings fix",
+            "value": "The player's own screen resolution is now added as the first option in settings.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S03_PATCH_1_0_2",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25063956/",
+            "finding": "monster gems below highest level bug fixed; missing Guardian could lock the King and was fixed; Defeat the King achievement unlock issue fixed; native screen resolution option added",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-updates-patch-1-0-2",
+            "role": "entity",
+            "source": "/zad-archery/04_gameplay.jpg",
+            "localRef": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Launch notes"
+        },
+        "assets": [
+          {
+            "mediaId": "media-updates-patch-1-0-2",
+            "role": "entity",
+            "path": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "updates-patch-1-0-2-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S03_PATCH_1_0_2"
+            ],
+            "mediaRefs": [
+              "media-updates-patch-1-0-2"
+            ]
+          },
+          {
+            "instanceId": "updates-patch-1-0-2-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems."
+            },
+            "evidenceRefs": [
+              "S03_PATCH_1_0_2"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "updates-patch-1-0-2-header",
+            "payload": {
+              "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S03_PATCH_1_0_2"
+            ],
+            "mediaRefs": [
+              "media-updates-patch-1-0-2"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "updates-patch-1-0-2-answer",
+            "payload": {
+              "answer": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems."
+            },
+            "evidenceRefs": [
+              "S03_PATCH_1_0_2"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-platforms-steam-deck",
+      "title": "Zad Archery on Steam Deck: Compatibility and Caveats",
+      "href": "/guides/platforms/steam-deck/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-platforms-steam-deck",
+          "title": "Zad Archery on Steam Deck: Compatibility and Caveats",
+          "href": "/guides/platforms/steam-deck/",
+          "query": "Zad Archery on Steam Deck: Compatibility and Caveats",
+          "playerProblem": "steam deck compatibility"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Platform compatibility"
+        },
+        "intent": {
+          "query": "Zad Archery on Steam Deck: Compatibility and Caveats",
+          "playerProblem": "steam deck compatibility",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Zad Archery is rated Playable on Steam Deck. Steam’s compatibility data says all functionality is accessible with the default controller configuration, text is legible and the default graphics configuration performs well. The main caveat is that some non-Deck controller icons may appear.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Steam Deck compatibility status",
+              "paragraphs": [
+                "Steam compatibility metadata marks Zad Archery as Playable.",
+                "Default controller configuration can access all functionality.",
+                "Interface text is legible and default graphics settings perform well."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Known caveat",
+              "paragraphs": [
+                "Some controller glyphs shown by the game may not match Steam Deck buttons."
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Is Zad Archery Steam Deck Verified?",
+              "answer": "The current compatibility category is Playable, not Verified."
+            },
+            {
+              "id": "faq-2",
+              "question": "Do you need mouse and keyboard?",
+              "answer": "Steam metadata says all functionality is accessible with the default controller configuration."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-platforms-steam-deck-0",
+            "label": "Steam Deck compatibility status",
+            "value": "Steam compatibility metadata marks Zad Archery as Playable.",
+            "verified": true
+          },
+          {
+            "id": "guides-platforms-steam-deck-1",
+            "label": "Steam Deck compatibility status",
+            "value": "Default controller configuration can access all functionality.",
+            "verified": true
+          },
+          {
+            "id": "guides-platforms-steam-deck-0",
+            "label": "Known caveat",
+            "value": "Some controller glyphs shown by the game may not match Steam Deck buttons.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S04_STEAM_DECK",
+            "sourceType": "A_STEAM_METADATA_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/app/4412000/config/",
+            "finding": "Steam Deck category Playable; default controller configuration exposes all functionality; text is legible; default graphics configuration performs well; some non-Steam-Deck controller glyphs may appear; SteamOS runs successfully",
+            "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S06_REDDIT_RELEASE",
+            "sourceType": "B_DEVELOPER_AND_COMMUNITY",
+            "sourceRef": "https://www.reddit.com/r/incremental_games/comments/1w4bc84/zad_archery_has_been_released/",
+            "finding": "developer confirms demo save cannot carry because full game changed significantly; developer links iOS and Android releases; developer says mobile versions have no IAP/no ads; players ask about playtime, Steam Deck, mobile, update cadence; community completion reports around 4-5.5 hours",
+            "freshness": "2026-09-02"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-platforms-steam-deck",
+            "role": "entity",
+            "source": "/zad-archery/06_gameplay.jpg",
+            "localRef": "/zad-archery/06_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery on Steam Deck: Compatibility and Caveats",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-02",
+          "platform": "Platform compatibility"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-platforms-steam-deck",
+            "role": "entity",
+            "path": "/zad-archery/06_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery on Steam Deck: Compatibility and Caveats",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-platforms-steam-deck-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery on Steam Deck: Compatibility and Caveats",
+              "task": "steam deck compatibility",
+              "subject": "Platforms"
+            },
+            "evidenceRefs": [
+              "S04_STEAM_DECK",
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [
+              "media-guides-platforms-steam-deck"
+            ]
+          },
+          {
+            "instanceId": "guides-platforms-steam-deck-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Zad Archery is rated Playable on Steam Deck. Steam’s compatibility data says all functionality is accessible with the default controller configuration, text is legible and the default graphics configuration performs well. The main caveat is that some non-Deck controller icons may appear."
+            },
+            "evidenceRefs": [
+              "S04_STEAM_DECK"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-platforms-steam-deck-header",
+            "payload": {
+              "title": "Zad Archery on Steam Deck: Compatibility and Caveats",
+              "task": "steam deck compatibility",
+              "subject": "Platforms"
+            },
+            "evidenceRefs": [
+              "S04_STEAM_DECK",
+              "S06_REDDIT_RELEASE"
+            ],
+            "mediaRefs": [
+              "media-guides-platforms-steam-deck"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "guides-platforms-steam-deck-answer",
+            "payload": {
+              "answer": "Zad Archery is rated Playable on Steam Deck. Steam’s compatibility data says all functionality is accessible with the default controller configuration, text is legible and the default graphics configuration performs well. The main caveat is that some non-Deck controller icons may appear."
+            },
+            "evidenceRefs": [
+              "S04_STEAM_DECK"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    }
+  ]
+}

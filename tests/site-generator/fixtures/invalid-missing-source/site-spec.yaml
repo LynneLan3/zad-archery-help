@@ -1,0 +1,39 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+site:
+  id: missing-source-game
+  locale: en
+  siteUrl: https://missing-source.example
+  hubPath: /
+  title: Missing Source Wiki
+  shortName: Missing Source
+  description: Fixture for missing page source.
+game:
+  name: Missing Source Game
+  hubTitle: Missing Source Game Wiki
+  tagline: Missing source fixture.
+  releaseStatus: unknown
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms: [PC]
+theme:
+  accentColor: "#112233"
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: Starter category.
+    icon: rocket
+    order: 1
+pages:
+  - id: beginner-guide
+    title: Beginner Guide
+    description: Missing source on purpose.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/does-not-exist.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+homepage: {}
+assets: []

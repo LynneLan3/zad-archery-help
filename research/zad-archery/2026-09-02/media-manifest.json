@@ -1,0 +1,145 @@
+{
+  "policy": {
+    "role": "media evidence and official marketing asset inventory",
+    "do_not_treat_marketing_art_as_gameplay_evidence": true,
+    "do_not_hotlink_in_production_without_project_policy_check": true,
+    "gameplay_article_rule": "For mechanic-specific pages, prefer current-build screenshots or reliable video frames that visibly prove the claim."
+  },
+  "items": [
+    {
+      "id": "M01_OFFICIAL_LOGO",
+      "type": "official_logo",
+      "source": "Steam asset metadata",
+      "source_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4412000/f2a37f31a529309e579361e057cae806d21957ea/logo.png",
+      "recommended_use": [
+        "header logo reference",
+        "brand asset"
+      ],
+      "evidence_level": "BRAND_ONLY"
+    },
+    {
+      "id": "M02_HERO_CAPSULE",
+      "type": "official_marketing_art",
+      "source": "Steam asset metadata",
+      "source_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4412000/047faece3e2389a9bbfd8f85db8a8b6255451db5/hero_capsule.jpg",
+      "recommended_use": [
+        "homepage hero if licensing/project policy allows"
+      ],
+      "evidence_level": "MARKETING_ONLY"
+    },
+    {
+      "id": "M03_MAIN_CAPSULE",
+      "type": "official_marketing_art",
+      "source": "Steam asset metadata",
+      "source_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4412000/95af99672042eaefeac1b6734523fd562de6884c/capsule_616x353.jpg",
+      "recommended_use": [
+        "guide card fallback",
+        "OpenGraph fallback"
+      ],
+      "evidence_level": "MARKETING_ONLY"
+    },
+    {
+      "id": "M04_HEADER_IMAGE",
+      "type": "official_marketing_art",
+      "source": "Steam asset metadata",
+      "source_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4412000/a54516126bfd79b8cfee92bbaeeb91896ebe3ddf/header.jpg",
+      "recommended_use": [
+        "small cover/reference"
+      ],
+      "evidence_level": "MARKETING_ONLY"
+    },
+    {
+      "id": "M05_STEAM_MICROTRAILER",
+      "type": "official_video",
+      "source": "Steam asset metadata",
+      "source_url": "https://video.fastly.steamstatic.com/store_trailers/4412000/1449219312/2f436b00950a0173ad3fb2ffad1f3632b423d194/1786381521/microtrailer.mp4",
+      "recommended_use": [
+        "visual research",
+        "frame extraction after verifying frame matches article claim"
+      ],
+      "evidence_level": "VISUAL_SOURCE"
+    },
+    {
+      "id": "M06_YOUTUBE_TRAILER",
+      "type": "official_trailer",
+      "source": "GameTrailers/official trailer distribution",
+      "source_url": "https://www.youtube.com/watch?v=58d3mBSc6LU",
+      "recommended_use": [
+        "video evidence discovery",
+        "frame research"
+      ],
+      "evidence_level": "VISUAL_SOURCE"
+    },
+    {
+      "id": "M07_TRENDS_WEEK",
+      "type": "research_evidence",
+      "local_path": "evidence/google-trends-us-past-week.png",
+      "recommended_use": [
+        "internal research only"
+      ],
+      "evidence_level": "SEARCH_DEMAND"
+    },
+    {
+      "id": "M08_TRENDS_MONTH",
+      "type": "research_evidence",
+      "local_path": "evidence/google-trends-us-past-month.png",
+      "recommended_use": [
+        "internal research only"
+      ],
+      "evidence_level": "SEARCH_DEMAND"
+    }
+  ],
+  "required_current_build_captures": [
+    {
+      "capture_id": "C01_JOBS",
+      "for_pages": [
+        "best-early-build",
+        "jobs-unlock-order"
+      ],
+      "target": "All five job cards/names plus any visible unlock conditions",
+      "priority": "P0_AFTER_LAUNCH"
+    },
+    {
+      "capture_id": "C02_SKILL_TREE",
+      "for_pages": [
+        "best-early-build",
+        "skill-tree"
+      ],
+      "target": "Full skill tree at early game and later game; capture node names/costs",
+      "priority": "P0_AFTER_LAUNCH"
+    },
+    {
+      "capture_id": "C03_CRAFTING",
+      "for_pages": [
+        "crafting-upgrades",
+        "sell-salvage-items"
+      ],
+      "target": "Crafting/forging/inventory screen showing exact current controls, stats and rarity behavior",
+      "priority": "P0_AFTER_LAUNCH"
+    },
+    {
+      "capture_id": "C04_MINING",
+      "for_pages": [
+        "mining-gems"
+      ],
+      "target": "Mining UI, material names, monster gems and visible skill transformation",
+      "priority": "P0_AFTER_LAUNCH"
+    },
+    {
+      "capture_id": "C05_GUARDIAN_KING",
+      "for_pages": [
+        "guardian-king"
+      ],
+      "target": "Guardian Perks UI, King unlock state and fight evidence",
+      "priority": "P1"
+    },
+    {
+      "capture_id": "C06_ACHIEVEMENTS_LIVE",
+      "for_pages": [
+        "achievements"
+      ],
+      "target": "Steam live achievement page/count; resolve 12-vs-25 discrepancy",
+      "priority": "P0_RECHECK"
+    }
+  ]
+}

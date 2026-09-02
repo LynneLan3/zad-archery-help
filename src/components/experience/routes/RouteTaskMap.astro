@@ -1,0 +1,36 @@
+---
+/**
+ * Player Task Map — formal Routes Index body.
+ * /{hubPath}/routes/
+ *
+ * Answers "what do I want to do?" Each route shows only number, optional
+ * visual, title, description and an "Open route" CTA — no guide list. That is
+ * what distinguishes it from the Guides Index (guide library grouped by route).
+ *
+ * Consumes `game.routes` only; number is derived from array index.
+ */
+import { ui } from '../../../lib/ui';
+import type { GameRoute } from '../../../config/game-types';
+import RouteTopicCard from './RouteTopicCard.astro';
+
+interface Props {
+	routes: readonly GameRoute[];
+}
+
+const { routes } = Astro.props;
+const t = ui();
+---
+
+<section class="exp-taskmap-hero">
+	<div class="exp-content">
+		<p class="exp-eyebrow">{t.playerRoutes}</p>
+		<h1 class="exp-h1">{t.routesNav}</h1>
+		<p class="exp-lede">{t.chooseWhatYoureTryingLede}</p>
+	</div>
+</section>
+
+<section class="exp-content exp-taskmap" aria-label={t.routesNav}>
+	{routes.map((route, index) => (
+		<RouteTopicCard route={route} number={String(index + 1).padStart(2, '0')} />
+	))}
+</section>

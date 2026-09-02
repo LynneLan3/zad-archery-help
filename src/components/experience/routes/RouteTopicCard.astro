@@ -1,0 +1,58 @@
+---
+/**
+ * RouteTopicCard — primary player-task card for Homepage and Routes Index.
+ *
+ * Route is a player path, not a Category. This card summarizes the Route and
+ * previews its ordered guide membership without expanding into a taxonomy tree.
+ */
+import { assetUrl } from './asset-url';
+import { ui } from '../../../lib/ui';
+import type { GameRoute } from '../../../config/game-types';
+
+interface Props {
+	route: GameRoute;
+	number: string;
+	variant?: 'topic' | 'primary';
+}
+
+const { route, number, variant = 'topic' } = Astro.props;
+const t = ui();
+const visualUrl = assetUrl(route.visual);
+const previewPages = route.pages.slice(0, 3);
+---
+
+<a
+	class:list={[
+		'exp-route-topic-card',
+		`exp-route-topic-card--${variant}`,
+		!visualUrl && 'exp-route-topic-card--text',
+	]}
+	href={route.href}
+>
+	{visualUrl && (
+		<div class="exp-route-topic-card__visual">
+			<img src={visualUrl} alt={`${route.title} route visual`} />
+		</div>
+	)}
+	<div class="exp-route-topic-card__body">
+		<div class="exp-route-topic-card__meta">
+			<span class="exp-route-topic-card__number">{number}</span>
+			<span class="exp-route-topic-card__eyebrow">
+				{route.eyebrow ?? t.routeNumberLabel(number)}
+			</span>
+		</div>
+		<h3 class="exp-route-topic-card__title">{route.title}</h3>
+		<p class="exp-route-topic-card__desc">{route.description}</p>
+		{previewPages.length > 0 && (
+			<ul class="exp-route-topic-card__preview" aria-label={t.followTheRoute}>
+				{previewPages.map((page) => (
+					<li>{page.label ?? page.title}</li>
+				))}
+			</ul>
+		)}
+		<div class="exp-route-topic-card__footer">
+			<span>{t.guideCount(route.pages.length)}</span>
+			<span class="exp-cta-link">{t.openRoute(route.title)}</span>
+		</div>
+	</div>
+</a>

@@ -1,0 +1,735 @@
+{
+  "count": 26,
+  "cases": [
+    {
+      "primitiveId": "A01",
+      "input": {
+        "task": "entity-lookup",
+        "payload": {
+          "title": "Title",
+          "task": "Task",
+          "subject": "Subject"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "A01",
+          "label": "Answer Header",
+          "interactive": false,
+          "instanceId": "a01-1",
+          "payload": {
+            "title": "Title",
+            "task": "Task",
+            "subject": "Subject"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "A02",
+      "input": {
+        "task": "entity-lookup",
+        "payload": {
+          "answer": "Answer"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "A02",
+          "label": "Quick Answer",
+          "interactive": false,
+          "instanceId": "a02-1",
+          "payload": {
+            "answer": "Answer"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "A03",
+      "input": {
+        "task": "mechanics",
+        "payload": {
+          "scope": "Scope"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "A03",
+          "label": "Task Context",
+          "interactive": false,
+          "instanceId": "a03-1",
+          "payload": {
+            "scope": "Scope"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "S01",
+      "input": {
+        "task": "recommendation",
+        "payload": {
+          "value": "0.9"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "S01",
+          "label": "Version State",
+          "interactive": false,
+          "instanceId": "s01-1",
+          "payload": {
+            "value": "0.9"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "S02",
+      "input": {
+        "task": "choice-comparison",
+        "payload": {
+          "value": "PC"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "S02",
+          "label": "Platform State",
+          "interactive": true,
+          "instanceId": "s02-1",
+          "payload": {
+            "value": "PC"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "S03",
+      "input": {
+        "task": "planning",
+        "payload": {
+          "value": "Summer"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "S03",
+          "label": "Season State",
+          "interactive": true,
+          "instanceId": "s03-1",
+          "payload": {
+            "value": "Summer"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "S04",
+      "input": {
+        "task": "planning",
+        "payload": {
+          "value": "Current"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "S04",
+          "label": "Data Freshness",
+          "interactive": false,
+          "instanceId": "s04-1",
+          "payload": {
+            "value": "Current"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "E01",
+      "input": {
+        "task": "entity-lookup",
+        "payload": {
+          "facts": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "E01",
+          "label": "Fact Card",
+          "interactive": false,
+          "instanceId": "e01-1",
+          "payload": {
+            "facts": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "E02",
+      "input": {
+        "task": "collection-browse",
+        "payload": {
+          "entities": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "E02",
+          "label": "Entity Grid",
+          "interactive": false,
+          "instanceId": "e02-1",
+          "payload": {
+            "entities": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "E03",
+      "input": {
+        "task": "collection-browse",
+        "payload": {
+          "columns": [],
+          "rows": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "E03",
+          "label": "Entity Table",
+          "interactive": false,
+          "instanceId": "e03-1",
+          "payload": {
+            "columns": [],
+            "rows": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "D01",
+      "input": {
+        "task": "choice-comparison",
+        "payload": {
+          "options": [],
+          "dimensions": [],
+          "cells": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "D01",
+          "label": "Comparison Table",
+          "interactive": false,
+          "instanceId": "d01-1",
+          "payload": {
+            "options": [],
+            "dimensions": [],
+            "cells": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "D02",
+      "input": {
+        "task": "choice-comparison",
+        "payload": {
+          "entries": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "D02",
+          "label": "Ranking List",
+          "interactive": false,
+          "instanceId": "d02-1",
+          "payload": {
+            "entries": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "D03",
+      "input": {
+        "task": "choice-comparison",
+        "payload": {
+          "scenarios": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "D03",
+          "label": "Choice Matrix",
+          "interactive": false,
+          "instanceId": "d03-1",
+          "payload": {
+            "scenarios": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "P01",
+      "input": {
+        "task": "procedure",
+        "payload": {
+          "requirements": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "P01",
+          "label": "Requirements",
+          "interactive": false,
+          "instanceId": "p01-1",
+          "payload": {
+            "requirements": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "P02",
+      "input": {
+        "task": "procedure",
+        "payload": {
+          "steps": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "P02",
+          "label": "Step Sequence",
+          "interactive": false,
+          "instanceId": "p02-1",
+          "payload": {
+            "steps": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "P03",
+      "input": {
+        "task": "progression",
+        "payload": {
+          "milestones": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "P03",
+          "label": "Progress Sequence",
+          "interactive": false,
+          "instanceId": "p03-1",
+          "payload": {
+            "milestones": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "P04",
+      "input": {
+        "task": "procedure",
+        "payload": {
+          "cases": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "P04",
+          "label": "Failure & Recovery",
+          "interactive": false,
+          "instanceId": "p04-1",
+          "payload": {
+            "cases": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "L01",
+      "input": {
+        "task": "location",
+        "payload": {
+          "area": "Area"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "L01",
+          "label": "Location Fact",
+          "interactive": false,
+          "instanceId": "l01-1",
+          "payload": {
+            "area": "Area"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "L02",
+      "input": {
+        "task": "location",
+        "payload": {
+          "source": "Map source"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "L02",
+          "label": "Map",
+          "interactive": true,
+          "instanceId": "l02-1",
+          "payload": {
+            "source": "Map source"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "L03",
+      "input": {
+        "task": "location",
+        "payload": {
+          "start": "Start",
+          "waypoints": [],
+          "destination": "End"
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "L03",
+          "label": "Route Sequence",
+          "interactive": false,
+          "instanceId": "l03-1",
+          "payload": {
+            "start": "Start",
+            "waypoints": [],
+            "destination": "End"
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "X01",
+      "input": {
+        "task": "collection-browse",
+        "payload": {
+          "facets": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "X01",
+          "label": "Filter",
+          "interactive": true,
+          "instanceId": "x01-1",
+          "payload": {
+            "facets": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "X02",
+      "input": {
+        "task": "collection-browse",
+        "payload": {
+          "columns": [],
+          "rows": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "X02",
+          "label": "Sortable Data",
+          "interactive": true,
+          "instanceId": "x02-1",
+          "payload": {
+            "columns": [],
+            "rows": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "X03",
+      "input": {
+        "task": "mechanics",
+        "payload": {
+          "expression": "a + b",
+          "variables": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "X03",
+          "label": "Formula",
+          "interactive": false,
+          "instanceId": "x03-1",
+          "payload": {
+            "expression": "a + b",
+            "variables": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "X04",
+      "input": {
+        "task": "mechanics",
+        "payload": {
+          "inputs": [],
+          "calculation": "a + b",
+          "result": {
+            "value": 2
+          }
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "X04",
+          "label": "Calculator",
+          "interactive": true,
+          "instanceId": "x04-1",
+          "payload": {
+            "inputs": [],
+            "calculation": "a + b",
+            "result": {
+              "value": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "X05",
+      "input": {
+        "task": "tool-database",
+        "payload": {
+          "state": {},
+          "controls": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "X05",
+          "label": "Workspace / Planner",
+          "interactive": true,
+          "instanceId": "x05-1",
+          "payload": {
+            "state": {},
+            "controls": []
+          }
+        }
+      }
+    },
+    {
+      "primitiveId": "N01",
+      "input": {
+        "task": "procedure",
+        "payload": {
+          "steps": []
+        },
+        "optionalCollectionsEmpty": true
+      },
+      "implementation": {
+        "module": "src/components/v4/SemanticPrimitive.astro",
+        "branchPresent": true,
+        "rawJsonOrPreFallback": false
+      },
+      "output": {
+        "ok": true,
+        "view": {
+          "id": "N01",
+          "label": "Related Next Step",
+          "interactive": false,
+          "instanceId": "n01-1",
+          "payload": {
+            "steps": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "route": "/guides/progression/",
+  "title": "Progression",
+  "description_draft": "Start here for playtime, demo-to-full-game changes and the verified systems that unlock across a run.",
+  "research_status": "READY",
+  "player_questions": [
+    "How long is Zad Archery?",
+    "Does demo progress carry over?",
+    "What systems unlock during a run?"
+  ]
+}

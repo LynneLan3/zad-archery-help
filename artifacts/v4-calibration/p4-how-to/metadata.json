@@ -1,0 +1,11 @@
+{
+  "page": "P4 How-to — Forge Guide",
+  "url": "/v4-preview/forge-guide/",
+  "prototype": "P4",
+  "playerTask": "procedure",
+  "primitiveRecipe": ["A01", "P01", "P02", "P04"],
+  "mediaUsed": ["media-1: forge step evidence"],
+  "interactiveBehavior": "Numbered action sequence and linked next task; media supports the relevant step.",
+  "desktopScreenshot": "artifacts/v4-calibration/p4-how-to/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/p4-how-to/mobile.png"
+}

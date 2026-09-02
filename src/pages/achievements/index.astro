@@ -1,0 +1,6 @@
+---
+import Article from '../../components/zad/ZadArticlePage.astro';
+import generated from '../../v4/generated/example-site.json';
+const page = generated.pages.find((item: any) => item.href === '/achievements/');
+---
+<Article page={page} />

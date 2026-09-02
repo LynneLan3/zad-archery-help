@@ -1,0 +1,28 @@
+{
+  "pack": "zad-archery-research",
+  "version": "1.0.0",
+  "generated_at": "2026-09-02T12:45:00+08:00",
+  "target_domain": "zadarchery.help",
+  "target_language": "en",
+  "purpose": "Research/evidence input for game-wiki-starter V4. This is not a final prose bundle.",
+  "content_policy": {
+    "no_invented_gameplay": true,
+    "no_invented_unlock_thresholds": true,
+    "no_invented_item_or_ore_names": true,
+    "no_demo_claim_as_full_release_fact_without_verification": true,
+    "writer_copy_status": "research_ready_not_final_editorial_copy"
+  },
+  "counts": {
+    "sources": 15,
+    "launch_ready_articles": 7,
+    "hold_for_gameplay_articles": 7,
+    "category_briefs": 5
+  },
+  "recommended_v4_flow": [
+    "Research Pack",
+    "Guide Content Result",
+    "guide-content-adapter.ts",
+    "V4 PageData / Media Binding",
+    "approved Zad Archery presentation"
+  ]
+}

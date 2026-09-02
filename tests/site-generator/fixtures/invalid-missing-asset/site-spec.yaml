@@ -1,0 +1,47 @@
+schemaVersion: 1
+templateVersion: 2.0.0
+mode: generated-site
+site:
+  id: missing-asset-game
+  mode: hub
+  locale: en
+  siteUrl: https://missing-asset.example
+  hubPath: /missing-asset/
+  title: Missing Asset Wiki
+  shortName: Missing Asset
+  description: Fixture for missing asset source.
+game:
+  name: Missing Asset Game
+  hubTitle: Missing Asset Game Wiki
+  tagline: Missing asset fixture.
+  releaseStatus: unknown
+  developer: Fixture Studio
+  publisher: Fixture Publishing
+  platforms: [PC]
+theme:
+  accentColor: "#123456"
+  heroAssetId: hero
+categories:
+  - id: getting-started
+    label: Getting Started
+    description: Starter category.
+    icon: rocket
+    order: 1
+pages:
+  - id: beginner-guide
+    title: Beginner Guide
+    description: Valid page, missing asset source.
+    category: getting-started
+    slug: beginner-guide
+    source: site-input/pages/beginner-guide.md
+    status: confirmed
+    featured: true
+    sidebarOrder: 1
+homepage: {}
+assets:
+  - id: hero
+    source: site-input/assets/missing-hero.svg
+    target: hero/main.svg
+    alt: Hero alt
+    sourceType: user-provided
+    usageStatus: review-required

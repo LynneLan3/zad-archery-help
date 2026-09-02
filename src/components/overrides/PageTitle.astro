@@ -1,0 +1,67 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import GuideBreadcrumb from '../GuideBreadcrumb.astro';
+import GuideStatus from '../GuideStatus.astro';
+import QuickAnswer from '../QuickAnswer.astro';
+import GuideHero from '../GuideHero.astro';
+import GuideFacts from '../GuideFacts.astro';
+import ExperienceGuideHeader from '../experience/ExperienceGuideHeader.astro';
+import { isCategoryLandingPath } from '../../lib/guides';
+import { isTrustPath } from '../../lib/trust';
+import { isExperienceGuide } from '../../lib/experience-guide';
+import { formatUiDate, ui } from '../../lib/ui';
+import ContentTrust from '../ContentTrust.astro';
+import { isV3Presentation, isV3Article } from '../../lib/v3/presentation';
+
+const { entry } = Astro.locals.starlightRoute;
+const t = ui();
+const isSplash = entry.data.template === 'splash';
+const isCategoryLanding = isCategoryLandingPath(Astro.url.pathname);
+const isTrust = isTrustPath(Astro.url.pathname);
+const isExperience = isExperienceGuide(entry, Astro.url.pathname);
+const isArticle = !isSplash && !isCategoryLanding && !isTrust;
+const lastUpdated = entry.data.lastUpdated instanceof Date ? entry.data.lastUpdated : undefined;
+const eyebrow: string | undefined = (entry.data as Record<string, unknown>).eyebrow as string | undefined;
+---
+
+{isV3Presentation && isV3Article(entry, Astro.url.pathname) ? null : isExperience && <ExperienceGuideHeader />}
+
+{
+		isArticle && !isExperience && !isV3Presentation && (
+		<>
+			<GuideBreadcrumb />
+			{eyebrow && <p class="gw-eyebrow">{eyebrow}</p>}
+		</>
+	)
+}
+
+{!isSplash && !isExperience && !isV3Presentation && (
+	<Default>
+		<slot />
+	</Default>
+)}
+
+{
+		isArticle && !isExperience && !isV3Presentation && entry.data.description && (
+		<p class="gw-guide-dek">{entry.data.description}</p>
+	)
+}
+
+{
+		isArticle && !isExperience && !isV3Presentation && (
+		<>
+			<div class="gw-article-meta">
+				{entry.data.status && <GuideStatus status={entry.data.status} />}
+				{lastUpdated && (
+					<time datetime={lastUpdated.toISOString()}>
+						{t.updatedOn(formatUiDate(lastUpdated))}
+					</time>
+				)}
+			</div>
+			{entry.data.trust && <ContentTrust trust={entry.data.trust} detailed={false} />}
+			<GuideHero />
+			<GuideFacts />
+			{entry.data.quickAnswer && <QuickAnswer text={entry.data.quickAnswer} />}
+		</>
+	)
+}

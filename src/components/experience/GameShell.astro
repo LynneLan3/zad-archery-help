@@ -1,0 +1,122 @@
+---
+/**
+ * Game Experience Shell — reusable layout wrapper.
+ *
+ * Provides the document shell, top navigation, search integration,
+ * responsive mobile menu, and footer for Game Experience pages.
+ *
+ * Does NOT include page-specific content or hardcoded game data.
+ * The calling page supplies siteTitle, nav items, and slot content.
+ */
+import '../../styles/experience.css';
+import { game } from '../../config/game';
+import GameShellTopbar from './GameShellTopbar.astro';
+import GameShellFooter from './GameShellFooter.astro';
+
+export interface NavItem {
+	label: string;
+	href: string;
+	/** Optional extra path prefixes that should mark this item active (e.g. any `/routes/{id}/` page). */
+	activeMatch?: readonly string[];
+}
+
+export interface FooterLink {
+	label: string;
+	href: string;
+}
+
+interface Props {
+	/** Page <title> */
+	title: string;
+	/** Optional meta description */
+	description?: string;
+	/** Optional canonical URL (absolute) */
+	canonical?: string;
+	/** Site brand text shown in top bar */
+	siteTitle: string;
+	/** Link target for the brand text */
+	homeHref: string;
+	/** Navigation items shown in top bar */
+	nav: NavItem[];
+	/** Current page path for active state (compared without trailing slash) */
+	activePath?: string;
+	/** Accent color (CSS value) — defaults to --game-accent from Starlight head injection */
+	accentColor?: string;
+	/** Accent foreground (for buttons on accent bg) */
+	accentForeground?: string;
+	/** Footer links */
+	footerLinks?: FooterLink[];
+	/** Footer description / copyright */
+	footerText?: string;
+}
+
+const {
+	title,
+	description,
+	canonical,
+	siteTitle,
+	homeHref,
+	nav,
+	activePath = '',
+	accentColor,
+	accentForeground,
+	footerLinks = [],
+	footerText,
+} = Astro.props;
+
+const resolvedAccentColor = accentColor ?? game.accentColor;
+const resolvedAccentForeground = accentForeground ?? game.accentForeground ?? '#041012';
+---
+
+<!doctype html>
+<html lang={game.locale === 'zh-CN' ? 'zh-CN' : 'en'} data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>{title}</title>
+	{description && <meta name="description" content={description} />}
+	{canonical && <link rel="canonical" href={canonical} />}
+	<slot name="head" />
+	<style is:global define:vars={{ gameAccent: resolvedAccentColor, gameAccentForeground: resolvedAccentForeground }}>
+		:root {
+			--game-accent: var(--gameAccent);
+			--game-accent-foreground: var(--gameAccentForeground);
+			--sl-font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+			--sl-text-xs: 0.75rem;
+			--sl-text-sm: 0.875rem;
+			--sl-text-base: 1rem;
+			--sl-text-lg: 1.125rem;
+			--sl-color-bg: #0f1219;
+			--sl-color-text: #c5ced6;
+			--sl-color-white: #f0f3f5;
+			--sl-color-gray-2: #9aa5b4;
+			--sl-color-gray-3: #6b7785;
+			--sl-color-gray-4: #495564;
+			--sl-color-gray-6: #1a1f28;
+			--sl-color-text-accent: color-mix(in srgb, var(--game-accent) 72%, white);
+			--sl-color-green: #10b981;
+			--sl-color-green-high: #34d399;
+		}
+		body {
+			margin: 0;
+			background: var(--sl-color-bg);
+			color: var(--sl-color-text);
+			font-family: var(--sl-font);
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: inherit; }
+	</style>
+	<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+</head>
+<body>
+	<div class="exp-shell">
+		<GameShellTopbar siteTitle={siteTitle} homeHref={homeHref} nav={nav} activePath={activePath} />
+
+		<main class="exp-main" data-pagefind-body>
+			<slot />
+		</main>
+
+		<GameShellFooter footerLinks={footerLinks} footerText={footerText} siteTitle={siteTitle} />
+	</div>
+</body>
+</html>

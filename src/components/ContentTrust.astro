@@ -1,0 +1,36 @@
+---
+import { formatUiDate } from '../lib/ui';
+import { trustSourceTypeLabel, trustStatusLabel, type ContentTrust } from '../lib/content-trust';
+
+interface Props { trust: ContentTrust; detailed?: boolean }
+const { trust, detailed = true } = Astro.props;
+const hasDetails = Boolean(trust.lastVerified || trust.appliesTo?.length || (detailed && (trust.sources?.length || trust.note)));
+const sources = trust.sources?.filter((source, index, all) => all.findIndex((item) => item.label === source.label && item.url === source.url && item.type === source.type) === index) ?? [];
+---
+
+{(trust.status || hasDetails) && (
+	<section class="gw-content-trust" aria-labelledby="gw-content-trust-heading">
+		<div class="gw-content-trust__summary">
+			<span id="gw-content-trust-heading" class="gw-content-trust__label">Content trust</span>
+			{trust.status && <span class:list={['gw-trust-status', `gw-trust-status--${trust.status}`]}>{trustStatusLabel(trust.status)}</span>}
+			{trust.lastVerified && <span class="gw-content-trust__verified">Verified {formatUiDate(new Date(`${trust.lastVerified}T00:00:00Z`))}</span>}
+		</div>
+		{trust.appliesTo && trust.appliesTo.length > 0 && (
+			<div class="gw-content-trust__scope"><span>Applies to</span>{trust.appliesTo.map((scope) => <span class="gw-trust-chip">{scope}</span>)}</div>
+		)}
+		{detailed && trust.note && <p class="gw-content-trust__note">{trust.note}</p>}
+		{detailed && sources.length > 0 && (
+			<div class="gw-content-trust__sources">
+				<span class="gw-content-trust__sources-label">Evidence</span>
+				<ul>
+					{sources.map((source) => (
+						<li>
+							{source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer" data-outbound-kind="source">{source.label}</a> : <span>{source.label}</span>}
+							<span class="gw-content-trust__source-type">{trustSourceTypeLabel(source.type)}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		)}
+	</section>
+)}

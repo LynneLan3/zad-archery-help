@@ -1,0 +1,50 @@
+---
+const { text } = Astro.props as { text: string };
+---
+
+<details class="zad-quick-answer" open>
+  <summary>
+    <span class="zad-quick-answer-label">Quick answer</span>
+    <span class="zad-quick-answer-action open-action">Collapse</span>
+    <span class="zad-quick-answer-action closed-action">Read answer</span>
+  </summary>
+  <p>{text}</p>
+</details>
+
+<style>
+  .zad-quick-answer {
+    margin: 1.25rem 0 0;
+    border: 1px solid #d8cdbd;
+    border-left: 4px solid #d49a22;
+    border-radius: 0.35rem;
+    background: #fffaf1;
+    color: #2c251e;
+    box-shadow: 0 0.5rem 1.5rem rgba(74, 52, 29, 0.08);
+  }
+
+  .zad-quick-answer summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .zad-quick-answer summary::-webkit-details-marker { display: none; }
+  .zad-quick-answer summary::after { content: '＋'; color: #a66a0a; font-size: 1.15rem; }
+  .zad-quick-answer[open] summary::after { content: '−'; }
+  .zad-quick-answer-label { color: #a66a0a; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
+  .zad-quick-answer-action { color: #756b60; font-size: 0.78rem; }
+  .closed-action { display: none; }
+  .zad-quick-answer:not([open]) .open-action { display: none; }
+  .zad-quick-answer:not([open]) .closed-action { display: inline; }
+  .zad-quick-answer p { margin: 0; padding: 0 1.1rem 1.1rem; color: #4f473f; font-size: 1.08rem; line-height: 1.55; }
+
+  @media (max-width: 600px) {
+    .zad-quick-answer summary { align-items: flex-start; flex-wrap: wrap; padding: 0.8rem 0.9rem; }
+    .zad-quick-answer-action { margin-left: auto; }
+    .zad-quick-answer p { padding: 0 0.9rem 0.9rem; font-size: 1rem; }
+  }
+</style>

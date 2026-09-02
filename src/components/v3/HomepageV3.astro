@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import { game } from '../../config/game';
+import { resolveGameAsset } from '../../lib/assets';
+import { getGuides, categoryOf } from '../../lib/guides';
+import { categoryHref } from '../../lib/category-url';
+import { resolveGuideCardImage } from '../../lib/card-images';
+import GuideGridV3 from './GuideGridV3.astro';
+const guides = await getGuides();
+const hot = guides.filter((g) => typeof g.data.homepagePriority === 'number').sort((a,b) => (a.data.homepagePriority ?? 999) - (b.data.homepagePriority ?? 999));
+const featured = guides.find((g) => g.data.featured) ?? hot[0];
+const hero = game.heroImage ? resolveGameAsset(game.heroImage, 'V3 homepage hero') : undefined;
+const recent = [...guides].sort((a,b) => new Date(String(b.data.lastUpdated ?? '')).getTime() - new Date(String(a.data.lastUpdated ?? '')).getTime()).slice(0, 4);
+const categories = [...game.categories].sort((a,b) => a.order-b.order);
+---
+<section class="v3-hero"><>{hero && <Image src={hero} alt={game.heroAlt ?? game.name} width={1600} height={900} widths={[800,1200,1600]} sizes="100vw" loading="eager" fetchpriority="high" style={{ objectPosition: game.heroPosition ?? 'center' }} />}</><div class="v3-hero__copy"><span class="v3-eyebrow">Game guide & wiki</span><h1>{game.hubTitle ?? `${game.name} Guide & Wiki`}</h1><p>{game.tagline}</p></div></section>
+{hot.length > 0 && <section class="v3-section"><h2>Hot Guides</h2><GuideGridV3 entries={hot.slice(0, 6)} /></section>}
+{(game.portal?.popularQuestions?.length ?? 0) > 0 && <section class="v3-section"><h2>Popular Questions</h2>{game.portal?.popularQuestions?.map((q) => <a class="v3-question" href={q.href}>{q.label}</a>)}</section>}
+{featured && <section class="v3-section"><h2>Featured Guide</h2><GuideGridV3 entries={[featured]} /></section>}
+<section class="v3-section" id="browse-guides"><h2>Browse by Game Content</h2><div class="v3-grid">{categories.map((category) => { const imageEntry = guides.find((g) => categoryOf(g)?.id === category.id && resolveGuideCardImage(g)); const image = category.image ? resolveGameAsset(category.image) : imageEntry ? resolveGuideCardImage(imageEntry) : undefined; return <a class="v3-category-block" href={categoryHref(category.id)}>{image && <img src={image.src} alt="" loading="lazy" />}<strong>{category.label}</strong><p>{category.description}</p></a>; })}</div></section>
+{guides.length > 0 && <section class="v3-section"><h2>More Guides</h2><GuideGridV3 entries={guides.filter((g) => !hot.includes(g)).slice(0, 6)} /></section>}
+{recent.length > 0 && <section class="v3-section"><h2>Recently Updated</h2><GuideGridV3 entries={recent} /></section>}
+{game.portal?.evidence?.items?.length && <section class="v3-section"><h2>{game.portal.evidence.title ?? 'Media / Evidence'}</h2><div class="v3-grid">{game.portal.evidence.items.map((item) => { const image = resolveGameAsset(item.image); return <figure class="v3-card"><img class="v3-card__image" src={image?.src} alt={item.alt} /><figcaption class="v3-card__body">{item.caption}</figcaption></figure>; })}</div></section>}
+<section class="v3-section" id="about"><h2>About</h2><p>{game.description}</p></section>

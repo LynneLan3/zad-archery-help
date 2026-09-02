@@ -1,0 +1,11 @@
+{
+  "route": "/guides/builds-classes/",
+  "title": "Builds & Classes",
+  "description_draft": "Jobs, skill-tree choices and build planning. Deep recommendations are intentionally held until current-build gameplay evidence is captured.",
+  "research_status": "PARTIAL",
+  "player_questions": [
+    "What is the best early build?",
+    "What are all five jobs?",
+    "Which skill-tree upgrades should I take first?"
+  ]
+}

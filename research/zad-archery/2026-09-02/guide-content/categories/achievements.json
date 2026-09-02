@@ -1,0 +1,11 @@
+{
+  "route": "/achievements/",
+  "title": "Achievements",
+  "description_draft": "The live Steam achievement set currently exposes 12 milestones covering major systems, Level 40, legendary gear and the King.",
+  "research_status": "READY_WITH_LIVE_COUNT_NOTE",
+  "player_questions": [
+    "How many achievements are live?",
+    "How do I unlock Strongest Archer in Zad?",
+    "What achievement requires Level 40?"
+  ]
+}

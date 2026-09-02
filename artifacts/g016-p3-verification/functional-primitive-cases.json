@@ -1,0 +1,86 @@
+[
+  {
+    "primitiveId": "D01",
+    "nativeShape": [
+      "options",
+      "dimensions",
+      "cells"
+    ],
+    "behavior": "cell lookup by optionId + dimensionId",
+    "evidence": {
+      "cell": {
+        "optionId": "a",
+        "dimensionId": "power",
+        "value": "High"
+      }
+    },
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  },
+  {
+    "primitiveId": "P02",
+    "nativeShape": [
+      "steps"
+    ],
+    "behavior": "ordered <ol> with action/result and nested evidence/media refs",
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  },
+  {
+    "primitiveId": "L02",
+    "nativeShape": [
+      "source",
+      "markers",
+      "layers"
+    ],
+    "behavior": "map marker selection",
+    "result": {
+      "label": "Vein"
+    },
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  },
+  {
+    "primitiveId": "X01",
+    "nativeShape": [
+      "facets",
+      "selected",
+      "resultCount"
+    ],
+    "behavior": "row filtering",
+    "result": [
+      {
+        "name": "Cinder Axe",
+        "class": "Warden"
+      }
+    ],
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  },
+  {
+    "primitiveId": "X04",
+    "nativeShape": [
+      "inputs",
+      "calculation",
+      "result"
+    ],
+    "behavior": "linear calculator interaction",
+    "result": 14,
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  },
+  {
+    "primitiveId": "X05",
+    "nativeShape": [
+      "state",
+      "controls",
+      "saveShare"
+    ],
+    "behavior": "planner slot toggle plus save/share controls",
+    "result": [
+      "primary"
+    ],
+    "branchPresent": true,
+    "rawJsonOrPreFallback": false
+  }
+]

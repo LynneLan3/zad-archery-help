@@ -1,0 +1,42 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# local caches
+.cache/
+.turbo/
+.vite/
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+# local Vercel CLI link — deployment identity lives in site-spec.yaml
+.vercel/
+
+# macOS / archive noise
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# local template exports and test artifacts
+*.zip
+*.tgz
+tmp/
+tmp-*/
+preview-screenshots/
+test-reports/
+validation-reports/

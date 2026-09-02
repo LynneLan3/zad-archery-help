@@ -1,0 +1,37 @@
+---
+/**
+ * Route Fast Answers — quick-answer list for a Route Hub.
+ *
+ * Rendered only when the route provides fast answers (max 3 in the contract).
+ * Links point at formal runtime hrefs.
+ */
+import { ui } from '../../../lib/ui';
+import type { GameRouteFastAnswer } from '../../../config/game-types';
+
+interface Props {
+	answers: readonly GameRouteFastAnswer[];
+}
+
+const { answers } = Astro.props;
+const t = ui();
+---
+
+<section class="exp-section">
+	<div class="exp-reading">
+		<p class="exp-eyebrow">{t.fastAnswers}</p>
+		<h2 class="exp-h2">{t.commonQuestionsLede}</h2>
+		<div style="margin-top: 1.5rem;">
+			<div class="exp-fast-answers">
+				{answers.map((fa) => (
+					<a class="exp-fast-answer" href={fa.href}>
+						<span class="exp-fast-answer__q">{fa.question}</span>
+						<span class="exp-fast-answer__link exp-cta-link">
+							{t.read} →
+						</span>
+						<span class="exp-fast-answer__a">{fa.answer}</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</div>
+</section>

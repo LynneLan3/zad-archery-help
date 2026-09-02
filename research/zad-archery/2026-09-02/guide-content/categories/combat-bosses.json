@@ -1,0 +1,11 @@
+{
+  "route": "/guides/combat-bosses/",
+  "title": "Combat & Bosses",
+  "description_draft": "Guardian progression, King access and combat roadblocks. Patch 1.0.2 fixed a Guardian issue that could block the King.",
+  "research_status": "PARTIAL",
+  "player_questions": [
+    "How do I unlock the King?",
+    "What are Guardian Perks?",
+    "What should I do if a Guardian never appeared?"
+  ]
+}

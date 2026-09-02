@@ -1,0 +1,37 @@
+---
+/**
+ * PageRouteContext — Guide → Route reverse lookup (basic capability).
+ *
+ * Finds every route that contains `pageId` via `findRoutesForPage`, without
+ * persisting membership on the page itself. Renders nothing when the page is
+ * not part of any route. Links point at each route's formal href.
+ */
+import { findRoutesForPage } from '../../../lib/routes';
+import { ui } from '../../../lib/ui';
+import type { GameRoute } from '../../../config/game-types';
+
+interface Props {
+	pageId: string;
+	routes: readonly GameRoute[];
+	guidesHref: string;
+}
+
+const { pageId, routes, guidesHref } = Astro.props;
+const t = ui();
+const matched = findRoutesForPage(pageId, routes);
+---
+
+{matched.length > 0 && (
+	<div class="exp-guide-route-ctx">
+		<p class="exp-guide-route-ctx__eyebrow">{t.youAreOn}</p>
+		<p class="exp-guide-route-ctx__label">{matched.map((r) => r.title).join(', ')}</p>
+		<div class="exp-guide-route-ctx__actions">
+			{matched.map((r) => (
+				<a href={r.href} aria-label={`${t.backToRoute}: ${r.title}`}>
+					← {r.title}
+				</a>
+			))}
+			<a href={guidesHref}>{t.chooseAnotherRouteAction}</a>
+		</div>
+	</div>
+)}

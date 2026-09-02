@@ -1,0 +1,12 @@
+{
+  "schema_version": "hotword-research-package-v1",
+  "package_type": "INITIAL",
+  "research_package_id": "rp-artificial-emberfall-p1-missing-001",
+  "target": { "game_name": "Artificial Emberfall" },
+  "page": { "id": "ember-rule", "topic": "ember rule" },
+  "query": "artificial emberfall ember rule",
+  "player_problem": "understand the Ember rule",
+  "game_facts": [],
+  "search_evidence": [],
+  "evidence": []
+}

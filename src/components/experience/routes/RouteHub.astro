@@ -1,0 +1,82 @@
+---
+/**
+ * Route Hub — formal dynamic Route landing body.
+ *
+ * Structure (visual-accepted): Route Hero → Fast Answers → Follow the Route →
+ * Other Routes. Route number is derived from the route's position in the full
+ * `routes` array; Other Routes excludes the current route and preserves
+ * config order. `visual` and `fastAnswers` are optional.
+ */
+import RouteFastAnswers from './RouteFastAnswers.astro';
+import RouteTimeline from './RouteTimeline.astro';
+import { assetUrl } from './asset-url';
+import { ui } from '../../../lib/ui';
+import type { GameRoute } from '../../../config/game-types';
+
+interface Props {
+	route: GameRoute;
+	routes: readonly GameRoute[];
+}
+
+const { route, routes } = Astro.props;
+const t = ui();
+const routeIndex = routes.findIndex((r) => r.id === route.id);
+const number = String(routeIndex >= 0 ? routeIndex + 1 : routes.length + 1).padStart(2, '0');
+const otherRoutes = routes.filter((r) => r.id !== route.id);
+const visualUrl = assetUrl(route.visual);
+---
+
+<section
+	class:list={['exp-route-hero', !route.visual && 'exp-route-hero--content-only']}
+>
+	{route.visual && visualUrl && (
+		<div class="exp-route-hero__visual">
+			<img src={visualUrl} alt={`${route.title} route visual`} />
+		</div>
+	)}
+	<div class="exp-route-hero__inner">
+		<div class="exp-number exp-number--lg exp-route-hero__number">{number}</div>
+		{route.eyebrow && <p class="exp-eyebrow exp-route-hero__eyebrow">{route.eyebrow}</p>}
+		<h1 class="exp-h1 exp-route-hero__title">{route.title}</h1>
+		<p class="exp-lede exp-route-hero__desc">{route.description}</p>
+	</div>
+</section>
+
+{route.fastAnswers && route.fastAnswers.length > 0 && (
+	<RouteFastAnswers answers={route.fastAnswers} />
+)}
+
+<section class="exp-section exp-route-guides-section">
+	<div class="exp-reading">
+		<p class="exp-eyebrow">{t.followTheRoute}</p>
+		<h2 class="exp-h2">{t.followTheRouteLede}</h2>
+		<p class="exp-lede" style="margin-top: 0.75rem;">{t.followTheRouteStepLede}</p>
+		<div style="margin-top: 1.5rem;">
+			<RouteTimeline pages={route.pages} />
+		</div>
+	</div>
+</section>
+
+{otherRoutes.length > 0 && (
+	<section class="exp-section">
+		<div class="exp-content">
+			<p class="exp-eyebrow">{t.otherRoutes}</p>
+			<h2 class="exp-h2">{t.chooseAnotherRoute}</h2>
+			<div style="margin-top: 1.5rem;">
+				<div class="exp-other-routes">
+					{otherRoutes.map((other) => {
+						const otherIndex = routes.findIndex((item) => item.id === other.id);
+						return (
+							<a class="exp-other-route" href={other.href}>
+								<span class="exp-number exp-number--xs exp-other-route__number">
+									{String(otherIndex >= 0 ? otherIndex + 1 : routes.length + 1).padStart(2, '0')}
+								</span>
+								<span class="exp-other-route__label">{other.title}</span>
+							</a>
+						);
+					})}
+				</div>
+			</div>
+		</div>
+	</section>
+)}

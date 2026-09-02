@@ -1,0 +1,11 @@
+{
+  "page": "Homepage",
+  "url": "/v4-preview/",
+  "prototype": "discovery-homepage",
+  "playerTask": "choose a useful next task",
+  "primitiveRecipe": ["identity", "Hot Now", "Start Here", "Primary Tool", "Browse by Task"],
+  "mediaUsed": [],
+  "interactiveBehavior": "Whole-surface navigation links with hover and focus states.",
+  "desktopScreenshot": "artifacts/v4-calibration/homepage/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/homepage/mobile.png"
+}

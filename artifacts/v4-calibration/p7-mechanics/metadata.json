@@ -1,0 +1,11 @@
+{
+  "page": "P7 Mechanics — Heat System",
+  "url": "/v4-preview/heat-system/",
+  "prototype": "P7",
+  "playerTask": "mechanics",
+  "primitiveRecipe": ["A01", "A03", "X03", "X04"],
+  "mediaUsed": [],
+  "interactiveBehavior": "Calculator inputs recompute the heat result and interpretation.",
+  "desktopScreenshot": "artifacts/v4-calibration/p7-mechanics/desktop.png",
+  "mobileScreenshot": "artifacts/v4-calibration/p7-mechanics/mobile.png"
+}

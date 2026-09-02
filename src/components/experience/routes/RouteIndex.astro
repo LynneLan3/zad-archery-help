@@ -1,0 +1,34 @@
+---
+/**
+ * Route Index — formal Guides Index body (player-facing Route Map).
+ *
+ * Consumes `game.routes` only; no prototype data. Each route renders as a
+ * section with number (derived from array index), title, description,
+ * optional visual, guide list (exact route order), and an "Open route" CTA.
+ * Duplicate guides across routes are intentional and are not de-duplicated.
+ */
+import RouteSection from './RouteSection.astro';
+import { ui } from '../../../lib/ui';
+import type { GameRoute } from '../../../config/game-types';
+
+interface Props {
+	routes: readonly GameRoute[];
+}
+
+const { routes } = Astro.props;
+const t = ui();
+---
+
+<section class="exp-index-hero">
+	<div class="exp-content">
+		<p class="exp-eyebrow">{t.fieldGuide}</p>
+		<h1 class="exp-h1">{t.allGuides}</h1>
+		<p class="exp-lede">{t.chooseRouteLede}</p>
+	</div>
+</section>
+
+<section class="exp-content" id="routes">
+	{routes.map((route, index) => (
+		<RouteSection route={route} number={String(index + 1).padStart(2, '0')} />
+	))}
+</section>

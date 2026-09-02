@@ -1,0 +1,8 @@
+{
+  "page": "P5 Location — Cinder Marsh Map",
+  "url": "/v4-preview/marsh-map/",
+  "prototype": "P5",
+  "desktop": "desktop.png",
+  "mobile": "mobile.png",
+  "revision": "Map remains a wide utility surface; user-facing location headings are natural."
+}

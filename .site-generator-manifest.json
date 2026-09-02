@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "templateVersion": "2.0.0",
+  "generatorVersion": "1.0.0",
+  "specHash": "ad8862ce92a28c1b9bed6a0c6ef855bdccabfdceee174a6a1fc4f4c69917031e",
+  "siteId": "zad-archery",
+  "createdFromSpec": "site-spec.yaml",
+  "managedFiles": [
+    {
+      "path": "public/1009d489-3711-462d-8a5a-6b9c7d595353.txt",
+      "sha256": "9c649d62f1b1144922d4e456e6a79d23d067e5c7eb25d74b26e3e1fd13709b24",
+      "kind": "other"
+    },
+    {
+      "path": "src/assets/zad-archery/hero.jpg",
+      "sha256": "59d3c3097f81a0d7bb3d1aeab016b5b977f1ab60caf9c82157a966771f7c1c49",
+      "kind": "asset"
+    },
+    {
+      "path": "src/config/indexnow-key.json",
+      "sha256": "e82beaa13e0ea5c7f56095f5100aed7da7c547f59fe1a80a9063f5240c767190",
+      "kind": "config"
+    },
+    {
+      "path": "src/config/site.generated.ts",
+      "sha256": "f0df4b702288361793b0da5afa75eceee2f0dd4fbe65310d929d8870abe1323c",
+      "kind": "config"
+    },
+    {
+      "path": "src/content/docs/guides/zad-archery-guide-index.md",
+      "sha256": "0a284dda5fe99eb0ed84e5728ff4bb405fcb5d7506d9c97e1e59e60e355fb23c",
+      "kind": "page"
+    },
+    {
+      "path": "src/content/docs/index.mdx",
+      "sha256": "cca32c0505402b4315093d978933549450060c30b6901262cd8d73a93579b0d7",
+      "kind": "hub"
+    }
+  ],
+  "managedAssets": [
+    {
+      "id": "zad-hero",
+      "target": "zad-archery/hero.jpg",
+      "source": "public/zad-archery/10_steam_library_hero.jpg",
+      "sha256": "59d3c3097f81a0d7bb3d1aeab016b5b977f1ab60caf9c82157a966771f7c1c49",
+      "usageStatus": "approved",
+      "sourceType": "official"
+    }
+  ]
+}

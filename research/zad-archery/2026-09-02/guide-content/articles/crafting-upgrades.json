@@ -1,0 +1,24 @@
+{
+  "slug": "crafting-upgrades",
+  "route": "/guides/crafting-gear/crafting-upgrades/",
+  "title_draft": "Zad Archery Crafting Guide: What to Upgrade First",
+  "research_status": "HOLD_GAMEPLAY_EVIDENCE",
+  "known": [
+    "Crafting creates bows and armor; demo feedback mentions forging and RNG."
+  ],
+  "missing_before_publish": [
+    "current crafting recipe/cost system",
+    "rarities/affixes",
+    "forging behavior",
+    "upgrade priorities"
+  ],
+  "capture_targets": [
+    "crafting screen",
+    "forging screen",
+    "rare/legendary comparison"
+  ],
+  "sources": [
+    "S01_STEAM_STORE",
+    "S11_FEEDBACK_THREAD"
+  ]
+}
