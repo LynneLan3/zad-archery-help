@@ -80,4 +80,16 @@ export const siteConfig: GameConfig = {
 			],
 		},
 	],
+	trust: {
+		enabled: true,
+		pages: {
+			privacy: {
+				enabled: true,
+				slug: "privacy",
+				path: "/privacy/",
+				title: "Privacy",
+				robots: "noindex,follow",
+			},
+		},
+	},
 };

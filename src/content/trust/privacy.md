@@ -1,4 +1,15 @@
-# Privacy
+---
+title: Privacy
+description: "Starter privacy copy for Zad Archery Guide & Wiki. Update before adding analytics, ads, or affiliate links."
+trustType: privacy
+robots: "noindex,follow"
+---
+<!--
+  This file is generated from site-spec.yaml.
+  Do not edit directly.
+  Run npm run site:generate instead.
+  Source: site-input/trust/privacy.md
+-->
 
 This page is informational and not legal advice.
 

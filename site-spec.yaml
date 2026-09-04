@@ -70,3 +70,9 @@ assets:
     sourceType: official
     usageStatus: approved
     aspectRatio: auto
+
+trust:
+  enabled: true
+  privacy:
+    enabled: true
+    source: site-input/trust/privacy.md

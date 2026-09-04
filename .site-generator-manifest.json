@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "templateVersion": "2.0.0",
   "generatorVersion": "1.0.0",
-  "specHash": "ad8862ce92a28c1b9bed6a0c6ef855bdccabfdceee174a6a1fc4f4c69917031e",
+  "specHash": "fbc45e278781b92097885a1d09657816f6e36a4619677a83848db3ed3ba5e0f7",
   "siteId": "zad-archery",
   "createdFromSpec": "site-spec.yaml",
   "managedFiles": [
@@ -23,7 +23,7 @@
     },
     {
       "path": "src/config/site.generated.ts",
-      "sha256": "f0df4b702288361793b0da5afa75eceee2f0dd4fbe65310d929d8870abe1323c",
+      "sha256": "4badf27bc466f9a762b65cac9546cdda9b6c00b990aff2e8c215a522b48317b8",
       "kind": "config"
     },
     {
@@ -35,6 +35,11 @@
       "path": "src/content/docs/index.mdx",
       "sha256": "cca32c0505402b4315093d978933549450060c30b6901262cd8d73a93579b0d7",
       "kind": "hub"
+    },
+    {
+      "path": "src/content/trust/privacy.md",
+      "sha256": "201825db898f565c782ff7dd3497472590d6fce35300d5dc1e14c25cdde6e790",
+      "kind": "trust"
     }
   ],
   "managedAssets": [
