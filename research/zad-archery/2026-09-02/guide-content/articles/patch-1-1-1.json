@@ -1,0 +1,103 @@
+{
+  "schema": "research-guide-content-v1",
+  "slug": "patch-1-1-1",
+  "route": "/updates/patch-1-1-1/",
+  "page_type": "article",
+  "category": "Updates",
+  "priority": "P0",
+  "research_status": "READY",
+  "primary_intent": "patch_notes",
+  "title_draft": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+  "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
+  "quick_answer_draft": "Patch 1.1.1 is the September 5 follow-up to the Mega Update. It adds an Effects Amount slider, auto-collects piled mining ore, fixes currency UI wrapping, repairs the Run Portal death skip that could skip monsters or a Guardian, restores missed Guardians or grants their currency if already passed, stops leftover skill effects from killing the next Run Portal, and corrects lost Portal Currency from the skipped-level bug on load.",
+  "sections": [
+    {
+      "h2": "Quality-of-life changes",
+      "claims": [
+        {
+          "text": "Effects Amount slider added.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Mining ore now auto-collects when too much ore piles up.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Currency UI wrap issue fixed.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Guardian and skipped-level recovery",
+      "claims": [
+        {
+          "text": "Dying as the Run Portal dies no longer causes the next level to skip monsters or the Guardian.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "A missed Guardian can appear on the next level; if you already passed that point, the Guardian is counted defeated and currency is granted.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Leftover skill effects no longer kill the next Run Portal.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Lost Portal Currency from the skipped-level bug is corrected on load.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "S17_PATCH_1_1_1_STEAM",
+    "S16_MEGA_UPDATE_STEAMDB",
+    "S18_STEAM_COMMUNITY_HUB"
+  ],
+  "media_slots": [
+    {
+      "slot": "hero",
+      "preferred": "patch_or_gameplay_screenshot",
+      "status": "OPTIONAL"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does Patch 1.1.1 replace the Mega Update?",
+      "a": "No. It is the follow-up patch after the September 4 Mega Update.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB",
+        "S17_PATCH_1_1_1_STEAM"
+      ]
+    },
+    {
+      "q": "What if I already skipped a Guardian?",
+      "a": "Official notes say a missed Guardian can appear next level; if already passed, it is counted defeated and currency is granted. Lost Portal Currency from the bug is corrected on load.",
+      "sources": [
+        "S17_PATCH_1_1_1_STEAM"
+      ]
+    }
+  ],
+  "warnings": [],
+  "related_routes": [
+    "/updates/mega-update/",
+    "/guides/progression/guardian-skipped-level/",
+    "/updates/patch-1-0-2/"
+  ],
+  "codex_rule": "Stay inside Patch 1.1.1 official notes. Do not invent extra recovery steps."
+}

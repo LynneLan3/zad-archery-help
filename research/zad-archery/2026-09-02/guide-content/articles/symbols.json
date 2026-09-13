@@ -1,0 +1,90 @@
+{
+  "schema": "research-guide-content-v1",
+  "slug": "symbols",
+  "route": "/guides/progression/symbols/",
+  "page_type": "article",
+  "category": "Progression",
+  "priority": "P0",
+  "research_status": "READY",
+  "primary_intent": "mechanic_overview",
+  "title_draft": "Zad Archery Symbols: What the Mega Update System Adds",
+  "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
+  "quick_answer_draft": "The September 4 Mega Update adds a Symbol System with 50+ Symbols and Exalted Symbols. This page covers only that verified system fact. It does not rank best Symbols or publish unverified hidden values.",
+  "sections": [
+    {
+      "h2": "What is confirmed",
+      "claims": [
+        {
+          "text": "The Mega Update added the Symbol System.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Official notes describe 50+ Symbols and Exalted Symbols.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "In the current progression path, Symbols sit after Jobs / Preferred Job and before later Portal Currency / Rings progression.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "What this page does not claim",
+      "claims": [
+        {
+          "text": "No verified best-Symbol ranking is included because official notes do not publish one.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Exact Symbol effects, drop rates, and hidden values remain outside the verified recovery evidence.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "S16_MEGA_UPDATE_STEAMDB"
+  ],
+  "media_slots": [
+    {
+      "slot": "hero",
+      "preferred": "symbol_ui_screenshot",
+      "status": "MISSING"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many Symbols are there?",
+      "a": "Official Mega Update notes say 50+ Symbols and Exalted Symbols. An exact enumerated list is not part of the verified recovery pack.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB"
+      ]
+    },
+    {
+      "q": "What is the best Symbol?",
+      "a": "There is no verified official ranking in the current evidence. This page only confirms the system exists.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB"
+      ]
+    }
+  ],
+  "warnings": [
+    "No ranking or exact values"
+  ],
+  "related_routes": [
+    "/updates/mega-update/",
+    "/guides/getting-started/",
+    "/guides/progression/rings-portal-endless/"
+  ],
+  "codex_rule": "FAST_VERIFIED system overview only. Forbidden: rankings, complete lists, exact hidden values."
+}

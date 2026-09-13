@@ -1,12 +1,52 @@
 [
   {
-    "question": "How long is Zad Archery?",
+    "question": "What did the Zad Archery Mega Update add?",
+    "intent": "mega_update",
+    "signal": "HIGH",
+    "sources": [
+      "S16_MEGA_UPDATE_STEAMDB",
+      "S18_STEAM_COMMUNITY_HUB"
+    ],
+    "route": "/updates/mega-update/",
+    "status": "READY"
+  },
+  {
+    "question": "How do Symbols work in Zad Archery?",
+    "intent": "symbols",
+    "signal": "HIGH",
+    "sources": [
+      "S16_MEGA_UPDATE_STEAMDB"
+    ],
+    "route": "/guides/progression/symbols/",
+    "status": "READY"
+  },
+  {
+    "question": "How do Rings, Portal Currency and Endless work?",
+    "intent": "rings_portal_endless",
+    "signal": "HIGH",
+    "sources": [
+      "S16_MEGA_UPDATE_STEAMDB"
+    ],
+    "route": "/guides/progression/rings-portal-endless/",
+    "status": "READY"
+  },
+  {
+    "question": "What if my Guardian was skipped or missing?",
+    "intent": "guardian_skipped_level",
+    "signal": "HIGH",
+    "sources": [
+      "S17_PATCH_1_1_1_STEAM"
+    ],
+    "route": "/guides/progression/guardian-skipped-level/",
+    "status": "READY"
+  },
+  {
+    "question": "How long is Zad Archery after the Mega Update?",
     "intent": "completion_time",
     "signal": "HIGH",
     "sources": [
       "S02_STEAM_NEWS_RELEASE_INFO",
-      "S06_REDDIT_RELEASE",
-      "S09_STEAM_DISCUSSIONS"
+      "S16_MEGA_UPDATE_STEAMDB"
     ],
     "route": "/guides/progression/how-long-to-beat-zad-archery/",
     "status": "READY"
@@ -14,7 +54,7 @@
   {
     "question": "Does Zad Archery demo progress carry over to the full game?",
     "intent": "demo_save_transfer",
-    "signal": "HIGH",
+    "signal": "MEDIUM",
     "sources": [
       "S06_REDDIT_RELEASE",
       "S09_STEAM_DISCUSSIONS"
@@ -23,9 +63,19 @@
     "status": "READY"
   },
   {
+    "question": "What changed in Patch 1.1.1?",
+    "intent": "patch_1_1_1",
+    "signal": "HIGH",
+    "sources": [
+      "S17_PATCH_1_1_1_STEAM"
+    ],
+    "route": "/updates/patch-1-1-1/",
+    "status": "READY"
+  },
+  {
     "question": "Does Zad Archery work on Steam Deck?",
     "intent": "steam_deck",
-    "signal": "MEDIUM_HIGH",
+    "signal": "MEDIUM",
     "sources": [
       "S04_STEAM_DECK",
       "S06_REDDIT_RELEASE"
@@ -36,7 +86,7 @@
   {
     "question": "Is Zad Archery on mobile?",
     "intent": "mobile",
-    "signal": "MEDIUM_HIGH",
+    "signal": "MEDIUM",
     "sources": [
       "S06_REDDIT_RELEASE"
     ],
@@ -46,7 +96,7 @@
   {
     "question": "What are the Zad Archery achievements?",
     "intent": "achievements",
-    "signal": "MEDIUM_HIGH",
+    "signal": "MEDIUM",
     "sources": [
       "S01_STEAM_STORE",
       "S12_ACHIEVEMENTS",

@@ -159,7 +159,7 @@ export function generateV4(input: V4SiteInput): V4GeneratedSite {
 				primitiveSupport: { ...media.primitiveSupport, ...page.primitiveSupport },
 		};
 		const pageData = createPageData(pageDataInput);
-		return { id: page.id, title: page.title, href: page.href, pageData, composition: composePage(pageData) };
+		return { id: page.id, title: page.title, href: page.href, related: (page as V4InputPage & { related?: readonly { href: string; label?: string }[] }).related ?? [], pageData, composition: composePage(pageData) };
 	});
 	const pageIds = [...pages].sort((a, b) => b.pageData.intent.priority - a.pageData.intent.priority || a.id.localeCompare(b.id)).map((page) => page.id);
 	return {

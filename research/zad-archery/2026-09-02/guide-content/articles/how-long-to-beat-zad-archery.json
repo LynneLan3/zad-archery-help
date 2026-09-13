@@ -7,12 +7,12 @@
   "priority": "P0",
   "research_status": "READY",
   "primary_intent": "game_length",
-  "title_draft": "How Long Is Zad Archery? Main Run and 100% Estimate",
+  "title_draft": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
   "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
-  "quick_answer_draft": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4–5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run.",
+  "quick_answer_draft": "Do not treat the current full game as a fixed 4\u20135 hour finish. Launch main progression was designed around about five hours, and launch-day players often finished or maxed major systems in roughly 4\u20135.5 hours. After the September 4 Mega Update, the Level 50 cap is removed and Endless farming exists, so the current endpoint is open-ended beyond that launch main run.",
   "sections": [
     {
-      "h2": "Official playtime target",
+      "h2": "Launch main progression timing",
       "claims": [
         {
           "text": "Before launch, Samharia Studios said the game was designed to take around five hours.",
@@ -21,7 +21,13 @@
           ]
         },
         {
-          "text": "The developer specifically noted that build choices and loot affect duration, especially for players pursuing 100% achievements.",
+          "text": "Launch-day players reported finishing or maxing major systems in roughly 4 to 5.5 hours.",
+          "sources": [
+            "S06_REDDIT_RELEASE"
+          ]
+        },
+        {
+          "text": "The developer noted that build choices and loot affect duration, especially for 100% achievement hunting.",
           "sources": [
             "S02_STEAM_NEWS_RELEASE_INFO"
           ]
@@ -29,35 +35,43 @@
       ]
     },
     {
-      "h2": "What launch-day players reported",
+      "h2": "What changed after the Mega Update",
       "claims": [
         {
-          "text": "One Reddit player reported reaching Level 40, defeating the final boss and maxing almost every system in about 5.5 hours.",
+          "text": "The September 4 Mega Update removed the Level 50 cap.",
           "sources": [
-            "S06_REDDIT_RELEASE"
+            "S16_MEGA_UPDATE_STEAMDB"
           ]
         },
         {
-          "text": "Another launch-day comment reported maxing out in about four hours.",
+          "text": "Endless farming was added in the same Mega Update.",
           "sources": [
-            "S06_REDDIT_RELEASE"
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Because post-50 and Endless content now exist, the current game should not be described as ending at a fixed 4\u20135 hour cap.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB",
+            "S02_STEAM_NEWS_RELEASE_INFO"
           ]
         }
       ]
     },
     {
-      "h2": "What can make your run longer?",
+      "h2": "What remains unverified",
       "claims": [
         {
-          "text": "Loot and build choices are explicitly named by the developer as factors that change completion time.",
+          "text": "There is not yet a verified average clear time for post-50 or Endless endpoints in the recovery research pack.",
           "sources": [
-            "S02_STEAM_NEWS_RELEASE_INFO"
+            "S16_MEGA_UPDATE_STEAMDB"
           ]
         },
         {
-          "text": "Achievement hunting should be treated separately from the main run because the live achievement list includes milestones such as Level 40, Legendary Gear and defeating the King.",
+          "text": "Treat launch 4\u20135.5 hour reports as launch main-progression evidence, not as the current complete-game endpoint.",
           "sources": [
-            "S12_ACHIEVEMENTS"
+            "S06_REDDIT_RELEASE",
+            "S16_MEGA_UPDATE_STEAMDB"
           ]
         }
       ]
@@ -66,33 +80,38 @@
   "source_ids": [
     "S02_STEAM_NEWS_RELEASE_INFO",
     "S06_REDDIT_RELEASE",
-    "S12_ACHIEVEMENTS"
+    "S12_ACHIEVEMENTS",
+    "S16_MEGA_UPDATE_STEAMDB"
   ],
   "media_slots": [
     {
       "slot": "hero",
       "preferred": "gameplay_progression_screenshot",
-      "status": "NEEDS_CAPTURE",
-      "capture_target": "late-game or Level 40 screen if available"
+      "status": "OPTIONAL"
     }
   ],
   "faq": [
     {
-      "q": "Can Zad Archery be finished in one sitting?",
-      "a": "Yes. The official target is roughly five hours, and multiple launch-day reports fall around four to five and a half hours.",
+      "q": "Is Zad Archery still only about five hours long?",
+      "a": "That figure described the launch main-progression target. After the Mega Update removed the Level 50 cap and added Endless, the current game continues past that launch endpoint.",
       "sources": [
         "S02_STEAM_NEWS_RELEASE_INFO",
-        "S06_REDDIT_RELEASE"
+        "S16_MEGA_UPDATE_STEAMDB"
       ]
     },
     {
-      "q": "How long does 100% take?",
-      "a": "There is not enough reliable post-launch timing data yet. The developer only said achievement hunting can extend the run.",
+      "q": "How long does Endless take?",
+      "a": "The official Mega Update confirms Endless farming exists, but it does not publish a verified average Endless clear time.",
       "sources": [
-        "S02_STEAM_NEWS_RELEASE_INFO"
+        "S16_MEGA_UPDATE_STEAMDB"
       ]
     }
   ],
   "warnings": [],
-  "codex_rule": "Map evidence into existing V4 Guide Content Result. Do not invent missing mechanics. Final editorial prose may be generated by the existing writer pipeline."
+  "related_routes": [
+    "/updates/mega-update/",
+    "/guides/progression/rings-portal-endless/",
+    "/guides/getting-started/"
+  ],
+  "codex_rule": "Distinguish launch main progression from post-Mega Update open-ended play. Do not invent Endless timing."
 }

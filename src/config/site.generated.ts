@@ -10,7 +10,7 @@ export const siteConfig: GameConfig = {
 	name: "Zad Archery",
 	shortName: "Zad Archery",
 	title: "Zad Archery Help",
-	description: "Verified guides for Zad Archery progression, platforms, achievements and launch updates.",
+	description: "Verified guides for Zad Archery Mega Update progression, Symbols, Rings, Endless, Patch 1.1.1 and launch answers.",
 	tagline: "Every arrow, answered.",
 	siteUrl: "https://zadarchery.help",
 	siteMode: "standalone",

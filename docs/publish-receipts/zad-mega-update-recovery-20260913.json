@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "hotword-publish-receipt-v1",
+  "common": {
+    "site": "Zad Archery Help",
+    "siteId": "zad-archery",
+    "game": "Zad Archery",
+    "batchId": "zad-archery|mega-update-recovery|20260913",
+    "lifecyclePhase": "indexing",
+    "attributionMode": "OBSERVATIONAL_ONLY",
+    "sourceRefs": [
+      "Zad_Recovery_Research_Pack_2026-09-13.md",
+      "research/zad-archery/2026-09-02/",
+      "site-input/v4/zad-archery/site.json"
+    ],
+    "writerModel": "gpt-5-mini",
+    "writerPipeline": "shared-dev-skills/article-writer/scripts/shared-article-writer.mjs"
+  },
+  "interventions": [
+    {
+      "interventionId": "zad-archery|homepage-current-version|20260913",
+      "action": "UPDATE_PAGE",
+      "primaryUrl": "/",
+      "affectedUrls": ["/"],
+      "reason": "Replace launch Patch 1.0.2 homepage messaging with Mega Update / Patch 1.1.1 discovery.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Recovery Pack Priority 1 homepage refresh."
+    },
+    {
+      "interventionId": "zad-archery|getting-started-current-progression|20260913",
+      "action": "UPDATE_PAGE",
+      "primaryUrl": "/guides/getting-started/",
+      "affectedUrls": ["/guides/getting-started/"],
+      "reason": "Update beginner progression to Jobs/Preferred Job → Symbols → Portal Currency/Rings → Endless.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer update from Recovery Pack facts."
+    },
+    {
+      "interventionId": "zad-archery|how-long-post-mega|20260913",
+      "action": "UPDATE_PAGE",
+      "primaryUrl": "/guides/progression/how-long-to-beat-zad-archery/",
+      "affectedUrls": ["/guides/progression/how-long-to-beat-zad-archery/"],
+      "reason": "Separate launch 4–5 hour main progression from post-Mega Update open-ended play.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer update from Recovery Pack facts."
+    },
+    {
+      "interventionId": "zad-archery|patch-1-0-2-historical|20260913",
+      "action": "UPDATE_PAGE",
+      "primaryUrl": "/updates/patch-1-0-2/",
+      "affectedUrls": ["/updates/patch-1-0-2/"],
+      "reason": "Keep historical Patch 1.0.2 and route current-version readers to Mega Update / 1.1.1.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer update from Recovery Pack facts."
+    },
+    {
+      "interventionId": "zad-archery|mega-update|20260913",
+      "action": "CREATE_PAGE",
+      "primaryUrl": "/updates/mega-update/",
+      "affectedUrls": ["/updates/mega-update/", "/updates/"],
+      "reason": "Publish current major update owner from verified Mega Update facts.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer create; Evidence Gate PASS."
+    },
+    {
+      "interventionId": "zad-archery|patch-1-1-1|20260913",
+      "action": "CREATE_PAGE",
+      "primaryUrl": "/updates/patch-1-1-1/",
+      "affectedUrls": ["/updates/patch-1-1-1/"],
+      "reason": "Publish Patch 1.1.1 owner including Guardian skip and Portal Currency recovery notes.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer create; Evidence Gate PASS."
+    },
+    {
+      "interventionId": "zad-archery|symbols|20260913",
+      "action": "CREATE_PAGE",
+      "primaryUrl": "/guides/progression/symbols/",
+      "affectedUrls": ["/guides/progression/symbols/"],
+      "reason": "Publish verified Symbol System overview without rankings.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer create; Evidence Gate PASS for system existence only."
+    },
+    {
+      "interventionId": "zad-archery|rings-portal-endless|20260913",
+      "action": "CREATE_PAGE",
+      "primaryUrl": "/guides/progression/rings-portal-endless/",
+      "affectedUrls": ["/guides/progression/rings-portal-endless/"],
+      "reason": "Publish verified Rings / Portal Currency / Endless overview without rankings or farm routes.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer create; Evidence Gate PASS for system existence only."
+    },
+    {
+      "interventionId": "zad-archery|guardian-skipped-level|20260913",
+      "action": "CREATE_PAGE",
+      "primaryUrl": "/guides/progression/guardian-skipped-level/",
+      "affectedUrls": ["/guides/progression/guardian-skipped-level/"],
+      "reason": "Publish Patch 1.1.1 Guardian missing / skipped-level recovery answer.",
+      "triggerType": "operator_request",
+      "triggerSummary": "Shared Writer create; Evidence Gate PASS."
+    }
+  ]
+}

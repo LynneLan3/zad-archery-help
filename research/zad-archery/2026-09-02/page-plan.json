@@ -1,60 +1,47 @@
 {
-  "launch_principle": "Publish verified answer pages first. Do not create thin or invented build/mining/crafting guides just to fill cards.",
+  "launch_principle": "Publish verified answer pages first. Do not create thin or invented Symbol/Ring ranking or Endless farming guides.",
   "homepage": {
     "route": "/",
     "popular_searches": [
       {
-        "label": "How long is the game?",
+        "label": "Mega Update",
+        "route": "/updates/mega-update/"
+      },
+      {
+        "label": "Symbols",
+        "route": "/guides/progression/symbols/"
+      },
+      {
+        "label": "Rings / Endless",
+        "route": "/guides/progression/rings-portal-endless/"
+      },
+      {
+        "label": "Missing Guardian",
+        "route": "/guides/progression/guardian-skipped-level/"
+      },
+      {
+        "label": "How long now?",
         "route": "/guides/progression/how-long-to-beat-zad-archery/"
-      },
-      {
-        "label": "Achievements",
-        "route": "/achievements/"
-      },
-      {
-        "label": "Steam Deck",
-        "route": "/guides/platforms/steam-deck/"
-      },
-      {
-        "label": "Demo save transfer",
-        "route": "/guides/progression/demo-save-transfer/"
-      },
-      {
-        "label": "Mobile version",
-        "route": "/guides/platforms/mobile/"
       }
     ],
     "players_are_asking": [
-      "How long is Zad Archery?",
-      "Does demo progress carry over?",
-      "Does it work on Steam Deck?",
-      "Is there an iOS/Android version?"
+      "What did the Mega Update add?",
+      "How do Symbols and Rings work?",
+      "What if my Guardian was skipped?",
+      "How long is the game after Endless?"
     ],
     "popular_right_now": [
+      "/updates/mega-update/",
       "/guides/getting-started/",
-      "/guides/progression/how-long-to-beat-zad-archery/",
-      "/achievements/"
+      "/guides/progression/guardian-skipped-level/"
     ],
     "recently_updated": [
-      "/updates/patch-1-0-2/",
-      "/guides/progression/demo-save-transfer/",
-      "/guides/platforms/steam-deck/"
+      "/updates/patch-1-1-1/",
+      "/guides/progression/symbols/",
+      "/guides/progression/rings-portal-endless/"
     ]
   },
   "categories": [
-    {
-      "route": "/guides/builds-classes/",
-      "title": "Builds & Classes",
-      "launch_state": "THIN_HOLD_EXPANSION",
-      "ready_children": [
-        "/guides/getting-started/"
-      ],
-      "hold_children": [
-        "/guides/builds-classes/best-early-build/",
-        "/guides/builds-classes/jobs-unlock-order/",
-        "/guides/builds-classes/skill-tree/"
-      ]
-    },
     {
       "route": "/guides/progression/",
       "title": "Progression",
@@ -62,28 +49,20 @@
       "ready_children": [
         "/guides/getting-started/",
         "/guides/progression/how-long-to-beat-zad-archery/",
-        "/guides/progression/demo-save-transfer/"
+        "/guides/progression/demo-save-transfer/",
+        "/guides/progression/symbols/",
+        "/guides/progression/rings-portal-endless/",
+        "/guides/progression/guardian-skipped-level/"
       ]
     },
     {
-      "route": "/guides/crafting-gear/",
-      "title": "Crafting & Gear",
-      "launch_state": "HOLD_DEEP_GUIDES",
-      "ready_children": [],
-      "hold_children": [
-        "/guides/crafting-gear/sell-salvage-items/",
-        "/guides/crafting-gear/mining-gems/",
-        "/guides/crafting-gear/crafting-upgrades/"
-      ]
-    },
-    {
-      "route": "/guides/combat-bosses/",
-      "title": "Combat & Bosses",
-      "launch_state": "HOLD_DEEP_GUIDES",
-      "ready_children": [],
-      "hold_children": [
-        "/guides/combat-bosses/guardian-king/",
-        "/guides/combat-bosses/final-boss/"
+      "route": "/updates/",
+      "title": "Updates",
+      "launch_state": "READY",
+      "ready_children": [
+        "/updates/mega-update/",
+        "/updates/patch-1-1-1/",
+        "/updates/patch-1-0-2/"
       ]
     },
     {
@@ -99,9 +78,14 @@
     "/guides/getting-started/",
     "/guides/progression/how-long-to-beat-zad-archery/",
     "/guides/progression/demo-save-transfer/",
+    "/guides/progression/symbols/",
+    "/guides/progression/rings-portal-endless/",
+    "/guides/progression/guardian-skipped-level/",
     "/guides/platforms/steam-deck/",
     "/guides/platforms/mobile/",
     "/achievements/",
+    "/updates/mega-update/",
+    "/updates/patch-1-1-1/",
     "/updates/patch-1-0-2/"
   ],
   "hold_articles": [
@@ -112,5 +96,11 @@
     "/guides/crafting-gear/mining-gems/",
     "/guides/crafting-gear/crafting-upgrades/",
     "/guides/combat-bosses/guardian-king/"
+  ],
+  "excluded_speculative": [
+    "best Symbols ranking",
+    "complete Ring ranking",
+    "best Endless farming route",
+    "unverified exact values"
   ]
 }

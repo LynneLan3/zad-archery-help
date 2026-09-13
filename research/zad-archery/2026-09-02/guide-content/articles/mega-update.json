@@ -1,0 +1,111 @@
+{
+  "schema": "research-guide-content-v1",
+  "slug": "mega-update",
+  "route": "/updates/mega-update/",
+  "page_type": "article",
+  "category": "Updates",
+  "priority": "P0",
+  "research_status": "READY",
+  "primary_intent": "patch_notes",
+  "title_draft": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+  "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
+  "quick_answer_draft": "The September 4 Mega Update is the current major content jump after launch. It adds the Symbol System (50+ Symbols and Exalted Symbols), Preferred Job, the Ring System with Portal Currency after level 30 and 9 Ring perks, Endless farming, and removes the Level 50 cap. September 5 Patch 1.1.1 is the follow-up stability patch.",
+  "sections": [
+    {
+      "h2": "What the Mega Update added",
+      "claims": [
+        {
+          "text": "Symbol System added, including 50+ Symbols and Exalted Symbols.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Preferred Job added; it doubles all bonuses of the preferred job.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Ring System added, with Portal Currency used after level 30 and 9 Ring perks.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Endless farming added.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Level 50 cap removed.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Automatic currency pickup and progression behavior improved.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "What to read next",
+      "claims": [
+        {
+          "text": "Use the Symbols and Rings / Portal Currency / Endless guides for system overviews without unverified rankings.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Read Patch 1.1.1 for Guardian skip recovery and related stability fixes.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "S16_MEGA_UPDATE_STEAMDB",
+    "S17_PATCH_1_1_1_STEAM",
+    "S18_STEAM_COMMUNITY_HUB"
+  ],
+  "media_slots": [
+    {
+      "slot": "hero",
+      "preferred": "update_or_gameplay_screenshot",
+      "status": "OPTIONAL"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is the Mega Update the current major version?",
+      "a": "Yes for major content systems. Patch 1.1.1 is the next-day follow-up patch on top of it.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB",
+        "S17_PATCH_1_1_1_STEAM"
+      ]
+    },
+    {
+      "q": "Did the Mega Update remove the Level 50 cap?",
+      "a": "Yes. Official notes confirm the Level 50 cap was removed and Endless farming was added.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB"
+      ]
+    }
+  ],
+  "warnings": [],
+  "related_routes": [
+    "/updates/patch-1-1-1/",
+    "/guides/progression/symbols/",
+    "/guides/progression/rings-portal-endless/",
+    "/guides/getting-started/",
+    "/updates/patch-1-0-2/"
+  ],
+  "codex_rule": "Only publish verified Mega Update facts. No Symbol/Ring ranking pages from this source alone."
+}

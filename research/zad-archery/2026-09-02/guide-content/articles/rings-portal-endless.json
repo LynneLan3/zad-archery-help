@@ -1,0 +1,115 @@
+{
+  "schema": "research-guide-content-v1",
+  "slug": "rings-portal-endless",
+  "route": "/guides/progression/rings-portal-endless/",
+  "page_type": "article",
+  "category": "Progression",
+  "priority": "P0",
+  "research_status": "READY",
+  "primary_intent": "mechanic_overview",
+  "title_draft": "Zad Archery Rings, Portal Currency and Endless Explained",
+  "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
+  "quick_answer_draft": "After level 30, Portal Currency feeds the Ring System, which includes 9 Ring perks. The Mega Update also adds Endless farming and removes the Level 50 cap. This page explains those verified systems only; it does not publish a complete Ring ranking or best Endless farming route.",
+  "sections": [
+    {
+      "h2": "Portal Currency and Rings",
+      "claims": [
+        {
+          "text": "Portal Currency is used after level 30.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "The Ring System was added in the Mega Update.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Official notes confirm 9 Ring perks.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Endless and the removed Level 50 cap",
+      "claims": [
+        {
+          "text": "Endless farming was added.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "The Level 50 cap was removed.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Automatic currency pickup / progression behavior improved in the same update.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Evidence boundary",
+      "claims": [
+        {
+          "text": "No complete Ring perk ranking or best Endless farming route is published in the verified recovery evidence.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Patch 1.1.1 later corrects lost Portal Currency from a skipped-level bug on load.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "S16_MEGA_UPDATE_STEAMDB",
+    "S17_PATCH_1_1_1_STEAM"
+  ],
+  "media_slots": [
+    {
+      "slot": "hero",
+      "preferred": "rings_or_endless_ui",
+      "status": "MISSING"
+    }
+  ],
+  "faq": [
+    {
+      "q": "When does Portal Currency start?",
+      "a": "Official Mega Update notes say Portal Currency is used after level 30.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB"
+      ]
+    },
+    {
+      "q": "How many Ring perks are there?",
+      "a": "Official notes confirm 9 Ring perks. They do not publish a verified ranking of those perks.",
+      "sources": [
+        "S16_MEGA_UPDATE_STEAMDB"
+      ]
+    }
+  ],
+  "warnings": [
+    "No ranking or farming route"
+  ],
+  "related_routes": [
+    "/updates/mega-update/",
+    "/guides/progression/symbols/",
+    "/guides/progression/how-long-to-beat-zad-archery/",
+    "/updates/patch-1-1-1/"
+  ],
+  "codex_rule": "Only verified Ring/Portal/Endless facts. Forbidden: complete rankings and best farming routes."
+}

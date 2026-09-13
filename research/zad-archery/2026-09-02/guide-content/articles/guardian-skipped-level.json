@@ -1,0 +1,113 @@
+{
+  "schema": "research-guide-content-v1",
+  "slug": "guardian-skipped-level",
+  "route": "/guides/progression/guardian-skipped-level/",
+  "page_type": "article",
+  "category": "Progression",
+  "priority": "P0",
+  "research_status": "READY",
+  "primary_intent": "problem_solving",
+  "title_draft": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+  "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
+  "quick_answer_draft": "If a level skipped monsters or a Guardian after dying as the Run Portal died, Patch 1.1.1 is the fix. A missed Guardian can appear on the next level; if you already passed that point, the Guardian is counted defeated and currency is granted. Lost Portal Currency from the skipped-level bug is corrected on load.",
+  "sections": [
+    {
+      "h2": "What went wrong",
+      "claims": [
+        {
+          "text": "Before Patch 1.1.1, dying as the Run Portal died could cause the next level to skip monsters or the Guardian.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Leftover skill effects could also kill the next Run Portal.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "What Patch 1.1.1 does",
+      "claims": [
+        {
+          "text": "The skip caused by dying as the Run Portal dies is fixed.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "A missed Guardian can appear next level.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "If you already passed the relevant point, the Guardian is counted defeated and currency is granted.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Lost Portal Currency from the skipped-level bug is corrected on load.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        },
+        {
+          "text": "Leftover skill effects no longer kill the next Run Portal.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Evidence boundary",
+      "claims": [
+        {
+          "text": "This page only restates the official Patch 1.1.1 recovery behavior. It does not invent extra manual workarounds beyond those notes.",
+          "sources": [
+            "S17_PATCH_1_1_1_STEAM"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "S17_PATCH_1_1_1_STEAM",
+    "S16_MEGA_UPDATE_STEAMDB"
+  ],
+  "media_slots": [
+    {
+      "slot": "hero",
+      "preferred": "guardian_or_portal_ui",
+      "status": "MISSING"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need an old save workaround?",
+      "a": "Official Patch 1.1.1 notes say missed Guardians can appear next level or be counted defeated with currency granted, and lost Portal Currency is corrected on load. No additional unofficial workaround is verified here.",
+      "sources": [
+        "S17_PATCH_1_1_1_STEAM"
+      ]
+    },
+    {
+      "q": "Is this the same as the Patch 1.0.2 Guardian fix?",
+      "a": "No. Patch 1.0.2 was a launch-week King lock fix. The skipped-level / Run Portal death recovery described here is from Patch 1.1.1.",
+      "sources": [
+        "S03_PATCH_1_0_2",
+        "S17_PATCH_1_1_1_STEAM"
+      ]
+    }
+  ],
+  "warnings": [],
+  "related_routes": [
+    "/updates/patch-1-1-1/",
+    "/updates/mega-update/",
+    "/updates/patch-1-0-2/"
+  ],
+  "codex_rule": "PREMIUM_PROBLEM_SOLVING verified simple version. Only Patch 1.1.1 recovery facts."
+}

@@ -185,5 +185,49 @@
       "positive interest in UI and skill tree"
     ],
     "warning": "Demo-era comments."
+  },
+  {
+    "id": "S16_MEGA_UPDATE_STEAMDB",
+    "tier": "A_OFFICIAL_VIA_STEAMDB",
+    "title": "September 4 Mega Update",
+    "url": "https://steamdb.info/patchnotes/25128059/",
+    "retrieved": "2026-09-13",
+    "supports": [
+      "Symbol System added",
+      "50+ Symbols and Exalted Symbols",
+      "Preferred Job added; doubles all bonuses of the preferred job",
+      "Ring System added",
+      "Portal Currency used after level 30",
+      "9 Ring perks",
+      "Endless farming added",
+      "Level 50 cap removed",
+      "automatic currency pickup / progression behavior improved"
+    ]
+  },
+  {
+    "id": "S17_PATCH_1_1_1_STEAM",
+    "tier": "A_OFFICIAL",
+    "title": "September 5 Patch 1.1.1",
+    "url": "https://steamcommunity.com/app/4412000/",
+    "retrieved": "2026-09-13",
+    "supports": [
+      "Effects Amount slider",
+      "mining ore auto-collect when too much ore piles up",
+      "currency UI wrap fix",
+      "fix for dying as Run Portal dies causing next level to skip monsters / Guardian",
+      "missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted",
+      "leftover skill effects no longer kill the next Run Portal",
+      "lost Portal Currency from skipped-level bug corrected on load"
+    ]
+  },
+  {
+    "id": "S18_STEAM_COMMUNITY_HUB",
+    "tier": "A_OFFICIAL",
+    "title": "Zad Archery Steam Community hub",
+    "url": "https://steamcommunity.com/app/4412000/",
+    "retrieved": "2026-09-13",
+    "supports": [
+      "official community hub for Mega Update and Patch 1.1.1 announcements"
+    ]
   }
 ]

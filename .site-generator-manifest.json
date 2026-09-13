@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "templateVersion": "2.0.0",
   "generatorVersion": "1.0.0",
-  "specHash": "fbc45e278781b92097885a1d09657816f6e36a4619677a83848db3ed3ba5e0f7",
+  "specHash": "9d2a5e7876b8f0c738dafe49b84b9298d942819d97923d00bb89f8ffb3f46f17",
   "siteId": "zad-archery",
   "createdFromSpec": "site-spec.yaml",
   "managedFiles": [
@@ -23,7 +23,7 @@
     },
     {
       "path": "src/config/site.generated.ts",
-      "sha256": "4badf27bc466f9a762b65cac9546cdda9b6c00b990aff2e8c215a522b48317b8",
+      "sha256": "248ebfb874f536681fb50ec69131ada1b456a4733bcb944660926e252b49a609",
       "kind": "config"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "path": "src/content/docs/index.mdx",
-      "sha256": "cca32c0505402b4315093d978933549450060c30b6901262cd8d73a93579b0d7",
+      "sha256": "3762cc5e44fd26efed4e31e20adf2268f299e837391ff083ab0ccc00ff5a8529",
       "kind": "hub"
     },
     {

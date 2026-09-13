@@ -40,6 +40,11 @@
         "href": "/guides/progression/"
       },
       {
+        "id": "updates",
+        "label": "Updates",
+        "href": "/updates/"
+      },
+      {
         "id": "achievements",
         "label": "Achievements",
         "href": "/achievements/"
@@ -67,15 +72,27 @@
       },
       {
         "id": "guides-getting-started",
-        "label": "Zad Archery Beginner Guide: What the Main Systems Do",
+        "label": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
         "href": "/guides/getting-started/",
         "pageId": "guides-getting-started"
       },
       {
+        "id": "guides-progression-guardian-skipped-level",
+        "label": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+        "href": "/guides/progression/guardian-skipped-level/",
+        "pageId": "guides-progression-guardian-skipped-level"
+      },
+      {
         "id": "guides-progression-how-long-to-beat-zad-archery",
-        "label": "How Long Is Zad Archery? Main Run and 100% Estimate",
+        "label": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
         "href": "/guides/progression/how-long-to-beat-zad-archery/",
         "pageId": "guides-progression-how-long-to-beat-zad-archery"
+      },
+      {
+        "id": "updates-mega-update",
+        "label": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+        "href": "/updates/mega-update/",
+        "pageId": "updates-mega-update"
       },
       {
         "id": "guides-platforms-mobile",
@@ -85,15 +102,33 @@
       },
       {
         "id": "updates-patch-1-0-2",
-        "label": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+        "label": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
         "href": "/updates/patch-1-0-2/",
         "pageId": "updates-patch-1-0-2"
+      },
+      {
+        "id": "updates-patch-1-1-1",
+        "label": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+        "href": "/updates/patch-1-1-1/",
+        "pageId": "updates-patch-1-1-1"
+      },
+      {
+        "id": "guides-progression-rings-portal-endless",
+        "label": "Zad Archery Rings, Portal Currency and Endless Explained",
+        "href": "/guides/progression/rings-portal-endless/",
+        "pageId": "guides-progression-rings-portal-endless"
       },
       {
         "id": "guides-platforms-steam-deck",
         "label": "Zad Archery on Steam Deck: Compatibility and Caveats",
         "href": "/guides/platforms/steam-deck/",
         "pageId": "guides-platforms-steam-deck"
+      },
+      {
+        "id": "guides-progression-symbols",
+        "label": "Zad Archery Symbols: What the Mega Update System Adds",
+        "href": "/guides/progression/symbols/",
+        "pageId": "guides-progression-symbols"
       }
     ]
   },
@@ -105,8 +140,13 @@
       "guides-platforms-mobile",
       "guides-platforms-steam-deck",
       "guides-progression-demo-save-transfer",
+      "guides-progression-guardian-skipped-level",
       "guides-progression-how-long-to-beat-zad-archery",
-      "updates-patch-1-0-2"
+      "guides-progression-rings-portal-endless",
+      "guides-progression-symbols",
+      "updates-mega-update",
+      "updates-patch-1-0-2",
+      "updates-patch-1-1-1"
     ],
     "assets": [
       {
@@ -133,7 +173,7 @@
         "label": "Popular Questions",
         "pageIds": [
           "guides-platforms-steam-deck",
-          "guides-progression-how-long-to-beat-zad-archery"
+          "guides-progression-guardian-skipped-level"
         ]
       },
       {
@@ -158,6 +198,7 @@
       "id": "home",
       "title": "Zad Archery Help",
       "href": "/",
+      "related": [],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
@@ -168,8 +209,9 @@
           "playerProblem": "find a verified answer"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
           "query": "Zad Archery guides",
@@ -215,7 +257,7 @@
           }
         },
         "body": {
-          "intro": "Incremental archery RPG/action game: clear waves of target-like monsters, collect loot, and grow through skill tree, jobs, skills, crafting, mining and later progression systems.",
+          "intro": "Current Zad Archery answers for the September 4 Mega Update, Patch 1.1.1, Symbols, Rings, Portal Currency, Endless, and launch progression problems.",
           "sections": [],
           "faq": []
         },
@@ -265,8 +307,9 @@
         ],
         "media": [],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [],
         "primitiveData": [
@@ -411,6 +454,7 @@
       "id": "achievements",
       "title": "Zad Archery Achievements: Current Steam List and Unlocks",
       "href": "/achievements/",
+      "related": [],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
@@ -421,8 +465,9 @@
           "playerProblem": "achievements"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
           "query": "Zad Archery Achievements: Current Steam List and Unlocks",
@@ -559,8 +604,9 @@
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
@@ -661,6 +707,7 @@
       "id": "guides-progression-demo-save-transfer",
       "title": "Does Zad Archery Demo Progress Carry Over?",
       "href": "/guides/progression/demo-save-transfer/",
+      "related": [],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
@@ -671,8 +718,9 @@
           "playerProblem": "demo save transfer"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
           "query": "Does Zad Archery Demo Progress Carry Over?",
@@ -793,8 +841,9 @@
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
@@ -907,23 +956,42 @@
     },
     {
       "id": "guides-getting-started",
-      "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+      "title": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
       "href": "/guides/getting-started/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/guides/progression/symbols/",
+          "label": "/guides/progression/symbols/"
+        },
+        {
+          "href": "/guides/progression/rings-portal-endless/",
+          "label": "/guides/progression/rings-portal-endless/"
+        },
+        {
+          "href": "/updates/patch-1-1-1/",
+          "label": "/updates/patch-1-1-1/"
+        }
+      ],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "guides-getting-started",
-          "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "title": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
           "href": "/guides/getting-started/",
-          "query": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "query": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
           "playerProblem": "beginner system overview"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
-          "query": "Zad Archery Beginner Guide: What the Main Systems Do",
+          "query": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
           "playerProblem": "beginner system overview",
           "primaryTask": "entity-lookup",
           "prototype": "P1",
@@ -956,33 +1024,35 @@
           }
         },
         "body": {
-          "intro": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'.",
+          "intro": "After the September 4 Mega Update, a current Zad Archery run moves from early wave clearing into Jobs and Preferred Job, then Symbols, then Portal Currency and Rings after level 30, and finally Endless once the Level 50 cap is gone. Learn each system as it unlocks; do not treat unverified Symbol or Ring rankings as required beginner advice.",
           "sections": [
             {
               "id": "section-1",
               "title": "What kind of game is Zad Archery?",
               "paragraphs": [
-                "The core loop is clearing target-like enemies, taking loot and reinvesting into upgrades and skills.",
+                "The core loop is still clearing target-like enemies, taking loot, and reinvesting into upgrades and skills.",
                 "Steam tags the game as Incremental, Idler, Loot, Platformer, Roguelite, RPG, Strategy, Crafting and Mining."
               ],
               "bullets": []
             },
             {
               "id": "section-2",
-              "title": "The verified progression systems",
+              "title": "Current progression path after the Mega Update",
               "paragraphs": [
-                "The live Steam description explicitly lists a large Skill Tree, five Archer Jobs, loot, skills, crafting and mining.",
-                "The same live description names Shaping, Masteries and Guardian Perks as later systems.",
-                "Developer/demo material additionally describes alchemy and gathering/herbing."
+                "Early progression still starts with wave clearing, loot, the skill tree, and unlocking systems such as crafting and mining.",
+                "Jobs remain a core growth axis; the Mega Update adds Preferred Job, which doubles all bonuses of the preferred job.",
+                "The Symbol System adds 50+ Symbols and Exalted Symbols as a post-job growth layer.",
+                "After level 30, Portal Currency feeds the Ring System, which includes 9 Ring perks.",
+                "Endless farming is available after the Level 50 cap was removed."
               ],
               "bullets": []
             },
             {
               "id": "section-3",
-              "title": "How long should a first run take?",
+              "title": "What not to invent while learning the systems",
               "paragraphs": [
-                "The developer said the game is designed around five hours, with build and loot differences affecting duration.",
-                "Launch-day Reddit reports cluster around roughly four to five and a half hours."
+                "Public official notes confirm the systems exist, but they do not publish a verified best-Symbol ranking, complete Ring ranking, or exact hidden values.",
+                "September 5 Patch 1.1.1 is the current follow-up patch after the Mega Update and includes Guardian / skipped-level recovery fixes."
               ],
               "bullets": []
             }
@@ -990,13 +1060,13 @@
           "faq": [
             {
               "id": "faq-1",
-              "question": "How many jobs are in Zad Archery?",
-              "answer": "The official Steam description says there are five Archer Jobs."
+              "question": "What should I unlock first after the Mega Update?",
+              "answer": "Follow the verified order: early progression systems, Jobs / Preferred Job, Symbols, then Portal Currency and Rings after level 30, then Endless. Exact best picks inside those systems are not published in the official notes used here."
             },
             {
               "id": "faq-2",
-              "question": "Is Zad Archery an idle game?",
-              "answer": "Steam lists it as both Incremental and Idler, but the public descriptions also emphasize active wave clearing and build progression."
+              "question": "How many jobs are in Zad Archery?",
+              "answer": "The official Steam description still lists five Archer Jobs. Preferred Job is a Mega Update addition that doubles the preferred job's bonuses."
             }
           ]
         },
@@ -1004,7 +1074,7 @@
           {
             "id": "guides-getting-started-0",
             "label": "What kind of game is Zad Archery?",
-            "value": "The core loop is clearing target-like enemies, taking loot and reinvesting into upgrades and skills.",
+            "value": "The core loop is still clearing target-like enemies, taking loot, and reinvesting into upgrades and skills.",
             "verified": true
           },
           {
@@ -1015,26 +1085,26 @@
           },
           {
             "id": "guides-getting-started-0",
-            "label": "The verified progression systems",
-            "value": "The live Steam description explicitly lists a large Skill Tree, five Archer Jobs, loot, skills, crafting and mining.",
+            "label": "Current progression path after the Mega Update",
+            "value": "Early progression still starts with wave clearing, loot, the skill tree, and unlocking systems such as crafting and mining.",
             "verified": true
           },
           {
             "id": "guides-getting-started-1",
-            "label": "The verified progression systems",
-            "value": "The same live description names Shaping, Masteries and Guardian Perks as later systems.",
+            "label": "Current progression path after the Mega Update",
+            "value": "Jobs remain a core growth axis; the Mega Update adds Preferred Job, which doubles all bonuses of the preferred job.",
             "verified": true
           },
           {
             "id": "guides-getting-started-0",
-            "label": "How long should a first run take?",
-            "value": "The developer said the game is designed around five hours, with build and loot differences affecting duration.",
+            "label": "What not to invent while learning the systems",
+            "value": "Public official notes confirm the systems exist, but they do not publish a verified best-Symbol ranking, complete Ring ranking, or exact hidden values.",
             "verified": true
           },
           {
             "id": "guides-getting-started-1",
-            "label": "How long should a first run take?",
-            "value": "Launch-day Reddit reports cluster around roughly four to five and a half hours.",
+            "label": "What not to invent while learning the systems",
+            "value": "September 5 Patch 1.1.1 is the current follow-up patch after the Mega Update and includes Guardian / skipped-level recovery fixes.",
             "verified": true
           }
         ],
@@ -1047,25 +1117,18 @@
             "freshness": "2026-09-02"
           },
           {
-            "evidenceId": "S02_STEAM_NEWS_RELEASE_INFO",
-            "sourceType": "A_OFFICIAL",
-            "sourceRef": "https://store.steampowered.com/news/app/4412000/view/703277854914249378",
-            "finding": "developer said game was designed around ~5 hours; build choices and loot can change completion time; pre-release statement claimed 7 major content systems; pre-release statement claimed 25 achievements",
-            "freshness": "2026-09-02"
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
           },
           {
-            "evidenceId": "S08_ITCH",
-            "sourceType": "B_DEVELOPER",
-            "sourceRef": "https://samharia.itch.io/zad-archery",
-            "finding": "skill tree, 5 jobs, loot, skills, crafting; alchemy; gathering including mining and herbing",
-            "freshness": "2026-09-02"
-          },
-          {
-            "evidenceId": "S14_DEMO_STORE",
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
             "sourceType": "A_OFFICIAL",
-            "sourceRef": "https://store.steampowered.com/app/4432820/Zad_Archery_Demo/",
-            "finding": "demo had first and second job classes, first four skills, loot/items and crafting; full version described as adding three job classes, 15+ skills, deeper crafting, alchemy, gathering, card shaping",
-            "freshness": "2026-09-02"
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
           }
         ],
         "media": [
@@ -1074,22 +1137,23 @@
             "role": "entity",
             "source": "/zad-archery/07_steam_header.jpg",
             "localRef": "/zad-archery/07_steam_header.jpg",
-            "alt": "Zad Archery visual for Zad Archery Beginner Guide: What the Main Systems Do",
+            "alt": "Zad Archery visual for Zad Archery Beginner Guide: Current Progression After the Mega Update",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "type": "image/jpeg"
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
             "mediaId": "media-guides-getting-started",
             "role": "entity",
             "path": "/zad-archery/07_steam_header.jpg",
-            "alt": "Zad Archery visual for Zad Archery Beginner Guide: What the Main Systems Do",
+            "alt": "Zad Archery visual for Zad Archery Beginner Guide: Current Progression After the Mega Update",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "usable": true,
@@ -1101,15 +1165,14 @@
             "instanceId": "guides-getting-started-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+              "title": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
               "task": "beginner system overview",
               "subject": "Progression"
             },
             "evidenceRefs": [
               "S01_STEAM_STORE",
-              "S02_STEAM_NEWS_RELEASE_INFO",
-              "S08_ITCH",
-              "S14_DEMO_STORE"
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
             ],
             "mediaRefs": [
               "media-guides-getting-started"
@@ -1119,7 +1182,7 @@
             "instanceId": "guides-getting-started-answer",
             "primitiveId": "A02",
             "payload": {
-              "answer": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'."
+              "answer": "After the September 4 Mega Update, a current Zad Archery run moves from early wave clearing into Jobs and Preferred Job, then Symbols, then Portal Currency and Rings after level 30, and finally Endless once the Level 50 cap is gone. Learn each system as it unlocks; do not treat unverified Symbol or Ring rankings as required beginner advice."
             },
             "evidenceRefs": [
               "S01_STEAM_STORE"
@@ -1161,15 +1224,14 @@
             "interactive": false,
             "instanceId": "guides-getting-started-header",
             "payload": {
-              "title": "Zad Archery Beginner Guide: What the Main Systems Do",
+              "title": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
               "task": "beginner system overview",
               "subject": "Progression"
             },
             "evidenceRefs": [
               "S01_STEAM_STORE",
-              "S02_STEAM_NEWS_RELEASE_INFO",
-              "S08_ITCH",
-              "S14_DEMO_STORE"
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
             ],
             "mediaRefs": [
               "media-guides-getting-started"
@@ -1183,7 +1245,7 @@
             "interactive": false,
             "instanceId": "guides-getting-started-answer",
             "payload": {
-              "answer": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'."
+              "answer": "After the September 4 Mega Update, a current Zad Archery run moves from early wave clearing into Jobs and Preferred Job, then Symbols, then Portal Currency and Rings after level 30, and finally Endless once the Level 50 cap is gone. Learn each system as it unlocks; do not treat unverified Symbol or Ring rankings as required beginner advice."
             },
             "evidenceRefs": [
               "S01_STEAM_STORE"
@@ -1196,24 +1258,337 @@
       }
     },
     {
+      "id": "guides-progression-guardian-skipped-level",
+      "title": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+      "href": "/guides/progression/guardian-skipped-level/",
+      "related": [
+        {
+          "href": "/updates/patch-1-1-1/",
+          "label": "/updates/patch-1-1-1/"
+        },
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/updates/patch-1-0-2/",
+          "label": "/updates/patch-1-0-2/"
+        }
+      ],
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-progression-guardian-skipped-level",
+          "title": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+          "href": "/guides/progression/guardian-skipped-level/",
+          "query": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+          "playerProblem": "problem solving"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "intent": {
+          "query": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+          "playerProblem": "problem solving",
+          "primaryTask": "progression",
+          "prototype": "P6",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P03",
+              "status": "include",
+              "reason": "Progression needs milestones and state."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "conditional",
+              "reason": "Stages may contain actionable steps."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the route."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "If a level skipped monsters or a Guardian after dying as the Run Portal died, Patch 1.1.1 is the fix. A missed Guardian can appear on the next level; if you already passed that point, the Guardian is counted defeated and currency is granted. Lost Portal Currency from the skipped-level bug is corrected on load.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Before Patch 1.1.1 — what happened",
+              "paragraphs": [
+                "1. Dying at the same moment the Run Portal died could cause the next level to skip monsters or the Guardian. 2. Leftover skill effects could also kill the next Run Portal, contributing to skipped content and progression gaps."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "What Patch 1.1.1 fixes",
+              "paragraphs": [
+                "The skip caused by dying as the Run Portal died is fixed. - Leftover skill effects no longer kill the next Run Portal. - Lost Portal Currency from the skipped-level bug is corrected when you load the game."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "How recovery behaves in a run (official behavior)",
+              "paragraphs": [
+                "1. If the game skipped a Guardian because the Run Portal died as you died, that missed Guardian can appear on the next level. 2. If you already passed the relevant point on the next level before the fix could spawn the Guardian, the game treats the Guardian as defeated and grants the appropriate Portal Currency. 3. Any Portal Currency lost due to the skipped-level bug will be corrected on load (the game restores the missing currency when the save is loaded)."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Notes and limits",
+              "paragraphs": [
+                "This page only restates the official Patch 1.1.1 recovery behavior. It does not provide or invent additional manual workarounds beyond the official notes. - All points above describe the recovery behavior as described in Patch 1.1.1; if you continue to see issues after updating, consult official patch notes or update announcements for further guidance."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-5",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/patch-1-1-1/ - /updates/mega-update/ - /updates/patch-1-0-2/"
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Will I get Portal Currency I lost because a level skipped the Guardian?",
+              "answer": "A: Yes. Lost Portal Currency from the skipped-level bug is corrected on load."
+            },
+            {
+              "id": "faq-2",
+              "question": "If a Guardian was missing, will it reappear?",
+              "answer": "A: A missed Guardian can appear on the next level. If you already passed that point, the game counts the Guardian as defeated and grants the currency."
+            },
+            {
+              "id": "faq-3",
+              "question": "Could leftover skill effects still kill the next Run Portal after the patch?",
+              "answer": "A: No. Patch 1.1.1 prevents leftover skill effects from killing the next Run Portal."
+            },
+            {
+              "id": "faq-4",
+              "question": "Does this guide include manual recovery steps or unverified workarounds?",
+              "answer": "A: No. This page only restates the official Patch 1.1.1 recovery behavior and does not invent extra manual workarounds."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-progression-guardian-skipped-level-0",
+            "label": "What went wrong",
+            "value": "Before Patch 1.1.1, dying as the Run Portal died could cause the next level to skip monsters or the Guardian.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-guardian-skipped-level-1",
+            "label": "What went wrong",
+            "value": "Leftover skill effects could also kill the next Run Portal.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-guardian-skipped-level-0",
+            "label": "What Patch 1.1.1 does",
+            "value": "The skip caused by dying as the Run Portal dies is fixed.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-guardian-skipped-level-1",
+            "label": "What Patch 1.1.1 does",
+            "value": "A missed Guardian can appear next level.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-guardian-skipped-level-0",
+            "label": "Evidence boundary",
+            "value": "This page only restates the official Patch 1.1.1 recovery behavior. It does not invent extra manual workarounds beyond those notes.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-progression-guardian-skipped-level",
+            "role": "entity",
+            "source": "/zad-archery/04_gameplay.jpg",
+            "localRef": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-progression-guardian-skipped-level",
+            "role": "entity",
+            "path": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-progression-guardian-skipped-level-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+              "task": "problem solving",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM",
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-guardian-skipped-level"
+            ]
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P03",
+            "status": "include",
+            "reason": "Progression needs milestones and state."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "omit",
+            "reason": "Stages may contain actionable steps."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "omit",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the route."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-progression-guardian-skipped-level-header",
+            "payload": {
+              "title": "Zad Archery Missing Guardian or Skipped Level: Patch 1.1.1 Recovery",
+              "task": "problem solving",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM",
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-guardian-skipped-level"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
       "id": "guides-progression-how-long-to-beat-zad-archery",
-      "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+      "title": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
       "href": "/guides/progression/how-long-to-beat-zad-archery/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/guides/progression/rings-portal-endless/",
+          "label": "/guides/progression/rings-portal-endless/"
+        },
+        {
+          "href": "/guides/getting-started/",
+          "label": "/guides/getting-started/"
+        }
+      ],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "guides-progression-how-long-to-beat-zad-archery",
-          "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "title": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
           "href": "/guides/progression/how-long-to-beat-zad-archery/",
-          "query": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "query": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
           "playerProblem": "game length"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
-          "query": "How Long Is Zad Archery? Main Run and 100% Estimate",
+          "query": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
           "playerProblem": "game length",
           "primaryTask": "entity-lookup",
           "prototype": "P1",
@@ -1246,32 +1621,34 @@
           }
         },
         "body": {
-          "intro": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4–5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run.",
+          "intro": "Do not treat the current full game as a fixed 4–5 hour finish. Launch main progression was designed around about five hours, and launch-day players often finished or maxed major systems in roughly 4–5.5 hours. After the September 4 Mega Update, the Level 50 cap is removed and Endless farming exists, so the current endpoint is open-ended beyond that launch main run.",
           "sections": [
             {
               "id": "section-1",
-              "title": "Official playtime target",
+              "title": "Launch main progression timing",
               "paragraphs": [
                 "Before launch, Samharia Studios said the game was designed to take around five hours.",
-                "The developer specifically noted that build choices and loot affect duration, especially for players pursuing 100% achievements."
+                "Launch-day players reported finishing or maxing major systems in roughly 4 to 5.5 hours.",
+                "The developer noted that build choices and loot affect duration, especially for 100% achievement hunting."
               ],
               "bullets": []
             },
             {
               "id": "section-2",
-              "title": "What launch-day players reported",
+              "title": "What changed after the Mega Update",
               "paragraphs": [
-                "One Reddit player reported reaching Level 40, defeating the final boss and maxing almost every system in about 5.5 hours.",
-                "Another launch-day comment reported maxing out in about four hours."
+                "The September 4 Mega Update removed the Level 50 cap.",
+                "Endless farming was added in the same Mega Update.",
+                "Because post-50 and Endless content now exist, the current game should not be described as ending at a fixed 4–5 hour cap."
               ],
               "bullets": []
             },
             {
               "id": "section-3",
-              "title": "What can make your run longer?",
+              "title": "What remains unverified",
               "paragraphs": [
-                "Loot and build choices are explicitly named by the developer as factors that change completion time.",
-                "Achievement hunting should be treated separately from the main run because the live achievement list includes milestones such as Level 40, Legendary Gear and defeating the King."
+                "There is not yet a verified average clear time for post-50 or Endless endpoints in the recovery research pack.",
+                "Treat launch 4–5.5 hour reports as launch main-progression evidence, not as the current complete-game endpoint."
               ],
               "bullets": []
             }
@@ -1279,51 +1656,51 @@
           "faq": [
             {
               "id": "faq-1",
-              "question": "Can Zad Archery be finished in one sitting?",
-              "answer": "Yes. The official target is roughly five hours, and multiple launch-day reports fall around four to five and a half hours."
+              "question": "Is Zad Archery still only about five hours long?",
+              "answer": "That figure described the launch main-progression target. After the Mega Update removed the Level 50 cap and added Endless, the current game continues past that launch endpoint."
             },
             {
               "id": "faq-2",
-              "question": "How long does 100% take?",
-              "answer": "There is not enough reliable post-launch timing data yet. The developer only said achievement hunting can extend the run."
+              "question": "How long does Endless take?",
+              "answer": "The official Mega Update confirms Endless farming exists, but it does not publish a verified average Endless clear time."
             }
           ]
         },
         "facts": [
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-0",
-            "label": "Official playtime target",
+            "label": "Launch main progression timing",
             "value": "Before launch, Samharia Studios said the game was designed to take around five hours.",
             "verified": true
           },
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-1",
-            "label": "Official playtime target",
-            "value": "The developer specifically noted that build choices and loot affect duration, especially for players pursuing 100% achievements.",
+            "label": "Launch main progression timing",
+            "value": "Launch-day players reported finishing or maxing major systems in roughly 4 to 5.5 hours.",
             "verified": true
           },
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-0",
-            "label": "What launch-day players reported",
-            "value": "One Reddit player reported reaching Level 40, defeating the final boss and maxing almost every system in about 5.5 hours.",
+            "label": "What changed after the Mega Update",
+            "value": "The September 4 Mega Update removed the Level 50 cap.",
             "verified": true
           },
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-1",
-            "label": "What launch-day players reported",
-            "value": "Another launch-day comment reported maxing out in about four hours.",
+            "label": "What changed after the Mega Update",
+            "value": "Endless farming was added in the same Mega Update.",
             "verified": true
           },
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-0",
-            "label": "What can make your run longer?",
-            "value": "Loot and build choices are explicitly named by the developer as factors that change completion time.",
+            "label": "What remains unverified",
+            "value": "There is not yet a verified average clear time for post-50 or Endless endpoints in the recovery research pack.",
             "verified": true
           },
           {
             "id": "guides-progression-how-long-to-beat-zad-archery-1",
-            "label": "What can make your run longer?",
-            "value": "Achievement hunting should be treated separately from the main run because the live achievement list includes milestones such as Level 40, Legendary Gear and defeating the King.",
+            "label": "What remains unverified",
+            "value": "Treat launch 4–5.5 hour reports as launch main-progression evidence, not as the current complete-game endpoint.",
             "verified": true
           }
         ],
@@ -1348,6 +1725,13 @@
             "sourceRef": "https://www.exophase.com/game/zad-archery-steam/achievements/",
             "finding": "12 currently exposed achievement names and unlock descriptions",
             "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
           }
         ],
         "media": [
@@ -1356,22 +1740,23 @@
             "role": "entity",
             "source": "/zad-archery/10_steam_library_hero.jpg",
             "localRef": "/zad-archery/10_steam_library_hero.jpg",
-            "alt": "Zad Archery visual for How Long Is Zad Archery? Main Run and 100% Estimate",
+            "alt": "Zad Archery visual for How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "type": "image/jpeg"
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
             "mediaId": "media-guides-progression-how-long-to-beat-zad-archery",
             "role": "entity",
             "path": "/zad-archery/10_steam_library_hero.jpg",
-            "alt": "Zad Archery visual for How Long Is Zad Archery? Main Run and 100% Estimate",
+            "alt": "Zad Archery visual for How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "usable": true,
@@ -1383,14 +1768,15 @@
             "instanceId": "guides-progression-how-long-to-beat-zad-archery-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+              "title": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
               "task": "game length",
               "subject": "Progression"
             },
             "evidenceRefs": [
               "S02_STEAM_NEWS_RELEASE_INFO",
               "S06_REDDIT_RELEASE",
-              "S12_ACHIEVEMENTS"
+              "S12_ACHIEVEMENTS",
+              "S16_MEGA_UPDATE_STEAMDB"
             ],
             "mediaRefs": [
               "media-guides-progression-how-long-to-beat-zad-archery"
@@ -1400,7 +1786,7 @@
             "instanceId": "guides-progression-how-long-to-beat-zad-archery-answer",
             "primitiveId": "A02",
             "payload": {
-              "answer": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4 - 5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run."
+              "answer": "Do not treat the current full game as a fixed 4 - 5 hour finish. Launch main progression was designed around about five hours, and launch-day players often finished or maxed major systems in roughly 4 - 5.5 hours. After the September 4 Mega Update, the Level 50 cap is removed and Endless farming exists, so the current endpoint is open-ended beyond that launch main run."
             },
             "evidenceRefs": [
               "S02_STEAM_NEWS_RELEASE_INFO"
@@ -1442,14 +1828,15 @@
             "interactive": false,
             "instanceId": "guides-progression-how-long-to-beat-zad-archery-header",
             "payload": {
-              "title": "How Long Is Zad Archery? Main Run and 100% Estimate",
+              "title": "How Long Is Zad Archery Now? Launch Run vs Post-Mega Update",
               "task": "game length",
               "subject": "Progression"
             },
             "evidenceRefs": [
               "S02_STEAM_NEWS_RELEASE_INFO",
               "S06_REDDIT_RELEASE",
-              "S12_ACHIEVEMENTS"
+              "S12_ACHIEVEMENTS",
+              "S16_MEGA_UPDATE_STEAMDB"
             ],
             "mediaRefs": [
               "media-guides-progression-how-long-to-beat-zad-archery"
@@ -1463,7 +1850,7 @@
             "interactive": false,
             "instanceId": "guides-progression-how-long-to-beat-zad-archery-answer",
             "payload": {
-              "answer": "Plan on about five hours for a normal run. The developer described Zad Archery as designed around ~5 hours, while launch-day players reported finishing or maxing major systems in roughly 4 - 5.5 hours. 100% completion can take longer because build choices, loot and achievements affect the run."
+              "answer": "Do not treat the current full game as a fixed 4 - 5 hour finish. Launch main progression was designed around about five hours, and launch-day players often finished or maxed major systems in roughly 4 - 5.5 hours. After the September 4 Mega Update, the Level 50 cap is removed and Endless farming exists, so the current endpoint is open-ended beyond that launch main run."
             },
             "evidenceRefs": [
               "S02_STEAM_NEWS_RELEASE_INFO"
@@ -1476,9 +1863,377 @@
       }
     },
     {
+      "id": "updates-mega-update",
+      "title": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+      "href": "/updates/mega-update/",
+      "related": [
+        {
+          "href": "/updates/patch-1-1-1/",
+          "label": "/updates/patch-1-1-1/"
+        },
+        {
+          "href": "/guides/progression/symbols/",
+          "label": "/guides/progression/symbols/"
+        },
+        {
+          "href": "/guides/progression/rings-portal-endless/",
+          "label": "/guides/progression/rings-portal-endless/"
+        },
+        {
+          "href": "/guides/getting-started/",
+          "label": "/guides/getting-started/"
+        },
+        {
+          "href": "/updates/patch-1-0-2/",
+          "label": "/updates/patch-1-0-2/"
+        }
+      ],
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "updates-mega-update",
+          "title": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+          "href": "/updates/mega-update/",
+          "query": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+          "playerProblem": "patch notes"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "intent": {
+          "query": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+          "playerProblem": "patch notes",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "The September 4 Mega Update is the current major content jump after launch. It adds the Symbol System (50+ Symbols and Exalted Symbols), Preferred Job, the Ring System with Portal Currency after level 30 and 9 Ring perks, Endless farming, and removes the Level 50 cap. September 5 Patch 1.1.1 is the follow-up stability patch.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Symbol System",
+              "paragraphs": [
+                "A new Symbol System was added in the Sep 4 Mega Update. - It includes 50+ Symbols and introduces Exalted Symbols. - For a full system overview (slots, unlocks, and interactions) see the Symbols guide: /guides/progression/symbols/ - Do not rely on this page for unverified symbol rankings; consult the Symbols guide for details."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Preferred Job",
+              "paragraphs": [
+                "Preferred Job is a new player-selectable setting added by the update. - When you set a Preferred Job it doubles all bonuses of that preferred job. - Use the in-game UI and the progression guides to learn how Preferred Job interacts with other systems."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "Ring System and Portal Currency",
+              "paragraphs": [
+                "A Ring System is added with nine Ring perks available. - Portal Currency is introduced and used after level 30 (Portal Currency becomes relevant once you pass level 30). - See the Rings / Portal / Endless guide for overview and how Ring perks and Portal Currency interact: /guides/progression/rings-portal-endless/ - This page does not provide unverified Ring rankings or hidden value numbers."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Endless farming",
+              "paragraphs": [
+                "Endless farming mode is added in this update as a farming option. - For practical Endless-mode strategies and details, consult the Rings / Portal / Endless guide: /guides/progression/rings-portal-endless/"
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-5",
+              "title": "Level cap removal",
+              "paragraphs": [
+                "The update removes the Level 50 cap. Players can progress beyond the previous cap after this update."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-6",
+              "title": "Quality-of-life: Automatic currency pickup and progression behavior",
+              "paragraphs": [
+                "The update improves automatic currency pickup. - Progression-related behavior has been improved (general fixes to how progression and pickups behave)."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-7",
+              "title": "September 5 Patch 1.1.1 — stability fixes and Guardian skip recovery",
+              "paragraphs": [
+                "Patch 1.1.1 (Sep 5) follows the Mega Update and fixes multiple stability and progression issues. Notable fixes: - Effects Amount slider added to settings. - Mining ore auto-collect fixes when too much ore piles up. - Currency UI wrapping issues corrected. - Fix for dying while a Run Portal dies that previously caused the next level to skip monsters / Guardian.   - Missed Guardians can now appear on the next level.   - If the player already passed the missed Guardian, the Guardian is counted as defeated and the corresponding currency is granted. - Leftover skill effects no longer instantly kill the next Run Portal. - Lost Portal Currency from the skipped-level bug is corrected on load. For the full Patch 1.1.1 notes, see: /updates/patch-1-1-1/"
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-8",
+              "title": "What to read next",
+              "paragraphs": [
+                "For system overviews and actionable details, use the official guides rather than ranking pages:   - Symbols overview: /guides/progression/symbols/   - Rings, Portal Currency and Endless mode: /guides/progression/rings-portal-endless/ - If you’re new to the game, start with Getting Started: /guides/getting-started/"
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-9",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/patch-1-1-1/ - /guides/progression/symbols/ - /guides/progression/rings-portal-endless/ - /guides/getting-started/ - /updates/patch-1-0-2/"
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "What does the Sep 4 Mega Update add at a glance?",
+              "answer": "A: It adds the Symbol System (50+ Symbols and Exalted Symbols), Preferred Job, the Ring System with Portal Currency after level 30 and 9 Ring perks, Endless farming, and removes the Level 50 cap. Patch 1.1.1 (Sep 5) provides follow-up stability fixes."
+            },
+            {
+              "id": "faq-2",
+              "question": "How does Preferred Job work?",
+              "answer": "A: Preferred Job doubles all bonuses of your selected preferred job."
+            },
+            {
+              "id": "faq-3",
+              "question": "When does Portal Currency come into play?",
+              "answer": "A: Portal Currency is used after level 30."
+            },
+            {
+              "id": "faq-4",
+              "question": "How many Ring perks are available?",
+              "answer": "A: The Ring System includes nine Ring perks."
+            },
+            {
+              "id": "faq-5",
+              "question": "Are there new symbols to collect?",
+              "answer": "A: Yes — 50+ Symbols were added along with Exalted Symbols."
+            },
+            {
+              "id": "faq-6",
+              "question": "Did the update change the level cap?",
+              "answer": "A: Yes — the Level 50 cap was removed."
+            },
+            {
+              "id": "faq-7",
+              "question": "What did Patch 1.1.1 fix related to Guardians and skipped levels?",
+              "answer": "A: The patch fixes an issue where dying as a Run Portal dies could cause the next level to skip monsters / Guardian. Missed Guardians can now appear on the next level; if already passed, the Guardian is counted defeated and currency is granted. Lost Portal Currency from that skipped-level bug is also corrected on load."
+            },
+            {
+              "id": "faq-8",
+              "question": "Where can I find detailed guides for Symbols, Rings, Portal Currency, and Endless?",
+              "answer": "A: See /guides/progression/symbols/ and /guides/progression/rings-portal-endless/."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "updates-mega-update-0",
+            "label": "What the Mega Update added",
+            "value": "Symbol System added, including 50+ Symbols and Exalted Symbols.",
+            "verified": true
+          },
+          {
+            "id": "updates-mega-update-1",
+            "label": "What the Mega Update added",
+            "value": "Preferred Job added; it doubles all bonuses of the preferred job.",
+            "verified": true
+          },
+          {
+            "id": "updates-mega-update-0",
+            "label": "What to read next",
+            "value": "Use the Symbols and Rings / Portal Currency / Endless guides for system overviews without unverified rankings.",
+            "verified": true
+          },
+          {
+            "id": "updates-mega-update-1",
+            "label": "What to read next",
+            "value": "Read Patch 1.1.1 for Guardian skip recovery and related stability fixes.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S18_STEAM_COMMUNITY_HUB",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "official community hub for Mega Update and Patch 1.1.1 announcements",
+            "freshness": "2026-09-13"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-updates-mega-update",
+            "role": "entity",
+            "source": "/zad-archery/04_gameplay.jpg",
+            "localRef": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "assets": [
+          {
+            "mediaId": "media-updates-mega-update",
+            "role": "entity",
+            "path": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "updates-mega-update-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM",
+              "S18_STEAM_COMMUNITY_HUB"
+            ],
+            "mediaRefs": [
+              "media-updates-mega-update"
+            ]
+          },
+          {
+            "instanceId": "updates-mega-update-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "The September 4 Mega Update is the current major content jump after launch. It adds the Symbol System (50+ Symbols and Exalted Symbols), Preferred Job, the Ring System with Portal Currency after level 30 and 9 Ring perks, Endless farming, and removes the Level 50 cap. September 5 Patch 1.1.1 is the follow-up stability patch."
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "updates-mega-update-header",
+            "payload": {
+              "title": "Zad Archery Mega Update (Sep 4): Symbols, Rings, Preferred Job and Endless",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM",
+              "S18_STEAM_COMMUNITY_HUB"
+            ],
+            "mediaRefs": [
+              "media-updates-mega-update"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "updates-mega-update-answer",
+            "payload": {
+              "answer": "The September 4 Mega Update is the current major content jump after launch. It adds the Symbol System (50+ Symbols and Exalted Symbols), Preferred Job, the Ring System with Portal Currency after level 30 and 9 Ring perks, Endless farming, and removes the Level 50 cap. September 5 Patch 1.1.1 is the follow-up stability patch."
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
       "id": "guides-platforms-mobile",
       "title": "Zad Archery Mobile: iOS and Android Availability",
       "href": "/guides/platforms/mobile/",
+      "related": [],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
@@ -1489,8 +2244,9 @@
           "playerProblem": "mobile availability"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Platform compatibility"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Platform compatibility",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
           "query": "Zad Archery Mobile: iOS and Android Availability",
@@ -1590,8 +2346,9 @@
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Platform compatibility"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Platform compatibility",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
@@ -1700,23 +2457,38 @@
     },
     {
       "id": "updates-patch-1-0-2",
-      "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+      "title": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
       "href": "/updates/patch-1-0-2/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/updates/patch-1-1-1/",
+          "label": "/updates/patch-1-1-1/"
+        },
+        {
+          "href": "/guides/progression/guardian-skipped-level/",
+          "label": "/guides/progression/guardian-skipped-level/"
+        }
+      ],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "updates-patch-1-0-2",
-          "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "title": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
           "href": "/updates/patch-1-0-2/",
-          "query": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "query": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
           "playerProblem": "patch notes"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Historical Patch 1.0.2"
         },
         "intent": {
-          "query": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+          "query": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
           "playerProblem": "patch notes",
           "primaryTask": "entity-lookup",
           "prototype": "P1",
@@ -1749,46 +2521,105 @@
           }
         },
         "body": {
-          "intro": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems.",
+          "intro": "Patch 1.0.2 is a launch-week historical patch, not the current version. It fixed monster gem counting below your highest level, restored missed Guardians that could lock the King, and repaired the Defeat the King achievement after Steam connectivity problems. For the current game, start with the September 4 Mega Update and September 5 Patch 1.1.1.",
           "sections": [
             {
               "id": "section-1",
-              "title": "Progression fixes",
+              "title": "Status (historical)",
               "paragraphs": [
-                "Monster gems now count when farming a level below the player's highest.",
-                "A Guardian that failed to appear could permanently lock the King; missed Guardians are restored on restart.",
-                "Defeat the King achievement unlock was fixed for cases where Steam was unreachable."
+                "Patch 1.0.2 is retained as a historical launch-week patch and should not be treated as the live current patch. - For the latest changes and fixes, follow the September 4 Mega Update first, then the September 5 Patch 1.1.1."
               ],
               "bullets": []
             },
             {
               "id": "section-2",
-              "title": "Display/settings fix",
+              "title": "What 1.0.2 changed (verified)",
               "paragraphs": [
-                "The player's own screen resolution is now added as the first option in settings."
+                "1. Monster gem counting    - Monster gems are counted properly when farming a level below your highest level. 2. Missed Guardian restoration    - A Guardian that failed to appear could permanently lock the King; missed Guardians were restored on restart to prevent that lock. 3. Achievement fix    - The Defeat the King achievement unlock was repaired for cases where Steam was unreachable. 4. Settings change    - The player's own screen resolution was added as the first option in settings."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "How this patch fits into post-launch updates",
+              "paragraphs": [
+                "Patch 1.0.2 is a launch-week fix set. It is not the current patch. - To view or apply current-version changes, review the September 4 Mega Update, then the September 5 Patch 1.1.1 in that order."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Common mistakes",
+              "paragraphs": [
+                "Assuming Patch 1.0.2 is the current patch. It is historical evidence of early launch fixes. - Skipping the September 4 and September 5 updates when looking for the latest fixes or systems."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-5",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/mega-update/ - /updates/patch-1-1-1/ - /guides/progression/guardian-skipped-level/"
               ],
               "bullets": []
             }
           ],
-          "faq": []
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Is Patch 1.0.2 the current version of the game?",
+              "answer": "A: No. Patch 1.0.2 is a launch-week historical patch and is not the live current patch."
+            },
+            {
+              "id": "faq-2",
+              "question": "Did Patch 1.0.2 fix monster gems not counting when farming lower levels?",
+              "answer": "A: Yes. Monster gems now count when farming a level below your highest level."
+            },
+            {
+              "id": "faq-3",
+              "question": "What happened with Guardians and the King in 1.0.2?",
+              "answer": "A: A Guardian that failed to appear could lock the King; missed Guardians were restored on restart to address that."
+            },
+            {
+              "id": "faq-4",
+              "question": "Was the Defeat the King achievement affected?",
+              "answer": "A: Yes. Patch 1.0.2 repaired the Defeat the King achievement unlock for cases where Steam was unreachable."
+            },
+            {
+              "id": "faq-5",
+              "question": "Were there any UI or settings changes in 1.0.2?",
+              "answer": "A: Yes. The player's own screen resolution was added as the first option in settings."
+            },
+            {
+              "id": "faq-6",
+              "question": "Where should I look for the current patches and updates?",
+              "answer": "A: Start with the September 4 Mega Update, then apply or read the September 5 Patch 1.1.1."
+            }
+          ]
         },
         "facts": [
           {
             "id": "updates-patch-1-0-2-0",
-            "label": "Progression fixes",
-            "value": "Monster gems now count when farming a level below the player's highest.",
+            "label": "Current-version navigation",
+            "value": "Patch 1.0.2 is retained as historical launch evidence and should not be presented as the live current patch.",
             "verified": true
           },
           {
             "id": "updates-patch-1-0-2-1",
-            "label": "Progression fixes",
-            "value": "A Guardian that failed to appear could permanently lock the King; missed Guardians are restored on restart.",
+            "label": "Current-version navigation",
+            "value": "Current-version reading order: September 4 Mega Update, then September 5 Patch 1.1.1.",
             "verified": true
           },
           {
             "id": "updates-patch-1-0-2-0",
-            "label": "Display/settings fix",
-            "value": "The player's own screen resolution is now added as the first option in settings.",
+            "label": "What Patch 1.0.2 fixed at launch",
+            "value": "Monster gems now counted when farming a level below the player's highest.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-0-2-1",
+            "label": "What Patch 1.0.2 fixed at launch",
+            "value": "A Guardian that failed to appear could permanently lock the King; missed Guardians were restored on restart.",
             "verified": true
           }
         ],
@@ -1799,6 +2630,20 @@
             "sourceRef": "https://steamdb.info/patchnotes/25063956/",
             "finding": "monster gems below highest level bug fixed; missing Guardian could lock the King and was fixed; Defeat the King achievement unlock issue fixed; native screen resolution option added",
             "freshness": "2026-09-02"
+          },
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
           }
         ],
         "media": [
@@ -1807,22 +2652,23 @@
             "role": "entity",
             "source": "/zad-archery/04_gameplay.jpg",
             "localRef": "/zad-archery/04_gameplay.jpg",
-            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "type": "image/jpeg"
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Launch notes"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Historical Patch 1.0.2"
         },
         "assets": [
           {
             "mediaId": "media-updates-patch-1-0-2",
             "role": "entity",
             "path": "/zad-archery/04_gameplay.jpg",
-            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
             "caption": "Zad Archery gameplay and official art reference.",
             "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
             "usable": true,
@@ -1834,12 +2680,14 @@
             "instanceId": "updates-patch-1-0-2-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+              "title": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
               "task": "patch notes",
               "subject": "Updates"
             },
             "evidenceRefs": [
-              "S03_PATCH_1_0_2"
+              "S03_PATCH_1_0_2",
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
             ],
             "mediaRefs": [
               "media-updates-patch-1-0-2"
@@ -1849,7 +2697,7 @@
             "instanceId": "updates-patch-1-0-2-answer",
             "primitiveId": "A02",
             "payload": {
-              "answer": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems."
+              "answer": "Patch 1.0.2 is a launch-week historical patch, not the current version. It fixed monster gem counting below your highest level, restored missed Guardians that could lock the King, and repaired the Defeat the King achievement after Steam connectivity problems. For the current game, start with the September 4 Mega Update and September 5 Patch 1.1.1."
             },
             "evidenceRefs": [
               "S03_PATCH_1_0_2"
@@ -1891,12 +2739,14 @@
             "interactive": false,
             "instanceId": "updates-patch-1-0-2-header",
             "payload": {
-              "title": "Zad Archery Patch 1.0.2: Guardian, King Achievement and Gem Fixes",
+              "title": "Zad Archery Patch 1.0.2: Historical Launch Fixes (Not Current)",
               "task": "patch notes",
               "subject": "Updates"
             },
             "evidenceRefs": [
-              "S03_PATCH_1_0_2"
+              "S03_PATCH_1_0_2",
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
             ],
             "mediaRefs": [
               "media-updates-patch-1-0-2"
@@ -1910,7 +2760,7 @@
             "interactive": false,
             "instanceId": "updates-patch-1-0-2-answer",
             "payload": {
-              "answer": "Patch 1.0.2 fixes three progression blockers: monster gems now count when farming below your highest level, missed Guardians are restored so the King is no longer permanently locked, and the Defeat the King Steam achievement can unlock correctly after Steam connectivity problems."
+              "answer": "Patch 1.0.2 is a launch-week historical patch, not the current version. It fixed monster gem counting below your highest level, restored missed Guardians that could lock the King, and repaired the Defeat the King achievement after Steam connectivity problems. For the current game, start with the September 4 Mega Update and September 5 Patch 1.1.1."
             },
             "evidenceRefs": [
               "S03_PATCH_1_0_2"
@@ -1923,9 +2773,677 @@
       }
     },
     {
+      "id": "updates-patch-1-1-1",
+      "title": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+      "href": "/updates/patch-1-1-1/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/guides/progression/guardian-skipped-level/",
+          "label": "/guides/progression/guardian-skipped-level/"
+        },
+        {
+          "href": "/updates/patch-1-0-2/",
+          "label": "/updates/patch-1-0-2/"
+        }
+      ],
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "updates-patch-1-1-1",
+          "title": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+          "href": "/updates/patch-1-1-1/",
+          "query": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+          "playerProblem": "patch notes"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "intent": {
+          "query": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+          "playerProblem": "patch notes",
+          "primaryTask": "entity-lookup",
+          "prototype": "P1",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A02",
+              "status": "include",
+              "reason": "Entity lookup needs a direct answer."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Entity facts use structured facts."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A related next task continues the lookup."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Patch 1.1.1 is the September 5 follow-up to the Mega Update. It adds an Effects Amount slider, auto-collects piled mining ore, fixes currency UI wrapping, repairs the Run Portal death skip that could skip monsters or a Guardian, restores missed Guardians or grants their currency if already passed, stops leftover skill effects from killing the next Run Portal, and corrects lost Portal Currency from the skipped-level bug on load.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Effects Amount slider added",
+              "paragraphs": [
+                "An Effects Amount slider has been added to the game. This option adjusts effects amount (no further values or UI specifics were provided in the notes)."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Mining ore auto-collect",
+              "paragraphs": [
+                "Mining ore will now auto-collect when too much ore piles up, preventing ore from remaining uncollected due to pile limits."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "Currency UI wrap fix",
+              "paragraphs": [
+                "The currency UI wrapping issue has been fixed so currency display no longer wraps incorrectly (no additional UI changes were detailed)."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Run Portal death skip repaired",
+              "paragraphs": [
+                "Dying at the same moment a Run Portal dies no longer causes the next level to skip monsters or skip a Guardian encounter."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-5",
+              "title": "Missed Guardian restoration or currency grant",
+              "paragraphs": [
+                "If a Guardian was missed because of the previous skip bug, the Guardian can appear on the next level. If you already passed the point where that Guardian would appear, the Guardian is counted defeated and the appropriate currency is granted."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-6",
+              "title": "Leftover skill effects no longer kill the next Run Portal",
+              "paragraphs": [
+                "Leftover skill effects that previously could kill the next Run Portal have been fixed so they no longer cause that behavior."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-7",
+              "title": "Lost Portal Currency corrected on load",
+              "paragraphs": [
+                "Players who lost Portal Currency because of the skipped-level bug should find that their lost Portal Currency is corrected when the game is loaded."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-8",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/mega-update/ - /guides/progression/guardian-skipped-level/ - /updates/patch-1-0-2/"
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "When was Patch 1.1.1 released?",
+              "answer": "A: Patch 1.1.1 was released on September 5 as a follow-up to the Mega Update."
+            },
+            {
+              "id": "faq-2",
+              "question": "Does this patch fix the Run Portal skip that could skip a Guardian?",
+              "answer": "A: Yes. Dying as the Run Portal dies no longer causes the next level to skip monsters or a Guardian."
+            },
+            {
+              "id": "faq-3",
+              "question": "What happens if I already passed the point where a missed Guardian would reappear?",
+              "answer": "A: If you already passed that point, the missed Guardian is counted defeated and the Guardian's currency is granted."
+            },
+            {
+              "id": "faq-4",
+              "question": "Will I get back Portal Currency lost to the skipped-level bug?",
+              "answer": "A: Lost Portal Currency from the skipped-level bug is corrected on load."
+            },
+            {
+              "id": "faq-5",
+              "question": "Are there UI or collection quality-of-life changes?",
+              "answer": "A: Yes. The patch adds an Effects Amount slider, fixes currency UI wrapping, and makes piled mining ore auto-collect when too much accumulates."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "updates-patch-1-1-1-0",
+            "label": "Quality-of-life changes",
+            "value": "Effects Amount slider added.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-1-1-1",
+            "label": "Quality-of-life changes",
+            "value": "Mining ore now auto-collects when too much ore piles up.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-1-1-0",
+            "label": "Guardian and skipped-level recovery",
+            "value": "Dying as the Run Portal dies no longer causes the next level to skip monsters or the Guardian.",
+            "verified": true
+          },
+          {
+            "id": "updates-patch-1-1-1-1",
+            "label": "Guardian and skipped-level recovery",
+            "value": "A missed Guardian can appear on the next level; if you already passed that point, the Guardian is counted defeated and currency is granted.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S18_STEAM_COMMUNITY_HUB",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "official community hub for Mega Update and Patch 1.1.1 announcements",
+            "freshness": "2026-09-13"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-updates-patch-1-1-1",
+            "role": "entity",
+            "source": "/zad-archery/04_gameplay.jpg",
+            "localRef": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current patch notes",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "assets": [
+          {
+            "mediaId": "media-updates-patch-1-1-1",
+            "role": "entity",
+            "path": "/zad-archery/04_gameplay.jpg",
+            "alt": "Zad Archery visual for Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "updates-patch-1-1-1-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM",
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S18_STEAM_COMMUNITY_HUB"
+            ],
+            "mediaRefs": [
+              "media-updates-patch-1-1-1"
+            ]
+          },
+          {
+            "instanceId": "updates-patch-1-1-1-answer",
+            "primitiveId": "A02",
+            "payload": {
+              "answer": "Patch 1.1.1 is the September 5 follow-up to the Mega Update. It adds an Effects Amount slider, auto-collects piled mining ore, fixes currency UI wrapping, repairs the Run Portal death skip that could skip monsters or a Guardian, restores missed Guardians or grants their currency if already passed, stops leftover skill effects from killing the next Run Portal, and corrects lost Portal Currency from the skipped-level bug on load."
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A02",
+            "status": "include",
+            "reason": "Entity lookup needs a direct answer."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Entity facts use structured facts."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A related next task continues the lookup."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "updates-patch-1-1-1-header",
+            "payload": {
+              "title": "Zad Archery Patch 1.1.1 (Sep 5): Guardian Skip and Portal Currency Fixes",
+              "task": "patch notes",
+              "subject": "Updates"
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM",
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S18_STEAM_COMMUNITY_HUB"
+            ],
+            "mediaRefs": [
+              "media-updates-patch-1-1-1"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "A02",
+            "label": "Quick Answer",
+            "interactive": false,
+            "instanceId": "updates-patch-1-1-1-answer",
+            "payload": {
+              "answer": "Patch 1.1.1 is the September 5 follow-up to the Mega Update. It adds an Effects Amount slider, auto-collects piled mining ore, fixes currency UI wrapping, repairs the Run Portal death skip that could skip monsters or a Guardian, restores missed Guardians or grants their currency if already passed, stops leftover skill effects from killing the next Run Portal, and corrects lost Portal Currency from the skipped-level bug on load."
+            },
+            "evidenceRefs": [
+              "S17_PATCH_1_1_1_STEAM"
+            ],
+            "mediaRefs": [],
+            "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-progression-rings-portal-endless",
+      "title": "Zad Archery Rings, Portal Currency and Endless Explained",
+      "href": "/guides/progression/rings-portal-endless/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/guides/progression/symbols/",
+          "label": "/guides/progression/symbols/"
+        },
+        {
+          "href": "/guides/progression/how-long-to-beat-zad-archery/",
+          "label": "/guides/progression/how-long-to-beat-zad-archery/"
+        },
+        {
+          "href": "/updates/patch-1-1-1/",
+          "label": "/updates/patch-1-1-1/"
+        }
+      ],
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-progression-rings-portal-endless",
+          "title": "Zad Archery Rings, Portal Currency and Endless Explained",
+          "href": "/guides/progression/rings-portal-endless/",
+          "query": "Zad Archery Rings, Portal Currency and Endless Explained",
+          "playerProblem": "mechanic overview"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "intent": {
+          "query": "Zad Archery Rings, Portal Currency and Endless Explained",
+          "playerProblem": "mechanic overview",
+          "primaryTask": "progression",
+          "prototype": "P6",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P03",
+              "status": "include",
+              "reason": "Progression needs milestones and state."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "conditional",
+              "reason": "Stages may contain actionable steps."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the route."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "After level 30, Portal Currency feeds the Ring System, which includes 9 Ring perks. The Mega Update also adds Endless farming and removes the Level 50 cap. This page explains those verified systems only; it does not publish a complete Ring ranking or best Endless farming route.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "Portal Currency and the Ring System",
+              "paragraphs": [
+                "Portal Currency becomes usable only after a player reaches level 30 (official patch notes). - The Ring System was introduced in the Mega Update and is funded by Portal Currency. - Official developer notes list 9 Ring perks available through the Ring System. - This article records those confirmed facts only; it does not provide unverified perk values, rankings, or hidden numbers."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Mega Update changes (verified)",
+              "paragraphs": [
+                "The Ring System was added in the Mega Update. - Endless farming mode was added in the same Mega Update. - The Level 50 cap was removed by the Mega Update. - The update also improved automatic currency pickup and some progression-related behaviours."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "Automatic pickup and progression improvements",
+              "paragraphs": [
+                "Official notes for the Mega Update state that automatic currency pickup and progression behaviour were improved. The patch notes list these improvements but do not publish exact mechanical values in the verified evidence."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Patch 1.1.1 — skipped-level bug fix",
+              "paragraphs": [
+                "Patch 1.1.1 corrected lost Portal Currency that could occur when a level was skipped because of a Run Portal / guardian interaction on load. The patch notes explicitly list a fix that restores lost Portal Currency in that situation."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-5",
+              "title": "What this page does not include",
+              "paragraphs": [
+                "No complete Ring-perk ranking is published in the verified evidence; this page does not create one. - No single \"best\" Endless farming route is published or endorsed here; the verified notes do not contain a best-route listing or exhaustive farming route data. - Exact hidden values, symbol/ring numerical ranks, and unverified optimization steps are not presented."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-6",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/mega-update/ - /guides/progression/symbols/ - /guides/progression/how-long-to-beat-zad-archery/ - /updates/patch-1-1-1/"
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "When can I spend Portal Currency?",
+              "answer": "A: Portal Currency becomes usable after level 30 (per the Mega Update notes)."
+            },
+            {
+              "id": "faq-2",
+              "question": "How many Ring perks exist?",
+              "answer": "A: Official notes confirm there are 9 Ring perks in the Ring System."
+            },
+            {
+              "id": "faq-3",
+              "question": "Was an Endless mode added?",
+              "answer": "A: Yes — Endless farming was added in the Mega Update."
+            },
+            {
+              "id": "faq-4",
+              "question": "Was the level cap changed?",
+              "answer": "A: Yes — the Mega Update removed the Level 50 cap."
+            },
+            {
+              "id": "faq-5",
+              "question": "Were automatic pickup or progression behaviors changed?",
+              "answer": "A: Yes — the Mega Update improved automatic currency pickup and progression behaviour according to the official notes."
+            },
+            {
+              "id": "faq-6",
+              "question": "Did Patch 1.1.1 address lost Portal Currency?",
+              "answer": "A: Yes — Patch 1.1.1 corrected lost Portal Currency caused by a skipped-level bug on load."
+            },
+            {
+              "id": "faq-7",
+              "question": "Will this page tell me the best Ring perks or the best Endless farming route?",
+              "answer": "A: No — the verified evidence does not publish a complete Ring perk ranking or a best Endless farming route; this page does not provide them."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-progression-rings-portal-endless-0",
+            "label": "Portal Currency and Rings",
+            "value": "Portal Currency is used after level 30.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-rings-portal-endless-1",
+            "label": "Portal Currency and Rings",
+            "value": "The Ring System was added in the Mega Update.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-rings-portal-endless-0",
+            "label": "Endless and the removed Level 50 cap",
+            "value": "Endless farming was added.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-rings-portal-endless-1",
+            "label": "Endless and the removed Level 50 cap",
+            "value": "The Level 50 cap was removed.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-rings-portal-endless-0",
+            "label": "Evidence boundary",
+            "value": "No complete Ring perk ranking or best Endless farming route is published in the verified recovery evidence.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-rings-portal-endless-1",
+            "label": "Evidence boundary",
+            "value": "Patch 1.1.1 later corrects lost Portal Currency from a skipped-level bug on load.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          },
+          {
+            "evidenceId": "S17_PATCH_1_1_1_STEAM",
+            "sourceType": "A_OFFICIAL",
+            "sourceRef": "https://steamcommunity.com/app/4412000/",
+            "finding": "Effects Amount slider; mining ore auto-collect when too much ore piles up; currency UI wrap fix; fix for dying as Run Portal dies causing next level to skip monsters / Guardian; missed Guardian can appear next level; if already passed, Guardian is counted defeated and currency granted; leftover skill effects no longer kill the next Run Portal; lost Portal Currency from skipped-level bug corrected on load",
+            "freshness": "2026-09-13"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-progression-rings-portal-endless",
+            "role": "entity",
+            "source": "/zad-archery/10_steam_library_hero.jpg",
+            "localRef": "/zad-archery/10_steam_library_hero.jpg",
+            "alt": "Zad Archery visual for Zad Archery Rings, Portal Currency and Endless Explained",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-progression-rings-portal-endless",
+            "role": "entity",
+            "path": "/zad-archery/10_steam_library_hero.jpg",
+            "alt": "Zad Archery visual for Zad Archery Rings, Portal Currency and Endless Explained",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-progression-rings-portal-endless-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Rings, Portal Currency and Endless Explained",
+              "task": "mechanic overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-rings-portal-endless"
+            ]
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P03",
+            "status": "include",
+            "reason": "Progression needs milestones and state."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "omit",
+            "reason": "Stages may contain actionable steps."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "omit",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the route."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-progression-rings-portal-endless-header",
+            "payload": {
+              "title": "Zad Archery Rings, Portal Currency and Endless Explained",
+              "task": "mechanic overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB",
+              "S17_PATCH_1_1_1_STEAM"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-rings-portal-endless"
+            ],
+            "behavior": "answer-header",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
       "id": "guides-platforms-steam-deck",
       "title": "Zad Archery on Steam Deck: Compatibility and Caveats",
       "href": "/guides/platforms/steam-deck/",
+      "related": [],
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
@@ -1936,8 +3454,9 @@
           "playerProblem": "steam deck compatibility"
         },
         "state": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Platform compatibility"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Platform compatibility",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "intent": {
           "query": "Zad Archery on Steam Deck: Compatibility and Caveats",
@@ -2056,8 +3575,9 @@
           }
         ],
         "freshness": {
-          "dataWindow": "Verified 2026-09-02",
-          "platform": "Platform compatibility"
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Platform compatibility",
+          "version": "Mega Update / Patch 1.1.1"
         },
         "assets": [
           {
@@ -2161,6 +3681,294 @@
             ],
             "mediaRefs": [],
             "behavior": "quick-answer",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides-progression-symbols",
+      "title": "Zad Archery Symbols: What the Mega Update System Adds",
+      "href": "/guides/progression/symbols/",
+      "related": [
+        {
+          "href": "/updates/mega-update/",
+          "label": "/updates/mega-update/"
+        },
+        {
+          "href": "/guides/getting-started/",
+          "label": "/guides/getting-started/"
+        },
+        {
+          "href": "/guides/progression/rings-portal-endless/",
+          "label": "/guides/progression/rings-portal-endless/"
+        }
+      ],
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "guides-progression-symbols",
+          "title": "Zad Archery Symbols: What the Mega Update System Adds",
+          "href": "/guides/progression/symbols/",
+          "query": "Zad Archery Symbols: What the Mega Update System Adds",
+          "playerProblem": "mechanic overview"
+        },
+        "state": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "intent": {
+          "query": "Zad Archery Symbols: What the Mega Update System Adds",
+          "playerProblem": "mechanic overview",
+          "primaryTask": "progression",
+          "prototype": "P6",
+          "priority": 10,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P03",
+              "status": "include",
+              "reason": "Progression needs milestones and state."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "conditional",
+              "reason": "Stages may contain actionable steps."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the route."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "The September 4 Mega Update adds a Symbol System with 50+ Symbols and Exalted Symbols. This page covers only that verified system fact. It does not rank best Symbols or publish unverified hidden values.",
+          "sections": [
+            {
+              "id": "section-1",
+              "title": "What the update added (verified)",
+              "paragraphs": [
+                "A new Symbol System was added in the September 4 Mega Update. - Official notes describe 50+ Symbols and the presence of Exalted Symbols. - Symbols are part of progression and sit after Jobs / the Preferred Job step and before later Portal Currency / Rings progression."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-2",
+              "title": "Where Symbols sit in progression",
+              "paragraphs": [
+                "In the current verified progression ordering: 1. Jobs / Preferred Job — the Preferred Job exists as part of progression. 2. Symbols — the Symbol System (50+ Symbols, including Exalted Symbols) comes after Jobs/Preferred Job. 3. Later progression — Portal Currency and the Ring progression follow Symbols.",
+                "This page documents those placement facts only; it does not expand on later Portal or Ring mechanics."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-3",
+              "title": "What is verified vs unknown",
+              "paragraphs": [
+                "Confirmed by official notes: - The game now has a Symbol System. - There are 50+ Symbols and Exalted Symbols. - Symbols are placed after Jobs / Preferred Job and before Portal Currency / Rings in the progression path.",
+                "Not published in official notes (remain unverified): - Exact Symbol effects, numerical values, drop rates, or hidden mechanics. - Any authoritative \"best Symbol\" rankings or exact comparisons.",
+                "Because official notes do not provide those details, this guide does not publish rankings or hidden values."
+              ],
+              "bullets": []
+            },
+            {
+              "id": "section-4",
+              "title": "Related links",
+              "paragraphs": [
+                "/updates/mega-update/ - /guides/getting-started/ - /guides/progression/rings-portal-endless/"
+              ],
+              "bullets": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Does the Mega Update add Symbols?",
+              "answer": "A: Yes — the September 4 Mega Update adds a Symbol System."
+            },
+            {
+              "id": "faq-2",
+              "question": "How many Symbols are there?",
+              "answer": "A: Official notes describe 50+ Symbols and also mention Exalted Symbols."
+            },
+            {
+              "id": "faq-3",
+              "question": "Where do Symbols appear in progression?",
+              "answer": "A: Verified ordering places Symbols after Jobs / Preferred Job and before later Portal Currency / Rings progression."
+            },
+            {
+              "id": "faq-4",
+              "question": "Are exact Symbol effects or drop rates published?",
+              "answer": "A: No. Exact effects, drop rates, and hidden values remain outside the verified official notes."
+            },
+            {
+              "id": "faq-5",
+              "question": "Does this page rank the best Symbols?",
+              "answer": "A: No. No best-Symbol ranking is included because official notes do not publish the necessary data."
+            },
+            {
+              "id": "faq-6",
+              "question": "What are Exalted Symbols?",
+              "answer": "A: Official notes mention Exalted Symbols exist; no further verified details about them are provided in the official notes."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "guides-progression-symbols-0",
+            "label": "What is confirmed",
+            "value": "The Mega Update added the Symbol System.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-symbols-1",
+            "label": "What is confirmed",
+            "value": "Official notes describe 50+ Symbols and Exalted Symbols.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-symbols-0",
+            "label": "What this page does not claim",
+            "value": "No verified best-Symbol ranking is included because official notes do not publish one.",
+            "verified": true
+          },
+          {
+            "id": "guides-progression-symbols-1",
+            "label": "What this page does not claim",
+            "value": "Exact Symbol effects, drop rates, and hidden values remain outside the verified recovery evidence.",
+            "verified": true
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "S16_MEGA_UPDATE_STEAMDB",
+            "sourceType": "A_OFFICIAL_VIA_STEAMDB",
+            "sourceRef": "https://steamdb.info/patchnotes/25128059/",
+            "finding": "Symbol System added; 50+ Symbols and Exalted Symbols; Preferred Job added; doubles all bonuses of the preferred job; Ring System added; Portal Currency used after level 30; 9 Ring perks; Endless farming added; Level 50 cap removed; automatic currency pickup / progression behavior improved",
+            "freshness": "2026-09-13"
+          }
+        ],
+        "media": [
+          {
+            "mediaId": "media-guides-progression-symbols",
+            "role": "entity",
+            "source": "/zad-archery/07_steam_header.jpg",
+            "localRef": "/zad-archery/07_steam_header.jpg",
+            "alt": "Zad Archery visual for Zad Archery Symbols: What the Mega Update System Adds",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "type": "image/jpeg"
+          }
+        ],
+        "freshness": {
+          "dataWindow": "Verified 2026-09-13",
+          "platform": "Current progression",
+          "version": "Mega Update / Patch 1.1.1"
+        },
+        "assets": [
+          {
+            "mediaId": "media-guides-progression-symbols",
+            "role": "entity",
+            "path": "/zad-archery/07_steam_header.jpg",
+            "alt": "Zad Archery visual for Zad Archery Symbols: What the Mega Update System Adds",
+            "caption": "Zad Archery gameplay and official art reference.",
+            "provenance": "User-supplied Zad Archery workspace asset; decorative/article support only.",
+            "usable": true,
+            "type": "image/jpeg"
+          }
+        ],
+        "primitiveData": [
+          {
+            "instanceId": "guides-progression-symbols-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Zad Archery Symbols: What the Mega Update System Adds",
+              "task": "mechanic overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-symbols"
+            ]
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P03",
+            "status": "include",
+            "reason": "Progression needs milestones and state."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "omit",
+            "reason": "Stages may contain actionable steps."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "omit",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the route."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ]
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "guides-progression-symbols-header",
+            "payload": {
+              "title": "Zad Archery Symbols: What the Mega Update System Adds",
+              "task": "mechanic overview",
+              "subject": "Progression"
+            },
+            "evidenceRefs": [
+              "S16_MEGA_UPDATE_STEAMDB"
+            ],
+            "mediaRefs": [
+              "media-guides-progression-symbols"
+            ],
+            "behavior": "answer-header",
             "data": []
           }
         ]

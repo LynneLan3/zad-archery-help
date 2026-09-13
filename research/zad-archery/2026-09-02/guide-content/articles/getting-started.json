@@ -7,15 +7,15 @@
   "priority": "P0",
   "research_status": "READY",
   "primary_intent": "beginner_system_overview",
-  "title_draft": "Zad Archery Beginner Guide: What the Main Systems Do",
+  "title_draft": "Zad Archery Beginner Guide: Current Progression After the Mega Update",
   "editorial_status": "RESEARCH_READY_NOT_FINAL_PROSE",
-  "quick_answer_draft": "Zad Archery is a short incremental RPG built around clearing waves, collecting loot, then unlocking systems such as the skill tree, jobs, crafting, mining, Shaping, Mastery and Guardian Perks. The safest beginner advice from public evidence is to learn each system as it unlocks rather than follow an unverified 'best build'.",
+  "quick_answer_draft": "After the September 4 Mega Update, a current Zad Archery run moves from early wave clearing into Jobs and Preferred Job, then Symbols, then Portal Currency and Rings after level 30, and finally Endless once the Level 50 cap is gone. Learn each system as it unlocks; do not treat unverified Symbol or Ring rankings as required beginner advice.",
   "sections": [
     {
       "h2": "What kind of game is Zad Archery?",
       "claims": [
         {
-          "text": "The core loop is clearing target-like enemies, taking loot and reinvesting into upgrades and skills.",
+          "text": "The core loop is still clearing target-like enemies, taking loot, and reinvesting into upgrades and skills.",
           "sources": [
             "S01_STEAM_STORE"
           ]
@@ -29,87 +29,94 @@
       ]
     },
     {
-      "h2": "The verified progression systems",
+      "h2": "Current progression path after the Mega Update",
       "claims": [
         {
-          "text": "The live Steam description explicitly lists a large Skill Tree, five Archer Jobs, loot, skills, crafting and mining.",
+          "text": "Early progression still starts with wave clearing, loot, the skill tree, and unlocking systems such as crafting and mining.",
           "sources": [
             "S01_STEAM_STORE"
           ]
         },
         {
-          "text": "The same live description names Shaping, Masteries and Guardian Perks as later systems.",
+          "text": "Jobs remain a core growth axis; the Mega Update adds Preferred Job, which doubles all bonuses of the preferred job.",
           "sources": [
-            "S01_STEAM_STORE"
+            "S01_STEAM_STORE",
+            "S16_MEGA_UPDATE_STEAMDB"
           ]
         },
         {
-          "text": "Developer/demo material additionally describes alchemy and gathering/herbing.",
+          "text": "The Symbol System adds 50+ Symbols and Exalted Symbols as a post-job growth layer.",
           "sources": [
-            "S08_ITCH",
-            "S14_DEMO_STORE"
-          ],
-          "caveat": "Verify exact full-release UI/availability before detailed instructions."
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "After level 30, Portal Currency feeds the Ring System, which includes 9 Ring perks.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
+        },
+        {
+          "text": "Endless farming is available after the Level 50 cap was removed.",
+          "sources": [
+            "S16_MEGA_UPDATE_STEAMDB"
+          ]
         }
       ]
     },
     {
-      "h2": "How long should a first run take?",
+      "h2": "What not to invent while learning the systems",
       "claims": [
         {
-          "text": "The developer said the game is designed around five hours, with build and loot differences affecting duration.",
+          "text": "Public official notes confirm the systems exist, but they do not publish a verified best-Symbol ranking, complete Ring ranking, or exact hidden values.",
           "sources": [
-            "S02_STEAM_NEWS_RELEASE_INFO"
+            "S16_MEGA_UPDATE_STEAMDB"
           ]
         },
         {
-          "text": "Launch-day Reddit reports cluster around roughly four to five and a half hours.",
+          "text": "September 5 Patch 1.1.1 is the current follow-up patch after the Mega Update and includes Guardian / skipped-level recovery fixes.",
           "sources": [
-            "S06_REDDIT_RELEASE"
-          ],
-          "caveat": "Community reports are anecdotal."
+            "S17_PATCH_1_1_1_STEAM"
+          ]
         }
       ]
     }
   ],
   "source_ids": [
     "S01_STEAM_STORE",
-    "S02_STEAM_NEWS_RELEASE_INFO",
-    "S08_ITCH",
-    "S14_DEMO_STORE"
+    "S16_MEGA_UPDATE_STEAMDB",
+    "S17_PATCH_1_1_1_STEAM"
   ],
   "media_slots": [
     {
       "slot": "hero",
       "preferred": "official_gameplay_or_store_asset",
-      "media_ids": [
-        "M02_HERO_CAPSULE",
-        "M05_TRAILER_FRAME"
-      ]
-    },
-    {
-      "slot": "systems",
-      "preferred": "current_build_gameplay_screenshot",
-      "status": "NEEDS_CAPTURE",
-      "capture_target": "UI showing the main progression system tabs"
+      "status": "OPTIONAL"
     }
   ],
   "faq": [
     {
-      "q": "How many jobs are in Zad Archery?",
-      "a": "The official Steam description says there are five Archer Jobs.",
+      "q": "What should I unlock first after the Mega Update?",
+      "a": "Follow the verified order: early progression systems, Jobs / Preferred Job, Symbols, then Portal Currency and Rings after level 30, then Endless. Exact best picks inside those systems are not published in the official notes used here.",
       "sources": [
-        "S01_STEAM_STORE"
+        "S16_MEGA_UPDATE_STEAMDB"
       ]
     },
     {
-      "q": "Is Zad Archery an idle game?",
-      "a": "Steam lists it as both Incremental and Idler, but the public descriptions also emphasize active wave clearing and build progression.",
+      "q": "How many jobs are in Zad Archery?",
+      "a": "The official Steam description still lists five Archer Jobs. Preferred Job is a Mega Update addition that doubles the preferred job's bonuses.",
       "sources": [
-        "S01_STEAM_STORE"
+        "S01_STEAM_STORE",
+        "S16_MEGA_UPDATE_STEAMDB"
       ]
     }
   ],
   "warnings": [],
-  "codex_rule": "Map evidence into existing V4 Guide Content Result. Do not invent missing mechanics. Final editorial prose may be generated by the existing writer pipeline."
+  "related_routes": [
+    "/updates/mega-update/",
+    "/guides/progression/symbols/",
+    "/guides/progression/rings-portal-endless/",
+    "/updates/patch-1-1-1/"
+  ],
+  "codex_rule": "Map evidence into existing V4 Guide Content Result. Do not invent Symbol/Ring rankings or hidden values."
 }
